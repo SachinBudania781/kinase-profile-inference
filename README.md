@@ -6,11 +6,11 @@ This repository holds the code, data recipes, split specifications and evaluator
 
 | Item | Value |
 | --- | --- |
-| OSF registration | `<OSF_REGISTRATION_URL>` |
-| OSF DOI | `<OSF_DOI>` |
-| Protocol revision registered on OSF (full commit hash) | `<PROTOCOL_COMMIT_SHA_40_HEX>` |
+| OSF registration | https://osf.io/5sbck |
+| OSF DOI | https://doi.org/10.17605/OSF.IO/5SBCK |
+| Protocol revision registered on OSF (full commit hash) | `06821c682666322dce217f542312dfa032d0baab` |
 | Release tag (set at freeze) | `<RELEASE_TAG>` |
-| Status | Design and code ready; not yet registered; no model has been run on any lockbox panel |
+| Status | Registered on OSF on 13 November 2026; development runs and release freeze come next; no model has been run on any lockbox panel |
 
 ---
 
