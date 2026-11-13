@@ -1,0 +1,143 @@
+{
+  "cohort_counts": {
+    "An2023_EGFR": {
+      "role": "lockbox_A",
+      "variants": 199,
+      "sites": 131,
+      "drugs": 5,
+      "budgets": [
+        2,
+        3
+      ],
+      "episodes": {
+        "2": 5970,
+        "3": 3980
+      }
+    },
+    "Abadie2026_EGFR": {
+      "role": "lockbox_A",
+      "variants": 370,
+      "sites": 62,
+      "drugs": 3,
+      "budgets": [
+        2
+      ],
+      "episodes": {
+        "2": 1110
+      }
+    },
+    "Bahcall2022_MET": {
+      "role": "lockbox_A",
+      "variants": 8,
+      "sites": 8,
+      "drugs": 6,
+      "budgets": [
+        2,
+        3
+      ],
+      "episodes": {
+        "2": 480,
+        "3": 480
+      }
+    },
+    "Fujino2019_MET": {
+      "role": "lockbox_A",
+      "variants": 26,
+      "sites": 12,
+      "drugs": 7,
+      "budgets": [
+        2,
+        3
+      ],
+      "episodes": {
+        "2": 2730,
+        "3": 3640
+      }
+    },
+    "Wylie2017_ABL1": {
+      "role": "lockbox_A",
+      "variants": 16,
+      "sites": 15,
+      "drugs": 6,
+      "budgets": [
+        2,
+        3
+      ],
+      "episodes": {
+        "2": 960,
+        "3": 960
+      }
+    },
+    "Zhang2016_ALK": {
+      "role": "lockbox_A",
+      "variants": 16,
+      "sites": 12,
+      "drugs": 4,
+      "budgets": [
+        2,
+        3
+      ],
+      "episodes": {
+        "2": 192,
+        "3": 64
+      }
+    },
+    "Gainor2016_ALK": {
+      "role": "lockbox_A",
+      "variants": 10,
+      "sites": 8,
+      "drugs": 5,
+      "budgets": [
+        2,
+        3
+      ],
+      "episodes": {
+        "2": 300,
+        "3": 200
+      }
+    },
+    "Villa2024_ALK": {
+      "role": "lockbox_B",
+      "variants": 9,
+      "sites": 8,
+      "drugs": 7,
+      "budgets": [
+        2,
+        3
+      ],
+      "episodes": {
+        "2": 945,
+        "3": 1260
+      }
+    },
+    "Takei2025_ALK": {
+      "role": "lockbox_B",
+      "variants": 12,
+      "sites": 11,
+      "drugs": 4,
+      "budgets": [
+        2,
+        3
+      ],
+      "episodes": {
+        "2": 144,
+        "3": 48
+      }
+    },
+    "Peng2024_ROS1": {
+      "role": "lockbox_B",
+      "variants": 14,
+      "sites": 8,
+      "drugs": 4,
+      "budgets": [
+        2,
+        3
+      ],
+      "episodes": {
+        "2": 168,
+        "3": 56
+      }
+    }
+  },
+  "lockbox_episode_manifest_sha256": "05c251a4abd54ad35bf33bd67f9cc32fae4e8b8218ef4ba6811c754e495d9635"
+}

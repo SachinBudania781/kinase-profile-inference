@@ -1,0 +1,5 @@
+# Keep line endings identical on every machine so the recorded hashes match.
+* text=auto eol=lf
+*.pdf binary
+*.gz binary
+*.png binary

@@ -1,0 +1,213 @@
+{
+  "seed": 20261112,
+  "xgb": {
+    "eta": 0.055,
+    "l2": 4.0,
+    "seed": 20261112,
+    "n_jobs": 1,
+    "max_train_episodes": 36000,
+    "grid": [
+      [
+        3,
+        200,
+        15
+      ],
+      [
+        5,
+        260,
+        15
+      ],
+      [
+        7,
+        300,
+        15
+      ]
+    ]
+  },
+  "neighbors": [
+    16,
+    48,
+    96
+  ],
+  "ridge_kappa": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "ser": {
+    "weights": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "confidence": 0.9,
+    "min_validation_sites": 3,
+    "experts": [
+      "bounded_local",
+      "shrunk_local",
+      "bounded_ridge",
+      "query_median",
+      "pooled_median"
+    ]
+  },
+  "saer": {
+    "joint_min_profiles": 1000,
+    "joint_min_cells": 10000,
+    "router_max_iter": 300,
+    "gaussian_centers": [
+      "zero",
+      "mean",
+      "median"
+    ],
+    "gaussian_shrink": [
+      0.01,
+      0.05,
+      0.25,
+      0.5,
+      0.9
+    ],
+    "gaussian_mult": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "mixture_components": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "mixture_cov": [
+      "tied",
+      "full"
+    ],
+    "mixture_reg": [
+      0.05,
+      0.2
+    ],
+    "donor_bandwidth": [
+      0.1,
+      0.25,
+      0.5,
+      1,
+      2,
+      4
+    ],
+    "donor_companion_weight": [
+      0,
+      0.25,
+      1
+    ],
+    "donor_pool": 256,
+    "pair_tree_max_pairs": 150000,
+    "pair_tree_capacity": [
+      [
+        100,
+        15
+      ],
+      [
+        300,
+        31
+      ],
+      [
+        600,
+        63
+      ]
+    ],
+    "pair_tree_thresholds": [
+      30000,
+      150000
+    ],
+    "pair_lr": 0.06,
+    "pair_min_leaf": 40,
+    "pair_l2": 1.0,
+    "joint_samples": [
+      40000,
+      120000,
+      240000
+    ],
+    "joint_capacity": [
+      [
+        150,
+        15
+      ],
+      [
+        250,
+        31
+      ],
+      [
+        400,
+        63
+      ]
+    ],
+    "joint_cell_thresholds": [
+      20000,
+      200000
+    ],
+    "joint_lr": 0.06,
+    "joint_min_leaf": 40,
+    "joint_l2": 1.0,
+    "context_model": {
+      "max_iter": 150,
+      "max_leaf_nodes": 15,
+      "learning_rate": 0.07,
+      "l2_regularization": 10.0,
+      "min_samples_leaf": 30
+    },
+    "select_sample": 1500,
+    "aux_max_episodes": 20000,
+    "aux_seed": 20261113
+  },
+  "aligned": {
+    "max_iter": 300,
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 40,
+    "l2_regularization": 1.0,
+    "seed": 20261111,
+    "nested_seed": 20261116,
+    "multipliers": [
+      0.25,
+      1.0,
+      4.0
+    ],
+    "tau": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "lambda": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "fallback_head": {
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 120
+    }
+  },
+  "nested_fixed": {
+    "gaussian": {
+      "center": "median",
+      "shrink": 0.25,
+      "mult": 0.75
+    },
+    "mixture": {
+      "n": 2,
+      "cov": "tied",
+      "reg": 0.2,
+      "median": true
+    },
+    "donor": {
+      "bandwidth": 1.0,
+      "companion_weight": 0.25,
+      "median": true
+    }
+  }
+}

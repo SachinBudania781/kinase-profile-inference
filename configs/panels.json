@@ -1,0 +1,300 @@
+{
+  "schema_version": "1.0",
+  "note": "Declared roles for the archive folders used by the study. Folder names match the cleaned-data archive. Lockbox B entries are filled in by the curator step; see protocol/OSF_preregistration.md section 4.",
+  "seed": 20261112,
+  "roots": {
+    "archive": "Folder holding the 59 cleaned archive folders (SER_Code_and_All_Cleaned_Study_Data/SER/data).",
+    "lockbox_b": "Folder holding the Lockbox B panels (kept outside the repository)."
+  },
+  "panels": {
+    "Estevam2025_MET": {
+      "role": "core_dev",
+      "root": "archive",
+      "format": "matrix_npz",
+      "multi_gene": false,
+      "prior": "companion_context",
+      "scale_kind": "fitness_score",
+      "max_masks_per_profile": {
+        "2": 24,
+        "3": 24
+      },
+      "min_groups": 4
+    },
+    "DuongLy2016_multi_kinase": {
+      "role": "core_dev",
+      "root": "archive",
+      "format": "matrix_npz",
+      "multi_gene": true,
+      "prior": "drug_median",
+      "scale_kind": "remaining_activity",
+      "max_masks_per_profile": {
+        "2": 120,
+        "3": 120
+      },
+      "min_groups": 4
+    },
+    "Robichaux2021_EGFR": {
+      "role": "core_dev",
+      "root": "archive",
+      "format": "matrix_npz",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "scale_kind": "ic50_log10_ratio",
+      "max_masks_per_profile": {
+        "2": 120,
+        "3": 120
+      },
+      "min_groups": 4
+    },
+    "Nakamura2021_FGFR1_FGFR2_FGFR3": {
+      "role": "core_dev",
+      "root": "archive",
+      "format": "matrix_npz",
+      "multi_gene": true,
+      "prior": "drug_median",
+      "scale_kind": "ic50_log10_ratio",
+      "max_masks_per_profile": {
+        "2": null,
+        "3": null
+      },
+      "min_groups": 3
+    },
+    "KiRHub2026_multi_kinase": {
+      "role": "core_dev",
+      "root": "archive",
+      "format": "matrix_npz",
+      "multi_gene": true,
+      "prior": "drug_median",
+      "scale_kind": "remaining_activity",
+      "max_masks_per_profile": {
+        "2": 60,
+        "3": 60
+      },
+      "min_groups": 4
+    },
+    "OKL2026_multi_kinase": {
+      "role": "core_dev",
+      "root": "archive",
+      "format": "matrix_npz",
+      "multi_gene": true,
+      "prior": "drug_median",
+      "scale_kind": "remaining_binding",
+      "max_masks_per_profile": {
+        "2": 120,
+        "3": 120
+      },
+      "min_groups": 4
+    },
+    "Jung2025_ABL1": {
+      "role": "stress_test",
+      "root": "archive",
+      "format": "matrix_npz",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "scale_kind": "other",
+      "max_masks_per_profile": {
+        "2": null,
+        "3": null
+      },
+      "min_groups": 4
+    },
+    "Chakraborty2024_SRC": {
+      "role": "stress_test",
+      "root": "archive",
+      "format": "matrix_npz",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "scale_kind": "other",
+      "max_masks_per_profile": {
+        "2": null,
+        "3": null
+      },
+      "min_groups": 4
+    },
+    "Lee2026_EGFR": {
+      "role": "stress_test",
+      "root": "archive",
+      "format": "matrix_npz",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "scale_kind": "other",
+      "max_masks_per_profile": {
+        "2": null,
+        "3": null
+      },
+      "min_groups": 4
+    },
+    "Oh2026_ALK": {
+      "role": "stress_test",
+      "root": "archive",
+      "format": "matrix_npz",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "scale_kind": "other",
+      "max_masks_per_profile": {
+        "2": null,
+        "3": null
+      },
+      "min_groups": 4
+    },
+    "An2023_EGFR": {
+      "role": "lockbox_A",
+      "root": "archive",
+      "format": "ser_csv",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "declared": {
+        "variants": 199,
+        "sites": 131,
+        "drugs": 5,
+        "budgets": [
+          2,
+          3
+        ]
+      }
+    },
+    "Abadie2026_EGFR": {
+      "role": "lockbox_A",
+      "root": "archive",
+      "format": "ser_csv",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "declared": {
+        "variants": 370,
+        "sites": 62,
+        "drugs": 3,
+        "budgets": [
+          2
+        ]
+      }
+    },
+    "Bahcall2022_MET": {
+      "role": "lockbox_A",
+      "root": "archive",
+      "format": "ser_csv",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "declared": {
+        "variants": 8,
+        "sites": 8,
+        "drugs": 6,
+        "budgets": [
+          2,
+          3
+        ]
+      }
+    },
+    "Fujino2019_MET": {
+      "role": "lockbox_A",
+      "root": "archive",
+      "format": "ser_csv",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "declared": {
+        "variants": 26,
+        "sites": 12,
+        "drugs": 7,
+        "budgets": [
+          2,
+          3
+        ]
+      }
+    },
+    "Wylie2017_ABL1": {
+      "role": "lockbox_A",
+      "root": "archive",
+      "format": "ser_csv",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "declared": {
+        "variants": 16,
+        "sites": 15,
+        "drugs": 6,
+        "budgets": [
+          2,
+          3
+        ]
+      }
+    },
+    "Zhang2016_ALK": {
+      "role": "lockbox_A",
+      "root": "archive",
+      "format": "ser_csv",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "declared": {
+        "variants": 16,
+        "sites": 12,
+        "drugs": 4,
+        "budgets": [
+          2,
+          3
+        ]
+      }
+    },
+    "Gainor2016_ALK": {
+      "role": "lockbox_A",
+      "root": "archive",
+      "format": "ser_csv",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "declared": {
+        "variants": 10,
+        "sites": 8,
+        "drugs": 5,
+        "budgets": [
+          2,
+          3
+        ]
+      }
+    },
+    "Villa2024_ALK": {
+      "role": "lockbox_B",
+      "root": "lockbox_b",
+      "format": "ser_csv",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "declared": {
+        "variants": 9,
+        "sites": 8,
+        "drugs": 7,
+        "budgets": [
+          2,
+          3
+        ]
+      }
+    },
+    "Takei2025_ALK": {
+      "role": "lockbox_B",
+      "root": "lockbox_b",
+      "format": "ser_csv",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "declared": {
+        "variants": 12,
+        "sites": 11,
+        "drugs": 4,
+        "budgets": [
+          2,
+          3
+        ]
+      }
+    },
+    "Peng2024_ROS1": {
+      "role": "lockbox_B",
+      "root": "lockbox_b",
+      "format": "ser_csv",
+      "multi_gene": false,
+      "prior": "drug_median",
+      "declared": {
+        "variants": 14,
+        "sites": 8,
+        "drugs": 4,
+        "budgets": [
+          2,
+          3
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Study data stays OUTSIDE the repo. Only hashes are recorded.
+data/
+raw_data/
+SER_Code_and_All_Cleaned_Study_Data/
+
+# Lockbox material must never be committed (curator-held): Lockbox A and Lockbox B
+lockbox_private/
+splits/lockbox_private/
+LockboxB_Data/
+**/SER_responses.csv
+**/source_IC50.csv
+*_truth.csv*
+*_inputs.csv*
+
+# Run outputs (large / regenerable). Hashes are recorded instead.
+runs/
+results/
+outputs/
+*.npz
+*.parquet
+!splits/**/*.parquet
+*.log
+
+# Editor and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

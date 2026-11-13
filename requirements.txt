@@ -1,0 +1,10 @@
+# Kinase Profile Inference - runtime requirements.
+# Lower bounds only; the exact versions used for the registered runs are frozen at the release freeze
+# (see protocol/OSF_preregistration.md section 10.2) in requirements-lock.txt.
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+xgboost>=3.1
+pytest>=8.0
+# Development-only deep-learning baselines (dl_baselines.py). Not needed for the registered roster or the lockbox run.
+torch>=2.2

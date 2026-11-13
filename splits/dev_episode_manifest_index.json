@@ -1,0 +1,146 @@
+[
+  {
+    "panel": "Estevam2025_MET",
+    "k": 2,
+    "episodes": 77136,
+    "file": "Estevam2025_MET_k2_manifest.csv.gz",
+    "sha256_uncompressed": "f3e2b2784a764d3c0bb0913201353683273358c737a922367b3e7faa1cc41921",
+    "rule": "uniform sample of 24 masks per profile, seed 20261112, per-profile SHA-256 stream"
+  },
+  {
+    "panel": "Estevam2025_MET",
+    "k": 3,
+    "episodes": 77136,
+    "file": "Estevam2025_MET_k3_manifest.csv.gz",
+    "sha256_uncompressed": "72a9623fb6eb72650a9ff6329f04558391e407694b8e0b6a2370a6fb01ceb829",
+    "rule": "uniform sample of 24 masks per profile, seed 20261112, per-profile SHA-256 stream"
+  },
+  {
+    "panel": "DuongLy2016_multi_kinase",
+    "k": 2,
+    "episodes": 9120,
+    "file": "DuongLy2016_multi_kinase_k2_manifest.csv.gz",
+    "sha256_uncompressed": "db4e7846b2fb9f02b82f479b1da8d4cfc2233afb56b75de3a9814238c15e17a3",
+    "rule": "uniform sample of 120 masks per profile, seed 20261112, per-profile SHA-256 stream"
+  },
+  {
+    "panel": "DuongLy2016_multi_kinase",
+    "k": 3,
+    "episodes": 9120,
+    "file": "DuongLy2016_multi_kinase_k3_manifest.csv.gz",
+    "sha256_uncompressed": "69997abe20f09a91798d45bdd5f934bc5ed0339d11c578cc1a88d37e1174ed42",
+    "rule": "uniform sample of 120 masks per profile, seed 20261112, per-profile SHA-256 stream"
+  },
+  {
+    "panel": "Robichaux2021_EGFR",
+    "k": 2,
+    "episodes": 9240,
+    "file": "Robichaux2021_EGFR_k2_manifest.csv.gz",
+    "sha256_uncompressed": "39cc1e7a1681b67743cacef5696e43ecf4cd71a744e2f76e62d546bc3ae31c14",
+    "rule": "uniform sample of 120 masks per profile, seed 20261112, per-profile SHA-256 stream"
+  },
+  {
+    "panel": "Robichaux2021_EGFR",
+    "k": 3,
+    "episodes": 9240,
+    "file": "Robichaux2021_EGFR_k3_manifest.csv.gz",
+    "sha256_uncompressed": "917a1070dfd7368d2bdb29b18ca5527cf2f67da3852b4801e483ef84cc519c2b",
+    "rule": "uniform sample of 120 masks per profile, seed 20261112, per-profile SHA-256 stream"
+  },
+  {
+    "panel": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+    "k": 2,
+    "episodes": 10791,
+    "file": "Nakamura2021_FGFR1_FGFR2_FGFR3_k2_manifest.csv.gz",
+    "sha256_uncompressed": "4d6dba5be44c5dcb2f6ec3671a2b6f71369e6e43992ab21c9c5bba1cd0157d7f",
+    "rule": "all eligible masks over measured cells"
+  },
+  {
+    "panel": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+    "k": 3,
+    "episodes": 17280,
+    "file": "Nakamura2021_FGFR1_FGFR2_FGFR3_k3_manifest.csv.gz",
+    "sha256_uncompressed": "7a8f7a66898911852a27d76e5ec16d4ca9a7de188f73f5ac8c4fabf0c46c5021",
+    "rule": "all eligible masks over measured cells"
+  },
+  {
+    "panel": "KiRHub2026_multi_kinase",
+    "k": 2,
+    "episodes": 18840,
+    "file": "KiRHub2026_multi_kinase_k2_manifest.csv.gz",
+    "sha256_uncompressed": "ad1f6bfbd783078d4f04f79eef6e8098da9f5678bbe28ac97bad3fcf4fdc313a",
+    "rule": "uniform sample of 60 masks per profile, seed 20261112, per-profile SHA-256 stream"
+  },
+  {
+    "panel": "KiRHub2026_multi_kinase",
+    "k": 3,
+    "episodes": 18840,
+    "file": "KiRHub2026_multi_kinase_k3_manifest.csv.gz",
+    "sha256_uncompressed": "1aa4c84775f4dec1a17932f145f6d97aab39382d43e3eca3b994fcf7f209b2db",
+    "rule": "uniform sample of 60 masks per profile, seed 20261112, per-profile SHA-256 stream"
+  },
+  {
+    "panel": "OKL2026_multi_kinase",
+    "k": 2,
+    "episodes": 7080,
+    "file": "OKL2026_multi_kinase_k2_manifest.csv.gz",
+    "sha256_uncompressed": "e24cc8117c44c155415295ab8d6938373023cb14cbe25f9cbf435cbd2ca6223e",
+    "rule": "uniform sample of 120 masks per profile, seed 20261112, per-profile SHA-256 stream"
+  },
+  {
+    "panel": "OKL2026_multi_kinase",
+    "k": 3,
+    "episodes": 7080,
+    "file": "OKL2026_multi_kinase_k3_manifest.csv.gz",
+    "sha256_uncompressed": "e33637a5de1ae018cdfe3221793ae1cc0c2e9508a62d59eb5ae5786029b26f74",
+    "rule": "uniform sample of 120 masks per profile, seed 20261112, per-profile SHA-256 stream"
+  },
+  {
+    "panel": "Jung2025_ABL1",
+    "k": 2,
+    "episodes": 55080,
+    "file": "Jung2025_ABL1_k2_manifest.csv.gz",
+    "sha256_uncompressed": "4ce5611e66ce9f834262cf695626f9ddde738a7225bcc44095317cd82db30221",
+    "rule": "all eligible masks over measured cells"
+  },
+  {
+    "panel": "Jung2025_ABL1",
+    "k": 3,
+    "episodes": 36720,
+    "file": "Jung2025_ABL1_k3_manifest.csv.gz",
+    "sha256_uncompressed": "a20d025b1b711504c91222fd3361ff322a20a50aede74c0c537376c8cef311c2",
+    "rule": "all eligible masks over measured cells"
+  },
+  {
+    "panel": "Chakraborty2024_SRC",
+    "k": 2,
+    "episodes": 40500,
+    "file": "Chakraborty2024_SRC_k2_manifest.csv.gz",
+    "sha256_uncompressed": "05a66f4d8155356e2d0795281d9f0e5ec6e5595ed2dc888db6fa6a832ed53e87",
+    "rule": "all eligible masks over measured cells"
+  },
+  {
+    "panel": "Chakraborty2024_SRC",
+    "k": 3,
+    "episodes": 13500,
+    "file": "Chakraborty2024_SRC_k3_manifest.csv.gz",
+    "sha256_uncompressed": "81436a0c9c021cbb282b8503d5d84b90675f21fac71272a76f7c542d152d8243",
+    "rule": "all eligible masks over measured cells"
+  },
+  {
+    "panel": "Lee2026_EGFR",
+    "k": 2,
+    "episodes": 4764,
+    "file": "Lee2026_EGFR_k2_manifest.csv.gz",
+    "sha256_uncompressed": "72b8b19be17bfb0053f946aad604e3b5b38b5802d33b5bff3ea5ec7c6addddf9",
+    "rule": "all eligible masks over measured cells"
+  },
+  {
+    "panel": "Oh2026_ALK",
+    "k": 2,
+    "episodes": 5796,
+    "file": "Oh2026_ALK_k2_manifest.csv.gz",
+    "sha256_uncompressed": "8ff426a33c8a4875fba2789d96edfdf7e70e67b334d62c70eb3d4b5c14e8f3aa",
+    "rule": "all eligible masks over measured cells"
+  }
+]
