@@ -1,0 +1,144 @@
+{
+  "batch_map.csv": {
+    "rows": 1401,
+    "missing_by_column": {},
+    "numeric": {},
+    "distinct": {}
+  },
+  "DrugMap_protein_abundance_cache.npz": {
+    "arrays": {
+      "genes": {
+        "shape": [
+          11459
+        ],
+        "dtype": "<U12"
+      },
+      "columns": {
+        "shape": [
+          417
+        ],
+        "dtype": "<U31"
+      },
+      "abundance": {
+        "shape": [
+          11459,
+          417
+        ],
+        "dtype": "float32",
+        "missing": 2417644
+      }
+    }
+  },
+  "DrugMap_raw_KB02_site_cache.npz": {
+    "arrays": {
+      "values": {
+        "shape": [
+          6552,
+          1401
+        ],
+        "dtype": "float32",
+        "missing": 3499061
+      },
+      "samples": {
+        "shape": [
+          1401
+        ],
+        "dtype": "<U33"
+      },
+      "site_names": {
+        "shape": [
+          6552
+        ],
+        "dtype": "<U15"
+      }
+    }
+  },
+  "DrugMap_raw_KB03_site_cache.npz": {
+    "arrays": {
+      "values": {
+        "shape": [
+          6552,
+          1401
+        ],
+        "dtype": "float32",
+        "missing": 3572818
+      },
+      "samples": {
+        "shape": [
+          1401
+        ],
+        "dtype": "<U33"
+      },
+      "site_names": {
+        "shape": [
+          6552
+        ],
+        "dtype": "<U15"
+      }
+    }
+  },
+  "DrugMap_raw_KB05_site_cache.npz": {
+    "arrays": {
+      "values": {
+        "shape": [
+          6552,
+          1401
+        ],
+        "dtype": "float32",
+        "missing": 3525707
+      },
+      "samples": {
+        "shape": [
+          1401
+        ],
+        "dtype": "<U33"
+      },
+      "site_names": {
+        "shape": [
+          6552
+        ],
+        "dtype": "<U15"
+      }
+    }
+  },
+  "DrugMap_unambiguous_site_matrices.npz": {
+    "arrays": {
+      "site_names": {
+        "shape": [
+          22105
+        ],
+        "dtype": "<U15"
+      },
+      "samples": {
+        "shape": [
+          417
+        ],
+        "dtype": "<U31"
+      },
+      "KB02": {
+        "shape": [
+          22105,
+          417
+        ],
+        "dtype": "float64",
+        "missing": 7368052
+      },
+      "KB03": {
+        "shape": [
+          22105,
+          417
+        ],
+        "dtype": "float64",
+        "missing": 7421705
+      },
+      "KB05": {
+        "shape": [
+          22105,
+          417
+        ],
+        "dtype": "float64",
+        "missing": 7412533
+      }
+    }
+  }
+}

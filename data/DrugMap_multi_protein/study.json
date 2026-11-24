@@ -1,0 +1,6 @@
+{
+  "study": "DrugMap_multi_protein",
+  "kinase": "Multiple proteins including kinases",
+  "source": "https://doi.org/10.1016/j.cell.2024.03.027",
+  "publication_title": "DrugMap: A quantitative pan-cancer analysis of cysteine ligandability"
+}

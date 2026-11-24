@@ -1,0 +1,24 @@
+{
+  "ABL1_review_IC50.csv.gz": {
+    "rows": 106,
+    "kinase_rows": {
+      "ABL1": 106
+    },
+    "relations": {
+      "range": 46,
+      "range_censored": 7,
+      "=": 53
+    },
+    "compounds": 5,
+    "numeric_by_endpoint": {
+      "cellular_IC50 [nM]": {
+        "finite": 106,
+        "min": 0.5,
+        "q25": 6.225,
+        "median": 38.8,
+        "q75": 472.5,
+        "max": 6400.0
+      }
+    }
+  }
+}

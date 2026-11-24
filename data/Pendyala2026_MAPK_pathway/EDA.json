@@ -1,0 +1,72 @@
+{
+  "phenotype_input.npz": {
+    "arrays": {
+      "genes": {
+        "shape": [
+          68443
+        ],
+        "dtype": "<U5"
+      },
+      "variants": {
+        "shape": [
+          68443
+        ],
+        "dtype": "<U6"
+      },
+      "features": {
+        "shape": [
+          68443,
+          41
+        ],
+        "dtype": "float64",
+        "missing": 0
+      },
+      "abundance": {
+        "shape": [
+          68443
+        ],
+        "dtype": "float64",
+        "missing": 0
+      },
+      "activity": {
+        "shape": [
+          68443
+        ],
+        "dtype": "float64",
+        "missing": 0
+      },
+      "positions": {
+        "shape": [
+          68443
+        ],
+        "dtype": "int64"
+      }
+    }
+  },
+  "phenotypes.csv.gz": {
+    "rows": 68443,
+    "missing_by_column": {},
+    "numeric": {
+      "abundance": {
+        "finite": 68443,
+        "min": 0.0648840126807774,
+        "q25": 0.46029606596525907,
+        "median": 0.7662376058830648,
+        "q75": 0.9322472592011037,
+        "max": 4.064001065625894
+      },
+      "activity": {
+        "finite": 68443,
+        "min": 0.0514822278686944,
+        "q25": 0.3435188613860666,
+        "median": 0.9078731348789923,
+        "q75": 1.267523564847608,
+        "max": 18.911209683185533
+      }
+    },
+    "distinct": {
+      "kinase": 7,
+      "position": 1254
+    }
+  }
+}

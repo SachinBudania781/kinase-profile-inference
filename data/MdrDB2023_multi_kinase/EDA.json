@@ -1,0 +1,11 @@
+{
+  "kinase_metadata.csv.gz": {
+    "rows": 763,
+    "missing_by_column": {},
+    "numeric": {},
+    "distinct": {
+      "UNIPROT_ID": 8,
+      "DRUG": 51
+    }
+  }
+}

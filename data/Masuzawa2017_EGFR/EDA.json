@@ -1,0 +1,24 @@
+{
+  "EGFR_primary_IC50.csv.gz": {
+    "rows": 60,
+    "kinase_rows": {
+      "EGFR": 60
+    },
+    "relations": {
+      "=": 56,
+      "<": 1,
+      ">": 3
+    },
+    "compounds": 4,
+    "numeric_by_endpoint": {
+      "cellular_IC50 [nM]": {
+        "finite": 60,
+        "min": 0.1,
+        "q25": 34.75,
+        "median": 108.5,
+        "q75": 642.25,
+        "max": 10000.0
+      }
+    }
+  }
+}

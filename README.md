@@ -10,7 +10,18 @@ This repository holds the code, data recipes, split specifications and evaluator
 | OSF DOI | https://doi.org/10.17605/OSF.IO/5SBCK |
 | Protocol revision registered on OSF (full commit hash) | `06821c682666322dce217f542312dfa032d0baab` |
 | Release tag (set at freeze) | `<RELEASE_TAG>` |
-| Status | Registered on OSF on 13 November 2026; development runs and release freeze come next; no model has been run on any lockbox panel |
+| Status | Registered on OSF on 13 November 2026. Development results are in section 10. The release freeze and the two one-shot lockbox runs come next; **no model has been run on either lockbox yet** |
+
+## Results so far
+
+| | SER gain over XGBoost (equal-study mean) | Studies | Status |
+| --- | --- | --- | --- |
+| Development panels (baseline run D0, 13 Nov) | **4.24%** (95% CI 2.91 to 5.28); wins 9, ties 1, losses 0 | 10 | Done. Full tables in section 10 and [`results/dev/DEV_RESULTS.md`](results/dev/DEV_RESULTS.md) |
+| Development panels (final code, after amendments A1 to A4) | see [`results/dev_final/`](results/dev_final/) once the run is committed | 10 | Planned next; numbers added when the run is committed |
+| Lockbox A (primary test, H1) | not run | 7 | One-shot run after the release freeze |
+| Lockbox B (replication, H1-B) | not run | 3 | One-shot run after the release freeze |
+
+Development numbers are evidence from the panels the models were built on. Only the lockbox runs test the registered hypotheses.
 
 ---
 
@@ -51,7 +62,7 @@ Four of the five candidates are retained as checkpoints for comparison; SER is t
 
 ## 3. Data roles
 
-The full archive inventory (59 folders) is in [`data_manifest/DATASETS.md`](data_manifest/DATASETS.md). Roles are declared in [`configs/panels.json`](configs/panels.json).
+The full archive inventory (59 folders) is in [`data_manifest/DATASETS.md`](data_manifest/DATASETS.md). Roles are declared in [`configs/panels.json`](configs/panels.json). **The 52 development, intake and literature folders are in [`data/`](data/)** (index with sources: [`data/README.md`](data/README.md)); the 7 Lockbox A panels and the 3 Lockbox B panels are held back until the lockbox runs are scored.
 
 | Role | Folders | Use |
 | --- | --- | --- |
@@ -124,26 +135,35 @@ Chosen to resemble Lockbox A and never scored by any model. Selection criteria, 
 kinase-profile-inference/
 ├── README.md                    this file
 ├── requirements.txt             minimum package versions (requirements-lock.txt is produced at the freeze)
-├── protocol/                    study design PDF, OSF pre-registration text, amendments
-├── data_manifest/               dataset roles and sources, checksums
+│
+├── protocol/                    study design PDF, OSF pre-registration text and amendments, DEVELOPMENT_LOG.md
+├── data_manifest/               DATASETS.md: the role of each of the 59 archive folders
+├── data/                        the 52 non-lockbox study folders, README.md (index and sources), CHECKSUMS.sha256
 ├── configs/
 │   ├── panels.json              panel registry: role, root, format, declared sizes for every panel
 │   └── models.json              every numerical model setting (frozen at the release freeze)
 ├── splits/                      deterministic fold and episode specifications (development only)
-├── models/                      frozen model artifacts, checkpoint metadata, model cards
-├── data_pipeline.py             ingestion, scale transform, folds, episodes, hashes        (Step 1)
-├── core_models.py               XGBoost, SAER-7g, AlignedAddAudit, NestedAligned,
-├── routers.py                   CovarianceLocalMedian, SER, plain baselines                (Step 3)
-├── dl_baselines.py              development-only deep-learning baselines                   (Step 4)
-├── run_study.py                 runs methods on panels, writes predictions by episode ID   (Step 4)
-├── evaluator.py                 lockbox scoring, robustness, translational endpoints       (Step 5)
-├── integrity.py                 SHA-256 records for code, configuration and data           (Step 5)
-├── build_lockbox_panel.py       turns a transcribed published table into a panel folder    (Lockbox B)
-├── lockbox_similarity.py        descriptive similarity of Lockbox B to Lockbox A           (Lockbox B)
-└── tests/                       unit and end-to-end tests on synthetic panels
+├── models/                      MODEL_CARD.md: what each model is, its settings, its development numbers
+├── results/                     summary tables from evaluator runs: dev now, lockbox A and B after the one-shot runs
+├── dev_tools/                   development-only scripts: diagnostics, artificial stress bank, replay experiments, report generator
+├── tests/                       unit and end-to-end tests on synthetic panels
+│
+├── data_pipeline.py             ingestion, scale transform, folds, episodes, hashes
+├── core_models.py               XGBoost, SER, CovarianceLocalMedian, SAER-7g, AlignedAddAudit, NestedAligned, plain baselines
+├── routers.py                   audit features, softmax routers, Laplace-mixture median (shared by the three routed models)
+├── dl_baselines.py              development-only deep-learning baselines
+├── run_study.py                 runs methods on panels, writes predictions by episode ID
+├── evaluator.py                 scoring, robustness, translational endpoints
+├── integrity.py                 SHA-256 records for code, configuration and data
+├── build_lockbox_panel.py       turns a transcribed published table into a panel folder (Lockbox B)
+└── lockbox_similarity.py        descriptive similarity of Lockbox B to Lockbox A (Lockbox B)
 ```
 
-Not in the repository: the study data itself and `LockboxB_Data/`. Keep them in sibling folders and pass their paths to the scripts.
+The Python modules stay in the repository root on purpose: the integrity record hashes these exact files and the registered code names, so they are not moved before the lockbox runs.
+
+Git-ignored: `runs/` (raw predictions, large and regenerable; their hashes are recorded), `lockbox_private/` (lockbox episode lists), `__pycache__/`.
+
+Not in the repository: `LockboxB_Data/` and, until the lockbox runs are scored, the seven Lockbox A panels. Development runs can use `--archive-root data`. The release freeze and the lockbox runs need the full archive folder, because it still holds the Lockbox A panels; the 52 folders in `data/` are byte-identical copies of it.
 
 ---
 
@@ -177,6 +197,8 @@ python evaluator.py --runs runs/lockbox_B --archive-root <data> --lockbox-b-root
     --roles lockbox_B --score-lockbox --out results/lockbox_B
 ```
 
+`<data>` is `data` for development runs (the folder in this repository). The freeze and lockbox steps use the full archive folder, because it still holds the Lockbox A panels.
+
 Building a Lockbox B panel from a transcribed table:
 
 ```
@@ -207,7 +229,8 @@ Use separate commits for: study design, development-data recipes, matched refere
 | `protocol/Kinase_Profile_Inference_Study_Design_and_Methods.pdf` (version 0.2, rebuilt 13 Nov) | `1517bcf91c2364fc97d7fb56d1c9016ccc7484fc9957b982b9cdf89272a4dd94` |
 | `data_manifest/DATASETS.md` | `a121a5ea5da68b2456881a9929afb39d038069eba1ed59422ef95e30182f2319` |
 | `configs/panels.json` | `1a01f3b8a458ba3648dca092adeb124598ef9a94c3ee2e4dbf7d8f6ea5372385` |
-| `configs/models.json` | `d4afbf22dae3204f3d8b97a74875af18397d2864d9d8a06af497a6dac2501eaa` |
+| `configs/models.json` at registration (13 Nov) | `d4afbf22dae3204f3d8b97a74875af18397d2864d9d8a06af497a6dac2501eaa` |
+| `configs/models.json` after amendment A4 (adds the `revision` block) | `869861a2941b114ca55a0e058296f3f8655fac841088c3b6bc8cdec213c67859` |
 | Cleaned development data (all files) | `7e362a53f43bfcdc825e92411c162e4e994dc9ef291dde8f6d306a79dbc4a7b5` |
 | Lockbox A data bundle (author-held) | `8c1e0505e2252cbf50ae35c09085aeaf748e6c6e715a906fb77ea9b79090c321` |
 | Lockbox B data bundle (author-held) | `370b8f8cc14b54781f458f30892aa4368abaa5818aa8143b390348073e2b0d90` |
@@ -224,8 +247,52 @@ Use separate commits for: study design, development-data recipes, matched refere
 
 ---
 
-## 10. Citation and licence
+## 10. Development results (before the freeze)
+
+Baseline run D0 of 13 Nov 2026 on the 10 development panels, with the code as registered (before amendments A1 to A4). Gain G = 100 x (MAE of XGBoost - MAE of SER) / MAE of XGBoost; positive means SER is better. Equal weight per study; a study's gain is the mean of its k = 2 and k = 3 gains.
+
+| Quantity | Value |
+| --- | --- |
+| Equal-study mean gain | **4.24%** (95% CI 2.91 to 5.28) |
+| Median study gain | 3.22% |
+| Leave-one-study-out | 3.64% to 4.71% |
+| Site-weighted | 3.03% (95% CI 2.64 to 3.39) |
+| Episode-weighted | 5.53% (95% CI 4.92 to 6.10) |
+| Wins / ties / losses | 9 / 1 / 0 (Nakamura ties: 3 sites, so the gate stays off) |
+
+| Study | Role | Sites | SER gain, k = 2 (%) | SER gain, k = 3 (%) | Study gain (%) |
+| --- | --- | --- | --- | --- | --- |
+| Estevam2025_MET | core | 287 | 8.00 | 11.11 | 9.56 |
+| DuongLy2016_multi_kinase | core | 21 | 9.45 | 7.40 | 8.42 |
+| Robichaux2021_EGFR | core | 13 | 5.16 | 8.21 | 6.69 |
+| Nakamura2021_FGFR1_FGFR2_FGFR3 | core | 3 | 0.00 | 0.00 | 0.00 |
+| KiRHub2026_multi_kinase | core | 48 | 7.96 | 9.37 | 8.67 |
+| OKL2026_multi_kinase | core | 11 | 5.72 | 3.78 | 4.75 |
+| Jung2025_ABL1 | stress test | 322 | 1.49 | 1.87 | 1.68 |
+| Chakraborty2024_SRC | stress test | 246 | 1.17 | 0.92 | 1.05 |
+| Lee2026_EGFR | stress test | 286 | 0.65 | - | 0.65 |
+| Oh2026_ALK | stress test | 331 | 0.89 | - | 0.89 |
+
+Lee2026_EGFR and Oh2026_ALK have only three inhibitors, so they have k = 2 only.
+
+What the numbers say:
+
+- SER beats XGBoost on 9 of 10 studies and ties on one. The gain is about 5 to 10% on five of the six core panels (Nakamura ties) and about 0.7 to 1.7% on the four stress-test panels.
+- The development log (D1) traced the small stress-test gains to XGBoost already having plenty of training data per mask type and to noisy replicate data, not to a bug.
+- Other models (D0, equal-study mean gain): CovarianceLocalMedian 3.51% (10 studies); SAER-7g 2.30%, NestedAligned 2.17%, AlignedAddAudit 2.15% (7 studies each, because of the crash fixed in A1); RidgeSupports 1.72%; QueryMedian -57.85%.
+
+Everything else is in:
+
+- [`results/dev/DEV_RESULTS.md`](results/dev/DEV_RESULTS.md): per-panel and per-budget tables with confidence intervals, all methods, intervention rates
+- [`results/dev/panel_budget_table.csv`](results/dev/panel_budget_table.csv) and [`results/dev/results.json`](results/dev/results.json): the raw evaluator output (including the T1 to T4 endpoints)
+- [`protocol/DEVELOPMENT_LOG.md`](protocol/DEVELOPMENT_LOG.md): D0 to D8, the diagnosis of the weak panels, the artificial stress bank, the revision experiments and amendments A1 to A4
+- [`dev_tools/results/`](dev_tools/results/): printed output of the revision experiments
+- [`models/MODEL_CARD.md`](models/MODEL_CARD.md): what each model is
+
+---
+
+## 11. Citation and licence
 
 - Citation: `<TO BE ADDED AT RELEASE>`
 - Code licence: `<CHOOSE, for example MIT or Apache-2.0>`
-- Source datasets keep their original licences and terms; see `data_manifest/`. Lockbox B source tables are from open-access papers (CC BY).
+- Source datasets keep their original licences and terms; see `data/README.md` and `data_manifest/`. The licences were not checked folder by folder. Lockbox B source tables are from open-access papers (CC BY).

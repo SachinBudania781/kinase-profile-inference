@@ -1,0 +1,22 @@
+{
+  "BCR_ABL_DMS_growth.csv.gz": {
+    "rows": 19719,
+    "kinase_rows": {
+      "ABL1": 19719
+    },
+    "relations": {
+      "=": 19719
+    },
+    "compounds": 2,
+    "numeric_by_endpoint": {
+      "net_cellular_growth [source_netgrowth]": {
+        "finite": 19719,
+        "min": -0.0383728,
+        "q25": -0.008837049999999999,
+        "median": 0.02153277,
+        "q75": 0.043059425,
+        "max": 0.09216376
+      }
+    }
+  }
+}

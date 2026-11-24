@@ -1,0 +1,24 @@
+{
+  "matched_context_pairs.csv.gz": {
+    "rows": 444,
+    "missing_by_column": {
+      "pIC50_MV411": 417,
+      "pIC50_sd_MV411": 417,
+      "Hillslope_MV411": 417,
+      "R-squared_MV411": 417,
+      "IC50 (nM)_MV411": 417,
+      "IC50_SD (nM)_MV411": 417,
+      "IC50_SEM (nM)_MV411": 417,
+      "MV411_minus_HEK293T_pIC50": 422,
+      "pIC50_HEK293T": 344,
+      "pIC50_sd_HEK293T": 344,
+      "Hillslope_HEK293T": 344,
+      "R-squared_HEK293T": 344,
+      "IC50 (nM)_HEK293T": 344,
+      "IC50_SD (nM)_HEK293T": 344,
+      "IC50_SEM (nM)_HEK293T": 344
+    },
+    "numeric": {},
+    "distinct": {}
+  }
+}

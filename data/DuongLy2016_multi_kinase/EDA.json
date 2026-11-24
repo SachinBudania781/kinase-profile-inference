@@ -1,0 +1,1897 @@
+{
+  "DuongLy2016_activity.csv.gz": {
+    "rows": 17710,
+    "kinase_rows": {
+      "ABL1": 1647,
+      "ALK": 914,
+      "BRAF": 366,
+      "BTK": 366,
+      "KIT": 2188,
+      "MET": 1646,
+      "SRC": 365,
+      "CHEK2": 366,
+      "EGFR": 2194,
+      "FGFR1": 366,
+      "FGFR2": 365,
+      "FGFR3": 731,
+      "FGFR4": 732,
+      "FLT3": 545,
+      "JAK2": 366,
+      "LRRK2": 729,
+      "MAP2K1": 366,
+      "MAPK14": 364,
+      "PDGFRA": 731,
+      "RET": 1633,
+      "TEK": 730
+    },
+    "relations": {
+      "=": 17710
+    },
+    "compounds": 183,
+    "numeric_by_endpoint": {
+      "remaining_catalytic_activity [percent]": {
+        "finite": 17710,
+        "min": -12.535,
+        "q25": 83.97625,
+        "median": 94.66,
+        "q75": 99.56,
+        "max": 191.34
+      }
+    }
+  },
+  "DuongLy2016_reference_selectivity.csv.gz": {
+    "rows": 592,
+    "kinase_rows": {
+      "ABL1": 2,
+      "ABL2/ARG": 2,
+      "ACK1": 2,
+      "AKT1": 2,
+      "AKT2": 2,
+      "AKT3": 2,
+      "ALK": 2,
+      "ALK1/ACVRL1": 2,
+      "ALK2/ACVR1": 2,
+      "ALK4/ACVR1B": 2,
+      "ALK5/TGFBR1": 2,
+      "ARAF": 2,
+      "ARK5/NUAK1": 2,
+      "ASK1/MAP3K5": 2,
+      "AURORA A": 2,
+      "AURORA B": 2,
+      "AURORA C": 2,
+      "AXL": 2,
+      "BLK": 2,
+      "BMX/ETK": 2,
+      "BRAF": 2,
+      "BRK": 2,
+      "BRSK1": 2,
+      "BRSK2": 2,
+      "BTK": 2,
+      "KIT": 2,
+      "C-MER": 2,
+      "MET": 2,
+      "SRC": 2,
+      "CAMK1\u03b1": 2,
+      "CAMK1\u03b2": 2,
+      "CAMK1\u03b4": 2,
+      "CAMK1\u03b3": 2,
+      "CAMK2\u03b1": 2,
+      "CAMK2\u03b2": 2,
+      "CAMK2\u03b4": 2,
+      "CAMK2\u03b3": 2,
+      "CAMK4": 2,
+      "CAMKK1": 2,
+      "CAMKK2": 2,
+      "CDK1/CYCLIN A": 2,
+      "CDK1/CYCLIN B": 2,
+      "CDK2/CYCLIN A": 2,
+      "CDK2/CYCLIN E": 2,
+      "CDK3/CYCLIN E": 2,
+      "CDK4/CYCLIN D1": 2,
+      "CDK4/CYCLIN D3": 2,
+      "CDK5/p25": 2,
+      "CDK5/p35": 2,
+      "CDK6/CYCLIN D1": 2,
+      "CDK6/CYCLIN D3": 2,
+      "CDK7/CYCLIN H": 2,
+      "CDK9 CYCLIN K": 2,
+      "CDK9/CYCLIN T1": 2,
+      "CHK1": 2,
+      "CHEK2": 2,
+      "CK1\u03b11": 2,
+      "CK1\u03b4": 2,
+      "CK1\u03b5": 2,
+      "CK1\u03b31": 2,
+      "CK1\u03b32": 2,
+      "CK1\u03b33": 2,
+      "CK2\u03b1": 2,
+      "CK2\u03b12": 2,
+      "CLK1": 2,
+      "CLK2": 2,
+      "CLK3": 2,
+      "CLK4": 2,
+      "COT1/MAP3K8": 2,
+      "CSK": 2,
+      "CTK MATK": 2,
+      "DAPK1": 2,
+      "DAPK2": 2,
+      "DCAMKL2": 2,
+      "DDR2": 2,
+      "DMPK": 2,
+      "DRAK1/STK17A": 2,
+      "DYRK1/DYRK1A": 2,
+      "DYRK1B": 2,
+      "DYRK2": 2,
+      "DYRK3": 2,
+      "DYRK4": 2,
+      "EGFR": 2,
+      "EPHA1": 2,
+      "EPHA2": 2,
+      "EPHA3": 2,
+      "EPHA4": 2,
+      "EPHA5": 2,
+      "EPHA6": 1,
+      "EPHA7": 2,
+      "EPHA8": 2,
+      "EPHB1": 2,
+      "EPHB2": 2,
+      "EPHB3": 2,
+      "EPHB4": 2,
+      "ERBB2/HER2": 2,
+      "ERBB4/HER4": 2,
+      "ERK1": 2,
+      "ERK2 MAPK1": 2,
+      "FAK/PTK2": 2,
+      "FER": 2,
+      "FES/FPS": 2,
+      "FGFR1": 2,
+      "FGFR2": 2,
+      "FGFR3": 2,
+      "FGFR4": 2,
+      "FGR": 2,
+      "FLT1/VEGFR1": 2,
+      "FLT3": 2,
+      "FLT4/VEGFR3": 2,
+      "FMS": 2,
+      "FRK/PTK5": 2,
+      "FYN": 2,
+      "GCK MAP4K2": 2,
+      "GRK2": 2,
+      "GRK3": 2,
+      "GRK4": 2,
+      "GRK5": 2,
+      "GRK6": 2,
+      "GRK7": 2,
+      "GSK3\u03b1": 2,
+      "GSK3\u03b2": 2,
+      "HASPIN": 2,
+      "HCK": 2,
+      "HGK MAP4K4": 2,
+      "HIPK1": 2,
+      "HIPK2": 2,
+      "HIPK3": 2,
+      "HIPK4": 2,
+      "IGF1R": 2,
+      "IKK\u03b1/CHUK": 2,
+      "IKK\u03b2/IKBKB": 2,
+      "IKK\u03b5/IKBKE": 2,
+      "IR": 2,
+      "IRAK1": 2,
+      "IRAK4": 2,
+      "IRR/INSRR": 2,
+      "ITK": 2,
+      "JAK1": 2,
+      "JAK2": 2,
+      "JAK3": 2,
+      "JNK1": 2,
+      "JNK2": 2,
+      "JNK3": 2,
+      "KDR/VEGFR2": 2,
+      "KHS MAP4K5": 2,
+      "LCK": 2,
+      "LIMK1": 2,
+      "LKB1": 2,
+      "LOK/STK10": 2,
+      "LRRK2": 2,
+      "LYN": 2,
+      "LYN B": 2,
+      "MAPKAPK2": 2,
+      "MAPKAPK3": 2,
+      "MAPKAPK5/PRAK": 2,
+      "MARK1": 2,
+      "MARK2/PAR-1B\u03b1": 2,
+      "MARK3": 2,
+      "MARK4": 2,
+      "MAP2K1": 2,
+      "MEK2": 2,
+      "MEKK2": 2,
+      "MEKK3": 2,
+      "MELK": 2,
+      "MINK/MINK1": 2,
+      "MKK6": 2,
+      "MLCK/MYLK": 2,
+      "MLCK2/MYLK2": 2,
+      "MLK1/MAP3K9": 2,
+      "MLK2/MAP3K10": 2,
+      "MLK3/MAP3K11": 2,
+      "MNK1": 2,
+      "MNK2": 2,
+      "MRCK\u03b1/CDC42BPA": 2,
+      "MRCK\u03b2/CDC42BPB": 2,
+      "MSK1/RPS6KA5": 2,
+      "MSK2/RPS6KA4": 2,
+      "MSSK1/STK23": 2,
+      "MST1/STK4": 2,
+      "MST2/STK3": 2,
+      "MST3/STK24": 2,
+      "MST4": 2,
+      "MUSK": 2,
+      "MYO3\u03b2": 1,
+      "NEK1": 2,
+      "NEK11": 2,
+      "NEK2": 2,
+      "NEK3": 2,
+      "NEK4": 2,
+      "NEK6": 2,
+      "NEK7": 2,
+      "NEK9": 2,
+      "NIK/MAP3K14": 1,
+      "NLK": 2,
+      "OSR1/OXSR1": 2,
+      "p38\u03b1/MAPK14": 2,
+      "p38\u03b2/MAPK11": 2,
+      "p38\u03b4/MAPK13": 2,
+      "p38\u03b3": 2,
+      "p70S6K/RPS6KB1": 2,
+      "p70S6Kb/RPS6KB2": 2,
+      "PAK1": 2,
+      "PAK2": 2,
+      "PAK3": 2,
+      "PAK4": 2,
+      "PAK5": 2,
+      "PAK6": 2,
+      "PASK": 2,
+      "PBK/TOPK": 2,
+      "PDGFRA": 2,
+      "PDGFR\u03b2": 2,
+      "PDK1/PDPK1": 2,
+      "PHK\u03b31": 2,
+      "PHK\u03b32": 2,
+      "PIM1": 2,
+      "PIM2": 2,
+      "PIM3": 2,
+      "PKA": 2,
+      "PKAc\u03b3": 1,
+      "PKC\u03b1": 2,
+      "PKC\u03b21": 2,
+      "PKC\u03b22": 2,
+      "PKC\u03b4": 2,
+      "PKC\u03b5": 2,
+      "PKC\u03b7": 2,
+      "PKC\u03b3": 2,
+      "PKC\u03b9": 2,
+      "PKC\u03bc/PRKD1": 2,
+      "PKC\u03bd/PRKD3": 2,
+      "PKC\u03b8": 2,
+      "PKC\u03b6": 2,
+      "PKD2/PRKD2": 2,
+      "PKG1\u03b1": 2,
+      "PKG1\u03b2": 2,
+      "PKG2/PRKG2": 2,
+      "PKN1/PRK1": 2,
+      "PKN2/PRK2": 2,
+      "PLK1": 2,
+      "PLK2": 2,
+      "PLK3": 2,
+      "PRKX": 2,
+      "PYK2": 2,
+      "RAF1": 2,
+      "RET": 2,
+      "RIPK2": 2,
+      "RIPK5": 2,
+      "ROCK1": 2,
+      "ROCK2": 2,
+      "RON/MST1R": 2,
+      "ROS/ROS1": 2,
+      "RSK1": 2,
+      "RSK2": 2,
+      "RSK3": 2,
+      "RSK4": 2,
+      "SGK1": 2,
+      "SGK2": 2,
+      "SGK3/SGKL": 2,
+      "SIK2": 2,
+      "SLK/STK2": 2,
+      "SNARK/NUAK2": 2,
+      "SRMS": 2,
+      "SRPK1": 2,
+      "SRPK2": 2,
+      "STK16": 2,
+      "STK22D/TSSK1": 2,
+      "STK25/YSK1": 2,
+      "STK33": 2,
+      "STK38/NDR1": 1,
+      "STK39/STLK3": 2,
+      "SYK": 2,
+      "TAK1": 2,
+      "TAOK1": 2,
+      "TAOK2/TAO1": 2,
+      "TAOK3/JIK": 2,
+      "TBK1": 2,
+      "TEC": 2,
+      "TGFBR2": 2,
+      "TEK": 2,
+      "TLK2": 1,
+      "TRKA": 2,
+      "TRKB": 2,
+      "TRKC": 2,
+      "TSSK2": 2,
+      "TTK": 1,
+      "TXK": 2,
+      "TYK1/LTK": 2,
+      "TYK2": 2,
+      "TYRO3 SKY": 2,
+      "ULK1": 2,
+      "ULK2": 2,
+      "ULK3": 1,
+      "VRK1": 2,
+      "WEE1": 2,
+      "WNK2": 2,
+      "WNK3": 2,
+      "YES/YES1": 2,
+      "ZAK/MLTK": 2,
+      "ZAP70": 2,
+      "ZIPK/DAPK3": 2
+    },
+    "relations": {
+      "=": 592
+    },
+    "compounds": 2,
+    "numeric_by_endpoint": {
+      "remaining_catalytic_activity [percent]": {
+        "finite": 592,
+        "min": -0.181205705046049,
+        "q25": 91.63881467799644,
+        "median": 97.4412916000852,
+        "q75": 100.82366589436262,
+        "max": 124.40743261076199
+      }
+    }
+  },
+  "DuongLy2016_selected_IC50.csv.gz": {
+    "rows": 35,
+    "kinase_rows": {
+      "ALK": 1,
+      "EGFR": 8,
+      "LRRK2": 6,
+      "PDGFRA": 14,
+      "RET": 6
+    },
+    "relations": {
+      "=": 35
+    },
+    "compounds": 20,
+    "numeric_by_endpoint": {
+      "biochemical_IC50 [nM]": {
+        "finite": 35,
+        "min": 0.179,
+        "q25": 6.785,
+        "median": 30.1,
+        "q75": 85.05000000000001,
+        "max": 1480.0
+      }
+    }
+  },
+  "kinase_activity.npz": {
+    "arrays": {
+      "mutants": {
+        "shape": [
+          76
+        ],
+        "dtype": "<U20"
+      },
+      "genes": {
+        "shape": [
+          76
+        ],
+        "dtype": "<U6"
+      },
+      "compounds": {
+        "shape": [
+          183
+        ],
+        "dtype": "<U61"
+      },
+      "mutant": {
+        "shape": [
+          76,
+          183
+        ],
+        "dtype": "float64",
+        "missing": 33
+      },
+      "reference": {
+        "shape": [
+          76,
+          183
+        ],
+        "dtype": "float64",
+        "missing": 24
+      }
+    }
+  },
+  "response_matrix_responses.csv.gz": {
+    "profiles": 76,
+    "unique_profiles": 76,
+    "drugs": 183,
+    "matrix_cells": 13908,
+    "missing_response_cells": 33,
+    "per_drug": {
+      "Afatinib": {
+        "finite": 75,
+        "min": 0.07723616652155035,
+        "q25": 59.48416196667794,
+        "median": 84.14921144984484,
+        "q75": 95.86381937078613,
+        "max": 130.48913707936413
+      },
+      "AG 1024": {
+        "finite": 76,
+        "min": 14.05,
+        "q25": 94.20875,
+        "median": 97.4575,
+        "q75": 100.28999999999999,
+        "max": 114.99
+      },
+      "AG 112": {
+        "finite": 76,
+        "min": 80.965,
+        "q25": 91.89875,
+        "median": 97.055,
+        "q75": 99.74000000000001,
+        "max": 108.955
+      },
+      "AG 1295": {
+        "finite": 76,
+        "min": 16.98,
+        "q25": 90.9725,
+        "median": 95.275,
+        "q75": 98.69624999999999,
+        "max": 115.6
+      },
+      "AG 1296": {
+        "finite": 76,
+        "min": 35.56,
+        "q25": 89.4,
+        "median": 95.285,
+        "q75": 99.14625,
+        "max": 118.97
+      },
+      "AG 1478": {
+        "finite": 76,
+        "min": -0.12,
+        "q25": 50.51375,
+        "median": 85.0425,
+        "q75": 95.52,
+        "max": 124.505
+      },
+      "AG 490": {
+        "finite": 76,
+        "min": 71.62,
+        "q25": 92.61,
+        "median": 96.2475,
+        "q75": 99.02625,
+        "max": 115.0
+      },
+      "AG 9 ": {
+        "finite": 75,
+        "min": 80.06,
+        "q25": 93.39750000000001,
+        "median": 97.595,
+        "q75": 100.8275,
+        "max": 107.07
+      },
+      "AGL 2043": {
+        "finite": 76,
+        "min": 4.78,
+        "q25": 79.8,
+        "median": 92.64750000000001,
+        "q75": 97.22,
+        "max": 118.2
+      },
+      "Akt Inhibitor IV": {
+        "finite": 76,
+        "min": 82.335,
+        "q25": 94.9375,
+        "median": 97.695,
+        "q75": 101.8475,
+        "max": 110.06
+      },
+      "Akt Inhibitor V, Triciribine": {
+        "finite": 76,
+        "min": 89.495,
+        "q25": 97.72375,
+        "median": 100.72,
+        "q75": 103.4725,
+        "max": 139.57
+      },
+      "Akt Inhibitor VIII, Isozyme-Selective, Akti-1/2": {
+        "finite": 75,
+        "min": 80.705,
+        "q25": 97.5925,
+        "median": 100.31,
+        "q75": 103.67,
+        "max": 123.415
+      },
+      "Akt Inhibitor X": {
+        "finite": 76,
+        "min": 91.17,
+        "q25": 98.44875,
+        "median": 101.5475,
+        "q75": 103.69,
+        "max": 119.285
+      },
+      "Aloisine A, RP107": {
+        "finite": 76,
+        "min": 20.425,
+        "q25": 71.25999999999999,
+        "median": 88.7125,
+        "q75": 97.9325,
+        "max": 109.955
+      },
+      "Aloisine, RP106": {
+        "finite": 75,
+        "min": 26.28,
+        "q25": 73.9625,
+        "median": 91.455,
+        "q75": 99.06,
+        "max": 151.985
+      },
+      "Alsterpaullone": {
+        "finite": 76,
+        "min": 5.01,
+        "q25": 58.4675,
+        "median": 88.10249999999999,
+        "q75": 98.39999999999999,
+        "max": 113.05
+      },
+      "Alsterpaullone                  2-Cyanoethyl": {
+        "finite": 76,
+        "min": 3.385,
+        "q25": 48.581250000000004,
+        "median": 85.255,
+        "q75": 97.73,
+        "max": 116.7
+      },
+      "Aminopurvalanol A": {
+        "finite": 76,
+        "min": 3.465,
+        "q25": 68.87125,
+        "median": 88.6225,
+        "q75": 99.115,
+        "max": 110.405
+      },
+      "AMPK Inhibitor,                  Compound C": {
+        "finite": 75,
+        "min": 0.28,
+        "q25": 57.192499999999995,
+        "median": 87.425,
+        "q75": 96.1575,
+        "max": 109.67
+      },
+      "ATM Kinase Inhibitor": {
+        "finite": 76,
+        "min": 74.345,
+        "q25": 90.41,
+        "median": 95.31,
+        "q75": 98.21375,
+        "max": 112.03
+      },
+      "ATM/ATR Kinase Inhibitor": {
+        "finite": 76,
+        "min": 62.19,
+        "q25": 93.36625000000001,
+        "median": 96.91749999999999,
+        "q75": 100.97375,
+        "max": 116.6
+      },
+      "Aurora Kinase Inhibitor II": {
+        "finite": 76,
+        "min": 33.055,
+        "q25": 90.50874999999999,
+        "median": 95.495,
+        "q75": 99.9625,
+        "max": 114.64
+      },
+      "Aurora Kinase Inhibitor III": {
+        "finite": 76,
+        "min": 32.52,
+        "q25": 88.075,
+        "median": 93.75,
+        "q75": 98.98875000000001,
+        "max": 115.8003291
+      },
+      "Aurora Kinase/Cdk Inhibitor": {
+        "finite": 76,
+        "min": 9.42,
+        "q25": 53.55875,
+        "median": 78.5625,
+        "q75": 93.83250000000001,
+        "max": 185.065
+      },
+      "BAY 11-7082": {
+        "finite": 76,
+        "min": 90.375,
+        "q25": 97.2075,
+        "median": 99.23,
+        "q75": 102.46124999999999,
+        "max": 133.53
+      },
+      "Bcr-Abl Inhibitor": {
+        "finite": 75,
+        "min": 83.72,
+        "q25": 95.0275,
+        "median": 97.615,
+        "q75": 100.16749999999999,
+        "max": 110.495
+      },
+      "Bisindolylmaleimide I": {
+        "finite": 76,
+        "min": 3.77,
+        "q25": 77.695,
+        "median": 90.25,
+        "q75": 96.13749999999999,
+        "max": 110.35
+      },
+      "Bisindolylmaleimide IV": {
+        "finite": 76,
+        "min": 10.85,
+        "q25": 79.60875,
+        "median": 90.195,
+        "q75": 97.97125,
+        "max": 109.06
+      },
+      "Bohemine": {
+        "finite": 76,
+        "min": 81.435,
+        "q25": 93.17124999999999,
+        "median": 96.0375,
+        "q75": 99.085,
+        "max": 109.28
+      },
+      "Bosutinib isomer": {
+        "finite": 76,
+        "min": -1.51,
+        "q25": 17.50625,
+        "median": 49.6425,
+        "q75": 83.38749999999999,
+        "max": 116.98
+      },
+      "BPIQ-I": {
+        "finite": 76,
+        "min": -2.87,
+        "q25": 53.285000000000004,
+        "median": 89.58250000000001,
+        "q75": 95.925,
+        "max": 132.185
+      },
+      "Casein Kinase I Inhibitor, D4476": {
+        "finite": 76,
+        "min": 87.635,
+        "q25": 97.81375,
+        "median": 100.3075,
+        "q75": 102.4675,
+        "max": 109.115
+      },
+      "Casein Kinase II Inhibitor III, TBCA": {
+        "finite": 76,
+        "min": 47.655,
+        "q25": 92.85249999999999,
+        "median": 98.38,
+        "q75": 101.5925,
+        "max": 115.66
+      },
+      "Cdc2-Like Kinase Inhibitor, TG003": {
+        "finite": 76,
+        "min": 80.985,
+        "q25": 95.3125,
+        "median": 99.4075,
+        "q75": 103.86875,
+        "max": 117.62
+      },
+      "Cdk/Crk Inhibitor": {
+        "finite": 76,
+        "min": 88.385,
+        "q25": 96.505,
+        "median": 99.94999999999999,
+        "q75": 102.91,
+        "max": 124.995
+      },
+      "Cdk1 Inhibitor": {
+        "finite": 76,
+        "min": 79.7,
+        "q25": 94.0725,
+        "median": 96.975,
+        "q75": 100.44375,
+        "max": 115.47
+      },
+      "Cdk1 Inhibitor,                    CGP74514A": {
+        "finite": 76,
+        "min": 19.0,
+        "q25": 88.14125000000001,
+        "median": 94.39500000000001,
+        "q75": 98.96875,
+        "max": 108.32
+      },
+      "Cdk1/2 Inhibitor III": {
+        "finite": 76,
+        "min": 0.39,
+        "q25": 4.5125,
+        "median": 14.05,
+        "q75": 50.81,
+        "max": 114.235
+      },
+      "Cdk1/5 Inhibitor": {
+        "finite": 76,
+        "min": 80.92,
+        "q25": 96.135,
+        "median": 99.22749999999999,
+        "q75": 101.83749999999999,
+        "max": 112.49
+      },
+      "Cdk2 Inhibitor III": {
+        "finite": 76,
+        "min": 86.18,
+        "q25": 95.57625,
+        "median": 98.385,
+        "q75": 101.1675,
+        "max": 116.255
+      },
+      "Cdk2 Inhibitor IV,                 NU6140": {
+        "finite": 75,
+        "min": 1.685,
+        "q25": 23.575,
+        "median": 60.11,
+        "q75": 91.41499999999999,
+        "max": 111.305
+      },
+      "Cdk4 Inhibitor": {
+        "finite": 76,
+        "min": 4.51,
+        "q25": 79.62875,
+        "median": 91.72999999999999,
+        "q75": 97.4475,
+        "max": 103.695
+      },
+      "Cdk4 Inhibitor II                NSC 625987": {
+        "finite": 76,
+        "min": 89.15,
+        "q25": 95.0325,
+        "median": 99.155,
+        "q75": 102.33624999999999,
+        "max": 110.18
+      },
+      "Cdk4 Inhibitor III": {
+        "finite": 76,
+        "min": 73.625,
+        "q25": 95.1,
+        "median": 98.3675,
+        "q75": 102.2675,
+        "max": 110.495
+      },
+      "cFMS Receptor Tyrosine Kinase Inhibitor": {
+        "finite": 76,
+        "min": 87.3,
+        "q25": 95.448198185,
+        "median": 98.9075,
+        "q75": 102.025,
+        "max": 110.66
+      },
+      "Chelerythrine Chloride": {
+        "finite": 76,
+        "min": 87.555,
+        "q25": 95.6875,
+        "median": 99.40040538,
+        "q75": 101.9825,
+        "max": 114.9535601
+      },
+      "Chk2 Inhibitor II": {
+        "finite": 76,
+        "min": 4.11,
+        "q25": 94.985,
+        "median": 98.71000000000001,
+        "q75": 102.115,
+        "max": 112.09
+      },
+      "Compound 52": {
+        "finite": 76,
+        "min": 12.02,
+        "q25": 87.2775,
+        "median": 94.6125,
+        "q75": 99.792916485,
+        "max": 153.3
+      },
+      "Compound 56": {
+        "finite": 75,
+        "min": -2.945,
+        "q25": 59.2525,
+        "median": 86.905,
+        "q75": 96.5125,
+        "max": 119.65
+      },
+      "Dasatinib": {
+        "finite": 76,
+        "min": -12.535,
+        "q25": 12.3475,
+        "median": 79.935,
+        "q75": 94.8325,
+        "max": 117.375
+      },
+      "Diacylglycerol Kinase Inhibitor II": {
+        "finite": 76,
+        "min": 86.795,
+        "q25": 95.13749999999999,
+        "median": 98.1,
+        "q75": 101.9825,
+        "max": 114.215
+      },
+      "DMBI": {
+        "finite": 76,
+        "min": 4.02,
+        "q25": 87.44624999999999,
+        "median": 95.1125,
+        "q75": 99.52875,
+        "max": 112.335
+      },
+      "DNA-PK Inhibitor II": {
+        "finite": 76,
+        "min": 67.03,
+        "q25": 92.5375,
+        "median": 96.375,
+        "q75": 99.44,
+        "max": 110.45
+      },
+      "DNA-PK Inhibitor III": {
+        "finite": 76,
+        "min": 88.51,
+        "q25": 94.36625000000001,
+        "median": 96.64500000000001,
+        "q75": 100.0625,
+        "max": 112.72
+      },
+      "DNA-PK Inhibitor V": {
+        "finite": 76,
+        "min": 73.11,
+        "q25": 95.10875,
+        "median": 97.3825,
+        "q75": 100.25750000000001,
+        "max": 130.68
+      },
+      "Dovitinib": {
+        "finite": 75,
+        "min": -9.7,
+        "q25": 9.0375,
+        "median": 36.405,
+        "q75": 88.38749999999999,
+        "max": 116.835
+      },
+      "EGFR Inhibitor": {
+        "finite": 76,
+        "min": -4.37,
+        "q25": 96.905,
+        "median": 99.8575,
+        "q75": 102.7975,
+        "max": 117.04
+      },
+      "EGFR/ErbB-2 Inhibitor": {
+        "finite": 76,
+        "min": -3.29,
+        "q25": 82.78125,
+        "median": 93.9125,
+        "q75": 98.065,
+        "max": 114.59
+      },
+      "EGFR/ErbB-2/ErbB-4 Inhibitor ": {
+        "finite": 76,
+        "min": -6.73,
+        "q25": 83.2825,
+        "median": 95.2075,
+        "q75": 99.55375,
+        "max": 127.95
+      },
+      "ERK Inhibitor II, FR180204": {
+        "finite": 76,
+        "min": 35.9,
+        "q25": 89.085,
+        "median": 96.3625,
+        "q75": 99.075,
+        "max": 115.44
+      },
+      "ERK Inhibitor II, Negative Control (Irfin)": {
+        "finite": 76,
+        "min": 43.465,
+        "q25": 96.00874999999999,
+        "median": 98.485,
+        "q75": 100.81,
+        "max": 108.07
+      },
+      "ERK Inhibitor III": {
+        "finite": 76,
+        "min": 87.295,
+        "q25": 96.355,
+        "median": 100.0675,
+        "q75": 102.75375,
+        "max": 112.765
+      },
+      "Erlotinib": {
+        "finite": 76,
+        "min": -0.19,
+        "q25": 50.64875,
+        "median": 80.02250000000001,
+        "q75": 93.8825,
+        "max": 120.9
+      },
+      "Fascaplysin, Synthetic": {
+        "finite": 76,
+        "min": 53.35,
+        "q25": 90.42375,
+        "median": 96.1075,
+        "q75": 100.70125,
+        "max": 112.975
+      },
+      "Flt-3 Inhibitor": {
+        "finite": 76,
+        "min": 9.01,
+        "q25": 89.86125,
+        "median": 95.18817458000001,
+        "q75": 100.60249999999999,
+        "max": 111.4397682
+      },
+      "Flt-3 Inhibitor II": {
+        "finite": 76,
+        "min": 1.22,
+        "q25": 30.206249999999997,
+        "median": 79.86250000000001,
+        "q75": 97.72,
+        "max": 121.58
+      },
+      "Flt-3 Inhibitor III": {
+        "finite": 76,
+        "min": 2.15,
+        "q25": 69.445,
+        "median": 90.309340155,
+        "q75": 97.60499999999999,
+        "max": 113.895
+      },
+      "Gefitinib": {
+        "finite": 75,
+        "min": -0.595,
+        "q25": 76.185,
+        "median": 88.67,
+        "q75": 94.565,
+        "max": 120.41
+      },
+      "G\u00f6 6976 ": {
+        "finite": 76,
+        "min": 0.41,
+        "q25": 12.425,
+        "median": 55.6075,
+        "q75": 88.34625,
+        "max": 120.23
+      },
+      "G\u00f6 6983": {
+        "finite": 76,
+        "min": 7.705,
+        "q25": 80.59,
+        "median": 94.3075,
+        "q75": 99.4175,
+        "max": 117.3
+      },
+      "GSK-3 Inhibitor IX": {
+        "finite": 75,
+        "min": -1.24,
+        "q25": 12.682500000000001,
+        "median": 44.43,
+        "q75": 92.0475,
+        "max": 144.03
+      },
+      "GSK-3 Inhibitor X": {
+        "finite": 76,
+        "min": 1.82,
+        "q25": 34.87875,
+        "median": 75.635,
+        "q75": 90.515,
+        "max": 119.3
+      },
+      "GSK-3 Inhibitor XIII": {
+        "finite": 76,
+        "min": 2.56,
+        "q25": 37.265,
+        "median": 64.7575,
+        "q75": 94.545,
+        "max": 116.83
+      },
+      "GSK-3\u03b2 Inhibitor I": {
+        "finite": 76,
+        "min": 67.415,
+        "q25": 94.61875,
+        "median": 99.41,
+        "q75": 102.555,
+        "max": 117.365
+      },
+      "GSK-3\u03b2 Inhibitor II": {
+        "finite": 76,
+        "min": 87.525,
+        "q25": 95.1775,
+        "median": 98.305,
+        "q75": 101.195,
+        "max": 110.215
+      },
+      "GSK-3\u03b2 Inhibitor VIII": {
+        "finite": 76,
+        "min": 74.145,
+        "q25": 93.285,
+        "median": 97.775,
+        "q75": 99.85374999999999,
+        "max": 108.6578464
+      },
+      "GSK-3\u03b2 Inhibitor XI": {
+        "finite": 76,
+        "min": 62.825,
+        "q25": 89.80875,
+        "median": 94.1875,
+        "q75": 98.55000000000001,
+        "max": 111.525
+      },
+      "GSK3\u03b2 Inhibitor XII, TWS119 ": {
+        "finite": 76,
+        "min": 0.735,
+        "q25": 5.925000000000001,
+        "median": 36.760000000000005,
+        "q75": 81.21625,
+        "max": 112.8
+      },
+      "GTP-14564": {
+        "finite": 76,
+        "min": 6.405,
+        "q25": 93.42500000000001,
+        "median": 97.8675,
+        "q75": 100.82374999999999,
+        "max": 117.245
+      },
+      "H-89, Dihydrochloride": {
+        "finite": 76,
+        "min": 75.485,
+        "q25": 96.1075,
+        "median": 98.97999999999999,
+        "q75": 101.44125,
+        "max": 120.23
+      },
+      "HA 1077, Dihydrochloride                              Fasudil": {
+        "finite": 76,
+        "min": 85.935,
+        "q25": 96.5675,
+        "median": 99.8,
+        "q75": 101.73875,
+        "max": 109.95
+      },
+      "Herbimycin A, Streptomyces sp.": {
+        "finite": 76,
+        "min": 86.55,
+        "q25": 96.125,
+        "median": 99.16499999999999,
+        "q75": 102.8425,
+        "max": 111.155
+      },
+      "IC261": {
+        "finite": 76,
+        "min": 89.44,
+        "q25": 95.3447799775,
+        "median": 98.61,
+        "q75": 103.202291575,
+        "max": 130.03
+      },
+      "IGF-1R Inhibitor II": {
+        "finite": 76,
+        "min": 86.57,
+        "q25": 95.13499999999999,
+        "median": 97.8375,
+        "q75": 102.2425,
+        "max": 114.01
+      },
+      "IKK-2 Inhibitor IV": {
+        "finite": 76,
+        "min": 12.2,
+        "q25": 50.93,
+        "median": 77.8275,
+        "q75": 95.03625,
+        "max": 115.14
+      },
+      "Imatinib": {
+        "finite": 76,
+        "min": 3.365,
+        "q25": 81.85875,
+        "median": 95.45,
+        "q75": 100.43375,
+        "max": 109.375
+      },
+      "Indirubin Derivative E804": {
+        "finite": 76,
+        "min": 0.55,
+        "q25": 27.55875,
+        "median": 50.645,
+        "q75": 87.17625000000001,
+        "max": 138.71
+      },
+      "Indirubin-3\u2032-monoxime": {
+        "finite": 75,
+        "min": 1.54,
+        "q25": 52.9675,
+        "median": 79.26,
+        "q75": 93.4,
+        "max": 116.37
+      },
+      "IRAK-1/4 Inhibitor": {
+        "finite": 76,
+        "min": 15.17,
+        "q25": 89.58625,
+        "median": 96.605,
+        "q75": 100.44874999999999,
+        "max": 110.595
+      },
+      "Isogranulatimide": {
+        "finite": 76,
+        "min": 4.725,
+        "q25": 64.4225,
+        "median": 86.3325,
+        "q75": 98.27,
+        "max": 117.48
+      },
+      "JAK Inhibitor I": {
+        "finite": 76,
+        "min": 2.09,
+        "q25": 38.693749999999994,
+        "median": 88.4825,
+        "q75": 97.13375,
+        "max": 108.54
+      },
+      "JAK3 Inhibitor II": {
+        "finite": 76,
+        "min": -0.86,
+        "q25": 40.808749999999996,
+        "median": 69.9525,
+        "q75": 91.0525,
+        "max": 132.145
+      },
+      "JAK3 Inhibitor IV": {
+        "finite": 76,
+        "min": 81.49,
+        "q25": 91.1925,
+        "median": 94.005,
+        "q75": 97.83000000000001,
+        "max": 113.595
+      },
+      "JAK3 Inhibitor VI": {
+        "finite": 75,
+        "min": 0.915,
+        "q25": 15.9875,
+        "median": 58.145,
+        "q75": 86.6275,
+        "max": 112.415
+      },
+      "JNK Inhibitor II": {
+        "finite": 76,
+        "min": 6.47,
+        "q25": 68.30125000000001,
+        "median": 86.7175,
+        "q75": 94.56625,
+        "max": 110.66
+      },
+      "JNK Inhibitor IX": {
+        "finite": 76,
+        "min": 83.61,
+        "q25": 94.96375,
+        "median": 97.19,
+        "q75": 99.645,
+        "max": 109.155
+      },
+      "JNK Inhibitor V": {
+        "finite": 76,
+        "min": 42.88,
+        "q25": 82.6175,
+        "median": 90.995,
+        "q75": 96.19375,
+        "max": 112.665
+      },
+      "JNK Inhibitor VIII": {
+        "finite": 75,
+        "min": 20.67,
+        "q25": 91.18,
+        "median": 95.745,
+        "q75": 98.86,
+        "max": 109.35
+      },
+      "JNK Inhibitor,                    Negative Control": {
+        "finite": 76,
+        "min": 30.285,
+        "q25": 87.14625000000001,
+        "median": 91.5925,
+        "q75": 96.74249999999999,
+        "max": 111.06
+      },
+      "K-252a, Nocardiopsis sp. ": {
+        "finite": 75,
+        "min": -1.765,
+        "q25": 4.7325,
+        "median": 19.145,
+        "q75": 69.3,
+        "max": 159.4
+      },
+      "Kenpaullone": {
+        "finite": 76,
+        "min": 20.345,
+        "q25": 77.37625,
+        "median": 91.1875,
+        "q75": 97.13374999999999,
+        "max": 109.69
+      },
+      "KN-62": {
+        "finite": 76,
+        "min": 77.865,
+        "q25": 95.985,
+        "median": 98.36,
+        "q75": 100.8575,
+        "max": 112.84
+      },
+      "KN-93": {
+        "finite": 76,
+        "min": 84.38,
+        "q25": 96.63250000000001,
+        "median": 98.58,
+        "q75": 100.32625,
+        "max": 105.125
+      },
+      "Lapatinib": {
+        "finite": 76,
+        "min": -0.23,
+        "q25": 95.45500000000001,
+        "median": 99.2775,
+        "q75": 102.265,
+        "max": 119.525
+      },
+      "Lck Inhibitor": {
+        "finite": 76,
+        "min": 2.73,
+        "q25": 57.182500000000005,
+        "median": 85.74000000000001,
+        "q75": 97.025,
+        "max": 113.745
+      },
+      "LY 294002": {
+        "finite": 76,
+        "min": 84.0,
+        "q25": 94.38625,
+        "median": 97.5,
+        "q75": 100.356890375,
+        "max": 117.005
+      },
+      "LY 303511- Negative control": {
+        "finite": 76,
+        "min": 86.625,
+        "q25": 95.42125,
+        "median": 97.57,
+        "q75": 100.895,
+        "max": 112.32
+      },
+      "Masitinib": {
+        "finite": 75,
+        "min": 4.625,
+        "q25": 88.0375,
+        "median": 96.085,
+        "q75": 100.92500000000001,
+        "max": 106.825
+      },
+      "MEK Inhibitor I": {
+        "finite": 76,
+        "min": 82.74,
+        "q25": 94.5925,
+        "median": 97.6075,
+        "q75": 100.38749999999999,
+        "max": 112.06
+      },
+      "MEK Inhibitor II": {
+        "finite": 76,
+        "min": 86.835,
+        "q25": 95.235,
+        "median": 98.20750000000001,
+        "q75": 101.07624999999999,
+        "max": 121.035
+      },
+      "MEK1/2 Inhibitor": {
+        "finite": 76,
+        "min": 84.27,
+        "q25": 94.24625,
+        "median": 97.60499999999999,
+        "q75": 100.91749999999999,
+        "max": 114.275
+      },
+      "Met Kinase Inhibitor": {
+        "finite": 76,
+        "min": 3.855,
+        "q25": 50.92125,
+        "median": 75.08250000000001,
+        "q75": 88.90124999999999,
+        "max": 105.285
+      },
+      "MK2a Inhibitor": {
+        "finite": 76,
+        "min": 83.41,
+        "q25": 94.12625,
+        "median": 96.185,
+        "q75": 99.72999999999999,
+        "max": 115.685
+      },
+      "MNK1 Inhibitor": {
+        "finite": 75,
+        "min": 53.845,
+        "q25": 83.805,
+        "median": 90.18,
+        "q75": 96.335,
+        "max": 115.74
+      },
+      "Mubritinib": {
+        "finite": 76,
+        "min": 85.97,
+        "q25": 95.16499999999999,
+        "median": 97.11500000000001,
+        "q75": 100.53875,
+        "max": 136.21
+      },
+      "NF-\u03baB Activation Inhibitor": {
+        "finite": 76,
+        "min": 78.015,
+        "q25": 94.3975,
+        "median": 96.345,
+        "q75": 99.39125,
+        "max": 117.075
+      },
+      "Nilotinib": {
+        "finite": 76,
+        "min": 0.13,
+        "q25": 61.91625,
+        "median": 91.775,
+        "q75": 99.31125,
+        "max": 107.05
+      },
+      "Olaparib": {
+        "finite": 76,
+        "min": 78.225,
+        "q25": 94.4975,
+        "median": 98.6925,
+        "q75": 101.82374999999999,
+        "max": 119.82
+      },
+      "p38 MAP Kinase Inhibitor": {
+        "finite": 76,
+        "min": 17.385,
+        "q25": 86.19625,
+        "median": 90.7875,
+        "q75": 95.10499999999999,
+        "max": 135.56
+      },
+      "p38 MAP Kinase Inhibitor III ": {
+        "finite": 76,
+        "min": 70.345,
+        "q25": 90.77250000000001,
+        "median": 93.26,
+        "q75": 96.4525,
+        "max": 105.16
+      },
+      "Pazopanib": {
+        "finite": 76,
+        "min": 1.76,
+        "q25": 45.95125,
+        "median": 79.07,
+        "q75": 92.10375,
+        "max": 115.52
+      },
+      "PD 158780": {
+        "finite": 75,
+        "min": -6.785,
+        "q25": 69.8825,
+        "median": 85.335,
+        "q75": 93.07249999999999,
+        "max": 131.205
+      },
+      "PD 169316": {
+        "finite": 76,
+        "min": 23.22,
+        "q25": 85.615,
+        "median": 91.39750000000001,
+        "q75": 96.46625,
+        "max": 110.89
+      },
+      "PD 174265": {
+        "finite": 76,
+        "min": -3.595,
+        "q25": 87.725,
+        "median": 93.325,
+        "q75": 96.83875,
+        "max": 108.965
+      },
+      "PD 98059": {
+        "finite": 75,
+        "min": 76.86,
+        "q25": 89.9925,
+        "median": 93.855,
+        "q75": 97.93,
+        "max": 125.445
+      },
+      "PDGF Receptor Tyrosine Kinase Inhibitor II": {
+        "finite": 76,
+        "min": 50.905,
+        "q25": 91.55875,
+        "median": 95.6175,
+        "q75": 98.41375,
+        "max": 104.835
+      },
+      "PDGF Receptor Tyrosine Kinase Inhibitor III": {
+        "finite": 76,
+        "min": 7.985,
+        "q25": 86.64750000000001,
+        "median": 94.0975,
+        "q75": 96.95500000000001,
+        "max": 114.835
+      },
+      "PDGF Receptor Tyrosine Kinase Inhibitor IV": {
+        "finite": 76,
+        "min": 10.475,
+        "q25": 63.78375,
+        "median": 88.425,
+        "q75": 96.64125,
+        "max": 104.905
+      },
+      "PDGF RTK Inhibitor": {
+        "finite": 76,
+        "min": 0.99,
+        "q25": 69.17875000000001,
+        "median": 84.68,
+        "q75": 95.005,
+        "max": 104.135
+      },
+      "PDK1/Akt/Flt Dual Pathway Inhibitor": {
+        "finite": 76,
+        "min": 9.69,
+        "q25": 67.6825,
+        "median": 81.7025,
+        "q75": 94.48625,
+        "max": 105.79
+      },
+      "PI 3-K\u03b3 Inhibitor ": {
+        "finite": 76,
+        "min": 86.055,
+        "q25": 93.515,
+        "median": 97.82,
+        "q75": 100.765,
+        "max": 119.1
+      },
+      "PI 3-K\u03b3 Inhibitor II ": {
+        "finite": 76,
+        "min": 82.67,
+        "q25": 93.3425,
+        "median": 97.41749999999999,
+        "q75": 101.13499999999999,
+        "max": 128.78
+      },
+      "PI-103": {
+        "finite": 76,
+        "min": 57.635,
+        "q25": 93.37125,
+        "median": 96.53,
+        "q75": 101.33375,
+        "max": 117.49
+      },
+      "PKC\u03b2 Inhibitor": {
+        "finite": 76,
+        "min": 2.97,
+        "q25": 79.86500000000001,
+        "median": 88.4675,
+        "q75": 94.64999999999999,
+        "max": 107.645
+      },
+      "PKC\u03b2II/EGFR Inhibitor": {
+        "finite": 76,
+        "min": 18.045,
+        "q25": 89.6825,
+        "median": 94.27250000000001,
+        "q75": 98.47999999999999,
+        "max": 115.465
+      },
+      "PKR Inhibitor": {
+        "finite": 76,
+        "min": 1.325,
+        "q25": 28.64125,
+        "median": 52.195,
+        "q75": 88.64500000000001,
+        "max": 117.315
+      },
+      "PKR Inhibitor, Negative Control": {
+        "finite": 76,
+        "min": 1.49,
+        "q25": 70.74374999999999,
+        "median": 87.3275,
+        "q75": 97.91,
+        "max": 113.505
+      },
+      "PP1 Analog II, 1NM-PP1": {
+        "finite": 76,
+        "min": 15.255,
+        "q25": 76.155,
+        "median": 90.14500000000001,
+        "q75": 95.61375000000001,
+        "max": 118.005
+      },
+      "PP3": {
+        "finite": 76,
+        "min": 54.645,
+        "q25": 92.7725,
+        "median": 96.71000000000001,
+        "q75": 101.23125,
+        "max": 127.205
+      },
+      "Purvalanol A": {
+        "finite": 76,
+        "min": 9.065,
+        "q25": 78.46375,
+        "median": 88.745,
+        "q75": 94.16,
+        "max": 108.645
+      },
+      "Rapamycin": {
+        "finite": 76,
+        "min": 84.865,
+        "q25": 93.37,
+        "median": 95.51249999999999,
+        "q75": 98.7475,
+        "max": 139.81
+      },
+      "Rho Kinase Inhibitor III, Rockout": {
+        "finite": 76,
+        "min": 84.0,
+        "q25": 92.33500000000001,
+        "median": 95.2525,
+        "q75": 99.10249999999999,
+        "max": 122.66
+      },
+      "Rho Kinase Inhibitor IV": {
+        "finite": 76,
+        "min": 39.715,
+        "q25": 90.4775,
+        "median": 94.5275,
+        "q75": 97.69624999999999,
+        "max": 105.9
+      },
+      "Ro-32-0432": {
+        "finite": 76,
+        "min": 23.51,
+        "q25": 90.405,
+        "median": 95.8975,
+        "q75": 99.69,
+        "max": 124.705
+      },
+      "ROCK Inhibitor, Y-27632": {
+        "finite": 76,
+        "min": 48.02,
+        "q25": 96.0525,
+        "median": 99.4325,
+        "q75": 102.44125,
+        "max": 115.155
+      },
+      "Roscovitine ": {
+        "finite": 76,
+        "min": 74.065,
+        "q25": 93.32374999999999,
+        "median": 97.3325,
+        "q75": 101.0775,
+        "max": 118.82
+      },
+      "SB 202190": {
+        "finite": 76,
+        "min": 8.805,
+        "q25": 91.0575,
+        "median": 95.4675,
+        "q75": 99.37,
+        "max": 109.26
+      },
+      "SB 202474 ": {
+        "finite": 76,
+        "min": 82.14,
+        "q25": 94.15875,
+        "median": 97.36,
+        "q75": 101.16875,
+        "max": 115.49
+      },
+      "SB 203580": {
+        "finite": 76,
+        "min": 15.245,
+        "q25": 90.45625,
+        "median": 94.4675,
+        "q75": 97.89125,
+        "max": 108.99
+      },
+      "SB 218078": {
+        "finite": 74,
+        "min": -1.035,
+        "q25": 8.338750000000001,
+        "median": 42.43,
+        "q75": 77.5027638775,
+        "max": 107.445
+      },
+      "SB220025": {
+        "finite": 76,
+        "min": 58.33,
+        "q25": 93.18625,
+        "median": 96.3425,
+        "q75": 100.00375,
+        "max": 112.82
+      },
+      "SC-68376": {
+        "finite": 76,
+        "min": 72.425,
+        "q25": 93.44749999999999,
+        "median": 98.1875,
+        "q75": 102.708832875,
+        "max": 119.51
+      },
+      "SKF-86002": {
+        "finite": 76,
+        "min": 60.595,
+        "q25": 93.60125,
+        "median": 97.58500000000001,
+        "q75": 103.2675,
+        "max": 113.24
+      },
+      "Sorafenib": {
+        "finite": 74,
+        "min": -1.43,
+        "q25": 48.1675,
+        "median": 90.0675,
+        "q75": 97.45375,
+        "max": 113.52
+      },
+      "Sphingosine Kinase Inhibitor": {
+        "finite": 76,
+        "min": 86.205,
+        "q25": 94.28875,
+        "median": 96.5775,
+        "q75": 101.96625,
+        "max": 117.01
+      },
+      "Src Kinase Inhibitor I": {
+        "finite": 76,
+        "min": 7.235,
+        "q25": 63.1525,
+        "median": 86.07249999999999,
+        "q75": 98.2396671475,
+        "max": 117.38
+      },
+      "Staurosporine, N-benzoyl-": {
+        "finite": 76,
+        "min": -2.925,
+        "q25": 9.4075,
+        "median": 43.692499999999995,
+        "q75": 84.59875,
+        "max": 104.795
+      },
+      "Staurosporine, Streptomyces sp.": {
+        "finite": 75,
+        "min": -4.845,
+        "q25": 0.33499999999999996,
+        "median": 4.19,
+        "q75": 26.6675,
+        "max": 104.57
+      },
+      "STO-609": {
+        "finite": 76,
+        "min": 28.71,
+        "q25": 89.1175,
+        "median": 94.8825,
+        "q75": 101.0255431,
+        "max": 121.405
+      },
+      "SU11652": {
+        "finite": 75,
+        "min": -1.685,
+        "q25": 5.8149999999999995,
+        "median": 20.15,
+        "q75": 84.45,
+        "max": 105.515
+      },
+      "SU6656": {
+        "finite": 73,
+        "min": -0.75,
+        "q25": 24.465,
+        "median": 68.01,
+        "q75": 89.97423488,
+        "max": 115.235
+      },
+      "SU9516": {
+        "finite": 76,
+        "min": 5.635,
+        "q25": 71.98375,
+        "median": 89.5925,
+        "q75": 96.735,
+        "max": 131.62
+      },
+      "Sunitinib": {
+        "finite": 76,
+        "min": -1.84,
+        "q25": 8.61625,
+        "median": 34.47,
+        "q75": 90.29499999999999,
+        "max": 117.435
+      },
+      "Syk Inhibitor": {
+        "finite": 75,
+        "min": 0.605,
+        "q25": 26.25,
+        "median": 58.9,
+        "q75": 83.6325,
+        "max": 128.37
+      },
+      "Syk Inhibitor II": {
+        "finite": 76,
+        "min": 14.28,
+        "q25": 69.35,
+        "median": 86.495,
+        "q75": 94.3625,
+        "max": 124.25
+      },
+      "Syk Inhibitor III": {
+        "finite": 76,
+        "min": 79.905,
+        "q25": 91.96,
+        "median": 94.6325,
+        "q75": 98.70875000000001,
+        "max": 115.85
+      },
+      "Tandutinib ": {
+        "finite": 75,
+        "min": 0.5,
+        "q25": 86.5675,
+        "median": 94.955,
+        "q75": 99.595,
+        "max": 150.085
+      },
+      "TGF-\u03b2 RI Inhibitor III": {
+        "finite": 76,
+        "min": 83.82,
+        "q25": 91.99875,
+        "median": 98.0175,
+        "q75": 100.33625,
+        "max": 111.98
+      },
+      "TGF-\u03b2 RI Kinase Inhibitor": {
+        "finite": 76,
+        "min": 51.78,
+        "q25": 82.82124999999999,
+        "median": 93.2825,
+        "q75": 97.71125,
+        "max": 123.44
+      },
+      "Tofacitinib": {
+        "finite": 76,
+        "min": 8.495,
+        "q25": 90.0475,
+        "median": 94.705,
+        "q75": 100.01625,
+        "max": 112.4
+      },
+      "Tozasertib": {
+        "finite": 74,
+        "min": 2.205,
+        "q25": 43.1,
+        "median": 73.995,
+        "q75": 90.855,
+        "max": 191.34
+      },
+      "Tpl2 Kinase Inhibitor": {
+        "finite": 76,
+        "min": 6.6,
+        "q25": 82.64999999999999,
+        "median": 89.485,
+        "q75": 95.36625000000001,
+        "max": 104.625
+      },
+      "Vandetanib": {
+        "finite": 76,
+        "min": 1.245,
+        "q25": 11.75625,
+        "median": 45.185,
+        "q75": 86.14874999999999,
+        "max": 103.21
+      },
+      "Vatalanib": {
+        "finite": 76,
+        "min": 29.75,
+        "q25": 92.65625,
+        "median": 96.06,
+        "q75": 99.88625,
+        "max": 111.29
+      },
+      "VEGF Receptor 2 Kinase Inhibitor I": {
+        "finite": 76,
+        "min": 1.9,
+        "q25": 69.39874999999999,
+        "median": 89.9975,
+        "q75": 99.02875,
+        "max": 114.97
+      },
+      "VEGF Receptor 2 Kinase Inhibitor II": {
+        "finite": 76,
+        "min": 1.42,
+        "q25": 50.510000000000005,
+        "median": 85.1675,
+        "q75": 96.78125,
+        "max": 108.11
+      },
+      "VEGF Receptor 2 Kinase Inhibitor III": {
+        "finite": 76,
+        "min": 1.305,
+        "q25": 33.20625,
+        "median": 87.9375,
+        "q75": 99.005,
+        "max": 109.24
+      },
+      "VEGF Receptor 2 Kinase Inhibitor IV": {
+        "finite": 76,
+        "min": 3.915,
+        "q25": 86.64625,
+        "median": 95.3325,
+        "q75": 100.94375,
+        "max": 115.87
+      },
+      "VEGF Receptor Tyrosine Kinase Inhibitor II": {
+        "finite": 75,
+        "min": 18.02,
+        "q25": 90.115,
+        "median": 96.41,
+        "q75": 100.9425,
+        "max": 114.515
+      },
+      "VEGF Receptor Tyrosine Kinase Inhibitor III, KRN633": {
+        "finite": 76,
+        "min": 0.92,
+        "q25": 84.80125,
+        "median": 93.91499999999999,
+        "q75": 98.745,
+        "max": 110.845
+      },
+      "Vismodegib": {
+        "finite": 76,
+        "min": 68.685,
+        "q25": 93.3475,
+        "median": 96.44,
+        "q75": 99.79625,
+        "max": 131.85
+      },
+      "VX-702": {
+        "finite": 76,
+        "min": 70.86,
+        "q25": 92.2975,
+        "median": 96.745,
+        "q75": 100.23375,
+        "max": 137.815
+      },
+      "Wortmannin": {
+        "finite": 76,
+        "min": 87.08,
+        "q25": 97.35,
+        "median": 100.825,
+        "q75": 103.7075,
+        "max": 112.775
+      }
+    },
+    "groups": 21
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "binding_assays.csv.gz": {
+    "rows": 396104,
+    "missing_by_column": {},
+    "numeric": {
+      "y": {
+        "finite": 396104,
+        "min": 2.05,
+        "q25": 5.8,
+        "median": 6.82,
+        "q75": 7.76,
+        "max": 11.0
+      }
+    },
+    "distinct": {
+      "target_chembl_id": 2397,
+      "compound_chembl_id": 267029
+    }
+  }
+}

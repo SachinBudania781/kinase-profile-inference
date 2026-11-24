@@ -1,0 +1,24 @@
+{
+  "ALK_primary_IC50.csv.gz": {
+    "rows": 108,
+    "kinase_rows": {
+      "ALK": 108
+    },
+    "relations": {
+      "=": 102,
+      "<": 4,
+      ">": 2
+    },
+    "compounds": 6,
+    "numeric_by_endpoint": {
+      "cellular_IC50 [nM]": {
+        "finite": 108,
+        "min": 0.2,
+        "q25": 29.75,
+        "median": 194.0,
+        "q75": 715.0,
+        "max": 10000.0
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "RET_review_IC50.csv.gz": {
+    "rows": 36,
+    "kinase_rows": {
+      "RET": 36
+    },
+    "relations": {
+      "=": 36
+    },
+    "compounds": 5,
+    "numeric_by_endpoint": {
+      "cellular_IC50 [nM]": {
+        "finite": 36,
+        "min": 0.4,
+        "q25": 17.1,
+        "median": 516.1500000000001,
+        "q75": 2673.5,
+        "max": 10600.0
+      }
+    }
+  }
+}
