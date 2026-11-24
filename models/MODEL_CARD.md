@@ -43,25 +43,29 @@ Set-Transformer with masked attention, GraphSAGE/GCN over inhibitors, 1D-CNN and
 
 Details and the experiments behind each decision are in [`../protocol/DEVELOPMENT_LOG.md`](../protocol/DEVELOPMENT_LOG.md).
 
-## Development numbers (SER and the other models against XGBoost)
+## Numbers (SER and the other models against XGBoost)
 
-Gain G = 100 x (MAE of XGBoost - MAE of the model) / MAE of XGBoost, equal weight per study, 10 development panels.
+Gain G = 100 x (MAE of XGBoost - MAE of the model) / MAE of XGBoost, equal weight per study. Positive means the model beats XGBoost.
 
-| Model | Studies | Mean gain, baseline run D0 (13 Nov, before A1 to A4) |
-| --- | --- | --- |
-| SER | 10 | **4.24%** (95% CI 2.91 to 5.28) |
-| CovarianceLocalMedian | 10 | 3.51% |
-| SAER-7g | 7 | 2.30% |
-| NestedAligned | 7 | 2.17% |
-| AlignedAddAudit | 7 | 2.15% |
-| RidgeSupports | 10 | 1.72% |
-| QueryMedian | 10 | -57.85% |
+| Model | Dev, baseline run D0 (13 Nov, before A1 to A4) | Dev, final code (24 Nov) | Lockbox A (7 studies, H1 and H2) | Lockbox B (3 studies, H1-B) |
+| --- | --- | --- | --- | --- |
+| SER | **4.24%** (95% CI 2.91 to 5.28), 10 studies | **4.24%** (95% CI 2.91 to 5.28), 10 studies | **3.52%** (95% CI 1.48 to 5.60) | **16.78%** (95% CI 12.71 to 19.53) |
+| CovarianceLocalMedian | 3.51% | 3.52% | -11.30% | 15.05% |
+| AlignedAddAudit | 2.15% (7 studies) | 2.99% | -1.61% | 13.14% |
+| SAER-7g | 2.30% (7 studies) | 2.92% | -1.05% | 16.61% |
+| NestedAligned | 2.17% (7 studies) | 2.90% | -3.19% | 14.90% |
+| RidgeSupports (plain, descriptive) | 1.72% | 1.72% | 0.16% | 22.88% |
+| QueryMedian (plain, descriptive) | -57.85% | -57.83% | -20.53% | -16.39% |
 
-The three routed models completed only 7 of 10 studies in D0 because of the crash fixed in A1 (Lee, Oh, and two Estevam folds), so their means are over fewer studies and are not directly comparable. Per-panel tables, the final-code run and the robustness checks are in [`../results/`](../results/).
+The three routed models completed only 7 of 10 studies in D0 because of the crash fixed in A1 (Lee, Oh, and two Estevam folds), so their D0 means are over fewer studies and are not directly comparable. Per-panel tables and robustness checks are in [`../results/`](../results/).
+
+On Lockbox A only SER beats XGBoost; none of the four checkpoint models does, and none is significant after the Holm adjustment. On Lockbox B every model beats XGBoost and the plain RidgeSupports baseline does best, so Lockbox B shows that SER beats the matched reference, not that SER is the best predictor.
 
 ## Known limits
 
-- All gains above are development evidence on development panels. The confirmatory result is the one-shot Lockbox A run.
-- The four stress-test panels have small gains (about 0.7 to 1.7%) because XGBoost already has plenty of data per mask type and the data are noisy.
+- The development gains are evidence on the panels the models were built on. The confirmatory results are the one-shot lockbox runs (`../results/lockbox_A/LOCKBOX_RESULTS.md` and `../results/lockbox_B/LOCKBOX_RESULTS.md`).
+- Lockbox A met the registered rule for H1 (point estimate above 2%, interval above zero): 3.52% (95% CI 1.48 to 5.60). The interval's lower end is below 2%, and the episode-weighted gain is 2.39% (95% CI -0.38 to 4.77).
+- The four development stress-test panels have small gains (0.65 to 1.7%) because XGBoost already has plenty of data per mask type and the data are noisy.
 - On artificial outlier-contaminated studies SER is not uniformly safe: 3 of 13 were below zero, worst -6.33%.
-- The censored branch of the gate has not run on real data; the first real test of it is the lockbox run itself.
+- The censored branch of the gate (A3) had never run on real data before the lockbox runs. It ran on `Fujino2019_MET` (Lockbox A; SER -7.48% at k = 2 and +3.14% at k = 3, and -3.01% and -0.88% on the episodes without censored values) and on the three Lockbox B panels. A 12-site panel cannot separate a real weakness from noise.
+- CovarianceLocalMedian's Lockbox A mean of -11.30% comes from two ALK panels (Gainor2016_ALK -51.02%, Zhang2016_ALK -38.08%), where SER gained 3.51% and 9.57%.

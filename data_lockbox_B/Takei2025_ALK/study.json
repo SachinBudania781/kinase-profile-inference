@@ -1,0 +1,34 @@
+{
+  "study": "Takei2025_ALK",
+  "kinase": "ALK",
+  "source": {
+    "citation": "Takei et al. 2025, Preclinical Prediction of Resistance Mutations and Proposal of Sequential Treatment Strategies for ALK-positive Lung Cancer Using Next-generation ALK Inhibitors. Pharmaceutical Research",
+    "doi": "10.1007/s11095-025-03916-1",
+    "pmcid": "PMC12508005",
+    "table": "Table II: IC50s of Several ALK-TKIs in the Presence of Various Resistance Mutations (IC50, nM)",
+    "assay": "Ba/F3 cells expressing EML4-ALK variant 1, cell viability assay; compound mutants carry G1202R or I1171N plus a second mutation",
+    "licence": "CC BY"
+  },
+  "ser": {
+    "table": "SER_responses.csv",
+    "drugs": [
+      "alectinib",
+      "crizotinib",
+      "lorlatinib",
+      "brigatinib"
+    ],
+    "modes": [
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "ATP-site"
+    ],
+    "response": "log10 mutant/native IC50",
+    "censor": {
+      "-1": "upper_bound",
+      "0": "exact",
+      "1": "lower_bound"
+    }
+  },
+  "note": "Source row label 'no mutation' is the native reference (WT). Zotizalkib, gilteritinib and neladalkib are reported for only a few rows and are not used (a variant is admitted only if every panel inhibitor is measured). Site = position of the second (added) mutation; background-only rows are keyed by their own position. Censored cells (>3000) are lower bounds (+1). Compound mutants were selected from Ba/F3 libraries by resistance to zotizalkib (G1202R background) or gilteritinib (I1171N background); the panel is therefore a resistance-enriched set."
+}

@@ -1,0 +1,28 @@
+{
+  "study": "Gainor2016_ALK",
+  "kinase": "ALK",
+  "source": "https://doi.org/10.1158/2159-8290.CD-16-0596",
+  "ser": {
+    "table": "SER_responses.csv",
+    "drugs": [
+      "crizotinib",
+      "ceritinib",
+      "alectinib",
+      "brigatinib",
+      "lorlatinib"
+    ],
+    "modes": [
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "ATP-site"
+    ],
+    "response": "log10 mutant/native IC50",
+    "censor": {
+      "-1": "upper_bound",
+      "0": "exact",
+      "1": "lower_bound"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "study": "Takei2025_ALK",
+  "kinase": "ALK",
+  "source": {
+    "citation": "Takei et al. 2025, Preclinical Prediction of Resistance Mutations and Proposal of Sequential Treatment Strategies for ALK-positive Lung Cancer Using Next-generation ALK Inhibitors. Pharmaceutical Research",
+    "doi": "10.1007/s11095-025-03916-1",
+    "pmcid": "PMC12508005",
+    "table": "Table II: IC50s of Several ALK-TKIs in the Presence of Various Resistance Mutations (IC50, nM)",
+    "assay": "Ba/F3 cells expressing EML4-ALK variant 1, cell viability assay; compound mutants carry G1202R or I1171N plus a second mutation",
+    "licence": "CC BY"
+  },
+  "drugs": ["alectinib", "crizotinib", "lorlatinib", "brigatinib"],
+  "modes": ["ATP-site", "ATP-site", "ATP-site", "ATP-site"],
+  "unit": "nM",
+  "native_label": "WT",
+  "site_rule": "last_position",
+  "rows": [
+    ["WT", "11.1", "85.2", "3.0", "25.2"],
+    ["G1202R", "299.5", "315.8", "59.0", "156.3"],
+    ["G1202R+F1174L", ">3000", "350.8", "466.4", "683.3"],
+    ["G1202R+F1245L", "27.9", "112.6", "6.8", "85.8"],
+    ["G1202R+P1153H", ">3000", "345.9", "102.9", "283.0"],
+    ["I1171N", "145.1", "243.3", "69.4", "68.7"],
+    ["I1171N+E1210K", "849.7", "402.1", "116.5", "167.7"],
+    ["I1171N+D1203N", "931.1", "842.7", "894.9", "478.8"],
+    ["I1171N+E1129V", "540.1", "597.9", "350.6", "301.5"],
+    ["I1171N+E1129K", "444.5", "493.4", "287.9", "278.3"],
+    ["I1171N+C1156Y", "519.5", "451.1", "833.3", "279.0"],
+    ["I1171N+L1256F", "17.8", "401.2", ">3000", "74.0"],
+    ["I1171N+T1151R", "452.2", "803.2", "800.7", "114.8"]
+  ],
+  "note": "Source row label 'no mutation' is the native reference (WT). Zotizalkib, gilteritinib and neladalkib are reported for only a few rows and are not used (a variant is admitted only if every panel inhibitor is measured). Site = position of the second (added) mutation; background-only rows are keyed by their own position. Censored cells (>3000) are lower bounds (+1). Compound mutants were selected from Ba/F3 libraries by resistance to zotizalkib (G1202R background) or gilteritinib (I1171N background); the panel is therefore a resistance-enriched set."
+}

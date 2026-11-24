@@ -9,17 +9,21 @@ This repository holds the code, data recipes, split specifications and evaluator
 | OSF registration | https://osf.io/5sbck |
 | OSF DOI | https://doi.org/10.17605/OSF.IO/5SBCK |
 | Protocol revision registered on OSF (full commit hash) | `06821c682666322dce217f542312dfa032d0baab` |
-| Release tag (set at freeze) | `<RELEASE_TAG>` |
-| Status | Registered on OSF on 13 November 2026. Development results are in section 10. The release freeze and the two one-shot lockbox runs come next; **no model has been run on either lockbox yet** |
+| Release tag | `freeze-2026-11-24` (commit `db9d8ff2e1ad3fecbc36150368cfca1b154d054e`) |
+| Status | Registered on OSF on 13 November 2026. Release freeze recorded on 24 November 2026. Both one-shot lockbox runs were done and scored on 24 November 2026. Development results are in section 10 and lockbox results in section 11 |
 
 ## Results so far
 
-| | SER gain over XGBoost (equal-study mean) | Studies | Status |
+| | SER gain over XGBoost (equal-study mean) | Studies | Where |
 | --- | --- | --- | --- |
-| Development panels (baseline run D0, 13 Nov) | **4.24%** (95% CI 2.91 to 5.28); wins 9, ties 1, losses 0 | 10 | Done. Full tables in section 10 and [`results/dev/DEV_RESULTS.md`](results/dev/DEV_RESULTS.md) |
-| Development panels (final code, after amendments A1 to A4) | see [`results/dev_final/`](results/dev_final/) once the run is committed | 10 | Planned next; numbers added when the run is committed |
-| Lockbox A (primary test, H1) | not run | 7 | One-shot run after the release freeze |
-| Lockbox B (replication, H1-B) | not run | 3 | One-shot run after the release freeze |
+| Development panels (final code) | **4.24%** (95% CI 2.91 to 5.28); wins 9, ties 1, losses 0 | 10 | [`results/dev_final/DEV_RESULTS.md`](results/dev_final/DEV_RESULTS.md) |
+| **Lockbox A (primary test, H1)** | **3.52%** (95% CI 1.48 to 5.60); 6 of 7 studies won | 7 | [`results/lockbox_A/LOCKBOX_RESULTS.md`](results/lockbox_A/LOCKBOX_RESULTS.md) |
+| Lockbox B (replication, H1-B) | **16.78%** (95% CI 12.71 to 19.53); 3 of 3 studies won | 3 | [`results/lockbox_B/LOCKBOX_RESULTS.md`](results/lockbox_B/LOCKBOX_RESULTS.md) |
+
+- **H1 (Lockbox A):** the registered rule (point estimate above 2% and 95% interval above zero) is met. The interval's lower end is 1.48%, so it does not exclude a true gain of 2%. The episode-weighted gain is 2.39% (95% CI -0.38 to 4.77).
+- **H2 (Lockbox A):** none of the four other models beats XGBoost on average (mean gains -1.05% to -11.30%), and none is significant after the Holm adjustment.
+- **H1-B (Lockbox B):** the criterion is met, on three studies and 27 sites. Villa2024_ALK holds 84% of the episodes and gains only 3.0%; the episode-weighted gain is 6.22% (95% CI 2.74 to 8.91). All four other models and the plain RidgeSupports baseline (22.88%) also beat XGBoost on these small panels, so this shows SER beats the reference, not that SER is the best predictor. Lockbox A and B are never pooled.
+- The first baseline development run D0 (13 Nov, code before amendments A1 to A4) is in [`results/dev/`](results/dev/) and gave the same development headline.
 
 Development numbers are evidence from the panels the models were built on. Only the lockbox runs test the registered hypotheses.
 
@@ -62,7 +66,7 @@ Four of the five candidates are retained as checkpoints for comparison; SER is t
 
 ## 3. Data roles
 
-The full archive inventory (59 folders) is in [`data_manifest/DATASETS.md`](data_manifest/DATASETS.md). Roles are declared in [`configs/panels.json`](configs/panels.json). **The 52 development, intake and literature folders are in [`data/`](data/)** (index with sources: [`data/README.md`](data/README.md)); the 7 Lockbox A panels and the 3 Lockbox B panels are held back until the lockbox runs are scored.
+The full archive inventory (59 folders) is in [`data_manifest/DATASETS.md`](data_manifest/DATASETS.md). Roles are declared in [`configs/panels.json`](configs/panels.json). **All 59 archive folders are in [`data/`](data/)** (index with sources: [`data/README.md`](data/README.md)); the seven Lockbox A panels were added after the lockbox runs were scored. The three Lockbox B panels are in [`data_lockbox_B/`](data_lockbox_B/), also added after scoring.
 
 | Role | Folders | Use |
 | --- | --- | --- |
@@ -87,7 +91,7 @@ The full archive inventory (59 folders) is in [`data_manifest/DATASETS.md`](data
 
 ### Lockbox B panels (curated for replication)
 
-Chosen to resemble Lockbox A and never scored by any model. Selection criteria, rejected candidates and the similarity table are in the OSF registration, section 4.4. The transcribed source tables and the built panel folders live in `LockboxB_Data/`, **next to the repository folder** (not inside it).
+Chosen to resemble Lockbox A and never scored by any model. Selection criteria, rejected candidates and the similarity table are in the OSF registration, section 4.4. The transcribed source tables and the built panel folders were kept in `LockboxB_Data/`, next to the repository folder, until the lockbox runs were scored; copies are now in `data_lockbox_B/`.
 
 | Panel | Variants / sites / drugs | Endpoint | Source | Budgets |
 | --- | --- | --- | --- | --- |
@@ -97,11 +101,11 @@ Chosen to resemble Lockbox A and never scored by any model. Selection criteria, 
 
 ### Lockbox access policy
 
-- Lockbox response tables are **never committed** to this repository. `.gitignore` blocks them, and only SHA-256 checksums are recorded.
+- Until both lockboxes were scored, the response tables were **not committed**: `.gitignore` blocked them and only SHA-256 checksums were recorded. After the scoring (24 Nov 2026) the tables were added, Lockbox A panels in `data/` and Lockbox B in `data_lockbox_B/`, each with a checksum file. They are byte-identical to the archive folders that were hashed at the freeze, and `python integrity.py verify --archive-root data --lockbox-b-root data_lockbox_B` passes against `protocol/integrity_record.json`.
 - Development checkouts may use study IDs, assay descriptions, inhibitor identities, declared cohort sizes and synthetic fixtures.
 - Lockbox episodes are written to `lockbox_private/` (git-ignored) and joined to truth only inside the scoring step.
 - The runner refuses lockbox roles unless `--allow-lockbox` is given and an integrity record that matches the current code and data is supplied. Each lockbox is run once; a marker file blocks a second run. The evaluator needs `--score-lockbox`.
-- **Disclosure:** no model has been run on either lockbox, and no model result on either has been seen. The only looks at lockbox data are descriptive: cleaning and summary statistics of Lockbox B, and descriptive summaries of Lockbox A used to choose Lockbox B. See the OSF registration, section 2.
+- **Disclosure (state before the runs):** no model had been run on either lockbox, and no model result on either had been seen. Both runs were done on 24 Nov 2026 (section 11). The only looks at lockbox data before the runs were descriptive: cleaning and summary statistics of Lockbox B, and descriptive summaries of Lockbox A used to choose Lockbox B. See the OSF registration, section 2.
 
 ---
 
@@ -134,17 +138,19 @@ Chosen to resemble Lockbox A and never scored by any model. Selection criteria, 
 ```
 kinase-profile-inference/
 ├── README.md                    this file
-├── requirements.txt             minimum package versions (requirements-lock.txt is produced at the freeze)
+├── requirements.txt             minimum package versions
+├── requirements-lock.txt        exact package versions at the freeze
 │
-├── protocol/                    study design PDF, OSF pre-registration text and amendments, DEVELOPMENT_LOG.md
+├── protocol/                    study design PDF, OSF pre-registration text and amendments, DEVELOPMENT_LOG.md, integrity_record.json
 ├── data_manifest/               DATASETS.md: the role of each of the 59 archive folders
-├── data/                        the 52 non-lockbox study folders, README.md (index and sources), CHECKSUMS.sha256
+├── data/                        all 59 archive study folders (52 development, intake, literature; 7 Lockbox A), README.md, CHECKSUMS.sha256
+├── data_lockbox_B/              the 3 Lockbox B panels, transcription specs, similarity table, CHECKSUMS.sha256
 ├── configs/
 │   ├── panels.json              panel registry: role, root, format, declared sizes for every panel
 │   └── models.json              every numerical model setting (frozen at the release freeze)
 ├── splits/                      deterministic fold and episode specifications (development only)
 ├── models/                      MODEL_CARD.md: what each model is, its settings, its development numbers
-├── results/                     summary tables from evaluator runs: dev now, lockbox A and B after the one-shot runs
+├── results/                     summary tables from evaluator runs: dev (D0), dev_final, lockbox_A, lockbox_B
 ├── dev_tools/                   development-only scripts: diagnostics, artificial stress bank, replay experiments, report generator
 ├── tests/                       unit and end-to-end tests on synthetic panels
 │
@@ -163,7 +169,7 @@ The Python modules stay in the repository root on purpose: the integrity record 
 
 Git-ignored: `runs/` (raw predictions, large and regenerable; their hashes are recorded), `lockbox_private/` (lockbox episode lists), `__pycache__/`.
 
-Not in the repository: `LockboxB_Data/` and, until the lockbox runs are scored, the seven Lockbox A panels. Development runs can use `--archive-root data`. The release freeze and the lockbox runs need the full archive folder, because it still holds the Lockbox A panels; the 52 folders in `data/` are byte-identical copies of it.
+All 59 archive folders are in `data/` and the three Lockbox B panels in `data_lockbox_B/`, byte-identical to the archive folders that were hashed at the freeze. `--archive-root data --lockbox-b-root data_lockbox_B` therefore works for every run and for `integrity.py verify`. The 24 Nov 2026 freeze and lockbox runs used the original archive folder next to the repository.
 
 ---
 
@@ -197,7 +203,9 @@ python evaluator.py --runs runs/lockbox_B --archive-root <data> --lockbox-b-root
     --roles lockbox_B --score-lockbox --out results/lockbox_B
 ```
 
-`<data>` is `data` for development runs (the folder in this repository). The freeze and lockbox steps use the full archive folder, because it still holds the Lockbox A panels.
+`<data>` is `data` and `<LockboxB_Data>` is `data_lockbox_B` (both in this repository). The 24 Nov 2026 freeze and lockbox runs used the original archive folder next to the repository.
+
+Operational note on the 24 Nov 2026 lockbox runs: to save time, Lockbox A ran as three parallel parts by panel (`--panels`, separate `--out` folders `runs/lockbox_A1`, `A2`, `A3`) and Lockbox B as one part. Each panel and budget was run exactly once, each part passed the integrity gate and wrote its own one-shot marker, and the parts were copied into one folder per lockbox for scoring.
 
 Building a Lockbox B panel from a transcribed table:
 
@@ -238,38 +246,44 @@ Use separate commits for: study design, development-data recipes, matched refere
 | Lockbox A episode manifest | `360ac9cc2ea3cb8bf329a506b60a0c9d971d2f18b04476da62461f1d84da3b6f` |
 | Lockbox B episode manifest | `6715936870aff7b06cac77825ccd9f52f1da700392f328e9f85751e5a1895031` |
 | Fold assignment table | `8f09dc43a942e4f32cb64f6102e3c468d3643273234fa64a140676613c62541a` |
-| Code bundle at release tag | `<CODE_BUNDLE_SHA256>` |
-| Dependency lock / environment | `<ENV_LOCK_SHA256>` |
-| Frozen model artifacts (`models/`) | `<MODEL_ARTIFACTS_SHA256>` |
-| Evaluator + output schema | `<EVALUATOR_SHA256>` |
+| Code bundle at release tag `freeze-2026-11-24` | `a74a4b61178ed5baaaf96081af61409105627e3dad05f2a7485c10fb13a5bb58` |
+| Configuration bundle (`configs/*.json`) at the freeze | `78827c27563f6a2264d4c07b43d2db2e0ba072614b4acf2012b3a902d7175075` |
+| Integrity record | `protocol/integrity_record.json` (commit `db9d8ff`) |
+| Dependency lock / environment | `requirements-lock.txt` (committed in `c6bb44f`) |
+| Frozen model artifacts | none: every model is refitted inside each run; the settings are in `configs/models.json` (hash above) |
+| Evaluator + output schema | part of the code bundle (`evaluator.py`) |
+| Lockbox A predictions, part A1 / A2 / A3 | `85b4b2d50c5b040256ab21481b9df3689783ec49050bbae66549676575f3ed5f` / `1b35fd1925f26b91e68f1a1a96beeefb11a655a74f172757ac31a570aad22852` / `e1826e13b1942c7ac6d04dece3f701e877217194914e90e4983d7bd40af3779d` |
+| Lockbox B predictions | `67f2ad2b60c1f587e9454e147e54271322ea93c340f1cc263a95263ad6faffb1` |
 
-`integrity.py` recomputes these and prints a comparison against the OSF record.
+`integrity.py verify` recomputes these and compares them with `protocol/integrity_record.json`. The freeze hashes were committed and tagged on GitHub before the lockbox runs; the OSF copy of them was not made before the runs (development log D10).
+
+All four lockbox start markers (`runs/lockbox_*/LOCKBOX_RUN_STARTED.json`) carry the same code bundle hash as the record and the same start time, 2026-11-24 12:54:15 UTC (18:24 IST).
 
 ---
 
 ## 10. Development results (before the freeze)
 
-Baseline run D0 of 13 Nov 2026 on the 10 development panels, with the code as registered (before amendments A1 to A4). Gain G = 100 x (MAE of XGBoost - MAE of SER) / MAE of XGBoost; positive means SER is better. Equal weight per study; a study's gain is the mean of its k = 2 and k = 3 gains.
+Final-code run of 24 Nov 2026 on the 10 development panels (code after amendments A1 to A4; this is the code that was frozen). It reproduces the baseline run D0 of 13 Nov (code as registered): SER is 4.24% (95% CI 2.91 to 5.28) in both, and per-study gains moved by at most 0.04 points. Gain G = 100 x (MAE of XGBoost - MAE of SER) / MAE of XGBoost; positive means SER is better. Equal weight per study; a study's gain is the mean of its k = 2 and k = 3 gains.
 
 | Quantity | Value |
 | --- | --- |
 | Equal-study mean gain | **4.24%** (95% CI 2.91 to 5.28) |
 | Median study gain | 3.22% |
 | Leave-one-study-out | 3.64% to 4.71% |
-| Site-weighted | 3.03% (95% CI 2.64 to 3.39) |
-| Episode-weighted | 5.53% (95% CI 4.92 to 6.10) |
+| Site-weighted | 3.04% (95% CI 2.65 to 3.40) |
+| Episode-weighted | 5.55% (95% CI 4.93 to 6.12) |
 | Wins / ties / losses | 9 / 1 / 0 (Nakamura ties: 3 sites, so the gate stays off) |
 
 | Study | Role | Sites | SER gain, k = 2 (%) | SER gain, k = 3 (%) | Study gain (%) |
 | --- | --- | --- | --- | --- | --- |
-| Estevam2025_MET | core | 287 | 8.00 | 11.11 | 9.56 |
-| DuongLy2016_multi_kinase | core | 21 | 9.45 | 7.40 | 8.42 |
+| Estevam2025_MET | core | 287 | 8.00 | 11.16 | 9.58 |
+| DuongLy2016_multi_kinase | core | 21 | 9.39 | 7.39 | 8.39 |
 | Robichaux2021_EGFR | core | 13 | 5.16 | 8.21 | 6.69 |
 | Nakamura2021_FGFR1_FGFR2_FGFR3 | core | 3 | 0.00 | 0.00 | 0.00 |
-| KiRHub2026_multi_kinase | core | 48 | 7.96 | 9.37 | 8.67 |
+| KiRHub2026_multi_kinase | core | 48 | 7.97 | 9.34 | 8.65 |
 | OKL2026_multi_kinase | core | 11 | 5.72 | 3.78 | 4.75 |
 | Jung2025_ABL1 | stress test | 322 | 1.49 | 1.87 | 1.68 |
-| Chakraborty2024_SRC | stress test | 246 | 1.17 | 0.92 | 1.05 |
+| Chakraborty2024_SRC | stress test | 246 | 1.24 | 0.92 | 1.08 |
 | Lee2026_EGFR | stress test | 286 | 0.65 | - | 0.65 |
 | Oh2026_ALK | stress test | 331 | 0.89 | - | 0.89 |
 
@@ -277,21 +291,99 @@ Lee2026_EGFR and Oh2026_ALK have only three inhibitors, so they have k = 2 only.
 
 What the numbers say:
 
-- SER beats XGBoost on 9 of 10 studies and ties on one. The gain is about 5 to 10% on five of the six core panels (Nakamura ties) and about 0.7 to 1.7% on the four stress-test panels.
+- SER beats XGBoost on 9 of 10 studies and ties on one. The gain is 4.8 to 9.6% on five of the six core panels (Nakamura ties) and 0.65 to 1.7% on the four stress-test panels.
 - The development log (D1) traced the small stress-test gains to XGBoost already having plenty of training data per mask type and to noisy replicate data, not to a bug.
-- Other models (D0, equal-study mean gain): CovarianceLocalMedian 3.51% (10 studies); SAER-7g 2.30%, NestedAligned 2.17%, AlignedAddAudit 2.15% (7 studies each, because of the crash fixed in A1); RidgeSupports 1.72%; QueryMedian -57.85%.
+- Other models (final code, equal-study mean gain, all 10 studies): CovarianceLocalMedian 3.52%, AlignedAddAudit 2.99%, SAER-7g 2.92%, NestedAligned 2.90%, RidgeSupports 1.72%, QueryMedian -57.83%. In D0 the three routed models completed only 7 studies because of the crash fixed in A1 (D0 means: SAER-7g 2.30%, NestedAligned 2.17%, AlignedAddAudit 2.15%).
 
 Everything else is in:
 
-- [`results/dev/DEV_RESULTS.md`](results/dev/DEV_RESULTS.md): per-panel and per-budget tables with confidence intervals, all methods, intervention rates
-- [`results/dev/panel_budget_table.csv`](results/dev/panel_budget_table.csv) and [`results/dev/results.json`](results/dev/results.json): the raw evaluator output (including the T1 to T4 endpoints)
-- [`protocol/DEVELOPMENT_LOG.md`](protocol/DEVELOPMENT_LOG.md): D0 to D8, the diagnosis of the weak panels, the artificial stress bank, the revision experiments and amendments A1 to A4
+- [`results/dev_final/DEV_RESULTS.md`](results/dev_final/DEV_RESULTS.md): per-panel and per-budget tables with confidence intervals, all methods, intervention rates (final code)
+- [`results/dev_final/panel_budget_table.csv`](results/dev_final/panel_budget_table.csv) and [`results/dev_final/results.json`](results/dev_final/results.json): the raw evaluator output (including the T1 to T4 endpoints)
+- [`results/dev/`](results/dev/): the same for the baseline run D0
+- [`protocol/DEVELOPMENT_LOG.md`](protocol/DEVELOPMENT_LOG.md): D0 to D11, the diagnosis of the weak panels, the artificial stress bank, the revision experiments, amendments A1 to A4, the freeze and the lockbox runs
 - [`dev_tools/results/`](dev_tools/results/): printed output of the revision experiments
 - [`models/MODEL_CARD.md`](models/MODEL_CARD.md): what each model is
 
 ---
 
-## 11. Citation and licence
+## 11. Lockbox results (one-shot runs, 24 Nov 2026)
+
+Both lockboxes were run once on the frozen code (tag `freeze-2026-11-24`, code bundle `a74a4b61...`) and scored once: 19 panel-budget runs, 23,687 episodes, no failed episodes, no errors. Full reports are in [`results/lockbox_A/LOCKBOX_RESULTS.md`](results/lockbox_A/LOCKBOX_RESULTS.md) and [`results/lockbox_B/LOCKBOX_RESULTS.md`](results/lockbox_B/LOCKBOX_RESULTS.md); the raw evaluator output (`results.json`, `panel_budget_table.csv`, including T1 to T4) sits beside each. Lockbox A and Lockbox B are never pooled.
+
+### Lockbox A (H1, primary test: 7 studies, 248 sites, 21,066 episodes)
+
+| Quantity | Value |
+| --- | --- |
+| Equal-study mean gain, SER vs XGBoost | **3.52%** (95% CI 1.48 to 5.60) |
+| Registered criterion (mean gain above 2% and 95% CI above 0) | **met** |
+| 95% CI entirely above 2% | no (lower end 1.48%) |
+| Median study gain | 3.51% |
+| Leave-one-study-out | 2.51% to 4.46% |
+| Site-weighted | 3.51% (95% CI 2.52 to 4.52) |
+| Episode-weighted | 2.39% (95% CI -0.38 to 4.77) |
+| Studies won / tied / lost | 6 / 0 / 1 |
+
+| Study | Sites | SER gain, k = 2 (%) | SER gain, k = 3 (%) | Study gain (%) |
+| --- | --- | --- | --- | --- |
+| Abadie2026_EGFR | 62 | 0.98 | - | 0.98 |
+| An2023_EGFR | 131 | 3.87 | 4.91 | 4.39 |
+| Bahcall2022_MET | 8 | 3.94 | -2.14 | 0.90 |
+| Fujino2019_MET | 12 | -7.48 | 3.14 | -2.17 |
+| Gainor2016_ALK | 8 | -0.98 | 8.01 | 3.51 |
+| Wylie2017_ABL1 | 15 | 7.25 | 7.60 | 7.43 |
+| Zhang2016_ALK | 12 | 22.60 | -3.47 | 9.57 |
+
+**H2 (the four other models against XGBoost, Lockbox A):** none beats XGBoost on average, and none is significant after the Holm adjustment (alpha 0.05).
+
+| Model | Mean gain (%) | 95% CI | p | Holm threshold |
+| --- | --- | --- | --- | --- |
+| CovarianceLocalMedian | -11.30 | -19.83 to -2.33 | 0.0139 | 0.0125 |
+| NestedAligned | -3.19 | -9.94 to 1.98 | 0.2285 | 0.0167 |
+| AlignedAddAudit | -1.61 | -8.04 to 3.74 | 0.5533 | 0.0250 |
+| SAER-7g | -1.05 | -7.22 to 4.53 | 0.7425 | 0.0500 |
+
+Plain baselines, descriptive: RidgeSupports 0.16% (95% CI -4.09 to 3.86), QueryMedian -20.53%.
+
+What to keep in mind when reading Lockbox A:
+
+- Most panels are small (8 to 15 sites in five of the seven), so most per-panel intervals include zero; the interval for the mean is wide (1.48 to 5.60).
+- The result is below the development estimate (4.24%) but inside the development interval (2.91 to 5.28).
+- `Fujino2019_MET` is the only Lockbox A panel with censor flags, so it is the first real-data test of the censored branch of the gate (amendment A3). SER lost there at k = 2 (-7.48%) and gained at k = 3 (+3.14%); on the episodes with no censored values the gains were -3.01% and -0.88%. A 12-site panel cannot separate a real weakness from noise.
+
+### Lockbox B (H1-B, replication: 3 studies, 27 sites, 2,621 episodes)
+
+| Quantity | Value |
+| --- | --- |
+| Equal-study mean gain, SER vs XGBoost | **16.78%** (95% CI 12.71 to 19.53) |
+| Registered criterion (mean gain above 2% and 95% CI above 0) | **met** (the interval is entirely above 2%) |
+| Median study gain | 19.03% |
+| Leave-one-study-out | 11.02% to 23.68% |
+| Site-weighted | 18.06% (95% CI 13.93 to 20.98) |
+| Episode-weighted | 6.22% (95% CI 2.74 to 8.91) |
+| Studies won / tied / lost | 3 / 0 / 0 |
+
+| Study | Sites | SER gain, k = 2 (%) | SER gain, k = 3 (%) | Study gain (%) |
+| --- | --- | --- | --- | --- |
+| Peng2024_ROS1 | 8 | 10.66 | 27.41 | 19.03 |
+| Takei2025_ALK | 11 | 7.94 | 48.69 | 28.32 |
+| Villa2024_ALK | 8 | -1.07 | 7.07 | 3.00 |
+
+What to keep in mind when reading Lockbox B:
+
+- Three studies and 27 sites make the intervals coarse, and one study can dominate: Villa2024_ALK has 84% of the episodes but gains only 3.0%, while Takei2025_ALK at k = 3 gains 48.69% on 48 episodes.
+- All four other models also beat XGBoost on these panels (13.14% to 16.61%), and the plain RidgeSupports baseline does better than SER (22.88%, 95% CI 12.97 to 29.89). This suggests XGBoost is a weak reference on panels with 8 to 11 sites. It supports "SER beats the matched reference", not "SER is the best predictor".
+- The Holm family is registered for Lockbox A only (H2); the same table on Lockbox B is descriptive.
+- All three Lockbox B panels have censored values. On the episodes with no censored values the SER gains were 5.15, 20.97, 7.00, 50.46, -1.21 and 3.70 (Peng k = 2, 3; Takei k = 2, 3; Villa k = 2, 3). The sign of every gain is unchanged; the size changed most for Peng at k = 2 (10.66% in the full data) and Villa at k = 3 (7.07%).
+
+### What differed from the plan
+
+- **Freeze record.** The registration (section 10.2) asks for the freeze to be recorded on GitHub and OSF before the lockbox runs. The commit, tag and push to GitHub were done by 18:17 IST on 24 Nov (the GitHub timestamps show the exact time); the first lockbox start marker is 18:24 IST. The OSF copy of the freeze hashes was not made before the runs.
+- **Artificial stress bank.** The development plan (log D8) included a full pass of the 400-study artificial bank with the final code before the freeze. It was not run. What exists is the first slice of about 60 studies (117 scored runs, no crash, no harm) from before the amendments (D5), and the 47-study revision experiments that tested A1 to A3 (D6, D7). The bank is not part of any hypothesis.
+- **Parallel parts.** Lockbox A ran as three parallel parts by panel (see section 7). Panels, budgets and settings were unchanged.
+
+---
+
+## 12. Citation and licence
 
 - Citation: `<TO BE ADDED AT RELEASE>`
 - Code licence: `<CHOOSE, for example MIT or Apache-2.0>`

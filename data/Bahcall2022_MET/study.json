@@ -1,0 +1,30 @@
+{
+  "study": "Bahcall2022_MET",
+  "kinase": "MET",
+  "source": "https://doi.org/10.1158/1535-7163.MCT-21-0344",
+  "ser": {
+    "table": "SER_responses.csv",
+    "drugs": [
+      "crizotinib",
+      "savolitinib",
+      "capmatinib",
+      "cabozantinib",
+      "glesatinib",
+      "merestinib"
+    ],
+    "modes": [
+      "type I",
+      "type I",
+      "type I",
+      "type II",
+      "type II",
+      "type II"
+    ],
+    "response": "log10 mutant/native IC50",
+    "censor": {
+      "-1": "upper_bound",
+      "0": "exact",
+      "1": "lower_bound"
+    }
+  }
+}

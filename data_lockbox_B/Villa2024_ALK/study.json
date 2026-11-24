@@ -1,0 +1,39 @@
+{
+  "study": "Villa2024_ALK",
+  "kinase": "ALK",
+  "source": {
+    "citation": "Villa et al. 2024, New pan-ALK inhibitor-resistant EML4::ALK mutations detected by liquid biopsy in lung cancer patients. npj Precision Oncology",
+    "doi": "10.1038/s41698-024-00498-w",
+    "pmcid": "PMC10918084",
+    "table": "Table 2: Activity of ALK inhibitors (IC50, nM) on EML4::ALK-transfected Ba/F3 cells, WT or mutant",
+    "assay": "Ba/F3 cell proliferation, mean of three or more independent experiments"
+  },
+  "ser": {
+    "table": "SER_responses.csv",
+    "drugs": [
+      "crizotinib",
+      "brigatinib",
+      "ceritinib",
+      "alectinib",
+      "lorlatinib",
+      "zotizalkib",
+      "repotrectinib"
+    ],
+    "modes": [
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "ATP-site"
+    ],
+    "response": "log10 mutant/native IC50",
+    "censor": {
+      "-1": "upper_bound",
+      "0": "exact",
+      "1": "lower_bound"
+    }
+  },
+  "note": "Censored cells (>3000, >10,000) are lower bounds (+1). Source is a single in-text table; no re-measurement."
+}

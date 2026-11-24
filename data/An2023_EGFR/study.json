@@ -1,0 +1,29 @@
+{
+  "study": "An2023_EGFR",
+  "kinase": "EGFR",
+  "source": "https://doi.org/10.1016/j.trsl.2022.11.002",
+  "source_data": "https://ars.els-cdn.com/content/image/1-s2.0-S1931524422002444-mmc1.pdf",
+  "ser": {
+    "table": "SER_responses.csv",
+    "drugs": [
+      "afatinib",
+      "erlotinib",
+      "gefitinib",
+      "icotinib",
+      "osimertinib"
+    ],
+    "modes": [
+      "covalent",
+      "reversible",
+      "reversible",
+      "reversible",
+      "covalent"
+    ],
+    "response": "published log2 enrichment",
+    "censor": {
+      "-1": "upper_bound",
+      "0": "exact",
+      "1": "lower_bound"
+    }
+  }
+}

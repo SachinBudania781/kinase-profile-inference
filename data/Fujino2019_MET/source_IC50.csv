@@ -1,0 +1,190 @@
+construct,drug,reported_ic50,relation,source_literal,in_SER_cohort
+WT,crizotinib,22.0,=,22,False
+WT,capmatinib,0.6,=,0.6,False
+WT,tepotinib,3.0,=,3.0,False
+WT,savolitinib,2.1,=,2.1,False
+WT,cabozantinib,7.8,=,7.8,False
+WT,merestinib,8.1,=,8.1,False
+WT,glesatinib,21.0,=,21,False
+G1090A,crizotinib,176.0,=,176,True
+G1090A,capmatinib,7.3,=,7.3,True
+G1090A,tepotinib,145.0,=,145,True
+G1090A,savolitinib,69.0,=,69,True
+G1090A,cabozantinib,0.3,=,0.3,True
+G1090A,merestinib,0.8,=,0.8,True
+G1090A,glesatinib,1.7,=,1.7,True
+G1090S,crizotinib,41.0,=,41,True
+G1090S,capmatinib,3.0,=,3.0,True
+G1090S,tepotinib,42.0,=,42,True
+G1090S,savolitinib,24.0,=,24,True
+G1090S,cabozantinib,0.7,=,0.7,True
+G1090S,merestinib,1.3,=,1.3,True
+G1090S,glesatinib,6.7,=,6.7,True
+V1092I,crizotinib,292.0,=,292,True
+V1092I,capmatinib,2.8,=,2.8,True
+V1092I,tepotinib,2.6,=,2.6,True
+V1092I,savolitinib,2.9,=,2.9,True
+V1092I,cabozantinib,16.0,=,16,True
+V1092I,merestinib,13.0,=,13,True
+V1092I,glesatinib,5.7,=,5.7,True
+V1092L,crizotinib,223.0,=,223,True
+V1092L,capmatinib,2.5,=,2.5,True
+V1092L,tepotinib,2.3,=,2.3,True
+V1092L,savolitinib,13.0,=,13,True
+V1092L,cabozantinib,1.8,=,1.8,True
+V1092L,merestinib,10.0,=,10,True
+V1092L,glesatinib,6.5,=,6.5,True
+D1133V,crizotinib,30.0,=,30,True
+D1133V,capmatinib,0.9,=,0.9,True
+D1133V,tepotinib,2.6,=,2.6,True
+D1133V,savolitinib,7.3,=,7.3,True
+D1133V,cabozantinib,88.0,=,88,True
+D1133V,merestinib,29.0,=,29,True
+D1133V,glesatinib,62.0,=,62,True
+V1155M,crizotinib,89.0,=,89,True
+V1155M,capmatinib,3.4,=,3.4,True
+V1155M,tepotinib,23.0,=,23,True
+V1155M,savolitinib,16.0,=,16,True
+V1155M,cabozantinib,17.0,=,17,True
+V1155M,merestinib,5.6,=,5.6,True
+V1155M,glesatinib,22.0,=,22,True
+Y1159H,crizotinib,181.0,=,181,True
+Y1159H,capmatinib,0.9,=,0.9,True
+Y1159H,tepotinib,22.0,=,22,True
+Y1159H,savolitinib,8.1,=,8.1,True
+Y1159H,cabozantinib,107.0,=,107,True
+Y1159H,merestinib,28.0,=,28,True
+Y1159H,glesatinib,46.0,=,46,True
+G1163E,crizotinib,91.0,=,91,True
+G1163E,capmatinib,0.9,=,0.9,True
+G1163E,tepotinib,10.0,=,10,True
+G1163E,savolitinib,3.3,=,3.3,True
+G1163E,cabozantinib,49.0,=,49,True
+G1163E,merestinib,9.3,=,9.3,True
+G1163E,glesatinib,89.0,=,89,True
+G1163R,crizotinib,1000.0,>,> 1000,True
+G1163R,capmatinib,2.5,=,2.5,True
+G1163R,tepotinib,70.0,=,70,True
+G1163R,savolitinib,8.5,=,8.5,True
+G1163R,cabozantinib,62.0,=,62,True
+G1163R,merestinib,14.0,=,14,True
+G1163R,glesatinib,66.0,=,66,True
+D1164G,crizotinib,213.0,=,213,True
+D1164G,capmatinib,7.2,=,7.2,True
+D1164G,tepotinib,74.0,=,74,True
+D1164G,savolitinib,28.0,=,28,True
+D1164G,cabozantinib,25.0,=,25,True
+D1164G,merestinib,9.7,=,9.7,True
+D1164G,glesatinib,24.0,=,24,True
+L1195F,crizotinib,23.0,=,23,True
+L1195F,capmatinib,0.3,=,0.3,True
+L1195F,tepotinib,2.6,=,2.6,True
+L1195F,savolitinib,1.8,=,1.8,True
+L1195F,cabozantinib,1000.0,>,> 1000,True
+L1195F,merestinib,83.0,=,83,True
+L1195F,glesatinib,90.0,=,90,True
+L1195V,crizotinib,235.0,=,235,True
+L1195V,capmatinib,8.1,=,8.1,True
+L1195V,tepotinib,55.0,=,55,True
+L1195V,savolitinib,22.0,=,22,True
+L1195V,cabozantinib,118.0,=,118,True
+L1195V,merestinib,44.0,=,44,True
+L1195V,glesatinib,236.0,=,236,True
+F1200I,crizotinib,199.0,=,199,True
+F1200I,capmatinib,6.1,=,6.1,True
+F1200I,tepotinib,45.0,=,45,True
+F1200I,savolitinib,30.0,=,30,True
+F1200I,cabozantinib,694.0,=,694,True
+F1200I,merestinib,212.0,=,212,True
+F1200I,glesatinib,275.0,=,275,True
+F1200L,crizotinib,23.0,=,23,True
+F1200L,capmatinib,0.8,=,0.8,True
+F1200L,tepotinib,8.0,=,8.0,True
+F1200L,savolitinib,7.7,=,7.7,True
+F1200L,cabozantinib,229.0,=,229,True
+F1200L,merestinib,109.0,=,109,True
+F1200L,glesatinib,111.0,=,111,True
+M1211T,crizotinib,26.0,=,26,True
+M1211T,capmatinib,2.8,=,2.8,True
+M1211T,tepotinib,24.0,=,24,True
+M1211T,savolitinib,11.0,=,11,True
+M1211T,cabozantinib,22.0,=,22,True
+M1211T,merestinib,7.5,=,7.5,True
+M1211T,glesatinib,18.0,=,18,True
+D1228A,crizotinib,1000.0,>,> 1000,True
+D1228A,capmatinib,1000.0,>,> 1000,True
+D1228A,tepotinib,1000.0,>,> 1000,True
+D1228A,savolitinib,1000.0,>,> 1000,True
+D1228A,cabozantinib,200.0,=,200,True
+D1228A,merestinib,89.0,=,89,True
+D1228A,glesatinib,216.0,=,216,True
+D1228E,crizotinib,690.0,=,690,True
+D1228E,capmatinib,137.0,=,137,True
+D1228E,tepotinib,1000.0,>,> 1000,True
+D1228E,savolitinib,573.0,=,573,True
+D1228E,cabozantinib,37.0,=,37,True
+D1228E,merestinib,19.0,=,19,True
+D1228E,glesatinib,30.0,=,30,True
+D1228G,crizotinib,319.0,=,319,True
+D1228G,capmatinib,697.0,=,697,True
+D1228G,tepotinib,1000.0,>,> 1000,True
+D1228G,savolitinib,431.0,=,431,True
+D1228G,cabozantinib,72.0,=,72,True
+D1228G,merestinib,23.0,=,23,True
+D1228G,glesatinib,46.0,=,46,True
+D1228H,crizotinib,665.0,=,665,True
+D1228H,capmatinib,1000.0,>,> 1000,True
+D1228H,tepotinib,1000.0,>,> 1000,True
+D1228H,savolitinib,1000.0,>,> 1000,True
+D1228H,cabozantinib,79.0,=,79,True
+D1228H,merestinib,25.0,=,25,True
+D1228H,glesatinib,38.0,=,38,True
+D1228N,crizotinib,1000.0,>,> 1000,True
+D1228N,capmatinib,1000.0,>,> 1000,True
+D1228N,tepotinib,1000.0,>,> 1000,True
+D1228N,savolitinib,1000.0,>,> 1000,True
+D1228N,cabozantinib,36.0,=,36,True
+D1228N,merestinib,26.0,=,26,True
+D1228N,glesatinib,22.0,=,22,True
+D1228Y,crizotinib,1000.0,>,> 1000,True
+D1228Y,capmatinib,477.0,=,477,True
+D1228Y,tepotinib,1000.0,>,> 1000,True
+D1228Y,savolitinib,1000.0,>,> 1000,True
+D1228Y,cabozantinib,539.0,=,539,True
+D1228Y,merestinib,149.0,=,149,True
+D1228Y,glesatinib,74.0,=,74,True
+Y1230C,crizotinib,645.0,=,645,True
+Y1230C,capmatinib,1000.0,>,> 1000,True
+Y1230C,tepotinib,1000.0,>,> 1000,True
+Y1230C,savolitinib,1000.0,>,> 1000,True
+Y1230C,cabozantinib,8.4,=,8.4,True
+Y1230C,merestinib,7.4,=,7.4,True
+Y1230C,glesatinib,12.0,=,12,True
+Y1230D,crizotinib,698.0,=,698,True
+Y1230D,capmatinib,1000.0,>,> 1000,True
+Y1230D,tepotinib,1000.0,>,> 1000,True
+Y1230D,savolitinib,1000.0,>,> 1000,True
+Y1230D,cabozantinib,16.0,=,16,True
+Y1230D,merestinib,5.5,=,5.5,True
+Y1230D,glesatinib,11.0,=,11,True
+Y1230S,crizotinib,811.0,=,811,True
+Y1230S,capmatinib,1000.0,>,> 1000,True
+Y1230S,tepotinib,1000.0,>,> 1000,True
+Y1230S,savolitinib,1000.0,>,> 1000,True
+Y1230S,cabozantinib,23.0,=,23,True
+Y1230S,merestinib,12.0,=,12,True
+Y1230S,glesatinib,14.0,=,14,True
+Y1230H,crizotinib,216.0,=,216,True
+Y1230H,capmatinib,401.0,=,401,True
+Y1230H,tepotinib,1000.0,>,> 1000,True
+Y1230H,savolitinib,1000.0,>,> 1000,True
+Y1230H,cabozantinib,20.0,=,20,True
+Y1230H,merestinib,8.2,=,8.2,True
+Y1230H,glesatinib,19.0,=,19,True
+Y1230N,crizotinib,1000.0,>,> 1000,True
+Y1230N,capmatinib,1000.0,>,> 1000,True
+Y1230N,tepotinib,1000.0,>,> 1000,True
+Y1230N,savolitinib,1000.0,>,> 1000,True
+Y1230N,cabozantinib,19.0,=,19,True
+Y1230N,merestinib,4.1,=,4.1,True
+Y1230N,glesatinib,14.0,=,14,True

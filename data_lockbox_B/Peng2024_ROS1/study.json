@@ -1,0 +1,34 @@
+{
+  "study": "Peng2024_ROS1",
+  "kinase": "ROS1",
+  "source": {
+    "citation": "Peng et al. 2024, Discovery of Oral Degraders of the ROS1 Fusion Protein with Potent Activity against Secondary Resistance Mutations. Journal of Medicinal Chemistry",
+    "doi": "10.1021/acs.jmedchem.4c01205",
+    "pmcid": "PMC11513893",
+    "table": "Table 6: Activity of 9o against an expanded set of clinical ROS1 mutations in comparison with TKIs (IC50, nM)",
+    "assay": "Ba/F3 cell proliferation; SLC34A2-ROS1 and CD74-ROS1 fusion backgrounds",
+    "licence": "CC BY"
+  },
+  "ser": {
+    "table": "SER_responses.csv",
+    "drugs": [
+      "brigatinib",
+      "lorlatinib",
+      "repotrectinib",
+      "9o"
+    ],
+    "modes": [
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "degrader"
+    ],
+    "response": "log10 mutant/native IC50",
+    "censor": {
+      "-1": "upper_bound",
+      "0": "exact",
+      "1": "lower_bound"
+    }
+  },
+  "note": "Two fusion backgrounds (SLC34A2-ROS1 and CD74-ROS1), same kinase domain; each variant is scaled by the wild-type row of its own background. Variant names carry an @background suffix so that the same substitution on two backgrounds stays two profiles; both share one residue site. Site = position of the last-listed mutation. Source label 'F2075 V' read as F2075V. 9o is a proteolysis-targeting degrader, its anti-proliferative IC50 is used as that inhibitor's response and its mode is recorded as 'degrader'. Censored cells (>2000) are lower bounds (+1)."
+}

@@ -1,8 +1,8 @@
-# Development log (development panels and artificial data only; no lockbox access)
+# Development log (development panels and artificial data through D9; the freeze and the lockbox runs are D10 and D11)
 
-Registered: OSF 5SBCK (DOI 10.17605/OSF.IO/5SBCK), registered commit 06821c68. Every entry below is a development step taken **before the release freeze**.
+Registered: OSF 5SBCK (DOI 10.17605/OSF.IO/5SBCK), registered commit 06821c68. Entries D0 to D9 are development steps taken **before the release freeze**; D10 and D11 record the freeze and the lockbox runs.
 Code changes are also in the amendments table (`protocol/OSF_preregistration.md`, section 11): A1 to A4, dated 2026-11-13.
-No lockbox panel was read, run or scored for any entry. Lockbox A and B stay untouched until the release freeze.
+No lockbox panel was read, run or scored for any entry through D9. Lockbox A and B stayed untouched until the release freeze (D10).
 
 ## D0. Baseline dev run (13 Nov 2026, unchanged code)
 SER vs XGBoost, equal-study mean gain 4.24% (95% CI 2.91 to 5.28), 10 dev studies. Wins 9, tie 1 (Nakamura: 3 sites, gate off).
@@ -81,7 +81,28 @@ The registered gate keeps SER close to XGBoost, but the local expert's outlier d
 `core_models.py`: A1 (joint-tree padding, no failure caching), A2 (`StdXGB`), A3 (`ser_censor_mode` = `no_defer_bi`). `run_study.py`: development-only `--capture-dir` (refused for lockbox roles).
 `configs/models.json`: new `revision` block (A4). Code defaults remain the registered behaviour; the released-reference parity test (`KPI_REFERENCE_SER`) passes with the registered defaults. Tests: 87 passed, 2 skipped.
 
-## D8. Run plan (not yet done)
-1. Dev baseline with the final code on all 10 dev panels (all five roster methods, records captured) on 4 cores.
-2. 400-study artificial bank with the final code (resumable, 3 to 4 jobs), then `analyze_synth.py`.
-3. Release freeze (pip freeze, integrity record, tag, hashes on OSF). Only after that: one run on each lockbox.
+## D8. Run plan and what was done
+1. Dev run with the final code on all 10 dev panels, all roster methods. **Done on 24 Nov 2026** as four parallel parts (seed 20261112): 18 runs (Lee and Oh at k = 2 only), 0 failed episodes, 0 errors. Scored with the evaluator: SER 4.24% (95% CI 2.91 to 5.28), the same as D0; per-study gains moved by at most 0.04 points; the three routed models now complete all 10 studies. Final-code means over the 10 studies: CovarianceLocalMedian 3.52, AlignedAddAudit 2.99, SAER-7g 2.92, NestedAligned 2.90, RidgeSupports 1.72, QueryMedian -57.83. Output in `results/dev_final/`.
+2. 400-study artificial bank with the final code: **not run** (see D9).
+3. Release freeze, then one run on each lockbox: done (D10, D11).
+
+## D9. Deviation: the full artificial-bank pass was not run on the final code
+The plan in D8 was a full pass of the 400-study artificial bank with the final code before the freeze. It was not run. What exists: the first slice of the bank (about 60 studies, 117 scored runs, no crash, no harm), which ran on the code **before** the amendments (D5), and the 47-study revision experiments of D6, which tested A1 to A3 on subsets (real dev panels Lee, Oh and Robichaux plus artificial studies). The bank is not part of any hypothesis; it was used only to find failure points. The freeze was done without the full final-code pass.
+
+## D10. Release freeze (24 Nov 2026)
+- The code files frozen are those of commit `367d658` (amendments A1 to A4). Between that commit and the freeze only documentation, data copies, results and the report generator `dev_tools/make_dev_results_md.py` were added; `git diff 367d658 HEAD` on `*.py`, `tests/*.py`, `configs/*.json` and `requirements.txt` shows no other change. Unit tests were last recorded in D7 (87 passed, 2 skipped).
+- `requirements-lock.txt` (output of `pip freeze`) was committed in `c6bb44f`.
+- `protocol/integrity_record.json` was written with `integrity.py record` using the original archive folder and the original `LockboxB_Data` folder, then checked with `integrity.py verify` (passed). It was committed in `db9d8ff`. Code bundle SHA-256 `a74a4b61178ed5baaaf96081af61409105627e3dad05f2a7485c10fb13a5bb58`; configuration bundle `78827c27563f6a2264d4c07b43d2db2e0ba072614b4acf2012b3a902d7175075`.
+- Tag `freeze-2026-11-24` on `db9d8ff` was pushed to GitHub together with the commits, before 18:17 IST on 24 Nov.
+- **Deviation.** The registration (section 10.2) asks for the freeze to be recorded on both GitHub and OSF before the lockbox runs. The OSF record was **not** made before the runs. The order of events is shown by the GitHub commit and tag timestamps and by the start markers (code bundle hash, start time 18:24 IST). The OSF note is added afterwards and cross-linked to the tag.
+
+## D11. Lockbox runs and scoring (24 Nov 2026)
+- **Start.** All four jobs started at 2026-11-24 12:54:15 UTC (18:24 IST). Each passed the integrity gate and wrote its `LOCKBOX_RUN_STARTED.json` with the same code bundle hash as the record. Lockbox A ran as three parallel parts by panel (A1: An2023_EGFR, Abadie2026_EGFR; A2: Bahcall2022_MET, Fujino2019_MET; A3: Wylie2017_ABL1, Zhang2016_ALK, Gainor2016_ALK), Lockbox B as one part. This split was an operational choice to save time; every panel and budget ran exactly once and no setting differed between parts.
+- **End.** The last run finished at about 14:40 UTC (20:10 IST): 13 Lockbox A runs (21,066 episodes) and 6 Lockbox B runs (2,621 episodes), 0 errors, 0 failed episodes. Prediction-folder hashes: A1 `85b4b2d5...`, A2 `1b35fd19...`, A3 `e1826e13...`, B `67f2ad2b...` (full values in the README, section 9).
+- **Scoring.** One evaluator call per lockbox with `--score-lockbox`, at about 20:35 IST, on the merged part folders. No model was re-run or retuned after scoring.
+- **Results.**
+  - Lockbox A (H1): SER 3.52% (95% CI 1.48 to 5.60); registered criterion met; the interval does not exclude 2%; 6 of 7 studies won; episode-weighted 2.39% (95% CI -0.38 to 4.77).
+  - H2 (Lockbox A): CovarianceLocalMedian -11.30%, NestedAligned -3.19%, AlignedAddAudit -1.61%, SAER-7g -1.05%; none significant after Holm.
+  - Lockbox B (H1-B): SER 16.78% (95% CI 12.71 to 19.53); criterion met; 3 of 3 studies won; episode-weighted 6.22% (95% CI 2.74 to 8.91); plain RidgeSupports 22.88% is higher than SER.
+  - Reports: `results/lockbox_A/LOCKBOX_RESULTS.md`, `results/lockbox_B/LOCKBOX_RESULTS.md`.
+- **Data release.** After scoring, the seven Lockbox A panels were copied into `data/` and the three Lockbox B panels into `data_lockbox_B/`, with checksums; `integrity.py verify --archive-root data --lockbox-b-root data_lockbox_B` passes against the record.

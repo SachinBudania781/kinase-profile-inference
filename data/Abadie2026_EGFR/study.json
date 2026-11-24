@@ -1,0 +1,25 @@
+{
+  "study": "Abadie2026_EGFR",
+  "kinase": "EGFR",
+  "source": "https://doi.org/10.1016/j.xgen.2026.101167",
+  "source_data": "https://figshare.com/projects/A_multiplex_prime_editing_framework_for_identifying_drug_resistance_variants_at_scale/247232",
+  "ser": {
+    "table": "SER_responses.csv",
+    "drugs": [
+      "CH7233163",
+      "osimertinib",
+      "sunvozertinib"
+    ],
+    "modes": [
+      "reversible",
+      "covalent",
+      "covalent"
+    ],
+    "response": "fixed-time log2 fold change",
+    "censor": {
+      "-1": "upper_bound",
+      "0": "exact",
+      "1": "lower_bound"
+    }
+  }
+}

@@ -1,20 +1,27 @@
 # Study data
 
-Cleaned study tables for 52 of the 59 archive folders, copied **byte for byte** from the study archive. They are the inputs read by `data_pipeline.py`.
+Cleaned study tables for all 59 archive folders, copied **byte for byte** from the study archive (the seven Lockbox A panels were added on 24 Nov 2026, after the lockbox run was scored). They are the inputs read by `data_pipeline.py`.
 Run any script with `--archive-root data` to use them. The layout is `data/<study>/...` with a `study.json` (kinase, source) in each folder.
 
-## What is not here (and why)
+## Lockbox panels
 
-| Not here | Why |
-| --- | --- |
-| Lockbox A panels (7: `An2023_EGFR`, `Abadie2026_EGFR`, `Bahcall2022_MET`, `Fujino2019_MET`, `Wylie2017_ABL1`, `Zhang2016_ALK`, `Gainor2016_ALK`) | Held back by the pre-registered lockbox policy until the one-shot lockbox run is done and scored. Their SHA-256 hashes go into `protocol/integrity_record.json` at the release freeze. |
-| Lockbox B panels (3: `Villa2024_ALK`, `Takei2025_ALK`, `Peng2024_ROS1`) | Same reason. They live in `LockboxB_Data/`, outside the repository. |
+The seven Lockbox A panels are in this folder (table below). They were held back by the pre-registered lockbox policy until the one-shot lockbox runs were done and scored, and were added on 24 Nov 2026. The three Lockbox B panels are in [`../data_lockbox_B/`](../data_lockbox_B/).
 
-After both lockbox runs are scored, the Lockbox A panels are added here and the Lockbox B panels go to `data_lockbox_B/`.
+## Lockbox A panels (7)
+
+| Folder | Kinase | Source | Size (KB) | Note |
+| --- | --- | --- | --- | --- |
+| `An2023_EGFR` | EGFR | <https://doi.org/10.1016/j.trsl.2022.11.002> | 35 | Lockbox A panel (primary test), added after scoring |
+| `Abadie2026_EGFR` | EGFR | <https://doi.org/10.1016/j.xgen.2026.101167> | 123 | Lockbox A panel (primary test), added after scoring |
+| `Bahcall2022_MET` | MET | <https://doi.org/10.1158/1535-7163.MCT-21-0344> | 8 | Lockbox A panel (primary test), added after scoring |
+| `Fujino2019_MET` | MET | <https://doi.org/10.1016/j.jtho.2019.06.023> | 20 | Lockbox A panel (primary test), added after scoring |
+| `Wylie2017_ABL1` | ABL1 | <https://doi.org/10.1038/nature21702> | 16 | Lockbox A panel (primary test), added after scoring |
+| `Zhang2016_ALK` | ALK | <https://doi.org/10.1158/1078-0432.CCR-16-0569> | 9 | Lockbox A panel (primary test), added after scoring |
+| `Gainor2016_ALK` | ALK | <https://doi.org/10.1158/2159-8290.CD-16-0596> | 9 | Lockbox A panel (primary test), added after scoring |
 
 ## Check that a copy is intact
 
-`CHECKSUMS.sha256` lists a SHA-256 for every copied study file (205 files; this README and the checksum file itself are not listed).
+`CHECKSUMS.sha256` lists a SHA-256 for every copied study file (234 files; this README and the checksum file itself are not listed).
 
 ```
 cd data

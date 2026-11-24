@@ -1,0 +1,41 @@
+{
+  "study": "Peng2024_ROS1",
+  "kinase": "ROS1",
+  "source": {
+    "citation": "Peng et al. 2024, Discovery of Oral Degraders of the ROS1 Fusion Protein with Potent Activity against Secondary Resistance Mutations. Journal of Medicinal Chemistry",
+    "doi": "10.1021/acs.jmedchem.4c01205",
+    "pmcid": "PMC11513893",
+    "table": "Table 6: Activity of 9o against an expanded set of clinical ROS1 mutations in comparison with TKIs (IC50, nM)",
+    "assay": "Ba/F3 cell proliferation; SLC34A2-ROS1 and CD74-ROS1 fusion backgrounds",
+    "licence": "CC BY"
+  },
+  "drugs": ["brigatinib", "lorlatinib", "repotrectinib", "9o"],
+  "modes": ["ATP-site", "ATP-site", "ATP-site", "degrader"],
+  "unit": "nM",
+  "native_labels": ["WT@SLC34A2", "WT@CD74"],
+  "native_label": "WT@SLC34A2",
+  "native_of": {
+    "L2086F@CD74": "WT@CD74", "G2032R@CD74": "WT@CD74", "G2032R+L2086F@CD74": "WT@CD74",
+    "S1986F+L2086F@CD74": "WT@CD74", "S1986F+G2032R@CD74": "WT@CD74", "S1986F+G2032R+L2086F@CD74": "WT@CD74"
+  },
+  "site_rule": "last_position",
+  "rows": [
+    ["WT@SLC34A2", "23.1 ± 1.9", "0.4 ± 0.3", "0.8 ± 0.3", "1.1 ± 0.4"],
+    ["D2033N@SLC34A2", "114.0 ± 25.3", "7.6 ± 0.5", "101 ± 27", "9.7 ± 2.6"],
+    ["L2026M@SLC34A2", "47.8 ± 10.2", "1.1 ± 0.2", "10.3 ± 1.9", "2.5 ± 0.6"],
+    ["V2098I@SLC34A2", "12.2 ± 3.1", "1.5 ± 0.4", "3.5 ± 0.6", "4.6 ± 2.1"],
+    ["G2032R@SLC34A2", "490.4 ± 38.4", "244.0 ± 35.3", "11.1 ± 2.0", "6.3 ± 1.1"],
+    ["G2032R+F2075V@SLC34A2", "327.3 ± 44.8", "340.9 ± 75.5", "16.3 ± 2.9", "5.6 ± 0.6"],
+    ["F2075C+G1837E@SLC34A2", "8.1 ± 2.2", "0.1 ± 0.1", "0.4 ± 0.2", "0.4 ± 0.3"],
+    ["G2032R+D2113G@SLC34A2", "215.0 ± 50.3", "142.1 ± 25.1", "25.0 ± 6.8", "2.9 ± 0.5"],
+    ["G2032R+F2075C@SLC34A2", "869.4 ± 147.6", ">2000", ">2000", "58.4 ± 11.4"],
+    ["WT@CD74", "13.2 ± 2.9", "0.3 ± 0.1", "0.7 ± 0.2", "1.6 ± 0.3"],
+    ["L2086F@CD74", "172.2 ± 47.6", ">2000", "588 ± 76", "6.9 ± 1.7"],
+    ["G2032R@CD74", "512.9 ± 118.5", "385.2 ± 76", "23.5 ± 3.8", "7.7 ± 2.0"],
+    ["G2032R+L2086F@CD74", "693.5 ± 204.3", ">2000", "181.0 ± 22.5", "66.2 ± 18.2"],
+    ["S1986F+L2086F@CD74", "329.1 ± 85.5", ">2000", ">2000", "1.9 ± 0.4"],
+    ["S1986F+G2032R@CD74", "487.7 ± 96.8", "503.4 ± 77.4", "31.4 ± 7.3", "49.5 ± 10.2"],
+    ["S1986F+G2032R+L2086F@CD74", ">2000", ">2000", ">2000", "37.8 ± 4.4"]
+  ],
+  "note": "Two fusion backgrounds (SLC34A2-ROS1 and CD74-ROS1), same kinase domain; each variant is scaled by the wild-type row of its own background. Variant names carry an @background suffix so that the same substitution on two backgrounds stays two profiles; both share one residue site. Site = position of the last-listed mutation. Source label 'F2075 V' read as F2075V. 9o is a proteolysis-targeting degrader, its anti-proliferative IC50 is used as that inhibitor's response and its mode is recorded as 'degrader'. Censored cells (>2000) are lower bounds (+1)."
+}

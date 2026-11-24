@@ -1,0 +1,3878 @@
+{
+  "config": {
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 20261112,
+    "alpha": 0.05,
+    "practical_threshold": 2.0,
+    "tie_tolerance": 1e-12,
+    "win_threshold_studies": 5,
+    "t1_min_eligible": 20,
+    "t1_review_fraction": 0.05,
+    "t1_ic50_sensitive_below": 0.47712125471966244,
+    "t1_ic50_resistant_at_least": 1.0,
+    "t2_min_remaining": 2,
+    "t2_unit": "variant",
+    "t4_min_episodes": 1
+  },
+  "studies": [
+    "Peng2024_ROS1",
+    "Takei2025_ALK",
+    "Villa2024_ALK"
+  ],
+  "methods": [
+    "AlignedAddAudit",
+    "CovarianceLocalMedian",
+    "NestedAligned",
+    "QueryMedian",
+    "RidgeSupports",
+    "SAER-7g",
+    "SER",
+    "XGBoost"
+  ],
+  "tables": {},
+  "summaries": {
+    "AlignedAddAudit": {
+      "panel_rows": [
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 168,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.7242738056412453,
+          "mae_xgboost": 0.7451342550601061,
+          "gain_percent": 2.79955582194756,
+          "gain_defined": true,
+          "absolute_error_difference": 0.020860449418860783,
+          "gain_ci95": [
+            -18.328328359924285,
+            13.737662728046605
+          ]
+        },
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 56,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6338095114228811,
+          "mae_xgboost": 0.9661110113755786,
+          "gain_percent": 34.39578847978934,
+          "gain_defined": true,
+          "absolute_error_difference": 0.33230149995269753,
+          "gain_ci95": [
+            13.318296903455382,
+            45.688007215020896
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 144,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.3817276921618953,
+          "mae_xgboost": 0.36617751607493615,
+          "gain_percent": -4.24662230866651,
+          "gain_defined": true,
+          "absolute_error_difference": -0.015550176086959133,
+          "gain_ci95": [
+            -16.161906519839995,
+            10.716266221683222
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 48,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.4864657307533283,
+          "mae_xgboost": 0.6137301841581119,
+          "gain_percent": 20.736221989693956,
+          "gain_defined": true,
+          "absolute_error_difference": 0.1272644534047836,
+          "gain_ci95": [
+            -3.8789134893074313,
+            45.934137484400225
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 945,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.3475345866301244,
+          "mae_xgboost": 0.3746654832065207,
+          "gain_percent": 7.241365375908251,
+          "gain_defined": true,
+          "absolute_error_difference": 0.027130896576396335,
+          "gain_ci95": [
+            -20.99745022932709,
+            25.773931917030296
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 1260,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.32728580668252405,
+          "mae_xgboost": 0.39859592498752144,
+          "gain_percent": 17.890327982462402,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0713101183049974,
+          "gain_ci95": [
+            -13.18623526258576,
+            37.394082390397294
+          ]
+        }
+      ],
+      "studies": [
+        "Peng2024_ROS1",
+        "Takei2025_ALK",
+        "Villa2024_ALK"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Peng2024_ROS1": 18.597672150868448,
+        "Takei2025_ALK": 8.244799840513723,
+        "Villa2024_ALK": 12.565846679185327
+      },
+      "gain_percent": 13.136106223522498,
+      "ci95": [
+        0.32756790802824937,
+        22.61122653238507
+      ],
+      "n_draws": 10000,
+      "meets_target": true,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 0.0424999900009999
+    },
+    "CovarianceLocalMedian": {
+      "panel_rows": [
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 168,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.7211306988601998,
+          "mae_xgboost": 0.7451342550601061,
+          "gain_percent": 3.221373334657673,
+          "gain_defined": true,
+          "absolute_error_difference": 0.02400355619990635,
+          "gain_ci95": [
+            -12.391880319572298,
+            14.2717831566225
+          ]
+        },
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 56,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6977229160793427,
+          "mae_xgboost": 0.9661110113755786,
+          "gain_percent": 27.78025424988136,
+          "gain_defined": true,
+          "absolute_error_difference": 0.268388095296236,
+          "gain_ci95": [
+            16.103684141348378,
+            37.94826718130326
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 144,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.3571272116720119,
+          "mae_xgboost": 0.36617751607493615,
+          "gain_percent": 2.4715620172244996,
+          "gain_defined": true,
+          "absolute_error_difference": 0.009050304402924259,
+          "gain_ci95": [
+            -6.212753403460379,
+            12.530047387331422
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 48,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.2982965547213873,
+          "mae_xgboost": 0.6137301841581119,
+          "gain_percent": 51.39614077632871,
+          "gain_defined": true,
+          "absolute_error_difference": 0.3154336294367246,
+          "gain_ci95": [
+            45.22264252261084,
+            57.00618745593258
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 945,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.37334973691798146,
+          "mae_xgboost": 0.3746654832065207,
+          "gain_percent": 0.3511789442888171,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0013157462885392546,
+          "gain_ci95": [
+            -34.35879265199111,
+            23.913120381685836
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 1260,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.3782673656172107,
+          "mae_xgboost": 0.39859592498752144,
+          "gain_percent": 5.100041946225908,
+          "gain_defined": true,
+          "absolute_error_difference": 0.02032855937031075,
+          "gain_ci95": [
+            -31.864591122532232,
+            28.82039371628307
+          ]
+        }
+      ],
+      "studies": [
+        "Peng2024_ROS1",
+        "Takei2025_ALK",
+        "Villa2024_ALK"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Peng2024_ROS1": 15.500813792269517,
+        "Takei2025_ALK": 26.933851396776603,
+        "Villa2024_ALK": 2.7256104452573626
+      },
+      "gain_percent": 15.053425211434494,
+      "ci95": [
+        2.56464645157608,
+        23.634323057915935
+      ],
+      "n_draws": 10000,
+      "meets_target": true,
+      "ci_entirely_above_threshold": true,
+      "bootstrap_p_two_sided": 0.0140999900009999
+    },
+    "NestedAligned": {
+      "panel_rows": [
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 168,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.7031278519118005,
+          "mae_xgboost": 0.7451342550601061,
+          "gain_percent": 5.637427465325316,
+          "gain_defined": true,
+          "absolute_error_difference": 0.042006403148305616,
+          "gain_ci95": [
+            -21.469882360532136,
+            20.77410691461172
+          ]
+        },
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 56,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6969826656697619,
+          "mae_xgboost": 0.9661110113755786,
+          "gain_percent": 27.856875921807738,
+          "gain_defined": true,
+          "absolute_error_difference": 0.2691283457058168,
+          "gain_ci95": [
+            1.9638728304172164,
+            38.35433601269997
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 144,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.37016041680848283,
+          "mae_xgboost": 0.36617751607493615,
+          "gain_percent": -1.0876966931884484,
+          "gain_defined": true,
+          "absolute_error_difference": -0.003982900733546679,
+          "gain_ci95": [
+            -14.407460153452194,
+            13.431029448619862
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 48,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.4068925470698587,
+          "mae_xgboost": 0.6137301841581119,
+          "gain_percent": 33.70172144490236,
+          "gain_defined": true,
+          "absolute_error_difference": 0.20683763708825315,
+          "gain_ci95": [
+            13.64459085317095,
+            51.49183466558562
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 945,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.3477813993651947,
+          "mae_xgboost": 0.3746654832065207,
+          "gain_percent": 7.175489882666117,
+          "gain_defined": true,
+          "absolute_error_difference": 0.026884083841326012,
+          "gain_ci95": [
+            -21.52528137322035,
+            26.989703958165368
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 1260,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.33427661330016273,
+          "mae_xgboost": 0.39859592498752144,
+          "gain_percent": 16.136469957481957,
+          "gain_defined": true,
+          "absolute_error_difference": 0.06431931168735872,
+          "gain_ci95": [
+            -17.461389997233216,
+            38.28467604981546
+          ]
+        }
+      ],
+      "studies": [
+        "Peng2024_ROS1",
+        "Takei2025_ALK",
+        "Villa2024_ALK"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Peng2024_ROS1": 16.747151693566526,
+        "Takei2025_ALK": 16.307012375856957,
+        "Villa2024_ALK": 11.655979920074037
+      },
+      "gain_percent": 14.903381329832506,
+      "ci95": [
+        0.6853327032814939,
+        24.386273643469238
+      ],
+      "n_draws": 10000,
+      "meets_target": true,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 0.038899990000999904
+    },
+    "QueryMedian": {
+      "panel_rows": [
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 168,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.8400385475521317,
+          "mae_xgboost": 0.7451342550601061,
+          "gain_percent": -12.736535979596074,
+          "gain_defined": true,
+          "absolute_error_difference": -0.09490429249202559,
+          "gain_ci95": [
+            -72.87894455461245,
+            16.11728505067173
+          ]
+        },
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 56,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.8400385475521317,
+          "mae_xgboost": 0.9661110113755786,
+          "gain_percent": 13.049480063780775,
+          "gain_defined": true,
+          "absolute_error_difference": 0.12607246382344695,
+          "gain_ci95": [
+            -36.8492217536655,
+            33.660731328641255
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 144,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.40678205166285847,
+          "mae_xgboost": 0.36617751607493615,
+          "gain_percent": -11.0887571752529,
+          "gain_defined": true,
+          "absolute_error_difference": -0.04060453558792232,
+          "gain_ci95": [
+            -35.763813381748115,
+            8.335362086617037
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 48,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.40678205166285847,
+          "mae_xgboost": 0.6137301841581119,
+          "gain_percent": 33.71972535115504,
+          "gain_defined": true,
+          "absolute_error_difference": 0.2069481324952534,
+          "gain_ci95": [
+            16.530044650056983,
+            49.35544289250933
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 945,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6204834483714254,
+          "mae_xgboost": 0.3746654832065207,
+          "gain_percent": -65.60998442159844,
+          "gain_defined": true,
+          "absolute_error_difference": -0.24581796516490473,
+          "gain_ci95": [
+            -150.87368374965212,
+            1.5234988569625716
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 1260,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6204834483714254,
+          "mae_xgboost": 0.39859592498752144,
+          "gain_percent": -55.66728345023861,
+          "gain_defined": true,
+          "absolute_error_difference": -0.221887523383904,
+          "gain_ci95": [
+            -144.73186389470445,
+            6.217772995862059
+          ]
+        }
+      ],
+      "studies": [
+        "Peng2024_ROS1",
+        "Takei2025_ALK",
+        "Villa2024_ALK"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Peng2024_ROS1": 0.15647204209235088,
+        "Takei2025_ALK": 11.31548408795107,
+        "Villa2024_ALK": -60.63863393591852
+      },
+      "gain_percent": -16.388892601958364,
+      "ci95": [
+        -49.82505784607437,
+        6.912685246418446
+      ],
+      "n_draws": 10000,
+      "meets_target": false,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 0.1850999900009999
+    },
+    "RidgeSupports": {
+      "panel_rows": [
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 168,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.65490057572173,
+          "mae_xgboost": 0.7451342550601061,
+          "gain_percent": 12.109720996667566,
+          "gain_defined": true,
+          "absolute_error_difference": 0.09023367933837612,
+          "gain_ci95": [
+            -3.451745058265417,
+            21.683234143756295
+          ]
+        },
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 56,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6241199938561938,
+          "mae_xgboost": 0.9661110113755786,
+          "gain_percent": 35.398728872000696,
+          "gain_defined": true,
+          "absolute_error_difference": 0.3419910175193849,
+          "gain_ci95": [
+            23.288386560381426,
+            42.33100080322503
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 144,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.33980101466605483,
+          "mae_xgboost": 0.36617751607493615,
+          "gain_percent": 7.203200702110697,
+          "gain_defined": true,
+          "absolute_error_difference": 0.026376501408881314,
+          "gain_ci95": [
+            -2.1316682386067636,
+            14.962096169518116
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 48,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.303091400305126,
+          "mae_xgboost": 0.6137301841581119,
+          "gain_percent": 50.61487798243238,
+          "gain_defined": true,
+          "absolute_error_difference": 0.3106387838529859,
+          "gain_ci95": [
+            43.76952388729085,
+            58.43039746809496
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 945,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.33399144994554786,
+          "mae_xgboost": 0.3746654832065207,
+          "gain_percent": 10.856092990704662,
+          "gain_defined": true,
+          "absolute_error_difference": 0.04067403326097285,
+          "gain_ci95": [
+            -15.63670801877615,
+            30.146862786328327
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 1260,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.31462065178516224,
+          "mae_xgboost": 0.39859592498752144,
+          "gain_percent": 21.067770124591252,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0839752732023592,
+          "gain_ci95": [
+            -3.9073903160574397,
+            40.8080336763633
+          ]
+        }
+      ],
+      "studies": [
+        "Peng2024_ROS1",
+        "Takei2025_ALK",
+        "Villa2024_ALK"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Peng2024_ROS1": 23.754224934334133,
+        "Takei2025_ALK": 28.90903934227154,
+        "Villa2024_ALK": 15.961931557647958
+      },
+      "gain_percent": 22.875065278084545,
+      "ci95": [
+        12.97251838895642,
+        29.89208218240004
+      ],
+      "n_draws": 10000,
+      "meets_target": true,
+      "ci_entirely_above_threshold": true,
+      "bootstrap_p_two_sided": 9.999000099990002e-05
+    },
+    "SAER-7g": {
+      "panel_rows": [
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 168,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6576839699776867,
+          "mae_xgboost": 0.7451342550601061,
+          "gain_percent": 11.73617834484944,
+          "gain_defined": true,
+          "absolute_error_difference": 0.08745028508241937,
+          "gain_ci95": [
+            -15.588966450392293,
+            28.097569469700133
+          ]
+        },
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 56,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6590111846884333,
+          "mae_xgboost": 0.9661110113755786,
+          "gain_percent": 31.78721938484969,
+          "gain_defined": true,
+          "absolute_error_difference": 0.3070998266871453,
+          "gain_ci95": [
+            9.098956601109009,
+            43.78165690606528
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 144,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.3750148843978783,
+          "mae_xgboost": 0.36617751607493615,
+          "gain_percent": -2.4134109646244943,
+          "gain_defined": true,
+          "absolute_error_difference": -0.00883736832294213,
+          "gain_ci95": [
+            -15.895174905480223,
+            12.897967869850824
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 48,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.41070750102711173,
+          "mae_xgboost": 0.6137301841581119,
+          "gain_percent": 33.08012028274245,
+          "gain_defined": true,
+          "absolute_error_difference": 0.20302268313100014,
+          "gain_ci95": [
+            12.526765212446152,
+            51.94947392273799
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 945,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.34582964127666266,
+          "mae_xgboost": 0.3746654832065207,
+          "gain_percent": 7.69642340230294,
+          "gain_defined": true,
+          "absolute_error_difference": 0.028835841929858053,
+          "gain_ci95": [
+            -19.61078860474374,
+            25.33536423225606
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 1260,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.3277933818492456,
+          "mae_xgboost": 0.39859592498752144,
+          "gain_percent": 17.76298720075786,
+          "gain_defined": true,
+          "absolute_error_difference": 0.07080254313827583,
+          "gain_ci95": [
+            -10.665116831351835,
+            35.49852632040265
+          ]
+        }
+      ],
+      "studies": [
+        "Peng2024_ROS1",
+        "Takei2025_ALK",
+        "Villa2024_ALK"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Peng2024_ROS1": 21.761698864849564,
+        "Takei2025_ALK": 15.333354659058978,
+        "Villa2024_ALK": 12.7297053015304
+      },
+      "gain_percent": 16.60825294181298,
+      "ci95": [
+        3.580046238818614,
+        25.62924641609437
+      ],
+      "n_draws": 10000,
+      "meets_target": true,
+      "ci_entirely_above_threshold": true,
+      "bootstrap_p_two_sided": 0.0122999900009999
+    },
+    "SER": {
+      "panel_rows": [
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 168,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6656885952587696,
+          "mae_xgboost": 0.7451342550601061,
+          "gain_percent": 10.661925587480619,
+          "gain_defined": true,
+          "absolute_error_difference": 0.07944565980133655,
+          "gain_ci95": [
+            -1.3580061192687545,
+            17.79984697851651
+          ]
+        },
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 56,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.7013377308763279,
+          "mae_xgboost": 0.9661110113755786,
+          "gain_percent": 27.40609281766268,
+          "gain_defined": true,
+          "absolute_error_difference": 0.26477328049925075,
+          "gain_ci95": [
+            14.403743697039735,
+            33.698586070520356
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 144,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.33709646059800824,
+          "mae_xgboost": 0.36617751607493615,
+          "gain_percent": 7.941791672150792,
+          "gain_defined": true,
+          "absolute_error_difference": 0.02908105547692791,
+          "gain_ci95": [
+            -1.2943157304236372,
+            14.45840878053474
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 48,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.31490120441811614,
+          "mae_xgboost": 0.6137301841581119,
+          "gain_percent": 48.690611518466575,
+          "gain_defined": true,
+          "absolute_error_difference": 0.2988289797399957,
+          "gain_ci95": [
+            42.63440183387404,
+            55.521030177393946
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 945,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.37867293660042767,
+          "mae_xgboost": 0.3746654832065207,
+          "gain_percent": -1.0696083769472817,
+          "gain_defined": true,
+          "absolute_error_difference": -0.004007453393906957,
+          "gain_ci95": [
+            -2.813237012623843,
+            -0.10676269463985597
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 1260,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.3704313267728001,
+          "mae_xgboost": 0.39859592498752144,
+          "gain_percent": 7.065952371591122,
+          "gain_defined": true,
+          "absolute_error_difference": 0.028164598214721337,
+          "gain_ci95": [
+            0.8160287681716609,
+            12.853930354962493
+          ]
+        }
+      ],
+      "studies": [
+        "Peng2024_ROS1",
+        "Takei2025_ALK",
+        "Villa2024_ALK"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Peng2024_ROS1": 19.03400920257165,
+        "Takei2025_ALK": 28.316201595308684,
+        "Villa2024_ALK": 2.99817199732192
+      },
+      "gain_percent": 16.78279426506742,
+      "ci95": [
+        12.705724284443972,
+        19.529204673732732
+      ],
+      "n_draws": 10000,
+      "meets_target": true,
+      "ci_entirely_above_threshold": true,
+      "bootstrap_p_two_sided": 9.999000099990002e-05
+    }
+  },
+  "primary": {
+    "method": "SER",
+    "panel_rows": [
+      {
+        "study": "Peng2024_ROS1",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 168,
+        "sites": 8,
+        "failed_episodes": 0,
+        "mae_method": 0.6656885952587696,
+        "mae_xgboost": 0.7451342550601061,
+        "gain_percent": 10.661925587480619,
+        "gain_defined": true,
+        "absolute_error_difference": 0.07944565980133655,
+        "gain_ci95": [
+          -1.3580061192687545,
+          17.79984697851651
+        ]
+      },
+      {
+        "study": "Peng2024_ROS1",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 56,
+        "sites": 8,
+        "failed_episodes": 0,
+        "mae_method": 0.7013377308763279,
+        "mae_xgboost": 0.9661110113755786,
+        "gain_percent": 27.40609281766268,
+        "gain_defined": true,
+        "absolute_error_difference": 0.26477328049925075,
+        "gain_ci95": [
+          14.403743697039735,
+          33.698586070520356
+        ]
+      },
+      {
+        "study": "Takei2025_ALK",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 144,
+        "sites": 11,
+        "failed_episodes": 0,
+        "mae_method": 0.33709646059800824,
+        "mae_xgboost": 0.36617751607493615,
+        "gain_percent": 7.941791672150792,
+        "gain_defined": true,
+        "absolute_error_difference": 0.02908105547692791,
+        "gain_ci95": [
+          -1.2943157304236372,
+          14.45840878053474
+        ]
+      },
+      {
+        "study": "Takei2025_ALK",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 48,
+        "sites": 11,
+        "failed_episodes": 0,
+        "mae_method": 0.31490120441811614,
+        "mae_xgboost": 0.6137301841581119,
+        "gain_percent": 48.690611518466575,
+        "gain_defined": true,
+        "absolute_error_difference": 0.2988289797399957,
+        "gain_ci95": [
+          42.63440183387404,
+          55.521030177393946
+        ]
+      },
+      {
+        "study": "Villa2024_ALK",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 945,
+        "sites": 8,
+        "failed_episodes": 0,
+        "mae_method": 0.37867293660042767,
+        "mae_xgboost": 0.3746654832065207,
+        "gain_percent": -1.0696083769472817,
+        "gain_defined": true,
+        "absolute_error_difference": -0.004007453393906957,
+        "gain_ci95": [
+          -2.813237012623843,
+          -0.10676269463985597
+        ]
+      },
+      {
+        "study": "Villa2024_ALK",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 1260,
+        "sites": 8,
+        "failed_episodes": 0,
+        "mae_method": 0.3704313267728001,
+        "mae_xgboost": 0.39859592498752144,
+        "gain_percent": 7.065952371591122,
+        "gain_defined": true,
+        "absolute_error_difference": 0.028164598214721337,
+        "gain_ci95": [
+          0.8160287681716609,
+          12.853930354962493
+        ]
+      }
+    ],
+    "studies": [
+      "Peng2024_ROS1",
+      "Takei2025_ALK",
+      "Villa2024_ALK"
+    ],
+    "complete": true,
+    "per_study_gain": {
+      "Peng2024_ROS1": 19.03400920257165,
+      "Takei2025_ALK": 28.316201595308684,
+      "Villa2024_ALK": 2.99817199732192
+    },
+    "gain_percent": 16.78279426506742,
+    "ci95": [
+      12.705724284443972,
+      19.529204673732732
+    ],
+    "n_draws": 10000,
+    "meets_target": true,
+    "ci_entirely_above_threshold": true,
+    "bootstrap_p_two_sided": 9.999000099990002e-05
+  },
+  "win_tie": {
+    "per_panel_budget": [
+      {
+        "study": "Peng2024_ROS1",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "Peng2024_ROS1",
+        "budget": 3,
+        "outcome": "win"
+      },
+      {
+        "study": "Takei2025_ALK",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "Takei2025_ALK",
+        "budget": 3,
+        "outcome": "win"
+      },
+      {
+        "study": "Villa2024_ALK",
+        "budget": 2,
+        "outcome": "loss"
+      },
+      {
+        "study": "Villa2024_ALK",
+        "budget": 3,
+        "outcome": "win"
+      }
+    ],
+    "per_study": {
+      "Peng2024_ROS1": "win",
+      "Takei2025_ALK": "win",
+      "Villa2024_ALK": "win"
+    },
+    "studies_won": 3,
+    "studies_tied": 0,
+    "studies_lost": 0,
+    "meets_descriptive_5_of_7": false,
+    "sign_test_upper_tail": 0.125,
+    "note": "descriptive: ties are not wins; chance of at least 5 of 7 by luck is 29/128 (22.7%)"
+  },
+  "robustness": {
+    "available": true,
+    "median_study_gain": 19.03400920257165,
+    "leave_one_study_out": {
+      "Peng2024_ROS1": {
+        "gain_percent": 15.657186796315301,
+        "ci95": [
+          11.59451397217142,
+          18.95711788755289
+        ]
+      },
+      "Takei2025_ALK": {
+        "gain_percent": 11.016090599946784,
+        "ci95": [
+          6.032348643461547,
+          13.946756634575834
+        ]
+      },
+      "Villa2024_ALK": {
+        "gain_percent": 23.67510539894017,
+        "ci95": [
+          18.09870630046824,
+          27.589718685885757
+        ]
+      }
+    },
+    "episode_weighted": {
+      "gain_percent": 6.223310958325124,
+      "ci95": [
+        2.742814189370688,
+        8.912226076152393
+      ],
+      "weights": {
+        "Peng2024_ROS1": 0.085463563525372,
+        "Takei2025_ALK": 0.07325448302174742,
+        "Villa2024_ALK": 0.8412819534528806
+      }
+    },
+    "site_weighted": {
+      "gain_percent": 18.064283968427556,
+      "ci95": [
+        13.925192891501462,
+        20.98402857120985
+      ],
+      "weights": {
+        "Peng2024_ROS1": 0.2962962962962963,
+        "Takei2025_ALK": 0.4074074074074074,
+        "Villa2024_ALK": 0.2962962962962963
+      }
+    }
+  },
+  "sensitivity": [
+    {
+      "study": "Peng2024_ROS1",
+      "budget": 2,
+      "interval": {
+        "denominator": 168,
+        "mae_method": 0.6645458143817786,
+        "mae_xgboost": 0.7451342550601062,
+        "gain_percent": 10.815291356029114
+      },
+      "exact_profile_subset": {
+        "denominator": 114,
+        "mae_method": 0.5987272040821068,
+        "mae_xgboost": 0.6312517200600756,
+        "gain_percent": 5.15238453130448
+      }
+    },
+    {
+      "study": "Peng2024_ROS1",
+      "budget": 3,
+      "interval": {
+        "denominator": 56,
+        "mae_method": 0.7013377308763279,
+        "mae_xgboost": 0.9661110113755785,
+        "gain_percent": 27.40609281766267
+      },
+      "exact_profile_subset": {
+        "denominator": 36,
+        "mae_method": 0.5954080868647734,
+        "mae_xgboost": 0.753405445461294,
+        "gain_percent": 20.971093260386795
+      }
+    },
+    {
+      "study": "Takei2025_ALK",
+      "budget": 2,
+      "interval": {
+        "denominator": 144,
+        "mae_method": 0.33709646059800824,
+        "mae_xgboost": 0.3661775160749361,
+        "gain_percent": 7.941791672150779
+      },
+      "exact_profile_subset": {
+        "denominator": 117,
+        "mae_method": 0.28275734595884255,
+        "mae_xgboost": 0.30403164500679664,
+        "gain_percent": 6.9973962899416255
+      }
+    },
+    {
+      "study": "Takei2025_ALK",
+      "budget": 3,
+      "interval": {
+        "denominator": 48,
+        "mae_method": 0.31490120441811614,
+        "mae_xgboost": 0.6137301841581119,
+        "gain_percent": 48.690611518466575
+      },
+      "exact_profile_subset": {
+        "denominator": 36,
+        "mae_method": 0.2714152354492507,
+        "mae_xgboost": 0.547888360943831,
+        "gain_percent": 50.46158035157166
+      }
+    },
+    {
+      "study": "Villa2024_ALK",
+      "budget": 2,
+      "interval": {
+        "denominator": 945,
+        "mae_method": 0.37865929721159863,
+        "mae_xgboost": 0.37463595071021727,
+        "gain_percent": -1.0739349744075795
+      },
+      "exact_profile_subset": {
+        "denominator": 825,
+        "mae_method": 0.3289978832427009,
+        "mae_xgboost": 0.3250577352321659,
+        "gain_percent": -1.2121379015087344
+      }
+    },
+    {
+      "study": "Villa2024_ALK",
+      "budget": 3,
+      "interval": {
+        "denominator": 1260,
+        "mae_method": 0.3699337009168752,
+        "mae_xgboost": 0.3980894576328399,
+        "gain_percent": 7.072721011851792
+      },
+      "exact_profile_subset": {
+        "denominator": 1060,
+        "mae_method": 0.3083588675927712,
+        "mae_xgboost": 0.32019028376509334,
+        "gain_percent": 3.695120299466121
+      }
+    }
+  ],
+  "secondary_holm": {
+    "alpha": 0.05,
+    "family": {
+      "SAER-7g": {
+        "p": 0.0122999900009999,
+        "threshold": 0.0125,
+        "reject": true
+      },
+      "CovarianceLocalMedian": {
+        "p": 0.0140999900009999,
+        "threshold": 0.016666666666666666,
+        "reject": true
+      },
+      "NestedAligned": {
+        "p": 0.038899990000999904,
+        "threshold": 0.025,
+        "reject": false
+      },
+      "AlignedAddAudit": {
+        "p": 0.0424999900009999,
+        "threshold": 0.05,
+        "reject": false
+      }
+    },
+    "note": "formal claims only if made; otherwise descriptive"
+  },
+  "plain_baselines": {
+    "QueryMedian": {
+      "panel_rows": [
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 168,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.8400385475521317,
+          "mae_xgboost": 0.7451342550601061,
+          "gain_percent": -12.736535979596074,
+          "gain_defined": true,
+          "absolute_error_difference": -0.09490429249202559,
+          "gain_ci95": [
+            -72.87894455461245,
+            16.11728505067173
+          ]
+        },
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 56,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.8400385475521317,
+          "mae_xgboost": 0.9661110113755786,
+          "gain_percent": 13.049480063780775,
+          "gain_defined": true,
+          "absolute_error_difference": 0.12607246382344695,
+          "gain_ci95": [
+            -36.8492217536655,
+            33.660731328641255
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 144,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.40678205166285847,
+          "mae_xgboost": 0.36617751607493615,
+          "gain_percent": -11.0887571752529,
+          "gain_defined": true,
+          "absolute_error_difference": -0.04060453558792232,
+          "gain_ci95": [
+            -35.763813381748115,
+            8.335362086617037
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 48,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.40678205166285847,
+          "mae_xgboost": 0.6137301841581119,
+          "gain_percent": 33.71972535115504,
+          "gain_defined": true,
+          "absolute_error_difference": 0.2069481324952534,
+          "gain_ci95": [
+            16.530044650056983,
+            49.35544289250933
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 945,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6204834483714254,
+          "mae_xgboost": 0.3746654832065207,
+          "gain_percent": -65.60998442159844,
+          "gain_defined": true,
+          "absolute_error_difference": -0.24581796516490473,
+          "gain_ci95": [
+            -150.87368374965212,
+            1.5234988569625716
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 1260,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6204834483714254,
+          "mae_xgboost": 0.39859592498752144,
+          "gain_percent": -55.66728345023861,
+          "gain_defined": true,
+          "absolute_error_difference": -0.221887523383904,
+          "gain_ci95": [
+            -144.73186389470445,
+            6.217772995862059
+          ]
+        }
+      ],
+      "studies": [
+        "Peng2024_ROS1",
+        "Takei2025_ALK",
+        "Villa2024_ALK"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Peng2024_ROS1": 0.15647204209235088,
+        "Takei2025_ALK": 11.31548408795107,
+        "Villa2024_ALK": -60.63863393591852
+      },
+      "gain_percent": -16.388892601958364,
+      "ci95": [
+        -49.82505784607437,
+        6.912685246418446
+      ],
+      "n_draws": 10000,
+      "meets_target": false,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 0.1850999900009999
+    },
+    "RidgeSupports": {
+      "panel_rows": [
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 168,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.65490057572173,
+          "mae_xgboost": 0.7451342550601061,
+          "gain_percent": 12.109720996667566,
+          "gain_defined": true,
+          "absolute_error_difference": 0.09023367933837612,
+          "gain_ci95": [
+            -3.451745058265417,
+            21.683234143756295
+          ]
+        },
+        {
+          "study": "Peng2024_ROS1",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 56,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.6241199938561938,
+          "mae_xgboost": 0.9661110113755786,
+          "gain_percent": 35.398728872000696,
+          "gain_defined": true,
+          "absolute_error_difference": 0.3419910175193849,
+          "gain_ci95": [
+            23.288386560381426,
+            42.33100080322503
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 144,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.33980101466605483,
+          "mae_xgboost": 0.36617751607493615,
+          "gain_percent": 7.203200702110697,
+          "gain_defined": true,
+          "absolute_error_difference": 0.026376501408881314,
+          "gain_ci95": [
+            -2.1316682386067636,
+            14.962096169518116
+          ]
+        },
+        {
+          "study": "Takei2025_ALK",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 48,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 0.303091400305126,
+          "mae_xgboost": 0.6137301841581119,
+          "gain_percent": 50.61487798243238,
+          "gain_defined": true,
+          "absolute_error_difference": 0.3106387838529859,
+          "gain_ci95": [
+            43.76952388729085,
+            58.43039746809496
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 945,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.33399144994554786,
+          "mae_xgboost": 0.3746654832065207,
+          "gain_percent": 10.856092990704662,
+          "gain_defined": true,
+          "absolute_error_difference": 0.04067403326097285,
+          "gain_ci95": [
+            -15.63670801877615,
+            30.146862786328327
+          ]
+        },
+        {
+          "study": "Villa2024_ALK",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 1260,
+          "sites": 8,
+          "failed_episodes": 0,
+          "mae_method": 0.31462065178516224,
+          "mae_xgboost": 0.39859592498752144,
+          "gain_percent": 21.067770124591252,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0839752732023592,
+          "gain_ci95": [
+            -3.9073903160574397,
+            40.8080336763633
+          ]
+        }
+      ],
+      "studies": [
+        "Peng2024_ROS1",
+        "Takei2025_ALK",
+        "Villa2024_ALK"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Peng2024_ROS1": 23.754224934334133,
+        "Takei2025_ALK": 28.90903934227154,
+        "Villa2024_ALK": 15.961931557647958
+      },
+      "gain_percent": 22.875065278084545,
+      "ci95": [
+        12.97251838895642,
+        29.89208218240004
+      ],
+      "n_draws": 10000,
+      "meets_target": true,
+      "ci_entirely_above_threshold": true,
+      "bootstrap_p_two_sided": 9.999000099990002e-05
+    }
+  },
+  "intervention": [
+    {
+      "study": "Peng2024_ROS1",
+      "budget": 2,
+      "episodes": 168,
+      "intervention_rate": 0.9285714285714286
+    },
+    {
+      "study": "Peng2024_ROS1",
+      "budget": 3,
+      "episodes": 56,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Takei2025_ALK",
+      "budget": 2,
+      "episodes": 144,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Takei2025_ALK",
+      "budget": 3,
+      "episodes": 48,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Villa2024_ALK",
+      "budget": 2,
+      "episodes": 945,
+      "intervention_rate": 0.3333333333333333
+    },
+    {
+      "study": "Villa2024_ALK",
+      "budget": 3,
+      "episodes": 1260,
+      "intervention_rate": 0.5555555555555556
+    }
+  ],
+  "T1_hidden_resistance": {
+    "Peng2024_ROS1|k2": {
+      "defined": true,
+      "ambiguous_excluded": 0,
+      "groups_total": 12,
+      "groups_used": 0,
+      "groups_below_minimum": 12,
+      "methods": {
+        "AlignedAddAudit": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "CovarianceLocalMedian": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "NestedAligned": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SAER-7g": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SER": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "XGBoost": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        }
+      },
+      "eligible_episodes_used": 0,
+      "positive_episodes_used": 0,
+      "base_rate": NaN
+    },
+    "Peng2024_ROS1|k3": {
+      "defined": true,
+      "ambiguous_excluded": 0,
+      "groups_total": 4,
+      "groups_used": 0,
+      "groups_below_minimum": 4,
+      "methods": {
+        "AlignedAddAudit": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "CovarianceLocalMedian": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "NestedAligned": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SAER-7g": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SER": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "XGBoost": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        }
+      },
+      "eligible_episodes_used": 0,
+      "positive_episodes_used": 0,
+      "base_rate": NaN
+    },
+    "Takei2025_ALK|k2": {
+      "defined": true,
+      "ambiguous_excluded": 0,
+      "groups_total": 10,
+      "groups_used": 0,
+      "groups_below_minimum": 10,
+      "methods": {
+        "AlignedAddAudit": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "CovarianceLocalMedian": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "NestedAligned": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SAER-7g": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SER": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "XGBoost": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        }
+      },
+      "eligible_episodes_used": 0,
+      "positive_episodes_used": 0,
+      "base_rate": NaN
+    },
+    "Takei2025_ALK|k3": {
+      "defined": true,
+      "ambiguous_excluded": 0,
+      "groups_total": 1,
+      "groups_used": 0,
+      "groups_below_minimum": 1,
+      "methods": {
+        "AlignedAddAudit": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "CovarianceLocalMedian": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "NestedAligned": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SAER-7g": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SER": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "XGBoost": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        }
+      },
+      "eligible_episodes_used": 0,
+      "positive_episodes_used": 0,
+      "base_rate": NaN
+    },
+    "Villa2024_ALK|k2": {
+      "defined": true,
+      "ambiguous_excluded": 0,
+      "groups_total": 105,
+      "groups_used": 0,
+      "groups_below_minimum": 105,
+      "methods": {
+        "AlignedAddAudit": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "CovarianceLocalMedian": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "NestedAligned": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SAER-7g": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SER": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "XGBoost": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        }
+      },
+      "eligible_episodes_used": 0,
+      "positive_episodes_used": 0,
+      "base_rate": NaN
+    },
+    "Villa2024_ALK|k3": {
+      "defined": true,
+      "ambiguous_excluded": 0,
+      "groups_total": 140,
+      "groups_used": 0,
+      "groups_below_minimum": 140,
+      "methods": {
+        "AlignedAddAudit": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "CovarianceLocalMedian": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "NestedAligned": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SAER-7g": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SER": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "XGBoost": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        }
+      },
+      "eligible_episodes_used": 0,
+      "positive_episodes_used": 0,
+      "base_rate": NaN
+    }
+  },
+  "T2_inhibitor_choice": {
+    "Peng2024_ROS1|k2": {
+      "defined": true,
+      "support_sets": 62,
+      "excluded_incomplete": 0,
+      "excluded_censored": 22,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 13,
+          "mean_regret": 0.11171058490174982,
+          "chosen_is_best_fraction": 0.7419354838709677
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 13,
+          "mean_regret": 0.10095012420389014,
+          "chosen_is_best_fraction": 0.8387096774193549
+        },
+        "NestedAligned": {
+          "eligible_variants": 13,
+          "mean_regret": 0.11150809429683657,
+          "chosen_is_best_fraction": 0.7580645161290323
+        },
+        "SAER-7g": {
+          "eligible_variants": 13,
+          "mean_regret": 0.058586691543328996,
+          "chosen_is_best_fraction": 0.7741935483870968
+        },
+        "SER": {
+          "eligible_variants": 13,
+          "mean_regret": 0.1545327804939269,
+          "chosen_is_best_fraction": 0.8225806451612904
+        },
+        "XGBoost": {
+          "eligible_variants": 13,
+          "mean_regret": 0.06601023049660698,
+          "chosen_is_best_fraction": 0.8225806451612904
+        }
+      }
+    },
+    "Peng2024_ROS1|k3": {
+      "defined": false,
+      "reason": "only 1 remaining inhibitor(s) at k=3; at least 2 are needed"
+    },
+    "Takei2025_ALK|k2": {
+      "defined": true,
+      "support_sets": 63,
+      "excluded_incomplete": 0,
+      "excluded_censored": 9,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 12,
+          "mean_regret": 0.04580281600412053,
+          "chosen_is_best_fraction": 0.8412698412698413
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 12,
+          "mean_regret": 0.05012946584610765,
+          "chosen_is_best_fraction": 0.8412698412698413
+        },
+        "NestedAligned": {
+          "eligible_variants": 12,
+          "mean_regret": 0.0514997646327941,
+          "chosen_is_best_fraction": 0.8253968253968254
+        },
+        "SAER-7g": {
+          "eligible_variants": 12,
+          "mean_regret": 0.058077119545650674,
+          "chosen_is_best_fraction": 0.8253968253968254
+        },
+        "SER": {
+          "eligible_variants": 12,
+          "mean_regret": 0.040953883631010976,
+          "chosen_is_best_fraction": 0.8571428571428571
+        },
+        "XGBoost": {
+          "eligible_variants": 12,
+          "mean_regret": 0.0514997646327941,
+          "chosen_is_best_fraction": 0.8253968253968254
+        }
+      }
+    },
+    "Takei2025_ALK|k3": {
+      "defined": false,
+      "reason": "only 1 remaining inhibitor(s) at k=3; at least 2 are needed"
+    },
+    "Villa2024_ALK|k2": {
+      "defined": true,
+      "support_sets": 154,
+      "excluded_incomplete": 0,
+      "excluded_censored": 35,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 9,
+          "mean_regret": 0.20633042876283286,
+          "chosen_is_best_fraction": 0.4090909090909091
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 9,
+          "mean_regret": 0.20654795834310546,
+          "chosen_is_best_fraction": 0.33766233766233766
+        },
+        "NestedAligned": {
+          "eligible_variants": 9,
+          "mean_regret": 0.215993766922149,
+          "chosen_is_best_fraction": 0.4090909090909091
+        },
+        "SAER-7g": {
+          "eligible_variants": 9,
+          "mean_regret": 0.21268095654969166,
+          "chosen_is_best_fraction": 0.4090909090909091
+        },
+        "SER": {
+          "eligible_variants": 9,
+          "mean_regret": 0.174611934756396,
+          "chosen_is_best_fraction": 0.3961038961038961
+        },
+        "XGBoost": {
+          "eligible_variants": 9,
+          "mean_regret": 0.16615100953303671,
+          "chosen_is_best_fraction": 0.43506493506493504
+        }
+      }
+    },
+    "Villa2024_ALK|k3": {
+      "defined": true,
+      "support_sets": 265,
+      "excluded_incomplete": 0,
+      "excluded_censored": 50,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 9,
+          "mean_regret": 0.1987956419002125,
+          "chosen_is_best_fraction": 0.42641509433962266
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 9,
+          "mean_regret": 0.1837398098653471,
+          "chosen_is_best_fraction": 0.3471698113207547
+        },
+        "NestedAligned": {
+          "eligible_variants": 9,
+          "mean_regret": 0.2051536749000194,
+          "chosen_is_best_fraction": 0.41509433962264153
+        },
+        "SAER-7g": {
+          "eligible_variants": 9,
+          "mean_regret": 0.2158139166561984,
+          "chosen_is_best_fraction": 0.39622641509433965
+        },
+        "SER": {
+          "eligible_variants": 9,
+          "mean_regret": 0.16304092090267486,
+          "chosen_is_best_fraction": 0.44528301886792454
+        },
+        "XGBoost": {
+          "eligible_variants": 9,
+          "mean_regret": 0.17639052096027663,
+          "chosen_is_best_fraction": 0.4075471698113208
+        }
+      }
+    }
+  },
+  "T3_third_measurement": {
+    "Peng2024_ROS1": {
+      "defined": true,
+      "base_episodes": 168,
+      "methods": {
+        "AlignedAddAudit": {
+          "mean_error_reduction": 0.09046429421836413,
+          "site_mean_error_reduction": 0.1274136692484412,
+          "fraction_helped": 0.5595238095238095
+        },
+        "CovarianceLocalMedian": {
+          "mean_error_reduction": 0.023407782780857138,
+          "site_mean_error_reduction": 0.02294526538053858,
+          "fraction_helped": 0.5416666666666666
+        },
+        "NestedAligned": {
+          "mean_error_reduction": 0.00614518624203871,
+          "site_mean_error_reduction": -0.000915923586967772,
+          "fraction_helped": 0.47619047619047616
+        },
+        "SAER-7g": {
+          "mean_error_reduction": -0.001327214710746636,
+          "site_mean_error_reduction": 0.04063257928167479,
+          "fraction_helped": 0.4642857142857143
+        },
+        "SER": {
+          "mean_error_reduction": -0.03564913561755831,
+          "site_mean_error_reduction": -0.02834254711586206,
+          "fraction_helped": 0.4523809523809524
+        },
+        "XGBoost": {
+          "mean_error_reduction": -0.22097675631547234,
+          "site_mean_error_reduction": -0.17410793533249166,
+          "fraction_helped": 0.3869047619047619
+        }
+      }
+    },
+    "Takei2025_ALK": {
+      "defined": true,
+      "base_episodes": 144,
+      "methods": {
+        "AlignedAddAudit": {
+          "mean_error_reduction": -0.10473803859143303,
+          "site_mean_error_reduction": -0.09567726825384465,
+          "fraction_helped": 0.375
+        },
+        "CovarianceLocalMedian": {
+          "mean_error_reduction": 0.0588306569506246,
+          "site_mean_error_reduction": 0.07038314269380799,
+          "fraction_helped": 0.5625
+        },
+        "NestedAligned": {
+          "mean_error_reduction": -0.03673213026137582,
+          "site_mean_error_reduction": -0.031074292917515997,
+          "fraction_helped": 0.4375
+        },
+        "SAER-7g": {
+          "mean_error_reduction": -0.03569261662923336,
+          "site_mean_error_reduction": -0.03328272291422463,
+          "fraction_helped": 0.4027777777777778
+        },
+        "SER": {
+          "mean_error_reduction": 0.022195256179892136,
+          "site_mean_error_reduction": 0.03020004419070499,
+          "fraction_helped": 0.5555555555555556
+        },
+        "XGBoost": {
+          "mean_error_reduction": -0.24755266808317572,
+          "site_mean_error_reduction": -0.2402886619761812,
+          "fraction_helped": 0.2638888888888889
+        }
+      }
+    },
+    "Villa2024_ALK": {
+      "defined": true,
+      "base_episodes": 945,
+      "methods": {
+        "AlignedAddAudit": {
+          "mean_error_reduction": 0.02024877994760035,
+          "site_mean_error_reduction": 0.01907520906589727,
+          "fraction_helped": 0.5862433862433862
+        },
+        "CovarianceLocalMedian": {
+          "mean_error_reduction": -0.004917628699229239,
+          "site_mean_error_reduction": -0.0037713192081753628,
+          "fraction_helped": 0.46984126984126984
+        },
+        "NestedAligned": {
+          "mean_error_reduction": 0.013504786065031998,
+          "site_mean_error_reduction": 0.012443712300885484,
+          "fraction_helped": 0.5492063492063493
+        },
+        "SAER-7g": {
+          "mean_error_reduction": 0.018036259427416962,
+          "site_mean_error_reduction": 0.017391731542944634,
+          "fraction_helped": 0.5830687830687831
+        },
+        "SER": {
+          "mean_error_reduction": 0.008241609827627481,
+          "site_mean_error_reduction": 0.006421486711087053,
+          "fraction_helped": 0.5322751322751322
+        },
+        "XGBoost": {
+          "mean_error_reduction": -0.023930441781000455,
+          "site_mean_error_reduction": -0.027765594220823864,
+          "fraction_helped": 0.4507936507936508
+        }
+      }
+    }
+  },
+  "T4_binding_mode": {
+    "Peng2024_ROS1|k2": {
+      "defined": true,
+      "strata": {
+        "support_matches_query_mode": {
+          "observations": 126,
+          "sites": 8,
+          "by_query": {
+            "AlignedAddAudit": [
+              {
+                "query": "brigatinib",
+                "observations": 42,
+                "mae_method": 0.41742824195662126,
+                "mae_xgboost": 0.4029577378641564,
+                "gain_percent": -3.591072396118897
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 42,
+                "mae_method": 0.9507214695771893,
+                "mae_xgboost": 0.977350115291386,
+                "gain_percent": 2.72457590146779
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 42,
+                "mae_method": 1.03708151323377,
+                "mae_xgboost": 1.130322085370318,
+                "gain_percent": 8.249026834329285
+              }
+            ],
+            "CovarianceLocalMedian": [
+              {
+                "query": "brigatinib",
+                "observations": 42,
+                "mae_method": 0.41846113587990663,
+                "mae_xgboost": 0.4029577378641564,
+                "gain_percent": -3.8474004986043187
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 42,
+                "mae_method": 0.9397418535560208,
+                "mae_xgboost": 0.977350115291386,
+                "gain_percent": 3.8479825342991605
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 42,
+                "mae_method": 0.9944213099118129,
+                "mae_xgboost": 1.130322085370318,
+                "gain_percent": 12.023190311634144
+              }
+            ],
+            "NestedAligned": [
+              {
+                "query": "brigatinib",
+                "observations": 42,
+                "mae_method": 0.40697485362586017,
+                "mae_xgboost": 0.4029577378641564,
+                "gain_percent": -0.9969074630496377
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 42,
+                "mae_method": 0.969493751858015,
+                "mae_xgboost": 0.977350115291386,
+                "gain_percent": 0.8038433014384769
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 42,
+                "mae_method": 0.9569594763048981,
+                "mae_xgboost": 1.130322085370318,
+                "gain_percent": 15.337452157154173
+              }
+            ],
+            "SAER-7g": [
+              {
+                "query": "brigatinib",
+                "observations": 42,
+                "mae_method": 0.41995894345125473,
+                "mae_xgboost": 0.4029577378641564,
+                "gain_percent": -4.219103888465275
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 42,
+                "mae_method": 0.7765933125488742,
+                "mae_xgboost": 0.977350115291386,
+                "gain_percent": 20.5409299698766
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 42,
+                "mae_method": 0.9379762499264546,
+                "mae_xgboost": 1.130322085370318,
+                "gain_percent": 17.01690499844093
+              }
+            ],
+            "SER": [
+              {
+                "query": "brigatinib",
+                "observations": 42,
+                "mae_method": 0.38262846005570195,
+                "mae_xgboost": 0.4029577378641564,
+                "gain_percent": 5.045014873323461
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 42,
+                "mae_method": 0.8168932619919231,
+                "mae_xgboost": 0.977350115291386,
+                "gain_percent": 16.41754073478822
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 42,
+                "mae_method": 0.961046867058184,
+                "mae_xgboost": 1.130322085370318,
+                "gain_percent": 14.975839232290657
+              }
+            ],
+            "XGBoost": [
+              {
+                "query": "brigatinib",
+                "observations": 42,
+                "mae_method": 0.4029577378641564,
+                "mae_xgboost": 0.4029577378641564,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 42,
+                "mae_method": 0.977350115291386,
+                "mae_xgboost": 0.977350115291386,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 42,
+                "mae_method": 1.130322085370318,
+                "mae_xgboost": 1.130322085370318,
+                "gain_percent": 0.0
+              }
+            ]
+          },
+          "methods": {
+            "AlignedAddAudit": {
+              "mean_gain_over_xgboost_across_queries": 2.4608434465593927
+            },
+            "CovarianceLocalMedian": {
+              "mean_gain_over_xgboost_across_queries": 4.007924115776329
+            },
+            "NestedAligned": {
+              "mean_gain_over_xgboost_across_queries": 5.0481293318476705
+            },
+            "SAER-7g": {
+              "mean_gain_over_xgboost_across_queries": 11.112910359950751
+            },
+            "SER": {
+              "mean_gain_over_xgboost_across_queries": 12.146131613467446
+            },
+            "XGBoost": {
+              "mean_gain_over_xgboost_across_queries": 0.0
+            }
+          }
+        },
+        "no_matching_support": {
+          "observations": 42,
+          "sites": 8,
+          "by_query": {
+            "AlignedAddAudit": [
+              {
+                "query": "9o",
+                "observations": 42,
+                "mae_method": 0.49186399779740037,
+                "mae_xgboost": 0.46990708171456436,
+                "gain_percent": -4.67260804044943
+              }
+            ],
+            "CovarianceLocalMedian": [
+              {
+                "query": "9o",
+                "observations": 42,
+                "mae_method": 0.5318984960930587,
+                "mae_xgboost": 0.46990708171456436,
+                "gain_percent": -13.19227072558779
+              }
+            ],
+            "NestedAligned": [
+              {
+                "query": "9o",
+                "observations": 42,
+                "mae_method": 0.4790833258584285,
+                "mae_xgboost": 0.46990708171456436,
+                "gain_percent": -1.9527784323620958
+              }
+            ],
+            "SAER-7g": [
+              {
+                "query": "9o",
+                "observations": 42,
+                "mae_method": 0.4962073739841635,
+                "mae_xgboost": 0.46990708171456436,
+                "gain_percent": -5.5969133671355715
+              }
+            ],
+            "SER": [
+              {
+                "query": "9o",
+                "observations": 42,
+                "mae_method": 0.5021857919292692,
+                "mae_xgboost": 0.46990708171456436,
+                "gain_percent": -6.869168708189815
+              }
+            ],
+            "XGBoost": [
+              {
+                "query": "9o",
+                "observations": 42,
+                "mae_method": 0.46990708171456436,
+                "mae_xgboost": 0.46990708171456436,
+                "gain_percent": 0.0
+              }
+            ]
+          },
+          "methods": {
+            "AlignedAddAudit": {
+              "mean_gain_over_xgboost_across_queries": -4.67260804044943
+            },
+            "CovarianceLocalMedian": {
+              "mean_gain_over_xgboost_across_queries": -13.19227072558779
+            },
+            "NestedAligned": {
+              "mean_gain_over_xgboost_across_queries": -1.9527784323620958
+            },
+            "SAER-7g": {
+              "mean_gain_over_xgboost_across_queries": -5.5969133671355715
+            },
+            "SER": {
+              "mean_gain_over_xgboost_across_queries": -6.869168708189815
+            },
+            "XGBoost": {
+              "mean_gain_over_xgboost_across_queries": 0.0
+            }
+          }
+        }
+      }
+    },
+    "Peng2024_ROS1|k3": {
+      "defined": true,
+      "strata": {
+        "support_matches_query_mode": {
+          "observations": 42,
+          "sites": 8,
+          "by_query": {
+            "AlignedAddAudit": [
+              {
+                "query": "brigatinib",
+                "observations": 14,
+                "mae_method": 0.4124675666096455,
+                "mae_xgboost": 0.5017644526477955,
+                "gain_percent": 17.796574780643198
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 14,
+                "mae_method": 0.6870386510512995,
+                "mae_xgboost": 1.6408772077302238,
+                "gain_percent": 58.12979497706233
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 14,
+                "mae_method": 0.8573417922154631,
+                "mae_xgboost": 1.1649973466432084,
+                "gain_percent": 26.408262243190133
+              }
+            ],
+            "CovarianceLocalMedian": [
+              {
+                "query": "brigatinib",
+                "observations": 14,
+                "mae_method": 0.3778121904533494,
+                "mae_xgboost": 0.5017644526477955,
+                "gain_percent": 24.703276914168352
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 14,
+                "mae_method": 0.7828068396796671,
+                "mae_xgboost": 1.6408772077302238,
+                "gain_percent": 52.29339307098425
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 14,
+                "mae_method": 1.0578731017335667,
+                "mae_xgboost": 1.1649973466432084,
+                "gain_percent": 9.195235098028897
+              }
+            ],
+            "NestedAligned": [
+              {
+                "query": "brigatinib",
+                "observations": 14,
+                "mae_method": 0.5228649581526953,
+                "mae_xgboost": 0.5017644526477955,
+                "gain_percent": -4.205261132699442
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 14,
+                "mae_method": 0.7933126507147618,
+                "mae_xgboost": 1.6408772077302238,
+                "gain_percent": 51.653137298912974
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 14,
+                "mae_method": 0.8153278022307519,
+                "mae_xgboost": 1.1649973466432084,
+                "gain_percent": 30.01462152853694
+              }
+            ],
+            "SAER-7g": [
+              {
+                "query": "brigatinib",
+                "observations": 14,
+                "mae_method": 0.40497801712444975,
+                "mae_xgboost": 0.5017644526477955,
+                "gain_percent": 19.289217283649066
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 14,
+                "mae_method": 0.6311574245415835,
+                "mae_xgboost": 1.6408772077302238,
+                "gain_percent": 61.53536525657244
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 14,
+                "mae_method": 0.9422340415511227,
+                "mae_xgboost": 1.1649973466432084,
+                "gain_percent": 19.12135729183846
+              }
+            ],
+            "SER": [
+              {
+                "query": "brigatinib",
+                "observations": 14,
+                "mae_method": 0.38090510333295946,
+                "mae_xgboost": 0.5017644526477955,
+                "gain_percent": 24.086869581347376
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 14,
+                "mae_method": 0.8995090760670477,
+                "mae_xgboost": 1.6408772077302238,
+                "gain_percent": 45.18120723297074
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 14,
+                "mae_method": 1.0610488822372848,
+                "mae_xgboost": 1.1649973466432084,
+                "gain_percent": 8.922635292298125
+              }
+            ],
+            "XGBoost": [
+              {
+                "query": "brigatinib",
+                "observations": 14,
+                "mae_method": 0.5017644526477955,
+                "mae_xgboost": 0.5017644526477955,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 14,
+                "mae_method": 1.6408772077302238,
+                "mae_xgboost": 1.6408772077302238,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 14,
+                "mae_method": 1.1649973466432084,
+                "mae_xgboost": 1.1649973466432084,
+                "gain_percent": 0.0
+              }
+            ]
+          },
+          "methods": {
+            "AlignedAddAudit": {
+              "mean_gain_over_xgboost_across_queries": 34.11154400029856
+            },
+            "CovarianceLocalMedian": {
+              "mean_gain_over_xgboost_across_queries": 28.73063502772717
+            },
+            "NestedAligned": {
+              "mean_gain_over_xgboost_across_queries": 25.820832564916824
+            },
+            "SAER-7g": {
+              "mean_gain_over_xgboost_across_queries": 33.315313277353326
+            },
+            "SER": {
+              "mean_gain_over_xgboost_across_queries": 26.063570702205414
+            },
+            "XGBoost": {
+              "mean_gain_over_xgboost_across_queries": 0.0
+            }
+          }
+        },
+        "no_matching_support": {
+          "observations": 14,
+          "sites": 8,
+          "by_query": {
+            "AlignedAddAudit": [
+              {
+                "query": "9o",
+                "observations": 14,
+                "mae_method": 0.5783900358151163,
+                "mae_xgboost": 0.5568050384810866,
+                "gain_percent": -3.876580821343057
+              }
+            ],
+            "CovarianceLocalMedian": [
+              {
+                "query": "9o",
+                "observations": 14,
+                "mae_method": 0.5723995324507875,
+                "mae_xgboost": 0.5568050384810866,
+                "gain_percent": -2.800709923933369
+              }
+            ],
+            "NestedAligned": [
+              {
+                "query": "9o",
+                "observations": 14,
+                "mae_method": 0.6564252515808379,
+                "mae_xgboost": 0.5568050384810866,
+                "gain_percent": -17.891399361526265
+              }
+            ],
+            "SAER-7g": [
+              {
+                "query": "9o",
+                "observations": 14,
+                "mae_method": 0.6576752555365776,
+                "mae_xgboost": 0.5568050384810866,
+                "gain_percent": -18.115895166943115
+              }
+            ],
+            "SER": [
+              {
+                "query": "9o",
+                "observations": 14,
+                "mae_method": 0.46388786186801995,
+                "mae_xgboost": 0.5568050384810866,
+                "gain_percent": 16.687560311332003
+              }
+            ],
+            "XGBoost": [
+              {
+                "query": "9o",
+                "observations": 14,
+                "mae_method": 0.5568050384810866,
+                "mae_xgboost": 0.5568050384810866,
+                "gain_percent": 0.0
+              }
+            ]
+          },
+          "methods": {
+            "AlignedAddAudit": {
+              "mean_gain_over_xgboost_across_queries": -3.876580821343057
+            },
+            "CovarianceLocalMedian": {
+              "mean_gain_over_xgboost_across_queries": -2.800709923933369
+            },
+            "NestedAligned": {
+              "mean_gain_over_xgboost_across_queries": -17.891399361526265
+            },
+            "SAER-7g": {
+              "mean_gain_over_xgboost_across_queries": -18.115895166943115
+            },
+            "SER": {
+              "mean_gain_over_xgboost_across_queries": 16.687560311332003
+            },
+            "XGBoost": {
+              "mean_gain_over_xgboost_across_queries": 0.0
+            }
+          }
+        }
+      }
+    },
+    "Takei2025_ALK|k2": {
+      "defined": true,
+      "strata": {
+        "support_matches_query_mode": {
+          "observations": 144,
+          "sites": 11,
+          "by_query": {
+            "AlignedAddAudit": [
+              {
+                "query": "alectinib",
+                "observations": 36,
+                "mae_method": 0.5248105556350956,
+                "mae_xgboost": 0.5237473182463575,
+                "gain_percent": -0.2030057914755809
+              },
+              {
+                "query": "crizotinib",
+                "observations": 36,
+                "mae_method": 0.1723532365870714,
+                "mae_xgboost": 0.18837428024119507,
+                "gain_percent": 8.504899731327578
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 36,
+                "mae_method": 0.5668955414855616,
+                "mae_xgboost": 0.4874506039279469,
+                "gain_percent": -16.298048852014137
+              },
+              {
+                "query": "brigatinib",
+                "observations": 36,
+                "mae_method": 0.2628514349398524,
+                "mae_xgboost": 0.26513786188424526,
+                "gain_percent": 0.8623539950665611
+              }
+            ],
+            "CovarianceLocalMedian": [
+              {
+                "query": "alectinib",
+                "observations": 36,
+                "mae_method": 0.531199489348868,
+                "mae_xgboost": 0.5237473182463575,
+                "gain_percent": -1.4228561832950894
+              },
+              {
+                "query": "crizotinib",
+                "observations": 36,
+                "mae_method": 0.16016174449248488,
+                "mae_xgboost": 0.18837428024119507,
+                "gain_percent": 14.976851251979177
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 36,
+                "mae_method": 0.4427858462874924,
+                "mae_xgboost": 0.4874506039279469,
+                "gain_percent": 9.162930003684371
+              },
+              {
+                "query": "brigatinib",
+                "observations": 36,
+                "mae_method": 0.29436176655920204,
+                "mae_xgboost": 0.26513786188424526,
+                "gain_percent": -11.022154462313438
+              }
+            ],
+            "NestedAligned": [
+              {
+                "query": "alectinib",
+                "observations": 36,
+                "mae_method": 0.5221975500838892,
+                "mae_xgboost": 0.5237473182463575,
+                "gain_percent": 0.29589997093583986
+              },
+              {
+                "query": "crizotinib",
+                "observations": 36,
+                "mae_method": 0.1453733313433903,
+                "mae_xgboost": 0.18837428024119507,
+                "gain_percent": 22.827399177183953
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 36,
+                "mae_method": 0.5491136456855387,
+                "mae_xgboost": 0.4874506039279469,
+                "gain_percent": -12.650110854454196
+              },
+              {
+                "query": "brigatinib",
+                "observations": 36,
+                "mae_method": 0.2639571401211131,
+                "mae_xgboost": 0.26513786188424526,
+                "gain_percent": 0.44532370999040777
+              }
+            ],
+            "SAER-7g": [
+              {
+                "query": "alectinib",
+                "observations": 36,
+                "mae_method": 0.50586503808587,
+                "mae_xgboost": 0.5237473182463575,
+                "gain_percent": 3.414295317131544
+              },
+              {
+                "query": "crizotinib",
+                "observations": 36,
+                "mae_method": 0.17099966290005936,
+                "mae_xgboost": 0.18837428024119507,
+                "gain_percent": 9.223455197221824
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 36,
+                "mae_method": 0.5764922816757158,
+                "mae_xgboost": 0.4874506039279469,
+                "gain_percent": -18.266810427612196
+              },
+              {
+                "query": "brigatinib",
+                "observations": 36,
+                "mae_method": 0.24670255492986815,
+                "mae_xgboost": 0.26513786188424526,
+                "gain_percent": 6.953102368467338
+              }
+            ],
+            "SER": [
+              {
+                "query": "alectinib",
+                "observations": 36,
+                "mae_method": 0.48847928326531076,
+                "mae_xgboost": 0.5237473182463575,
+                "gain_percent": 6.733788174636056
+              },
+              {
+                "query": "crizotinib",
+                "observations": 36,
+                "mae_method": 0.16156892888581342,
+                "mae_xgboost": 0.18837428024119507,
+                "gain_percent": 14.22983611194691
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 36,
+                "mae_method": 0.4744507708659552,
+                "mae_xgboost": 0.4874506039279469,
+                "gain_percent": 2.6669026476195095
+              },
+              {
+                "query": "brigatinib",
+                "observations": 36,
+                "mae_method": 0.22388685937495356,
+                "mae_xgboost": 0.26513786188424526,
+                "gain_percent": 15.55832208049607
+              }
+            ],
+            "XGBoost": [
+              {
+                "query": "alectinib",
+                "observations": 36,
+                "mae_method": 0.5237473182463575,
+                "mae_xgboost": 0.5237473182463575,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "crizotinib",
+                "observations": 36,
+                "mae_method": 0.18837428024119507,
+                "mae_xgboost": 0.18837428024119507,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 36,
+                "mae_method": 0.4874506039279469,
+                "mae_xgboost": 0.4874506039279469,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "brigatinib",
+                "observations": 36,
+                "mae_method": 0.26513786188424526,
+                "mae_xgboost": 0.26513786188424526,
+                "gain_percent": 0.0
+              }
+            ]
+          },
+          "methods": {
+            "AlignedAddAudit": {
+              "mean_gain_over_xgboost_across_queries": -1.7834502292738947
+            },
+            "CovarianceLocalMedian": {
+              "mean_gain_over_xgboost_across_queries": 2.923692652513756
+            },
+            "NestedAligned": {
+              "mean_gain_over_xgboost_across_queries": 2.729628000914001
+            },
+            "SAER-7g": {
+              "mean_gain_over_xgboost_across_queries": 0.3310106138021274
+            },
+            "SER": {
+              "mean_gain_over_xgboost_across_queries": 9.797212253674637
+            },
+            "XGBoost": {
+              "mean_gain_over_xgboost_across_queries": 0.0
+            }
+          }
+        },
+        "no_matching_support": {
+          "observations": 0
+        }
+      }
+    },
+    "Takei2025_ALK|k3": {
+      "defined": true,
+      "strata": {
+        "support_matches_query_mode": {
+          "observations": 48,
+          "sites": 11,
+          "by_query": {
+            "AlignedAddAudit": [
+              {
+                "query": "alectinib",
+                "observations": 12,
+                "mae_method": 0.6791493865025259,
+                "mae_xgboost": 0.6901759683898644,
+                "gain_percent": 1.5976479031952986
+              },
+              {
+                "query": "crizotinib",
+                "observations": 12,
+                "mae_method": 0.24468149090614266,
+                "mae_xgboost": 0.5198727018533933,
+                "gain_percent": 52.93434526686418
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 12,
+                "mae_method": 0.5428169441959092,
+                "mae_xgboost": 0.859216381939436,
+                "gain_percent": 36.82418589707813
+              },
+              {
+                "query": "brigatinib",
+                "observations": 12,
+                "mae_method": 0.4792151014087354,
+                "mae_xgboost": 0.3856556844497538,
+                "gain_percent": -24.259830914322038
+              }
+            ],
+            "CovarianceLocalMedian": [
+              {
+                "query": "alectinib",
+                "observations": 12,
+                "mae_method": 0.4461161213670332,
+                "mae_xgboost": 0.6901759683898644,
+                "gain_percent": 35.36197407629346
+              },
+              {
+                "query": "crizotinib",
+                "observations": 12,
+                "mae_method": 0.14590031253593305,
+                "mae_xgboost": 0.5198727018533933,
+                "gain_percent": 71.93537725374208
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 12,
+                "mae_method": 0.3430162905707222,
+                "mae_xgboost": 0.859216381939436,
+                "gain_percent": 60.07800854582628
+              },
+              {
+                "query": "brigatinib",
+                "observations": 12,
+                "mae_method": 0.2581534944118605,
+                "mae_xgboost": 0.3856556844497538,
+                "gain_percent": 33.061146296809035
+              }
+            ],
+            "NestedAligned": [
+              {
+                "query": "alectinib",
+                "observations": 12,
+                "mae_method": 0.5569174153737843,
+                "mae_xgboost": 0.6901759683898644,
+                "gain_percent": 19.30790973886901
+              },
+              {
+                "query": "crizotinib",
+                "observations": 12,
+                "mae_method": 0.18208525440768797,
+                "mae_xgboost": 0.5198727018533933,
+                "gain_percent": 64.97503066451893
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 12,
+                "mae_method": 0.5358540024753901,
+                "mae_xgboost": 0.859216381939436,
+                "gain_percent": 37.63456869085149
+              },
+              {
+                "query": "brigatinib",
+                "observations": 12,
+                "mae_method": 0.35271351602257245,
+                "mae_xgboost": 0.3856556844497538,
+                "gain_percent": 8.541859942809504
+              }
+            ],
+            "SAER-7g": [
+              {
+                "query": "alectinib",
+                "observations": 12,
+                "mae_method": 0.5096635962172441,
+                "mae_xgboost": 0.6901759683898644,
+                "gain_percent": 26.15454325275102
+              },
+              {
+                "query": "crizotinib",
+                "observations": 12,
+                "mae_method": 0.24289206955292267,
+                "mae_xgboost": 0.5198727018533933,
+                "gain_percent": 53.27854902036779
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 12,
+                "mae_method": 0.5626232020728117,
+                "mae_xgboost": 0.859216381939436,
+                "gain_percent": 34.51903223692613
+              },
+              {
+                "query": "brigatinib",
+                "observations": 12,
+                "mae_method": 0.3276511362654682,
+                "mae_xgboost": 0.3856556844497538,
+                "gain_percent": 15.040501287319376
+              }
+            ],
+            "SER": [
+              {
+                "query": "alectinib",
+                "observations": 12,
+                "mae_method": 0.4528413769216419,
+                "mae_xgboost": 0.6901759683898644,
+                "gain_percent": 34.38754786288903
+              },
+              {
+                "query": "crizotinib",
+                "observations": 12,
+                "mae_method": 0.16346913723862494,
+                "mae_xgboost": 0.5198727018533933,
+                "gain_percent": 68.55592981592558
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 12,
+                "mae_method": 0.44121468028778876,
+                "mae_xgboost": 0.859216381939436,
+                "gain_percent": 48.64917737114457
+              },
+              {
+                "query": "brigatinib",
+                "observations": 12,
+                "mae_method": 0.20207962322440895,
+                "mae_xgboost": 0.3856556844497538,
+                "gain_percent": 47.60102563696622
+              }
+            ],
+            "XGBoost": [
+              {
+                "query": "alectinib",
+                "observations": 12,
+                "mae_method": 0.6901759683898644,
+                "mae_xgboost": 0.6901759683898644,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "crizotinib",
+                "observations": 12,
+                "mae_method": 0.5198727018533933,
+                "mae_xgboost": 0.5198727018533933,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 12,
+                "mae_method": 0.859216381939436,
+                "mae_xgboost": 0.859216381939436,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "brigatinib",
+                "observations": 12,
+                "mae_method": 0.3856556844497538,
+                "mae_xgboost": 0.3856556844497538,
+                "gain_percent": 0.0
+              }
+            ]
+          },
+          "methods": {
+            "AlignedAddAudit": {
+              "mean_gain_over_xgboost_across_queries": 16.774087038203895
+            },
+            "CovarianceLocalMedian": {
+              "mean_gain_over_xgboost_across_queries": 50.10912654316771
+            },
+            "NestedAligned": {
+              "mean_gain_over_xgboost_across_queries": 32.61484225926223
+            },
+            "SAER-7g": {
+              "mean_gain_over_xgboost_across_queries": 32.24815644934108
+            },
+            "SER": {
+              "mean_gain_over_xgboost_across_queries": 49.79842017173135
+            },
+            "XGBoost": {
+              "mean_gain_over_xgboost_across_queries": 0.0
+            }
+          }
+        },
+        "no_matching_support": {
+          "observations": 0
+        }
+      }
+    },
+    "Villa2024_ALK|k2": {
+      "defined": true,
+      "strata": {
+        "support_matches_query_mode": {
+          "observations": 945,
+          "sites": 8,
+          "by_query": {
+            "AlignedAddAudit": [
+              {
+                "query": "crizotinib",
+                "observations": 135,
+                "mae_method": 0.2953977705838827,
+                "mae_xgboost": 0.19538615853235314,
+                "gain_percent": -51.18664126607981
+              },
+              {
+                "query": "brigatinib",
+                "observations": 135,
+                "mae_method": 0.3208073643632776,
+                "mae_xgboost": 0.38855334448111084,
+                "gain_percent": 17.43543868044781
+              },
+              {
+                "query": "ceritinib",
+                "observations": 135,
+                "mae_method": 0.3873119076061448,
+                "mae_xgboost": 0.45096422523361984,
+                "gain_percent": 14.114715550773512
+              },
+              {
+                "query": "alectinib",
+                "observations": 135,
+                "mae_method": 0.4146480189443419,
+                "mae_xgboost": 0.4072162050732578,
+                "gain_percent": -1.8250290087908283
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 135,
+                "mae_method": 0.42549099760386255,
+                "mae_xgboost": 0.5493466741923957,
+                "gain_percent": 22.545995526525317
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 135,
+                "mae_method": 0.2885573001609671,
+                "mae_xgboost": 0.3307018596003408,
+                "gain_percent": 12.7439741313539
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 135,
+                "mae_method": 0.30052874714839434,
+                "mae_xgboost": 0.30048991533256697,
+                "gain_percent": -0.012922834959166591
+              }
+            ],
+            "CovarianceLocalMedian": [
+              {
+                "query": "crizotinib",
+                "observations": 135,
+                "mae_method": 0.2558198718528705,
+                "mae_xgboost": 0.19538615853235314,
+                "gain_percent": -30.930396387577463
+              },
+              {
+                "query": "brigatinib",
+                "observations": 135,
+                "mae_method": 0.3833112958415659,
+                "mae_xgboost": 0.38855334448111084,
+                "gain_percent": 1.3491194231117354
+              },
+              {
+                "query": "ceritinib",
+                "observations": 135,
+                "mae_method": 0.4595514865288969,
+                "mae_xgboost": 0.45096422523361984,
+                "gain_percent": -1.9042001149489072
+              },
+              {
+                "query": "alectinib",
+                "observations": 135,
+                "mae_method": 0.42125156150213816,
+                "mae_xgboost": 0.4072162050732578,
+                "gain_percent": -3.446659600974236
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 135,
+                "mae_method": 0.43784669230257983,
+                "mae_xgboost": 0.5493466741923957,
+                "gain_percent": 20.296833880669972
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 135,
+                "mae_method": 0.352627187209817,
+                "mae_xgboost": 0.3307018596003408,
+                "gain_percent": -6.629937804393765
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 135,
+                "mae_method": 0.3030400631880022,
+                "mae_xgboost": 0.30048991533256697,
+                "gain_percent": -0.8486633744805882
+              }
+            ],
+            "NestedAligned": [
+              {
+                "query": "crizotinib",
+                "observations": 135,
+                "mae_method": 0.29153171206966927,
+                "mae_xgboost": 0.19538615853235314,
+                "gain_percent": -49.20796552811893
+              },
+              {
+                "query": "brigatinib",
+                "observations": 135,
+                "mae_method": 0.3285190858418075,
+                "mae_xgboost": 0.38855334448111084,
+                "gain_percent": 15.450712107362094
+              },
+              {
+                "query": "ceritinib",
+                "observations": 135,
+                "mae_method": 0.39244915556149224,
+                "mae_xgboost": 0.45096422523361984,
+                "gain_percent": 12.97554581892037
+              },
+              {
+                "query": "alectinib",
+                "observations": 135,
+                "mae_method": 0.43582878569211786,
+                "mae_xgboost": 0.4072162050732578,
+                "gain_percent": -7.026385556958053
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 135,
+                "mae_method": 0.45043641721558303,
+                "mae_xgboost": 0.5493466741923957,
+                "gain_percent": 18.00507068186449
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 135,
+                "mae_method": 0.2881891836172543,
+                "mae_xgboost": 0.3307018596003408,
+                "gain_percent": 12.855287851862654
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 135,
+                "mae_method": 0.24751545555843876,
+                "mae_xgboost": 0.30048991533256697,
+                "gain_percent": 17.62936360626238
+              }
+            ],
+            "SAER-7g": [
+              {
+                "query": "crizotinib",
+                "observations": 135,
+                "mae_method": 0.28196932019486065,
+                "mae_xgboost": 0.19538615853235314,
+                "gain_percent": -44.31386660799239
+              },
+              {
+                "query": "brigatinib",
+                "observations": 135,
+                "mae_method": 0.29877952510705175,
+                "mae_xgboost": 0.38855334448111084,
+                "gain_percent": 23.104631744695574
+              },
+              {
+                "query": "ceritinib",
+                "observations": 135,
+                "mae_method": 0.40466885580305295,
+                "mae_xgboost": 0.45096422523361984,
+                "gain_percent": 10.26586297540205
+              },
+              {
+                "query": "alectinib",
+                "observations": 135,
+                "mae_method": 0.41182398852920654,
+                "mae_xgboost": 0.4072162050732578,
+                "gain_percent": -1.1315324386758674
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 135,
+                "mae_method": 0.4317632564454047,
+                "mae_xgboost": 0.5493466741923957,
+                "gain_percent": 21.404228562929312
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 135,
+                "mae_method": 0.30227419425271623,
+                "mae_xgboost": 0.3307018596003408,
+                "gain_percent": 8.596161322461244
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 135,
+                "mae_method": 0.28952834860434523,
+                "mae_xgboost": 0.30048991533256697,
+                "gain_percent": 3.647898371594279
+              }
+            ],
+            "SER": [
+              {
+                "query": "crizotinib",
+                "observations": 135,
+                "mae_method": 0.2098455783584246,
+                "mae_xgboost": 0.19538615853235314,
+                "gain_percent": -7.400432013548795
+              },
+              {
+                "query": "brigatinib",
+                "observations": 135,
+                "mae_method": 0.3859852695581963,
+                "mae_xgboost": 0.38855334448111084,
+                "gain_percent": 0.6609323943264626
+              },
+              {
+                "query": "ceritinib",
+                "observations": 135,
+                "mae_method": 0.47292301671300685,
+                "mae_xgboost": 0.45096422523361984,
+                "gain_percent": -4.869297884552009
+              },
+              {
+                "query": "alectinib",
+                "observations": 135,
+                "mae_method": 0.41455101354727925,
+                "mae_xgboost": 0.4072162050732578,
+                "gain_percent": -1.8012074133203846
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 135,
+                "mae_method": 0.5357274049549563,
+                "mae_xgboost": 0.5493466741923957,
+                "gain_percent": 2.479175696742193
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 135,
+                "mae_method": 0.33010327290619695,
+                "mae_xgboost": 0.3307018596003408,
+                "gain_percent": 0.18100493745855206
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 135,
+                "mae_method": 0.3015750001649336,
+                "mae_xgboost": 0.30048991533256697,
+                "gain_percent": -0.36110524080840356
+              }
+            ],
+            "XGBoost": [
+              {
+                "query": "crizotinib",
+                "observations": 135,
+                "mae_method": 0.19538615853235314,
+                "mae_xgboost": 0.19538615853235314,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "brigatinib",
+                "observations": 135,
+                "mae_method": 0.38855334448111084,
+                "mae_xgboost": 0.38855334448111084,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "ceritinib",
+                "observations": 135,
+                "mae_method": 0.45096422523361984,
+                "mae_xgboost": 0.45096422523361984,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "alectinib",
+                "observations": 135,
+                "mae_method": 0.4072162050732578,
+                "mae_xgboost": 0.4072162050732578,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 135,
+                "mae_method": 0.5493466741923957,
+                "mae_xgboost": 0.5493466741923957,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 135,
+                "mae_method": 0.3307018596003408,
+                "mae_xgboost": 0.3307018596003408,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 135,
+                "mae_method": 0.30048991533256697,
+                "mae_xgboost": 0.30048991533256697,
+                "gain_percent": 0.0
+              }
+            ]
+          },
+          "methods": {
+            "AlignedAddAudit": {
+              "mean_gain_over_xgboost_across_queries": 1.973647254181533
+            },
+            "CovarianceLocalMedian": {
+              "mean_gain_over_xgboost_across_queries": -3.159129139799036
+            },
+            "NestedAligned": {
+              "mean_gain_over_xgboost_across_queries": 2.9545184258849995
+            },
+            "SAER-7g": {
+              "mean_gain_over_xgboost_across_queries": 3.081911990059172
+            },
+            "SER": {
+              "mean_gain_over_xgboost_across_queries": -1.5872756462431976
+            },
+            "XGBoost": {
+              "mean_gain_over_xgboost_across_queries": 0.0
+            }
+          }
+        },
+        "no_matching_support": {
+          "observations": 0
+        }
+      }
+    },
+    "Villa2024_ALK|k3": {
+      "defined": true,
+      "strata": {
+        "support_matches_query_mode": {
+          "observations": 1260,
+          "sites": 8,
+          "by_query": {
+            "AlignedAddAudit": [
+              {
+                "query": "crizotinib",
+                "observations": 180,
+                "mae_method": 0.3047715867288684,
+                "mae_xgboost": 0.2319228073576862,
+                "gain_percent": -31.410787149894297
+              },
+              {
+                "query": "brigatinib",
+                "observations": 180,
+                "mae_method": 0.2884813206267841,
+                "mae_xgboost": 0.3922056757103393,
+                "gain_percent": 26.44641867961138
+              },
+              {
+                "query": "ceritinib",
+                "observations": 180,
+                "mae_method": 0.4024260967205305,
+                "mae_xgboost": 0.5263735481581674,
+                "gain_percent": 23.5474316426692
+              },
+              {
+                "query": "alectinib",
+                "observations": 180,
+                "mae_method": 0.37587839387473043,
+                "mae_xgboost": 0.4627215021720882,
+                "gain_percent": 18.767899890042372
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 180,
+                "mae_method": 0.34812691809218443,
+                "mae_xgboost": 0.5386423325858833,
+                "gain_percent": 35.36955841905024
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 180,
+                "mae_method": 0.2777207050072362,
+                "mae_xgboost": 0.3343925626377628,
+                "gain_percent": 16.94770277887952
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 180,
+                "mae_method": 0.29359562572733433,
+                "mae_xgboost": 0.303913046290721,
+                "gain_percent": 3.3948593814288324
+              }
+            ],
+            "CovarianceLocalMedian": [
+              {
+                "query": "crizotinib",
+                "observations": 180,
+                "mae_method": 0.24515046720952544,
+                "mae_xgboost": 0.2319228073576862,
+                "gain_percent": -5.703475222011563
+              },
+              {
+                "query": "brigatinib",
+                "observations": 180,
+                "mae_method": 0.4044305266021936,
+                "mae_xgboost": 0.3922056757103393,
+                "gain_percent": -3.1169490012385346
+              },
+              {
+                "query": "ceritinib",
+                "observations": 180,
+                "mae_method": 0.46210443167567694,
+                "mae_xgboost": 0.5263735481581674,
+                "gain_percent": 12.209792210754964
+              },
+              {
+                "query": "alectinib",
+                "observations": 180,
+                "mae_method": 0.41239128831515115,
+                "mae_xgboost": 0.4627215021720882,
+                "gain_percent": 10.876999149743208
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 180,
+                "mae_method": 0.4701881419545449,
+                "mae_xgboost": 0.5386423325858833,
+                "gain_percent": 12.70865405299793
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 180,
+                "mae_method": 0.3420158832607736,
+                "mae_xgboost": 0.3343925626377628,
+                "gain_percent": -2.2797518470136873
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 180,
+                "mae_method": 0.3115908203026097,
+                "mae_xgboost": 0.303913046290721,
+                "gain_percent": -2.5263061607905373
+              }
+            ],
+            "NestedAligned": [
+              {
+                "query": "crizotinib",
+                "observations": 180,
+                "mae_method": 0.2923213241052134,
+                "mae_xgboost": 0.2319228073576862,
+                "gain_percent": -26.042508468939292
+              },
+              {
+                "query": "brigatinib",
+                "observations": 180,
+                "mae_method": 0.3032863649319396,
+                "mae_xgboost": 0.3922056757103393,
+                "gain_percent": 22.671602244754464
+              },
+              {
+                "query": "ceritinib",
+                "observations": 180,
+                "mae_method": 0.4197496959587996,
+                "mae_xgboost": 0.5263735481581674,
+                "gain_percent": 20.256308960139645
+              },
+              {
+                "query": "alectinib",
+                "observations": 180,
+                "mae_method": 0.4001377010357247,
+                "mae_xgboost": 0.4627215021720882,
+                "gain_percent": 13.525155161924651
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 180,
+                "mae_method": 0.37401371145256906,
+                "mae_xgboost": 0.5386423325858833,
+                "gain_percent": 30.563624723473666
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 180,
+                "mae_method": 0.3037614200204926,
+                "mae_xgboost": 0.3343925626377628,
+                "gain_percent": 9.160234418984958
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 180,
+                "mae_method": 0.24666607559640008,
+                "mae_xgboost": 0.303913046290721,
+                "gain_percent": 18.83662823726195
+              }
+            ],
+            "SAER-7g": [
+              {
+                "query": "crizotinib",
+                "observations": 180,
+                "mae_method": 0.29984681285455095,
+                "mae_xgboost": 0.2319228073576862,
+                "gain_percent": -29.287333260030785
+              },
+              {
+                "query": "brigatinib",
+                "observations": 180,
+                "mae_method": 0.2737815361286887,
+                "mae_xgboost": 0.3922056757103393,
+                "gain_percent": 30.19439720426481
+              },
+              {
+                "query": "ceritinib",
+                "observations": 180,
+                "mae_method": 0.3877004071573441,
+                "mae_xgboost": 0.5263735481581674,
+                "gain_percent": 26.345005649705268
+              },
+              {
+                "query": "alectinib",
+                "observations": 180,
+                "mae_method": 0.3596966594820131,
+                "mae_xgboost": 0.4627215021720882,
+                "gain_percent": 22.264978438749893
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 180,
+                "mae_method": 0.3745034415930706,
+                "mae_xgboost": 0.5386423325858833,
+                "gain_percent": 30.47270536736765
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 180,
+                "mae_method": 0.27232182203748945,
+                "mae_xgboost": 0.3343925626377628,
+                "gain_percent": 18.56223718334091
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 180,
+                "mae_method": 0.3267029936915626,
+                "mae_xgboost": 0.303913046290721,
+                "gain_percent": -7.4988381311675765
+              }
+            ],
+            "SER": [
+              {
+                "query": "crizotinib",
+                "observations": 180,
+                "mae_method": 0.21714083168794346,
+                "mae_xgboost": 0.2319228073576862,
+                "gain_percent": 6.373661925773875
+              },
+              {
+                "query": "brigatinib",
+                "observations": 180,
+                "mae_method": 0.3656969114242047,
+                "mae_xgboost": 0.3922056757103393,
+                "gain_percent": 6.758893592787395
+              },
+              {
+                "query": "ceritinib",
+                "observations": 180,
+                "mae_method": 0.5057470373879511,
+                "mae_xgboost": 0.5263735481581674,
+                "gain_percent": 3.918607012527595
+              },
+              {
+                "query": "alectinib",
+                "observations": 180,
+                "mae_method": 0.4278077515500442,
+                "mae_xgboost": 0.4627215021720882,
+                "gain_percent": 7.545305428460383
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 180,
+                "mae_method": 0.4876246632206013,
+                "mae_xgboost": 0.5386423325858833,
+                "gain_percent": 9.471529859222048
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 180,
+                "mae_method": 0.3090390246452781,
+                "mae_xgboost": 0.3343925626377628,
+                "gain_percent": 7.581968268818645
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 180,
+                "mae_method": 0.2799630674935789,
+                "mae_xgboost": 0.303913046290721,
+                "gain_percent": 7.88053658421486
+              }
+            ],
+            "XGBoost": [
+              {
+                "query": "crizotinib",
+                "observations": 180,
+                "mae_method": 0.2319228073576862,
+                "mae_xgboost": 0.2319228073576862,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "brigatinib",
+                "observations": 180,
+                "mae_method": 0.3922056757103393,
+                "mae_xgboost": 0.3922056757103393,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "ceritinib",
+                "observations": 180,
+                "mae_method": 0.5263735481581674,
+                "mae_xgboost": 0.5263735481581674,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "alectinib",
+                "observations": 180,
+                "mae_method": 0.4627215021720882,
+                "mae_xgboost": 0.4627215021720882,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "lorlatinib",
+                "observations": 180,
+                "mae_method": 0.5386423325858833,
+                "mae_xgboost": 0.5386423325858833,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "zotizalkib",
+                "observations": 180,
+                "mae_method": 0.3343925626377628,
+                "mae_xgboost": 0.3343925626377628,
+                "gain_percent": 0.0
+              },
+              {
+                "query": "repotrectinib",
+                "observations": 180,
+                "mae_method": 0.303913046290721,
+                "mae_xgboost": 0.303913046290721,
+                "gain_percent": 0.0
+              }
+            ]
+          },
+          "methods": {
+            "AlignedAddAudit": {
+              "mean_gain_over_xgboost_across_queries": 13.294726234541034
+            },
+            "CovarianceLocalMedian": {
+              "mean_gain_over_xgboost_across_queries": 3.1669947403488257
+            },
+            "NestedAligned": {
+              "mean_gain_over_xgboost_across_queries": 12.710149325371434
+            },
+            "SAER-7g": {
+              "mean_gain_over_xgboost_across_queries": 13.007593207461454
+            },
+            "SER": {
+              "mean_gain_over_xgboost_across_queries": 7.075786095972113
+            },
+            "XGBoost": {
+              "mean_gain_over_xgboost_across_queries": 0.0
+            }
+          }
+        },
+        "no_matching_support": {
+          "observations": 0
+        }
+      }
+    }
+  }
+}

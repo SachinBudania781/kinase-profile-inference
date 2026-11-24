@@ -11,19 +11,12 @@ venv/
 raw_data/
 SER_Code_and_All_Cleaned_Study_Data/
 
-# Lockbox material stays private until both one-shot lockbox runs are done and scored
-# (README, "Lockbox access policy"). After that, delete this block and commit the tables.
+# Lockbox material. The response tables of both lockboxes were private until both one-shot runs were scored
+# (24 Nov 2026) and are now tracked: Lockbox A panels in data/, Lockbox B in data_lockbox_B/.
+# Still ignored: the episode lists, the original Lockbox B folder outside the repository, and the hidden-truth join files.
 lockbox_private/
 splits/lockbox_private/
 LockboxB_Data/
-data/An2023_EGFR/
-data/Abadie2026_EGFR/
-data/Bahcall2022_MET/
-data/Fujino2019_MET/
-data/Wylie2017_ABL1/
-data/Zhang2016_ALK/
-data/Gainor2016_ALK/
-data_lockbox_B/
 *_truth.csv*
 *_inputs.csv*
 

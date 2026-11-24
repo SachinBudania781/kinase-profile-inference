@@ -1,0 +1,30 @@
+{
+  "study": "Wylie2017_ABL1",
+  "kinase": "ABL1",
+  "source": "https://doi.org/10.1038/nature21702",
+  "ser": {
+    "table": "SER_responses.csv",
+    "drugs": [
+      "imatinib",
+      "bosutinib",
+      "nilotinib",
+      "dasatinib",
+      "ponatinib",
+      "asciminib"
+    ],
+    "modes": [
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "ATP-site",
+      "allosteric"
+    ],
+    "response": "log10 mutant/native IC50",
+    "censor": {
+      "-1": "upper_bound",
+      "0": "exact",
+      "1": "lower_bound"
+    }
+  }
+}
