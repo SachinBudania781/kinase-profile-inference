@@ -1,0 +1,5140 @@
+{
+  "config": {
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 20261112,
+    "alpha": 0.05,
+    "practical_threshold": 2.0,
+    "tie_tolerance": 1e-12,
+    "win_threshold_studies": 5,
+    "t1_min_eligible": 20,
+    "t1_review_fraction": 0.05,
+    "t1_ic50_sensitive_below": 0.47712125471966244,
+    "t1_ic50_resistant_at_least": 1.0,
+    "t2_min_remaining": 2,
+    "t2_unit": "variant",
+    "t4_min_episodes": 1
+  },
+  "studies": [
+    "Chakraborty2024_SRC",
+    "DuongLy2016_multi_kinase",
+    "Estevam2025_MET",
+    "Jung2025_ABL1",
+    "KiRHub2026_multi_kinase",
+    "Lee2026_EGFR",
+    "Nakamura2021_FGFR1_FGFR2_FGFR3",
+    "OKL2026_multi_kinase",
+    "Oh2026_ALK",
+    "Robichaux2021_EGFR"
+  ],
+  "methods": [
+    "AlignedAddAudit",
+    "CovarianceLocalMedian",
+    "NestedAligned",
+    "QueryMedian",
+    "RidgeSupports",
+    "SAER-7g",
+    "SER",
+    "XGBoost"
+  ],
+  "tables": {},
+  "summaries": {
+    "AlignedAddAudit": {
+      "panel_rows": [
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 40500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.18350551780059116,
+          "mae_xgboost": 0.18443436361462368,
+          "gain_percent": 0.5036186293208063,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0009288458140325195,
+          "gain_ci95": [
+            -0.19122611773876624,
+            1.1336366091881707
+          ]
+        },
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 13500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.17253556952859272,
+          "mae_xgboost": 0.17456863204616424,
+          "gain_percent": 1.1646207533057127,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0020330625175715156,
+          "gain_ci95": [
+            -0.13581690265661267,
+            2.8719046725335304
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.757774768112881,
+          "mae_xgboost": 15.336855007271952,
+          "gain_percent": 10.295984661851152,
+          "gain_defined": true,
+          "absolute_error_difference": 1.5790802391590706,
+          "gain_ci95": [
+            1.3784981178674576,
+            16.681199448013547
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.858777115245186,
+          "mae_xgboost": 15.746505709411688,
+          "gain_percent": 11.98823808280339,
+          "gain_defined": true,
+          "absolute_error_difference": 1.8877285941665018,
+          "gain_ci95": [
+            1.912675765149397,
+            19.869557991822155
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.2514166095569961,
+          "mae_xgboost": 0.28746333302354865,
+          "gain_percent": 12.539590036548999,
+          "gain_defined": true,
+          "absolute_error_difference": 0.03604672346655258,
+          "gain_ci95": [
+            11.156090582623374,
+            13.849637972816895
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.23486268069365393,
+          "mae_xgboost": 0.2649097602377033,
+          "gain_percent": 11.342382974899886,
+          "gain_defined": true,
+          "absolute_error_difference": 0.030047079544049365,
+          "gain_ci95": [
+            9.867815918760751,
+            12.767975250491379
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 55080,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 1.0619447195236995,
+          "mae_xgboost": 1.0684411792597226,
+          "gain_percent": 0.6080315755448705,
+          "gain_defined": true,
+          "absolute_error_difference": 0.006496459736023086,
+          "gain_ci95": [
+            0.05802614521074434,
+            1.174757412053828
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 36720,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 0.9726421601628432,
+          "mae_xgboost": 0.9824823186215812,
+          "gain_percent": 1.001560870076897,
+          "gain_defined": true,
+          "absolute_error_difference": 0.00984015845873798,
+          "gain_ci95": [
+            0.25752021937250336,
+            1.733171621662687
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 19.270312574246052,
+          "mae_xgboost": 21.146426160921724,
+          "gain_percent": 8.872012567980406,
+          "gain_defined": true,
+          "absolute_error_difference": 1.8761135866756717,
+          "gain_ci95": [
+            5.567859693326202,
+            12.997527089312738
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 18.724715209495145,
+          "mae_xgboost": 21.04355279809421,
+          "gain_percent": 11.019230501843158,
+          "gain_defined": true,
+          "absolute_error_difference": 2.3188375885990666,
+          "gain_ci95": [
+            7.667269920983857,
+            14.977287376930086
+          ]
+        },
+        {
+          "study": "Lee2026_EGFR",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 4764,
+          "sites": 286,
+          "failed_episodes": 0,
+          "mae_method": 0.763797463962973,
+          "mae_xgboost": 0.7822247307610903,
+          "gain_percent": 2.3557509847825897,
+          "gain_defined": true,
+          "absolute_error_difference": 0.018427266798117348,
+          "gain_ci95": [
+            -0.19847772488352183,
+            4.740192264934807
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 10791,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.5623112241294852,
+          "mae_xgboost": 0.4507488091228848,
+          "gain_percent": -24.75046250786341,
+          "gain_defined": true,
+          "absolute_error_difference": -0.11156241500660041,
+          "gain_ci95": [
+            -55.83820189212182,
+            27.52661973181531
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 17280,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.5305944137910259,
+          "mae_xgboost": 0.4580932407303281,
+          "gain_percent": -15.826728406887376,
+          "gain_defined": true,
+          "absolute_error_difference": -0.07250117306069781,
+          "gain_ci95": [
+            -39.425540384737104,
+            31.31400452533948
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 25.618814508437783,
+          "mae_xgboost": 28.06735547448282,
+          "gain_percent": 8.723803595501208,
+          "gain_defined": true,
+          "absolute_error_difference": 2.4485409660450372,
+          "gain_ci95": [
+            -1.3058351335576095,
+            16.88082063272184
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 24.85213081337668,
+          "mae_xgboost": 27.818733342596378,
+          "gain_percent": 10.664046032164958,
+          "gain_defined": true,
+          "absolute_error_difference": 2.966602529219699,
+          "gain_ci95": [
+            -2.0342368120410566,
+            19.822388053683916
+          ]
+        },
+        {
+          "study": "Oh2026_ALK",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 5796,
+          "sites": 331,
+          "failed_episodes": 0,
+          "mae_method": 0.5902086807199786,
+          "mae_xgboost": 0.5906832663999063,
+          "gain_percent": 0.08034520476942833,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0004745856799277526,
+          "gain_ci95": [
+            -1.1833501154853139,
+            1.3009770918661832
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 2,
+          "method": "AlignedAddAudit",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7696275748152378,
+          "mae_xgboost": 0.7752034442626881,
+          "gain_percent": 0.719278208671219,
+          "gain_defined": true,
+          "absolute_error_difference": 0.005575869447450255,
+          "gain_ci95": [
+            -2.8106564555003692,
+            4.2588376441874845
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 3,
+          "method": "AlignedAddAudit",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.709174109142148,
+          "mae_xgboost": 0.7547901985714773,
+          "gain_percent": 6.04354554625415,
+          "gain_defined": true,
+          "absolute_error_difference": 0.045616089429329376,
+          "gain_ci95": [
+            0.48376636621322927,
+            9.668049073404566
+          ]
+        }
+      ],
+      "studies": [
+        "Chakraborty2024_SRC",
+        "DuongLy2016_multi_kinase",
+        "Estevam2025_MET",
+        "Jung2025_ABL1",
+        "KiRHub2026_multi_kinase",
+        "Lee2026_EGFR",
+        "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "OKL2026_multi_kinase",
+        "Oh2026_ALK",
+        "Robichaux2021_EGFR"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Chakraborty2024_SRC": 0.8341196913132595,
+        "DuongLy2016_multi_kinase": 11.142111372327271,
+        "Estevam2025_MET": 11.940986505724442,
+        "Jung2025_ABL1": 0.8047962228108838,
+        "KiRHub2026_multi_kinase": 9.945621534911782,
+        "Lee2026_EGFR": 2.3557509847825897,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": -20.288595457375393,
+        "OKL2026_multi_kinase": 9.693924813833082,
+        "Oh2026_ALK": 0.08034520476942833,
+        "Robichaux2021_EGFR": 3.3814118774626847
+      },
+      "gain_percent": 2.989047275056003,
+      "ci95": [
+        -0.34914960305555565,
+        7.577006544212344
+      ],
+      "n_draws": 10000,
+      "meets_target": false,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 0.0964999900009999
+    },
+    "CovarianceLocalMedian": {
+      "panel_rows": [
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 40500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.18247184477461115,
+          "mae_xgboost": 0.18443436361462368,
+          "gain_percent": 1.0640743956550414,
+          "gain_defined": true,
+          "absolute_error_difference": 0.001962518840012528,
+          "gain_ci95": [
+            0.10075837862793277,
+            2.330548964462862
+          ]
+        },
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 13500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.1727842742819517,
+          "mae_xgboost": 0.17456863204616424,
+          "gain_percent": 1.0221525730582983,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0017843577642125408,
+          "gain_ci95": [
+            -0.7111185176122236,
+            3.3344183013947424
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.923760755023487,
+          "mae_xgboost": 15.336855007271952,
+          "gain_percent": 9.213715925321377,
+          "gain_defined": true,
+          "absolute_error_difference": 1.4130942522484649,
+          "gain_ci95": [
+            -2.734462943503245,
+            18.406569034055583
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 14.024274754108982,
+          "mae_xgboost": 15.746505709411688,
+          "gain_percent": 10.937226246159035,
+          "gain_defined": true,
+          "absolute_error_difference": 1.722230955302706,
+          "gain_ci95": [
+            -3.4008621589704826,
+            21.83614688425748
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.2643992867915402,
+          "mae_xgboost": 0.28746333302354865,
+          "gain_percent": 8.0233002203864,
+          "gain_defined": true,
+          "absolute_error_difference": 0.023064046232008473,
+          "gain_ci95": [
+            7.265892996543723,
+            8.78296979851975
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.23533790345671374,
+          "mae_xgboost": 0.2649097602377033,
+          "gain_percent": 11.162992542990773,
+          "gain_defined": true,
+          "absolute_error_difference": 0.02957185678098956,
+          "gain_ci95": [
+            10.127270057914304,
+            12.21372149826954
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 55080,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 1.054612869206473,
+          "mae_xgboost": 1.0684411792597226,
+          "gain_percent": 1.2942509444301595,
+          "gain_defined": true,
+          "absolute_error_difference": 0.013828310053249693,
+          "gain_ci95": [
+            0.7953356273753015,
+            1.7937997630292275
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 36720,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 0.9698375619780137,
+          "mae_xgboost": 0.9824823186215812,
+          "gain_percent": 1.2870212933000158,
+          "gain_defined": true,
+          "absolute_error_difference": 0.012644756643567456,
+          "gain_ci95": [
+            0.4676903741631687,
+            2.1126247325333285
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 19.623231626484785,
+          "mae_xgboost": 21.146426160921724,
+          "gain_percent": 7.203082557996395,
+          "gain_defined": true,
+          "absolute_error_difference": 1.5231945344369393,
+          "gain_ci95": [
+            2.121849961669901,
+            12.197013755979597
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 19.22222708019641,
+          "mae_xgboost": 21.04355279809421,
+          "gain_percent": 8.65502957306119,
+          "gain_defined": true,
+          "absolute_error_difference": 1.8213257178977997,
+          "gain_ci95": [
+            2.826755240248189,
+            13.820473245928033
+          ]
+        },
+        {
+          "study": "Lee2026_EGFR",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 4764,
+          "sites": 286,
+          "failed_episodes": 0,
+          "mae_method": 0.775319300740426,
+          "mae_xgboost": 0.7822247307610903,
+          "gain_percent": 0.8827936204401889,
+          "gain_defined": true,
+          "absolute_error_difference": 0.006905430020664349,
+          "gain_ci95": [
+            -2.632032132842766,
+            3.982775365024689
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 10791,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.45963721063475027,
+          "mae_xgboost": 0.4507488091228848,
+          "gain_percent": -1.9719190227394026,
+          "gain_defined": true,
+          "absolute_error_difference": -0.008888401511865485,
+          "gain_ci95": [
+            -9.526193580126037,
+            27.239435713365232
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 17280,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.4551083229192236,
+          "mae_xgboost": 0.4580932407303281,
+          "gain_percent": 0.6515961262265523,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0029849178111044927,
+          "gain_ci95": [
+            -4.8857073487849565,
+            27.841049865037775
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 26.68058889007438,
+          "mae_xgboost": 28.06735547448282,
+          "gain_percent": 4.940852321014737,
+          "gain_defined": true,
+          "absolute_error_difference": 1.3867665844084414,
+          "gain_ci95": [
+            -7.015884520946255,
+            13.742029465628786
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 26.701952696875942,
+          "mae_xgboost": 27.818733342596378,
+          "gain_percent": 4.014491357197805,
+          "gain_defined": true,
+          "absolute_error_difference": 1.1167806457204357,
+          "gain_ci95": [
+            -13.647696837672292,
+            16.712509869678755
+          ]
+        },
+        {
+          "study": "Oh2026_ALK",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 5796,
+          "sites": 331,
+          "failed_episodes": 0,
+          "mae_method": 0.5986822311506692,
+          "mae_xgboost": 0.5906832663999063,
+          "gain_percent": -1.3541884806581619,
+          "gain_defined": true,
+          "absolute_error_difference": -0.007998964750762894,
+          "gain_ci95": [
+            -2.752624585111538,
+            -0.041855462290974095
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 2,
+          "method": "CovarianceLocalMedian",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7619620189097949,
+          "mae_xgboost": 0.7752034442626881,
+          "gain_percent": 1.7081226161846301,
+          "gain_defined": true,
+          "absolute_error_difference": 0.013241425352893188,
+          "gain_ci95": [
+            0.6361243947938926,
+            6.6515424725296395
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 3,
+          "method": "CovarianceLocalMedian",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7393783502817234,
+          "mae_xgboost": 0.7547901985714773,
+          "gain_percent": 2.0418718100635846,
+          "gain_defined": true,
+          "absolute_error_difference": 0.015411848289753949,
+          "gain_ci95": [
+            0.20516554943614457,
+            10.652922851352645
+          ]
+        }
+      ],
+      "studies": [
+        "Chakraborty2024_SRC",
+        "DuongLy2016_multi_kinase",
+        "Estevam2025_MET",
+        "Jung2025_ABL1",
+        "KiRHub2026_multi_kinase",
+        "Lee2026_EGFR",
+        "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "OKL2026_multi_kinase",
+        "Oh2026_ALK",
+        "Robichaux2021_EGFR"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Chakraborty2024_SRC": 1.0431134843566698,
+        "DuongLy2016_multi_kinase": 10.075471085740206,
+        "Estevam2025_MET": 9.593146381688587,
+        "Jung2025_ABL1": 1.2906361188650877,
+        "KiRHub2026_multi_kinase": 7.929056065528792,
+        "Lee2026_EGFR": 0.8827936204401889,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": -0.6601614482564251,
+        "OKL2026_multi_kinase": 4.4776718391062715,
+        "Oh2026_ALK": -1.3541884806581619,
+        "Robichaux2021_EGFR": 1.8749972131241073
+      },
+      "gain_percent": 3.515253587993533,
+      "ci95": [
+        1.3904238940741696,
+        6.110918528816682
+      ],
+      "n_draws": 10000,
+      "meets_target": true,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 0.0014999900009999
+    },
+    "NestedAligned": {
+      "panel_rows": [
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 40500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.18281834144956835,
+          "mae_xgboost": 0.18443436361462368,
+          "gain_percent": 0.8762044845569071,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0016160221650553253,
+          "gain_ci95": [
+            0.0033179014135739184,
+            1.8753372619298498
+          ]
+        },
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 13500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.1727827883048682,
+          "mae_xgboost": 0.17456863204616424,
+          "gain_percent": 1.0230038010630522,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0017858437412960337,
+          "gain_ci95": [
+            -0.4399659969763705,
+            2.8819077020169774
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.786254748595521,
+          "mae_xgboost": 15.336855007271952,
+          "gain_percent": 10.110288308399705,
+          "gain_defined": true,
+          "absolute_error_difference": 1.5506002586764307,
+          "gain_ci95": [
+            1.233480669845412,
+            16.58883848199775
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.776336018302732,
+          "mae_xgboost": 15.746505709411688,
+          "gain_percent": 12.511789773977505,
+          "gain_defined": true,
+          "absolute_error_difference": 1.9701696911089552,
+          "gain_ci95": [
+            2.6619528697638493,
+            20.285168570293198
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.2518744227938535,
+          "mae_xgboost": 0.28746333302354865,
+          "gain_percent": 12.380330338262558,
+          "gain_defined": true,
+          "absolute_error_difference": 0.035588910229695125,
+          "gain_ci95": [
+            10.986099772360001,
+            13.692231682697876
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.23500097261248054,
+          "mae_xgboost": 0.2649097602377033,
+          "gain_percent": 11.290179568463474,
+          "gain_defined": true,
+          "absolute_error_difference": 0.029908787625222755,
+          "gain_ci95": [
+            9.82736517120873,
+            12.719227471368999
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 55080,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 1.0673848868343059,
+          "mae_xgboost": 1.0684411792597226,
+          "gain_percent": 0.09886294593667534,
+          "gain_defined": true,
+          "absolute_error_difference": 0.001056292425416716,
+          "gain_ci95": [
+            -0.43679050757838744,
+            0.6426563514117791
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 36720,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 0.9799410590716134,
+          "mae_xgboost": 0.9824823186215812,
+          "gain_percent": 0.2586570263710326,
+          "gain_defined": true,
+          "absolute_error_difference": 0.002541259549967756,
+          "gain_ci95": [
+            -0.5029543262680285,
+            0.9920218512733648
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 19.271048790609594,
+          "mae_xgboost": 21.146426160921724,
+          "gain_percent": 8.86853105125536,
+          "gain_defined": true,
+          "absolute_error_difference": 1.8753773703121297,
+          "gain_ci95": [
+            5.3858907314501225,
+            13.114698072099381
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 18.723249672907915,
+          "mae_xgboost": 21.04355279809421,
+          "gain_percent": 11.02619480393269,
+          "gain_defined": true,
+          "absolute_error_difference": 2.320303125186296,
+          "gain_ci95": [
+            7.283343053953635,
+            15.369553760624543
+          ]
+        },
+        {
+          "study": "Lee2026_EGFR",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 4764,
+          "sites": 286,
+          "failed_episodes": 0,
+          "mae_method": 0.7657442220393513,
+          "mae_xgboost": 0.7822247307610903,
+          "gain_percent": 2.1068764606437043,
+          "gain_defined": true,
+          "absolute_error_difference": 0.016480508721739007,
+          "gain_ci95": [
+            -0.499902991626925,
+            4.6688254870747095
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 10791,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.5655919729506054,
+          "mae_xgboost": 0.4507488091228848,
+          "gain_percent": -25.47830665403081,
+          "gain_defined": true,
+          "absolute_error_difference": -0.11484316382772058,
+          "gain_ci95": [
+            -57.407148855363644,
+            27.52661973181531
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 17280,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.5318634250882117,
+          "mae_xgboost": 0.4580932407303281,
+          "gain_percent": -16.10374871287632,
+          "gain_defined": true,
+          "absolute_error_difference": -0.07377018435788363,
+          "gain_ci95": [
+            -39.717839876468034,
+            31.268741313385537
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 25.481826856240172,
+          "mae_xgboost": 28.06735547448282,
+          "gain_percent": 9.211871138316747,
+          "gain_defined": true,
+          "absolute_error_difference": 2.5855286182426482,
+          "gain_ci95": [
+            1.1344927224172243,
+            16.45569769397907
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 24.924178015509302,
+          "mae_xgboost": 27.818733342596378,
+          "gain_percent": 10.405057956592504,
+          "gain_defined": true,
+          "absolute_error_difference": 2.894555327087076,
+          "gain_ci95": [
+            -1.125683594649446,
+            19.609271829197446
+          ]
+        },
+        {
+          "study": "Oh2026_ALK",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 5796,
+          "sites": 331,
+          "failed_episodes": 0,
+          "mae_method": 0.5912466779901158,
+          "mae_xgboost": 0.5906832663999063,
+          "gain_percent": -0.09538302881734384,
+          "gain_defined": true,
+          "absolute_error_difference": -0.0005634115902094505,
+          "gain_ci95": [
+            -1.285616487550371,
+            1.0478062656826563
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 2,
+          "method": "NestedAligned",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7633280337254897,
+          "mae_xgboost": 0.7752034442626881,
+          "gain_percent": 1.5319088976047137,
+          "gain_defined": true,
+          "absolute_error_difference": 0.011875410537198317,
+          "gain_ci95": [
+            -0.8004005805330602,
+            5.849325221876257
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 3,
+          "method": "NestedAligned",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.709463086250244,
+          "mae_xgboost": 0.7547901985714773,
+          "gain_percent": 6.005259793651245,
+          "gain_defined": true,
+          "absolute_error_difference": 0.04532711232123332,
+          "gain_ci95": [
+            -1.306300943984584,
+            9.301922207229204
+          ]
+        }
+      ],
+      "studies": [
+        "Chakraborty2024_SRC",
+        "DuongLy2016_multi_kinase",
+        "Estevam2025_MET",
+        "Jung2025_ABL1",
+        "KiRHub2026_multi_kinase",
+        "Lee2026_EGFR",
+        "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "OKL2026_multi_kinase",
+        "Oh2026_ALK",
+        "Robichaux2021_EGFR"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Chakraborty2024_SRC": 0.9496041428099797,
+        "DuongLy2016_multi_kinase": 11.311039041188604,
+        "Estevam2025_MET": 11.835254953363016,
+        "Jung2025_ABL1": 0.17875998615385397,
+        "KiRHub2026_multi_kinase": 9.947362927594025,
+        "Lee2026_EGFR": 2.1068764606437043,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": -20.791027683453564,
+        "OKL2026_multi_kinase": 9.808464547454626,
+        "Oh2026_ALK": -0.09538302881734384,
+        "Robichaux2021_EGFR": 3.7685843456279793
+      },
+      "gain_percent": 2.9019535692564875,
+      "ci95": [
+        -0.4292485419596098,
+        7.536286009401575
+      ],
+      "n_draws": 10000,
+      "meets_target": false,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 0.1138999900009999
+    },
+    "QueryMedian": {
+      "panel_rows": [
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 40500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.2666155171792193,
+          "mae_xgboost": 0.18443436361462368,
+          "gain_percent": -44.55848246171383,
+          "gain_defined": true,
+          "absolute_error_difference": -0.0821811535645956,
+          "gain_ci95": [
+            -50.88228341433754,
+            -38.85783354334405
+          ]
+        },
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 13500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.26661551717921933,
+          "mae_xgboost": 0.17456863204616424,
+          "gain_percent": -52.72819294861262,
+          "gain_defined": true,
+          "absolute_error_difference": -0.09204688513305509,
+          "gain_ci95": [
+            -58.932601698067465,
+            -46.88934169470154
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 14.710459323485114,
+          "mae_xgboost": 15.336855007271952,
+          "gain_percent": 4.084251194197458,
+          "gain_defined": true,
+          "absolute_error_difference": 0.6263956837868374,
+          "gain_ci95": [
+            -8.441653894090686,
+            13.230920018066042
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 14.933899648994277,
+          "mae_xgboost": 15.746505709411688,
+          "gain_percent": 5.160548476045168,
+          "gain_defined": true,
+          "absolute_error_difference": 0.8126060604174103,
+          "gain_ci95": [
+            -8.982707790772551,
+            15.5822545971788
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 1.165382465900257,
+          "mae_xgboost": 0.28746333302354865,
+          "gain_percent": -305.40212681830633,
+          "gain_defined": true,
+          "absolute_error_difference": -0.8779191328767083,
+          "gain_ci95": [
+            -330.00397962062056,
+            -282.8456800638703
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 1.164384781814969,
+          "mae_xgboost": 0.2649097602377033,
+          "gain_percent": -339.5401591735116,
+          "gain_defined": true,
+          "absolute_error_difference": -0.8994750215772658,
+          "gain_ci95": [
+            -367.38046878354896,
+            -314.1422721536839
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 55080,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 2.0147193124182325,
+          "mae_xgboost": 1.0684411792597226,
+          "gain_percent": -88.56623570182364,
+          "gain_defined": true,
+          "absolute_error_difference": -0.94627813315851,
+          "gain_ci95": [
+            -97.05693144573043,
+            -80.68467692670556
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 36720,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 2.0147193124182325,
+          "mae_xgboost": 0.9824823186215812,
+          "gain_percent": -105.06418021291984,
+          "gain_defined": true,
+          "absolute_error_difference": -1.0322369937966513,
+          "gain_ci95": [
+            -114.75000332519373,
+            -96.07520990780029
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 20.737576247346095,
+          "mae_xgboost": 21.146426160921724,
+          "gain_percent": 1.9334232199064343,
+          "gain_defined": true,
+          "absolute_error_difference": 0.4088499135756294,
+          "gain_ci95": [
+            -1.8719838243476505,
+            5.852975069247948
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 20.780708625265433,
+          "mae_xgboost": 21.04355279809421,
+          "gain_percent": 1.2490484632071372,
+          "gain_defined": true,
+          "absolute_error_difference": 0.26284417282877826,
+          "gain_ci95": [
+            -2.4701965766929224,
+            4.980062636896257
+          ]
+        },
+        {
+          "study": "Lee2026_EGFR",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 4764,
+          "sites": 286,
+          "failed_episodes": 0,
+          "mae_method": 1.2110324428256092,
+          "mae_xgboost": 0.7822247307610903,
+          "gain_percent": -54.81899193436352,
+          "gain_defined": true,
+          "absolute_error_difference": -0.42880771206451884,
+          "gain_ci95": [
+            -63.94398653834601,
+            -46.147581200591496
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 10791,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.4427678130780882,
+          "mae_xgboost": 0.4507488091228848,
+          "gain_percent": 1.7706083484339867,
+          "gain_defined": true,
+          "absolute_error_difference": 0.007980996044796573,
+          "gain_ci95": [
+            -40.646604434023644,
+            5.27617694470099
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 17280,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.44080698506075017,
+          "mae_xgboost": 0.4580932407303281,
+          "gain_percent": 3.773523408033443,
+          "gain_defined": true,
+          "absolute_error_difference": 0.01728625566957792,
+          "gain_ci95": [
+            -54.79661634926254,
+            5.791912956326187
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 26.7286581920904,
+          "mae_xgboost": 28.06735547448282,
+          "gain_percent": 4.769588227182588,
+          "gain_defined": true,
+          "absolute_error_difference": 1.3386972823924204,
+          "gain_ci95": [
+            -13.145784628899852,
+            18.34821182950412
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 26.939378531073448,
+          "mae_xgboost": 27.818733342596378,
+          "gain_percent": 3.161016717380339,
+          "gain_defined": true,
+          "absolute_error_difference": 0.8793548115229299,
+          "gain_ci95": [
+            -20.09907187280906,
+            19.80280795546624
+          ]
+        },
+        {
+          "study": "Oh2026_ALK",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 5796,
+          "sites": 331,
+          "failed_episodes": 0,
+          "mae_method": 0.7983309820497381,
+          "mae_xgboost": 0.5906832663999063,
+          "gain_percent": -35.15381719130154,
+          "gain_defined": true,
+          "absolute_error_difference": -0.20764771564983175,
+          "gain_ci95": [
+            -40.472381267023515,
+            -29.95837079690684
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 1.0306793879553195,
+          "mae_xgboost": 0.7752034442626881,
+          "gain_percent": -32.95598666174915,
+          "gain_defined": true,
+          "absolute_error_difference": -0.2554759436926315,
+          "gain_ci95": [
+            -59.89099350126268,
+            -27.33608873475341
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 1.0101957686759864,
+          "mae_xgboost": 0.7547901985714773,
+          "gain_percent": -33.83795531366092,
+          "gain_defined": true,
+          "absolute_error_difference": -0.25540557010450904,
+          "gain_ci95": [
+            -64.29702052268159,
+            -30.53721449916737
+          ]
+        }
+      ],
+      "studies": [
+        "Chakraborty2024_SRC",
+        "DuongLy2016_multi_kinase",
+        "Estevam2025_MET",
+        "Jung2025_ABL1",
+        "KiRHub2026_multi_kinase",
+        "Lee2026_EGFR",
+        "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "OKL2026_multi_kinase",
+        "Oh2026_ALK",
+        "Robichaux2021_EGFR"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Chakraborty2024_SRC": -48.643337705163226,
+        "DuongLy2016_multi_kinase": 4.622399835121313,
+        "Estevam2025_MET": -322.47114299590896,
+        "Jung2025_ABL1": -96.81520795737174,
+        "KiRHub2026_multi_kinase": 1.5912358415567858,
+        "Lee2026_EGFR": -54.81899193436352,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": 2.7720658782337146,
+        "OKL2026_multi_kinase": 3.9653024722814636,
+        "Oh2026_ALK": -35.15381719130154,
+        "Robichaux2021_EGFR": -33.39697098770503
+      },
+      "gain_percent": -57.834846474462076,
+      "ci95": [
+        -63.618148340671134,
+        -54.50038052055034
+      ],
+      "n_draws": 10000,
+      "meets_target": false,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 9.999000099990002e-05
+    },
+    "RidgeSupports": {
+      "panel_rows": [
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 40500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.19009114656625908,
+          "mae_xgboost": 0.18443436361462368,
+          "gain_percent": -3.067098148507335,
+          "gain_defined": true,
+          "absolute_error_difference": -0.0056567829516354085,
+          "gain_ci95": [
+            -4.189394077377307,
+            -1.9628337229338386
+          ]
+        },
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 13500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.17914238059150064,
+          "mae_xgboost": 0.17456863204616424,
+          "gain_percent": -2.6200288629900514,
+          "gain_defined": true,
+          "absolute_error_difference": -0.0045737485453364035,
+          "gain_ci95": [
+            -4.416335351658892,
+            -0.4574471613821689
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.860212774006877,
+          "mae_xgboost": 15.336855007271952,
+          "gain_percent": 9.628064114611025,
+          "gain_defined": true,
+          "absolute_error_difference": 1.4766422332650748,
+          "gain_ci95": [
+            -5.470992568518309,
+            20.20416180112019
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.902043478554162,
+          "mae_xgboost": 15.746505709411688,
+          "gain_percent": 11.713470054217106,
+          "gain_defined": true,
+          "absolute_error_difference": 1.8444622308575251,
+          "gain_ci95": [
+            -5.015447585312315,
+            23.839125461832054
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.3097045748180958,
+          "mae_xgboost": 0.28746333302354865,
+          "gain_percent": -7.737070867652258,
+          "gain_defined": true,
+          "absolute_error_difference": -0.022241241794547173,
+          "gain_ci95": [
+            -8.935244475409087,
+            -6.586714392627399
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.28069711711033957,
+          "mae_xgboost": 0.2649097602377033,
+          "gain_percent": -5.959522540230413,
+          "gain_defined": true,
+          "absolute_error_difference": -0.01578735687263627,
+          "gain_ci95": [
+            -7.308657092113922,
+            -4.6764062396620645
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 55080,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 1.0941168637826535,
+          "mae_xgboost": 1.0684411792597226,
+          "gain_percent": -2.4030976174767513,
+          "gain_defined": true,
+          "absolute_error_difference": -0.025675684522930897,
+          "gain_ci95": [
+            -3.3743776808039363,
+            -1.4866194218637028
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 36720,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 0.9960170895902113,
+          "mae_xgboost": 0.9824823186215812,
+          "gain_percent": -1.3776096233079618,
+          "gain_defined": true,
+          "absolute_error_difference": -0.013534770968630094,
+          "gain_ci95": [
+            -2.623765143818835,
+            -0.21394177826766345
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 20.614414924376373,
+          "mae_xgboost": 21.146426160921724,
+          "gain_percent": 2.5158446751087418,
+          "gain_defined": true,
+          "absolute_error_difference": 0.5320112365453511,
+          "gain_ci95": [
+            -4.938445428640017,
+            9.090447584417332
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 20.071860830341304,
+          "mae_xgboost": 21.04355279809421,
+          "gain_percent": 4.617528119305535,
+          "gain_defined": true,
+          "absolute_error_difference": 0.971691967752907,
+          "gain_ci95": [
+            -2.86339874432703,
+            11.111983248695221
+          ]
+        },
+        {
+          "study": "Lee2026_EGFR",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 4764,
+          "sites": 286,
+          "failed_episodes": 0,
+          "mae_method": 0.7880013669012644,
+          "mae_xgboost": 0.7822247307610903,
+          "gain_percent": -0.7384880473612149,
+          "gain_defined": true,
+          "absolute_error_difference": -0.005776636140174096,
+          "gain_ci95": [
+            -4.237234660887494,
+            2.6969341839434957
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 10791,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.44840984248987703,
+          "mae_xgboost": 0.4507488091228848,
+          "gain_percent": 0.5189068913036435,
+          "gain_defined": true,
+          "absolute_error_difference": 0.002338966633007755,
+          "gain_ci95": [
+            -4.607208613673517,
+            40.34846304452649
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 17280,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.4456656250435379,
+          "mae_xgboost": 0.4580932407303281,
+          "gain_percent": 2.7129009078975073,
+          "gain_defined": true,
+          "absolute_error_difference": 0.012427615686790183,
+          "gain_ci95": [
+            -0.23224807757989724,
+            43.403550866694225
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 25.935767238590934,
+          "mae_xgboost": 28.06735547448282,
+          "gain_percent": 7.594546047737914,
+          "gain_defined": true,
+          "absolute_error_difference": 2.1315882358918863,
+          "gain_ci95": [
+            -5.972065417132314,
+            16.174363779223075
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 25.607267534787667,
+          "mae_xgboost": 27.818733342596378,
+          "gain_percent": 7.949556079976107,
+          "gain_defined": true,
+          "absolute_error_difference": 2.211465807808711,
+          "gain_ci95": [
+            -10.320199183574296,
+            19.71045965696582
+          ]
+        },
+        {
+          "study": "Oh2026_ALK",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 5796,
+          "sites": 331,
+          "failed_episodes": 0,
+          "mae_method": 0.5842972115323627,
+          "mae_xgboost": 0.5906832663999063,
+          "gain_percent": 1.081130147204833,
+          "gain_defined": true,
+          "absolute_error_difference": 0.006386054867543622,
+          "gain_ci95": [
+            -0.6559969381540506,
+            2.9421295806978778
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7507943588070045,
+          "mae_xgboost": 0.7752034442626881,
+          "gain_percent": 3.148732843789094,
+          "gain_defined": true,
+          "absolute_error_difference": 0.024409085455683543,
+          "gain_ci95": [
+            -4.088911627103386,
+            5.864708648415451
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7056647395166082,
+          "mae_xgboost": 0.7547901985714773,
+          "gain_percent": 6.508491915746173,
+          "gain_defined": true,
+          "absolute_error_difference": 0.04912545905486909,
+          "gain_ci95": [
+            -2.0728104753950385,
+            7.989533244537209
+          ]
+        }
+      ],
+      "studies": [
+        "Chakraborty2024_SRC",
+        "DuongLy2016_multi_kinase",
+        "Estevam2025_MET",
+        "Jung2025_ABL1",
+        "KiRHub2026_multi_kinase",
+        "Lee2026_EGFR",
+        "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "OKL2026_multi_kinase",
+        "Oh2026_ALK",
+        "Robichaux2021_EGFR"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Chakraborty2024_SRC": -2.843563505748693,
+        "DuongLy2016_multi_kinase": 10.670767084414067,
+        "Estevam2025_MET": -6.848296703941335,
+        "Jung2025_ABL1": -1.8903536203923565,
+        "KiRHub2026_multi_kinase": 3.5666863972071385,
+        "Lee2026_EGFR": -0.7384880473612149,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": 1.6159038996005755,
+        "OKL2026_multi_kinase": 7.772051063857011,
+        "Oh2026_ALK": 1.081130147204833,
+        "Robichaux2021_EGFR": 4.828612379767634
+      },
+      "gain_percent": 1.7214449094607658,
+      "ci95": [
+        -0.7522548954093606,
+        4.986741931899986
+      ],
+      "n_draws": 10000,
+      "meets_target": false,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 0.17809999000099988
+    },
+    "SAER-7g": {
+      "panel_rows": [
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 40500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.1844659519332749,
+          "mae_xgboost": 0.18443436361462368,
+          "gain_percent": -0.017127132944281198,
+          "gain_defined": true,
+          "absolute_error_difference": -3.1588318651215586e-05,
+          "gain_ci95": [
+            -0.5258811092236086,
+            0.49084540268443727
+          ]
+        },
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 13500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.17263900687534614,
+          "mae_xgboost": 0.17456863204616424,
+          "gain_percent": 1.1053676414831592,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0019296251708181,
+          "gain_ci95": [
+            -0.19175351712279223,
+            2.7513770885715476
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.824607718499664,
+          "mae_xgboost": 15.336855007271952,
+          "gain_percent": 9.860217678626144,
+          "gain_defined": true,
+          "absolute_error_difference": 1.5122472887722882,
+          "gain_ci95": [
+            -0.12936129887463935,
+            16.947803340368303
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.865454341209032,
+          "mae_xgboost": 15.746505709411688,
+          "gain_percent": 11.945833589469636,
+          "gain_defined": true,
+          "absolute_error_difference": 1.8810513682026553,
+          "gain_ci95": [
+            1.7368187109397384,
+            19.973665743744814
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.2585605993561238,
+          "mae_xgboost": 0.28746333302354865,
+          "gain_percent": 10.054407065911663,
+          "gain_defined": true,
+          "absolute_error_difference": 0.02890273366742485,
+          "gain_ci95": [
+            8.527697621702341,
+            11.482344006322267
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.24204484120573974,
+          "mae_xgboost": 0.2649097602377033,
+          "gain_percent": 8.631210496527904,
+          "gain_defined": true,
+          "absolute_error_difference": 0.022864919031963554,
+          "gain_ci95": [
+            6.979983986996037,
+            10.251179627206087
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 55080,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 1.06554851274032,
+          "mae_xgboost": 1.0684411792597226,
+          "gain_percent": 0.27073708647273226,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0028926665194026757,
+          "gain_ci95": [
+            -0.36257088922369407,
+            0.9065942639930656
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 36720,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 0.9758251669785732,
+          "mae_xgboost": 0.9824823186215812,
+          "gain_percent": 0.6775848803414508,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0066571516430079525,
+          "gain_ci95": [
+            -0.1157334937925243,
+            1.4460887429178184
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 19.46483133989992,
+          "mae_xgboost": 21.146426160921724,
+          "gain_percent": 7.952146656957883,
+          "gain_defined": true,
+          "absolute_error_difference": 1.681594821021804,
+          "gain_ci95": [
+            2.714537496965304,
+            13.868513109342427
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 19.030361098282388,
+          "mae_xgboost": 21.04355279809421,
+          "gain_percent": 9.566786174975865,
+          "gain_defined": true,
+          "absolute_error_difference": 2.0131916998118236,
+          "gain_ci95": [
+            4.245470617364953,
+            15.248749460328048
+          ]
+        },
+        {
+          "study": "Lee2026_EGFR",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 4764,
+          "sites": 286,
+          "failed_episodes": 0,
+          "mae_method": 0.7627685651941877,
+          "mae_xgboost": 0.7822247307610903,
+          "gain_percent": 2.4872859169221315,
+          "gain_defined": true,
+          "absolute_error_difference": 0.01945616556690266,
+          "gain_ci95": [
+            -0.17169152161127058,
+            4.883952002667063
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 10791,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.5385662515354883,
+          "mae_xgboost": 0.4507488091228848,
+          "gain_percent": -19.482567814985046,
+          "gain_defined": true,
+          "absolute_error_difference": -0.08781744241260353,
+          "gain_ci95": [
+            -55.83820189212182,
+            29.213476232473777
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 17280,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.5070508754540597,
+          "mae_xgboost": 0.4580932407303281,
+          "gain_percent": -10.687264157331706,
+          "gain_defined": true,
+          "absolute_error_difference": -0.0489576347237316,
+          "gain_ci95": [
+            -39.425540384737104,
+            31.7255848708156
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 26.153199731619004,
+          "mae_xgboost": 28.06735547448282,
+          "gain_percent": 6.819864965917622,
+          "gain_defined": true,
+          "absolute_error_difference": 1.9141557428638158,
+          "gain_ci95": [
+            -5.9849640600436,
+            15.579545600437143
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 25.02699411563127,
+          "mae_xgboost": 27.818733342596378,
+          "gain_percent": 10.035464924243566,
+          "gain_defined": true,
+          "absolute_error_difference": 2.7917392269651096,
+          "gain_ci95": [
+            -5.6310532680986025,
+            20.817994979135023
+          ]
+        },
+        {
+          "study": "Oh2026_ALK",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 5796,
+          "sites": 331,
+          "failed_episodes": 0,
+          "mae_method": 0.5895045179888485,
+          "mae_xgboost": 0.5906832663999063,
+          "gain_percent": 0.1995567638545166,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0011787484110578061,
+          "gain_ci95": [
+            -1.0721969274901584,
+            1.4436104489692834
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 2,
+          "method": "SAER-7g",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7709599773760968,
+          "mae_xgboost": 0.7752034442626881,
+          "gain_percent": 0.5474004170127653,
+          "gain_defined": true,
+          "absolute_error_difference": 0.004243466886591274,
+          "gain_ci95": [
+            -5.088581056939571,
+            3.935094808963602
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 3,
+          "method": "SAER-7g",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7120830865894526,
+          "mae_xgboost": 0.7547901985714773,
+          "gain_percent": 5.658143423543729,
+          "gain_defined": true,
+          "absolute_error_difference": 0.042707111982024704,
+          "gain_ci95": [
+            -3.656231262426683,
+            6.974391058678162
+          ]
+        }
+      ],
+      "studies": [
+        "Chakraborty2024_SRC",
+        "DuongLy2016_multi_kinase",
+        "Estevam2025_MET",
+        "Jung2025_ABL1",
+        "KiRHub2026_multi_kinase",
+        "Lee2026_EGFR",
+        "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "OKL2026_multi_kinase",
+        "Oh2026_ALK",
+        "Robichaux2021_EGFR"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Chakraborty2024_SRC": 0.544120254269439,
+        "DuongLy2016_multi_kinase": 10.90302563404789,
+        "Estevam2025_MET": 9.342808781219784,
+        "Jung2025_ABL1": 0.47416098340709156,
+        "KiRHub2026_multi_kinase": 8.759466415966873,
+        "Lee2026_EGFR": 2.4872859169221315,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": -15.084915986158375,
+        "OKL2026_multi_kinase": 8.427664945080593,
+        "Oh2026_ALK": 0.1995567638545166,
+        "Robichaux2021_EGFR": 3.102771920278247
+      },
+      "gain_percent": 2.9155945628888196,
+      "ci95": [
+        -1.1500854652432349,
+        7.091553620895126
+      ],
+      "n_draws": 10000,
+      "meets_target": false,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 0.2272999900009999
+    },
+    "SER": {
+      "panel_rows": [
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 40500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.1821490094159411,
+          "mae_xgboost": 0.18443436361462368,
+          "gain_percent": 1.2391151810829808,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0022853541986825876,
+          "gain_ci95": [
+            0.7228585572620322,
+            1.8601477295806153
+          ]
+        },
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 13500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.17295472838847045,
+          "mae_xgboost": 0.17456863204616424,
+          "gain_percent": 0.9245095403319626,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0016139036576937882,
+          "gain_ci95": [
+            0.3748999077225773,
+            1.5458771945409218
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.89608016168757,
+          "mae_xgboost": 15.336855007271952,
+          "gain_percent": 9.394200081445907,
+          "gain_defined": true,
+          "absolute_error_difference": 1.4407748455843823,
+          "gain_ci95": [
+            2.63557557350668,
+            15.13476144029639
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 14.582457629400025,
+          "mae_xgboost": 15.746505709411688,
+          "gain_percent": 7.392421540963915,
+          "gain_defined": true,
+          "absolute_error_difference": 1.1640480800116624,
+          "gain_ci95": [
+            0.19132818926503212,
+            14.722450724635591
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.2644562906856619,
+          "mae_xgboost": 0.28746333302354865,
+          "gain_percent": 8.003470249891677,
+          "gain_defined": true,
+          "absolute_error_difference": 0.02300704233788675,
+          "gain_ci95": [
+            7.249503168257169,
+            8.758251731060568
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.2353363858544988,
+          "mae_xgboost": 0.2649097602377033,
+          "gain_percent": 11.16356541815158,
+          "gain_defined": true,
+          "absolute_error_difference": 0.02957337438320451,
+          "gain_ci95": [
+            10.128224581344247,
+            12.214729448876879
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 55080,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 1.0524775474152206,
+          "mae_xgboost": 1.0684411792597226,
+          "gain_percent": 1.494104884235417,
+          "gain_defined": true,
+          "absolute_error_difference": 0.015963631844502002,
+          "gain_ci95": [
+            1.1807163897737898,
+            1.8137624854945082
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 36720,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 0.9641288100129094,
+          "mae_xgboost": 0.9824823186215812,
+          "gain_percent": 1.8680752071367246,
+          "gain_defined": true,
+          "absolute_error_difference": 0.018353508608671798,
+          "gain_ci95": [
+            1.4247973781745142,
+            2.303099730894633
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 19.462072945133393,
+          "mae_xgboost": 21.146426160921724,
+          "gain_percent": 7.9651909167563755,
+          "gain_defined": true,
+          "absolute_error_difference": 1.684353215788331,
+          "gain_ci95": [
+            4.716945799869298,
+            11.32187480217405
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 19.0787037007085,
+          "mae_xgboost": 21.04355279809421,
+          "gain_percent": 9.337059745746247,
+          "gain_defined": true,
+          "absolute_error_difference": 1.964849097385713,
+          "gain_ci95": [
+            6.033023395485856,
+            12.328604626728476
+          ]
+        },
+        {
+          "study": "Lee2026_EGFR",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 4764,
+          "sites": 286,
+          "failed_episodes": 0,
+          "mae_method": 0.7771064831676611,
+          "mae_xgboost": 0.7822247307610903,
+          "gain_percent": 0.654319326934257,
+          "gain_defined": true,
+          "absolute_error_difference": 0.00511824759342927,
+          "gain_ci95": [
+            -0.8244634896300269,
+            1.7969682118177306
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 10791,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.4507488091228848,
+          "mae_xgboost": 0.4507488091228848,
+          "gain_percent": 0.0,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0,
+          "gain_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 17280,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.4580932407303281,
+          "mae_xgboost": 0.4580932407303281,
+          "gain_percent": 0.0,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0,
+          "gain_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 26.46110168581881,
+          "mae_xgboost": 28.06735547448282,
+          "gain_percent": 5.722854047023847,
+          "gain_defined": true,
+          "absolute_error_difference": 1.6062537886640094,
+          "gain_ci95": [
+            -3.5907789362284634,
+            11.210367147379353
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 26.76672499417219,
+          "mae_xgboost": 27.818733342596378,
+          "gain_percent": 3.781654381845417,
+          "gain_defined": true,
+          "absolute_error_difference": 1.052008348424188,
+          "gain_ci95": [
+            -7.7244221160895785,
+            11.626715682933678
+          ]
+        },
+        {
+          "study": "Oh2026_ALK",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 5796,
+          "sites": 331,
+          "failed_episodes": 0,
+          "mae_method": 0.5854250655793439,
+          "mae_xgboost": 0.5906832663999063,
+          "gain_percent": 0.8901895685330727,
+          "gain_defined": true,
+          "absolute_error_difference": 0.0052582008205623865,
+          "gain_ci95": [
+            0.19468730420928243,
+            1.5832847617794497
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 2,
+          "method": "SER",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7351732128303593,
+          "mae_xgboost": 0.7752034442626881,
+          "gain_percent": 5.163835600653494,
+          "gain_defined": true,
+          "absolute_error_difference": 0.040030231432328756,
+          "gain_ci95": [
+            2.2521433846663212,
+            6.6737867462689735
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 3,
+          "method": "SER",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.6927868396795079,
+          "mae_xgboost": 0.7547901985714773,
+          "gain_percent": 8.214648124646756,
+          "gain_defined": true,
+          "absolute_error_difference": 0.062003358891969396,
+          "gain_ci95": [
+            3.9853569722026543,
+            10.916290123365119
+          ]
+        }
+      ],
+      "studies": [
+        "Chakraborty2024_SRC",
+        "DuongLy2016_multi_kinase",
+        "Estevam2025_MET",
+        "Jung2025_ABL1",
+        "KiRHub2026_multi_kinase",
+        "Lee2026_EGFR",
+        "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "OKL2026_multi_kinase",
+        "Oh2026_ALK",
+        "Robichaux2021_EGFR"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Chakraborty2024_SRC": 1.0818123607074717,
+        "DuongLy2016_multi_kinase": 8.39331081120491,
+        "Estevam2025_MET": 9.583517834021627,
+        "Jung2025_ABL1": 1.6810900456860707,
+        "KiRHub2026_multi_kinase": 8.651125331251311,
+        "Lee2026_EGFR": 0.654319326934257,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": 0.0,
+        "OKL2026_multi_kinase": 4.7522542144346325,
+        "Oh2026_ALK": 0.8901895685330727,
+        "Robichaux2021_EGFR": 6.689241862650125
+      },
+      "gain_percent": 4.237686135542349,
+      "ci95": [
+        2.911699354655737,
+        5.281962296468488
+      ],
+      "n_draws": 10000,
+      "meets_target": true,
+      "ci_entirely_above_threshold": true,
+      "bootstrap_p_two_sided": 9.999000099990002e-05
+    }
+  },
+  "primary": {
+    "method": "SER",
+    "panel_rows": [
+      {
+        "study": "Chakraborty2024_SRC",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 40500,
+        "sites": 246,
+        "failed_episodes": 0,
+        "mae_method": 0.1821490094159411,
+        "mae_xgboost": 0.18443436361462368,
+        "gain_percent": 1.2391151810829808,
+        "gain_defined": true,
+        "absolute_error_difference": 0.0022853541986825876,
+        "gain_ci95": [
+          0.7228585572620322,
+          1.8601477295806153
+        ]
+      },
+      {
+        "study": "Chakraborty2024_SRC",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 13500,
+        "sites": 246,
+        "failed_episodes": 0,
+        "mae_method": 0.17295472838847045,
+        "mae_xgboost": 0.17456863204616424,
+        "gain_percent": 0.9245095403319626,
+        "gain_defined": true,
+        "absolute_error_difference": 0.0016139036576937882,
+        "gain_ci95": [
+          0.3748999077225773,
+          1.5458771945409218
+        ]
+      },
+      {
+        "study": "DuongLy2016_multi_kinase",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 9120,
+        "sites": 21,
+        "failed_episodes": 0,
+        "mae_method": 13.89608016168757,
+        "mae_xgboost": 15.336855007271952,
+        "gain_percent": 9.394200081445907,
+        "gain_defined": true,
+        "absolute_error_difference": 1.4407748455843823,
+        "gain_ci95": [
+          2.63557557350668,
+          15.13476144029639
+        ]
+      },
+      {
+        "study": "DuongLy2016_multi_kinase",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 9120,
+        "sites": 21,
+        "failed_episodes": 0,
+        "mae_method": 14.582457629400025,
+        "mae_xgboost": 15.746505709411688,
+        "gain_percent": 7.392421540963915,
+        "gain_defined": true,
+        "absolute_error_difference": 1.1640480800116624,
+        "gain_ci95": [
+          0.19132818926503212,
+          14.722450724635591
+        ]
+      },
+      {
+        "study": "Estevam2025_MET",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 77136,
+        "sites": 287,
+        "failed_episodes": 0,
+        "mae_method": 0.2644562906856619,
+        "mae_xgboost": 0.28746333302354865,
+        "gain_percent": 8.003470249891677,
+        "gain_defined": true,
+        "absolute_error_difference": 0.02300704233788675,
+        "gain_ci95": [
+          7.249503168257169,
+          8.758251731060568
+        ]
+      },
+      {
+        "study": "Estevam2025_MET",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 77136,
+        "sites": 287,
+        "failed_episodes": 0,
+        "mae_method": 0.2353363858544988,
+        "mae_xgboost": 0.2649097602377033,
+        "gain_percent": 11.16356541815158,
+        "gain_defined": true,
+        "absolute_error_difference": 0.02957337438320451,
+        "gain_ci95": [
+          10.128224581344247,
+          12.214729448876879
+        ]
+      },
+      {
+        "study": "Jung2025_ABL1",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 55080,
+        "sites": 322,
+        "failed_episodes": 0,
+        "mae_method": 1.0524775474152206,
+        "mae_xgboost": 1.0684411792597226,
+        "gain_percent": 1.494104884235417,
+        "gain_defined": true,
+        "absolute_error_difference": 0.015963631844502002,
+        "gain_ci95": [
+          1.1807163897737898,
+          1.8137624854945082
+        ]
+      },
+      {
+        "study": "Jung2025_ABL1",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 36720,
+        "sites": 322,
+        "failed_episodes": 0,
+        "mae_method": 0.9641288100129094,
+        "mae_xgboost": 0.9824823186215812,
+        "gain_percent": 1.8680752071367246,
+        "gain_defined": true,
+        "absolute_error_difference": 0.018353508608671798,
+        "gain_ci95": [
+          1.4247973781745142,
+          2.303099730894633
+        ]
+      },
+      {
+        "study": "KiRHub2026_multi_kinase",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 18840,
+        "sites": 48,
+        "failed_episodes": 0,
+        "mae_method": 19.462072945133393,
+        "mae_xgboost": 21.146426160921724,
+        "gain_percent": 7.9651909167563755,
+        "gain_defined": true,
+        "absolute_error_difference": 1.684353215788331,
+        "gain_ci95": [
+          4.716945799869298,
+          11.32187480217405
+        ]
+      },
+      {
+        "study": "KiRHub2026_multi_kinase",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 18840,
+        "sites": 48,
+        "failed_episodes": 0,
+        "mae_method": 19.0787037007085,
+        "mae_xgboost": 21.04355279809421,
+        "gain_percent": 9.337059745746247,
+        "gain_defined": true,
+        "absolute_error_difference": 1.964849097385713,
+        "gain_ci95": [
+          6.033023395485856,
+          12.328604626728476
+        ]
+      },
+      {
+        "study": "Lee2026_EGFR",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 4764,
+        "sites": 286,
+        "failed_episodes": 0,
+        "mae_method": 0.7771064831676611,
+        "mae_xgboost": 0.7822247307610903,
+        "gain_percent": 0.654319326934257,
+        "gain_defined": true,
+        "absolute_error_difference": 0.00511824759342927,
+        "gain_ci95": [
+          -0.8244634896300269,
+          1.7969682118177306
+        ]
+      },
+      {
+        "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 10791,
+        "sites": 3,
+        "failed_episodes": 0,
+        "mae_method": 0.4507488091228848,
+        "mae_xgboost": 0.4507488091228848,
+        "gain_percent": 0.0,
+        "gain_defined": true,
+        "absolute_error_difference": 0.0,
+        "gain_ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 17280,
+        "sites": 3,
+        "failed_episodes": 0,
+        "mae_method": 0.4580932407303281,
+        "mae_xgboost": 0.4580932407303281,
+        "gain_percent": 0.0,
+        "gain_defined": true,
+        "absolute_error_difference": 0.0,
+        "gain_ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "study": "OKL2026_multi_kinase",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 7080,
+        "sites": 11,
+        "failed_episodes": 0,
+        "mae_method": 26.46110168581881,
+        "mae_xgboost": 28.06735547448282,
+        "gain_percent": 5.722854047023847,
+        "gain_defined": true,
+        "absolute_error_difference": 1.6062537886640094,
+        "gain_ci95": [
+          -3.5907789362284634,
+          11.210367147379353
+        ]
+      },
+      {
+        "study": "OKL2026_multi_kinase",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 7080,
+        "sites": 11,
+        "failed_episodes": 0,
+        "mae_method": 26.76672499417219,
+        "mae_xgboost": 27.818733342596378,
+        "gain_percent": 3.781654381845417,
+        "gain_defined": true,
+        "absolute_error_difference": 1.052008348424188,
+        "gain_ci95": [
+          -7.7244221160895785,
+          11.626715682933678
+        ]
+      },
+      {
+        "study": "Oh2026_ALK",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 5796,
+        "sites": 331,
+        "failed_episodes": 0,
+        "mae_method": 0.5854250655793439,
+        "mae_xgboost": 0.5906832663999063,
+        "gain_percent": 0.8901895685330727,
+        "gain_defined": true,
+        "absolute_error_difference": 0.0052582008205623865,
+        "gain_ci95": [
+          0.19468730420928243,
+          1.5832847617794497
+        ]
+      },
+      {
+        "study": "Robichaux2021_EGFR",
+        "budget": 2,
+        "method": "SER",
+        "episodes": 9240,
+        "sites": 13,
+        "failed_episodes": 0,
+        "mae_method": 0.7351732128303593,
+        "mae_xgboost": 0.7752034442626881,
+        "gain_percent": 5.163835600653494,
+        "gain_defined": true,
+        "absolute_error_difference": 0.040030231432328756,
+        "gain_ci95": [
+          2.2521433846663212,
+          6.6737867462689735
+        ]
+      },
+      {
+        "study": "Robichaux2021_EGFR",
+        "budget": 3,
+        "method": "SER",
+        "episodes": 9240,
+        "sites": 13,
+        "failed_episodes": 0,
+        "mae_method": 0.6927868396795079,
+        "mae_xgboost": 0.7547901985714773,
+        "gain_percent": 8.214648124646756,
+        "gain_defined": true,
+        "absolute_error_difference": 0.062003358891969396,
+        "gain_ci95": [
+          3.9853569722026543,
+          10.916290123365119
+        ]
+      }
+    ],
+    "studies": [
+      "Chakraborty2024_SRC",
+      "DuongLy2016_multi_kinase",
+      "Estevam2025_MET",
+      "Jung2025_ABL1",
+      "KiRHub2026_multi_kinase",
+      "Lee2026_EGFR",
+      "Nakamura2021_FGFR1_FGFR2_FGFR3",
+      "OKL2026_multi_kinase",
+      "Oh2026_ALK",
+      "Robichaux2021_EGFR"
+    ],
+    "complete": true,
+    "per_study_gain": {
+      "Chakraborty2024_SRC": 1.0818123607074717,
+      "DuongLy2016_multi_kinase": 8.39331081120491,
+      "Estevam2025_MET": 9.583517834021627,
+      "Jung2025_ABL1": 1.6810900456860707,
+      "KiRHub2026_multi_kinase": 8.651125331251311,
+      "Lee2026_EGFR": 0.654319326934257,
+      "Nakamura2021_FGFR1_FGFR2_FGFR3": 0.0,
+      "OKL2026_multi_kinase": 4.7522542144346325,
+      "Oh2026_ALK": 0.8901895685330727,
+      "Robichaux2021_EGFR": 6.689241862650125
+    },
+    "gain_percent": 4.237686135542349,
+    "ci95": [
+      2.911699354655737,
+      5.281962296468488
+    ],
+    "n_draws": 10000,
+    "meets_target": true,
+    "ci_entirely_above_threshold": true,
+    "bootstrap_p_two_sided": 9.999000099990002e-05
+  },
+  "win_tie": {
+    "per_panel_budget": [
+      {
+        "study": "Chakraborty2024_SRC",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "Chakraborty2024_SRC",
+        "budget": 3,
+        "outcome": "win"
+      },
+      {
+        "study": "DuongLy2016_multi_kinase",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "DuongLy2016_multi_kinase",
+        "budget": 3,
+        "outcome": "win"
+      },
+      {
+        "study": "Estevam2025_MET",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "Estevam2025_MET",
+        "budget": 3,
+        "outcome": "win"
+      },
+      {
+        "study": "Jung2025_ABL1",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "Jung2025_ABL1",
+        "budget": 3,
+        "outcome": "win"
+      },
+      {
+        "study": "KiRHub2026_multi_kinase",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "KiRHub2026_multi_kinase",
+        "budget": 3,
+        "outcome": "win"
+      },
+      {
+        "study": "Lee2026_EGFR",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "budget": 2,
+        "outcome": "tie"
+      },
+      {
+        "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "budget": 3,
+        "outcome": "tie"
+      },
+      {
+        "study": "OKL2026_multi_kinase",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "OKL2026_multi_kinase",
+        "budget": 3,
+        "outcome": "win"
+      },
+      {
+        "study": "Oh2026_ALK",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "Robichaux2021_EGFR",
+        "budget": 2,
+        "outcome": "win"
+      },
+      {
+        "study": "Robichaux2021_EGFR",
+        "budget": 3,
+        "outcome": "win"
+      }
+    ],
+    "per_study": {
+      "Chakraborty2024_SRC": "win",
+      "DuongLy2016_multi_kinase": "win",
+      "Estevam2025_MET": "win",
+      "Jung2025_ABL1": "win",
+      "KiRHub2026_multi_kinase": "win",
+      "Lee2026_EGFR": "win",
+      "Nakamura2021_FGFR1_FGFR2_FGFR3": "tie",
+      "OKL2026_multi_kinase": "win",
+      "Oh2026_ALK": "win",
+      "Robichaux2021_EGFR": "win"
+    },
+    "studies_won": 9,
+    "studies_tied": 1,
+    "studies_lost": 0,
+    "meets_descriptive_5_of_7": true,
+    "sign_test_upper_tail": 0.0107421875,
+    "note": "descriptive: ties are not wins; chance of at least 5 of 7 by luck is 29/128 (22.7%)"
+  },
+  "robustness": {
+    "available": true,
+    "median_study_gain": 3.216672130060352,
+    "leave_one_study_out": {
+      "Chakraborty2024_SRC": {
+        "gain_percent": 4.588338777190668,
+        "ci95": [
+          3.123055900844356,
+          5.7495109462958505
+        ]
+      },
+      "DuongLy2016_multi_kinase": {
+        "gain_percent": 3.7759500604687304,
+        "ci95": [
+          2.5234122475197776,
+          4.640455748198791
+        ]
+      },
+      "Estevam2025_MET": {
+        "gain_percent": 3.6437048357113166,
+        "ci95": [
+          2.1742594802004134,
+          4.796749882758655
+        ]
+      },
+      "Jung2025_ABL1": {
+        "gain_percent": 4.521752367748601,
+        "ci95": [
+          3.0585614511785657,
+          5.683215647462746
+        ]
+      },
+      "KiRHub2026_multi_kinase": {
+        "gain_percent": 3.747304002685796,
+        "ci95": [
+          2.317794906425396,
+          4.85735959290338
+        ]
+      },
+      "Lee2026_EGFR": {
+        "gain_percent": 4.63583800316547,
+        "ci95": [
+          3.1733819479068566,
+          5.7872131747715585
+        ]
+      },
+      "Nakamura2021_FGFR1_FGFR2_FGFR3": {
+        "gain_percent": 4.70854015060261,
+        "ci95": [
+          3.235221505173041,
+          5.8688469960760985
+        ]
+      },
+      "OKL2026_multi_kinase": {
+        "gain_percent": 4.180511904554316,
+        "ci95": [
+          3.2473516787988554,
+          5.007304761911091
+        ]
+      },
+      "Oh2026_ALK": {
+        "gain_percent": 4.609630198543379,
+        "ci95": [
+          3.1421217795589427,
+          5.775574199548226
+        ]
+      },
+      "Robichaux2021_EGFR": {
+        "gain_percent": 3.9652910547525955,
+        "ci95": [
+          2.533718653879855,
+          5.128969325067273
+        ]
+      }
+    },
+    "episode_weighted": {
+      "gain_percent": 5.545681732214578,
+      "ci95": [
+        4.9295399414151735,
+        6.11601501136313
+      ],
+      "weights": {
+        "Chakraborty2024_SRC": 0.12638585601842425,
+        "DuongLy2016_multi_kinase": 0.042690333588445525,
+        "Estevam2025_MET": 0.3610703477717471,
+        "Jung2025_ABL1": 0.21485595523132123,
+        "KiRHub2026_multi_kinase": 0.08818924175507825,
+        "Lee2026_EGFR": 0.011150041075403206,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": 0.0656995808202442,
+        "OKL2026_multi_kinase": 0.033141180022609025,
+        "Oh2026_ALK": 0.013565415212644203,
+        "Robichaux2021_EGFR": 0.043252048504082964
+      }
+    },
+    "site_weighted": {
+      "gain_percent": 3.0423743699014048,
+      "ci95": [
+        2.649766344258963,
+        3.399487388678013
+      ],
+      "weights": {
+        "Chakraborty2024_SRC": 0.1568877551020408,
+        "DuongLy2016_multi_kinase": 0.013392857142857142,
+        "Estevam2025_MET": 0.18303571428571427,
+        "Jung2025_ABL1": 0.20535714285714285,
+        "KiRHub2026_multi_kinase": 0.030612244897959183,
+        "Lee2026_EGFR": 0.18239795918367346,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": 0.001913265306122449,
+        "OKL2026_multi_kinase": 0.00701530612244898,
+        "Oh2026_ALK": 0.2110969387755102,
+        "Robichaux2021_EGFR": 0.008290816326530613
+      }
+    }
+  },
+  "sensitivity": [],
+  "secondary_holm": {
+    "alpha": 0.05,
+    "family": {
+      "CovarianceLocalMedian": {
+        "p": 0.0014999900009999,
+        "threshold": 0.0125,
+        "reject": true
+      },
+      "AlignedAddAudit": {
+        "p": 0.0964999900009999,
+        "threshold": 0.016666666666666666,
+        "reject": false
+      },
+      "NestedAligned": {
+        "p": 0.1138999900009999,
+        "threshold": 0.025,
+        "reject": false
+      },
+      "SAER-7g": {
+        "p": 0.2272999900009999,
+        "threshold": 0.05,
+        "reject": false
+      }
+    },
+    "note": "formal claims only if made; otherwise descriptive"
+  },
+  "plain_baselines": {
+    "QueryMedian": {
+      "panel_rows": [
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 40500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.2666155171792193,
+          "mae_xgboost": 0.18443436361462368,
+          "gain_percent": -44.55848246171383,
+          "gain_defined": true,
+          "absolute_error_difference": -0.0821811535645956,
+          "gain_ci95": [
+            -50.88228341433754,
+            -38.85783354334405
+          ]
+        },
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 13500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.26661551717921933,
+          "mae_xgboost": 0.17456863204616424,
+          "gain_percent": -52.72819294861262,
+          "gain_defined": true,
+          "absolute_error_difference": -0.09204688513305509,
+          "gain_ci95": [
+            -58.932601698067465,
+            -46.88934169470154
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 14.710459323485114,
+          "mae_xgboost": 15.336855007271952,
+          "gain_percent": 4.084251194197458,
+          "gain_defined": true,
+          "absolute_error_difference": 0.6263956837868374,
+          "gain_ci95": [
+            -8.441653894090686,
+            13.230920018066042
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 14.933899648994277,
+          "mae_xgboost": 15.746505709411688,
+          "gain_percent": 5.160548476045168,
+          "gain_defined": true,
+          "absolute_error_difference": 0.8126060604174103,
+          "gain_ci95": [
+            -8.982707790772551,
+            15.5822545971788
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 1.165382465900257,
+          "mae_xgboost": 0.28746333302354865,
+          "gain_percent": -305.40212681830633,
+          "gain_defined": true,
+          "absolute_error_difference": -0.8779191328767083,
+          "gain_ci95": [
+            -330.00397962062056,
+            -282.8456800638703
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 1.164384781814969,
+          "mae_xgboost": 0.2649097602377033,
+          "gain_percent": -339.5401591735116,
+          "gain_defined": true,
+          "absolute_error_difference": -0.8994750215772658,
+          "gain_ci95": [
+            -367.38046878354896,
+            -314.1422721536839
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 55080,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 2.0147193124182325,
+          "mae_xgboost": 1.0684411792597226,
+          "gain_percent": -88.56623570182364,
+          "gain_defined": true,
+          "absolute_error_difference": -0.94627813315851,
+          "gain_ci95": [
+            -97.05693144573043,
+            -80.68467692670556
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 36720,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 2.0147193124182325,
+          "mae_xgboost": 0.9824823186215812,
+          "gain_percent": -105.06418021291984,
+          "gain_defined": true,
+          "absolute_error_difference": -1.0322369937966513,
+          "gain_ci95": [
+            -114.75000332519373,
+            -96.07520990780029
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 20.737576247346095,
+          "mae_xgboost": 21.146426160921724,
+          "gain_percent": 1.9334232199064343,
+          "gain_defined": true,
+          "absolute_error_difference": 0.4088499135756294,
+          "gain_ci95": [
+            -1.8719838243476505,
+            5.852975069247948
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 20.780708625265433,
+          "mae_xgboost": 21.04355279809421,
+          "gain_percent": 1.2490484632071372,
+          "gain_defined": true,
+          "absolute_error_difference": 0.26284417282877826,
+          "gain_ci95": [
+            -2.4701965766929224,
+            4.980062636896257
+          ]
+        },
+        {
+          "study": "Lee2026_EGFR",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 4764,
+          "sites": 286,
+          "failed_episodes": 0,
+          "mae_method": 1.2110324428256092,
+          "mae_xgboost": 0.7822247307610903,
+          "gain_percent": -54.81899193436352,
+          "gain_defined": true,
+          "absolute_error_difference": -0.42880771206451884,
+          "gain_ci95": [
+            -63.94398653834601,
+            -46.147581200591496
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 10791,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.4427678130780882,
+          "mae_xgboost": 0.4507488091228848,
+          "gain_percent": 1.7706083484339867,
+          "gain_defined": true,
+          "absolute_error_difference": 0.007980996044796573,
+          "gain_ci95": [
+            -40.646604434023644,
+            5.27617694470099
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 17280,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.44080698506075017,
+          "mae_xgboost": 0.4580932407303281,
+          "gain_percent": 3.773523408033443,
+          "gain_defined": true,
+          "absolute_error_difference": 0.01728625566957792,
+          "gain_ci95": [
+            -54.79661634926254,
+            5.791912956326187
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 26.7286581920904,
+          "mae_xgboost": 28.06735547448282,
+          "gain_percent": 4.769588227182588,
+          "gain_defined": true,
+          "absolute_error_difference": 1.3386972823924204,
+          "gain_ci95": [
+            -13.145784628899852,
+            18.34821182950412
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 26.939378531073448,
+          "mae_xgboost": 27.818733342596378,
+          "gain_percent": 3.161016717380339,
+          "gain_defined": true,
+          "absolute_error_difference": 0.8793548115229299,
+          "gain_ci95": [
+            -20.09907187280906,
+            19.80280795546624
+          ]
+        },
+        {
+          "study": "Oh2026_ALK",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 5796,
+          "sites": 331,
+          "failed_episodes": 0,
+          "mae_method": 0.7983309820497381,
+          "mae_xgboost": 0.5906832663999063,
+          "gain_percent": -35.15381719130154,
+          "gain_defined": true,
+          "absolute_error_difference": -0.20764771564983175,
+          "gain_ci95": [
+            -40.472381267023515,
+            -29.95837079690684
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 2,
+          "method": "QueryMedian",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 1.0306793879553195,
+          "mae_xgboost": 0.7752034442626881,
+          "gain_percent": -32.95598666174915,
+          "gain_defined": true,
+          "absolute_error_difference": -0.2554759436926315,
+          "gain_ci95": [
+            -59.89099350126268,
+            -27.33608873475341
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 3,
+          "method": "QueryMedian",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 1.0101957686759864,
+          "mae_xgboost": 0.7547901985714773,
+          "gain_percent": -33.83795531366092,
+          "gain_defined": true,
+          "absolute_error_difference": -0.25540557010450904,
+          "gain_ci95": [
+            -64.29702052268159,
+            -30.53721449916737
+          ]
+        }
+      ],
+      "studies": [
+        "Chakraborty2024_SRC",
+        "DuongLy2016_multi_kinase",
+        "Estevam2025_MET",
+        "Jung2025_ABL1",
+        "KiRHub2026_multi_kinase",
+        "Lee2026_EGFR",
+        "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "OKL2026_multi_kinase",
+        "Oh2026_ALK",
+        "Robichaux2021_EGFR"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Chakraborty2024_SRC": -48.643337705163226,
+        "DuongLy2016_multi_kinase": 4.622399835121313,
+        "Estevam2025_MET": -322.47114299590896,
+        "Jung2025_ABL1": -96.81520795737174,
+        "KiRHub2026_multi_kinase": 1.5912358415567858,
+        "Lee2026_EGFR": -54.81899193436352,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": 2.7720658782337146,
+        "OKL2026_multi_kinase": 3.9653024722814636,
+        "Oh2026_ALK": -35.15381719130154,
+        "Robichaux2021_EGFR": -33.39697098770503
+      },
+      "gain_percent": -57.834846474462076,
+      "ci95": [
+        -63.618148340671134,
+        -54.50038052055034
+      ],
+      "n_draws": 10000,
+      "meets_target": false,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 9.999000099990002e-05
+    },
+    "RidgeSupports": {
+      "panel_rows": [
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 40500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.19009114656625908,
+          "mae_xgboost": 0.18443436361462368,
+          "gain_percent": -3.067098148507335,
+          "gain_defined": true,
+          "absolute_error_difference": -0.0056567829516354085,
+          "gain_ci95": [
+            -4.189394077377307,
+            -1.9628337229338386
+          ]
+        },
+        {
+          "study": "Chakraborty2024_SRC",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 13500,
+          "sites": 246,
+          "failed_episodes": 0,
+          "mae_method": 0.17914238059150064,
+          "mae_xgboost": 0.17456863204616424,
+          "gain_percent": -2.6200288629900514,
+          "gain_defined": true,
+          "absolute_error_difference": -0.0045737485453364035,
+          "gain_ci95": [
+            -4.416335351658892,
+            -0.4574471613821689
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.860212774006877,
+          "mae_xgboost": 15.336855007271952,
+          "gain_percent": 9.628064114611025,
+          "gain_defined": true,
+          "absolute_error_difference": 1.4766422332650748,
+          "gain_ci95": [
+            -5.470992568518309,
+            20.20416180112019
+          ]
+        },
+        {
+          "study": "DuongLy2016_multi_kinase",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 9120,
+          "sites": 21,
+          "failed_episodes": 0,
+          "mae_method": 13.902043478554162,
+          "mae_xgboost": 15.746505709411688,
+          "gain_percent": 11.713470054217106,
+          "gain_defined": true,
+          "absolute_error_difference": 1.8444622308575251,
+          "gain_ci95": [
+            -5.015447585312315,
+            23.839125461832054
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.3097045748180958,
+          "mae_xgboost": 0.28746333302354865,
+          "gain_percent": -7.737070867652258,
+          "gain_defined": true,
+          "absolute_error_difference": -0.022241241794547173,
+          "gain_ci95": [
+            -8.935244475409087,
+            -6.586714392627399
+          ]
+        },
+        {
+          "study": "Estevam2025_MET",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 77136,
+          "sites": 287,
+          "failed_episodes": 0,
+          "mae_method": 0.28069711711033957,
+          "mae_xgboost": 0.2649097602377033,
+          "gain_percent": -5.959522540230413,
+          "gain_defined": true,
+          "absolute_error_difference": -0.01578735687263627,
+          "gain_ci95": [
+            -7.308657092113922,
+            -4.6764062396620645
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 55080,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 1.0941168637826535,
+          "mae_xgboost": 1.0684411792597226,
+          "gain_percent": -2.4030976174767513,
+          "gain_defined": true,
+          "absolute_error_difference": -0.025675684522930897,
+          "gain_ci95": [
+            -3.3743776808039363,
+            -1.4866194218637028
+          ]
+        },
+        {
+          "study": "Jung2025_ABL1",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 36720,
+          "sites": 322,
+          "failed_episodes": 0,
+          "mae_method": 0.9960170895902113,
+          "mae_xgboost": 0.9824823186215812,
+          "gain_percent": -1.3776096233079618,
+          "gain_defined": true,
+          "absolute_error_difference": -0.013534770968630094,
+          "gain_ci95": [
+            -2.623765143818835,
+            -0.21394177826766345
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 20.614414924376373,
+          "mae_xgboost": 21.146426160921724,
+          "gain_percent": 2.5158446751087418,
+          "gain_defined": true,
+          "absolute_error_difference": 0.5320112365453511,
+          "gain_ci95": [
+            -4.938445428640017,
+            9.090447584417332
+          ]
+        },
+        {
+          "study": "KiRHub2026_multi_kinase",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 18840,
+          "sites": 48,
+          "failed_episodes": 0,
+          "mae_method": 20.071860830341304,
+          "mae_xgboost": 21.04355279809421,
+          "gain_percent": 4.617528119305535,
+          "gain_defined": true,
+          "absolute_error_difference": 0.971691967752907,
+          "gain_ci95": [
+            -2.86339874432703,
+            11.111983248695221
+          ]
+        },
+        {
+          "study": "Lee2026_EGFR",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 4764,
+          "sites": 286,
+          "failed_episodes": 0,
+          "mae_method": 0.7880013669012644,
+          "mae_xgboost": 0.7822247307610903,
+          "gain_percent": -0.7384880473612149,
+          "gain_defined": true,
+          "absolute_error_difference": -0.005776636140174096,
+          "gain_ci95": [
+            -4.237234660887494,
+            2.6969341839434957
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 10791,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.44840984248987703,
+          "mae_xgboost": 0.4507488091228848,
+          "gain_percent": 0.5189068913036435,
+          "gain_defined": true,
+          "absolute_error_difference": 0.002338966633007755,
+          "gain_ci95": [
+            -4.607208613673517,
+            40.34846304452649
+          ]
+        },
+        {
+          "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 17280,
+          "sites": 3,
+          "failed_episodes": 0,
+          "mae_method": 0.4456656250435379,
+          "mae_xgboost": 0.4580932407303281,
+          "gain_percent": 2.7129009078975073,
+          "gain_defined": true,
+          "absolute_error_difference": 0.012427615686790183,
+          "gain_ci95": [
+            -0.23224807757989724,
+            43.403550866694225
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 25.935767238590934,
+          "mae_xgboost": 28.06735547448282,
+          "gain_percent": 7.594546047737914,
+          "gain_defined": true,
+          "absolute_error_difference": 2.1315882358918863,
+          "gain_ci95": [
+            -5.972065417132314,
+            16.174363779223075
+          ]
+        },
+        {
+          "study": "OKL2026_multi_kinase",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 7080,
+          "sites": 11,
+          "failed_episodes": 0,
+          "mae_method": 25.607267534787667,
+          "mae_xgboost": 27.818733342596378,
+          "gain_percent": 7.949556079976107,
+          "gain_defined": true,
+          "absolute_error_difference": 2.211465807808711,
+          "gain_ci95": [
+            -10.320199183574296,
+            19.71045965696582
+          ]
+        },
+        {
+          "study": "Oh2026_ALK",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 5796,
+          "sites": 331,
+          "failed_episodes": 0,
+          "mae_method": 0.5842972115323627,
+          "mae_xgboost": 0.5906832663999063,
+          "gain_percent": 1.081130147204833,
+          "gain_defined": true,
+          "absolute_error_difference": 0.006386054867543622,
+          "gain_ci95": [
+            -0.6559969381540506,
+            2.9421295806978778
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 2,
+          "method": "RidgeSupports",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7507943588070045,
+          "mae_xgboost": 0.7752034442626881,
+          "gain_percent": 3.148732843789094,
+          "gain_defined": true,
+          "absolute_error_difference": 0.024409085455683543,
+          "gain_ci95": [
+            -4.088911627103386,
+            5.864708648415451
+          ]
+        },
+        {
+          "study": "Robichaux2021_EGFR",
+          "budget": 3,
+          "method": "RidgeSupports",
+          "episodes": 9240,
+          "sites": 13,
+          "failed_episodes": 0,
+          "mae_method": 0.7056647395166082,
+          "mae_xgboost": 0.7547901985714773,
+          "gain_percent": 6.508491915746173,
+          "gain_defined": true,
+          "absolute_error_difference": 0.04912545905486909,
+          "gain_ci95": [
+            -2.0728104753950385,
+            7.989533244537209
+          ]
+        }
+      ],
+      "studies": [
+        "Chakraborty2024_SRC",
+        "DuongLy2016_multi_kinase",
+        "Estevam2025_MET",
+        "Jung2025_ABL1",
+        "KiRHub2026_multi_kinase",
+        "Lee2026_EGFR",
+        "Nakamura2021_FGFR1_FGFR2_FGFR3",
+        "OKL2026_multi_kinase",
+        "Oh2026_ALK",
+        "Robichaux2021_EGFR"
+      ],
+      "complete": true,
+      "per_study_gain": {
+        "Chakraborty2024_SRC": -2.843563505748693,
+        "DuongLy2016_multi_kinase": 10.670767084414067,
+        "Estevam2025_MET": -6.848296703941335,
+        "Jung2025_ABL1": -1.8903536203923565,
+        "KiRHub2026_multi_kinase": 3.5666863972071385,
+        "Lee2026_EGFR": -0.7384880473612149,
+        "Nakamura2021_FGFR1_FGFR2_FGFR3": 1.6159038996005755,
+        "OKL2026_multi_kinase": 7.772051063857011,
+        "Oh2026_ALK": 1.081130147204833,
+        "Robichaux2021_EGFR": 4.828612379767634
+      },
+      "gain_percent": 1.7214449094607658,
+      "ci95": [
+        -0.7522548954093606,
+        4.986741931899986
+      ],
+      "n_draws": 10000,
+      "meets_target": false,
+      "ci_entirely_above_threshold": false,
+      "bootstrap_p_two_sided": 0.17809999000099988
+    }
+  },
+  "intervention": [
+    {
+      "study": "Chakraborty2024_SRC",
+      "budget": 2,
+      "episodes": 40500,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Chakraborty2024_SRC",
+      "budget": 3,
+      "episodes": 13500,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "DuongLy2016_multi_kinase",
+      "budget": 2,
+      "episodes": 9120,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "DuongLy2016_multi_kinase",
+      "budget": 3,
+      "episodes": 9120,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Estevam2025_MET",
+      "budget": 2,
+      "episodes": 77136,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Estevam2025_MET",
+      "budget": 3,
+      "episodes": 77136,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Jung2025_ABL1",
+      "budget": 2,
+      "episodes": 55080,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Jung2025_ABL1",
+      "budget": 3,
+      "episodes": 36720,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "KiRHub2026_multi_kinase",
+      "budget": 2,
+      "episodes": 18840,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "KiRHub2026_multi_kinase",
+      "budget": 3,
+      "episodes": 18840,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Lee2026_EGFR",
+      "budget": 2,
+      "episodes": 4764,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+      "budget": 2,
+      "episodes": 10791,
+      "intervention_rate": 0.0
+    },
+    {
+      "study": "Nakamura2021_FGFR1_FGFR2_FGFR3",
+      "budget": 3,
+      "episodes": 17280,
+      "intervention_rate": 0.0
+    },
+    {
+      "study": "OKL2026_multi_kinase",
+      "budget": 2,
+      "episodes": 7080,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "OKL2026_multi_kinase",
+      "budget": 3,
+      "episodes": 7080,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Oh2026_ALK",
+      "budget": 2,
+      "episodes": 5796,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Robichaux2021_EGFR",
+      "budget": 2,
+      "episodes": 9240,
+      "intervention_rate": 1.0
+    },
+    {
+      "study": "Robichaux2021_EGFR",
+      "budget": 3,
+      "episodes": 9240,
+      "intervention_rate": 1.0
+    }
+  ],
+  "T1_hidden_resistance": {
+    "Chakraborty2024_SRC|k2": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'other'"
+    },
+    "Chakraborty2024_SRC|k3": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'other'"
+    },
+    "DuongLy2016_multi_kinase|k2": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'remaining_activity'"
+    },
+    "DuongLy2016_multi_kinase|k3": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'remaining_activity'"
+    },
+    "Estevam2025_MET|k2": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'fitness_score'"
+    },
+    "Estevam2025_MET|k3": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'fitness_score'"
+    },
+    "Jung2025_ABL1|k2": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'other'"
+    },
+    "Jung2025_ABL1|k3": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'other'"
+    },
+    "KiRHub2026_multi_kinase|k2": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'remaining_activity'"
+    },
+    "KiRHub2026_multi_kinase|k3": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'remaining_activity'"
+    },
+    "Lee2026_EGFR|k2": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'other'"
+    },
+    "Nakamura2021_FGFR1_FGFR2_FGFR3|k2": {
+      "defined": true,
+      "ambiguous_excluded": 0,
+      "groups_total": 90,
+      "groups_used": 85,
+      "groups_below_minimum": 5,
+      "methods": {
+        "AlignedAddAudit": {
+          "hits": 58,
+          "reviewed": 187,
+          "precision": 0.31016042780748665,
+          "recall": 0.07259073842302878,
+          "enrichment_factor": 1.0574180292210182,
+          "mean_average_precision": 0.8248750234712803,
+          "groups_with_positives": 33,
+          "distinct_hit_pairs": 35
+        },
+        "CovarianceLocalMedian": {
+          "hits": 55,
+          "reviewed": 187,
+          "precision": 0.29411764705882354,
+          "recall": 0.0688360450563204,
+          "enrichment_factor": 1.0027239932268277,
+          "mean_average_precision": 0.76983915986066,
+          "groups_with_positives": 33,
+          "distinct_hit_pairs": 35
+        },
+        "NestedAligned": {
+          "hits": 58,
+          "reviewed": 187,
+          "precision": 0.31016042780748665,
+          "recall": 0.07259073842302878,
+          "enrichment_factor": 1.0574180292210182,
+          "mean_average_precision": 0.827804446988939,
+          "groups_with_positives": 33,
+          "distinct_hit_pairs": 36
+        },
+        "SAER-7g": {
+          "hits": 61,
+          "reviewed": 187,
+          "precision": 0.32620320855614976,
+          "recall": 0.07634543178973717,
+          "enrichment_factor": 1.112112065215209,
+          "mean_average_precision": 0.851797601501574,
+          "groups_with_positives": 33,
+          "distinct_hit_pairs": 33
+        },
+        "SER": {
+          "hits": 55,
+          "reviewed": 187,
+          "precision": 0.29411764705882354,
+          "recall": 0.0688360450563204,
+          "enrichment_factor": 1.0027239932268277,
+          "mean_average_precision": 0.7685257130914472,
+          "groups_with_positives": 33,
+          "distinct_hit_pairs": 42
+        },
+        "XGBoost": {
+          "hits": 55,
+          "reviewed": 187,
+          "precision": 0.29411764705882354,
+          "recall": 0.0688360450563204,
+          "enrichment_factor": 1.0027239932268277,
+          "mean_average_precision": 0.7685257130914472,
+          "groups_with_positives": 33,
+          "distinct_hit_pairs": 42
+        }
+      },
+      "eligible_episodes_used": 2724,
+      "positive_episodes_used": 799,
+      "base_rate": 0.2933186490455213
+    },
+    "Nakamura2021_FGFR1_FGFR2_FGFR3|k3": {
+      "defined": true,
+      "ambiguous_excluded": 0,
+      "groups_total": 100,
+      "groups_used": 90,
+      "groups_below_minimum": 10,
+      "methods": {
+        "AlignedAddAudit": {
+          "hits": 61,
+          "reviewed": 184,
+          "precision": 0.33152173913043476,
+          "recall": 0.07830551989730423,
+          "enrichment_factor": 1.011588156499414,
+          "mean_average_precision": 0.9456691783965728,
+          "groups_with_positives": 32,
+          "distinct_hit_pairs": 25
+        },
+        "CovarianceLocalMedian": {
+          "hits": 61,
+          "reviewed": 184,
+          "precision": 0.33152173913043476,
+          "recall": 0.07830551989730423,
+          "enrichment_factor": 1.011588156499414,
+          "mean_average_precision": 0.9401939563704269,
+          "groups_with_positives": 32,
+          "distinct_hit_pairs": 19
+        },
+        "NestedAligned": {
+          "hits": 61,
+          "reviewed": 184,
+          "precision": 0.33152173913043476,
+          "recall": 0.07830551989730423,
+          "enrichment_factor": 1.011588156499414,
+          "mean_average_precision": 0.9456691783965728,
+          "groups_with_positives": 32,
+          "distinct_hit_pairs": 25
+        },
+        "SAER-7g": {
+          "hits": 61,
+          "reviewed": 184,
+          "precision": 0.33152173913043476,
+          "recall": 0.07830551989730423,
+          "enrichment_factor": 1.011588156499414,
+          "mean_average_precision": 0.9456691783965728,
+          "groups_with_positives": 32,
+          "distinct_hit_pairs": 16
+        },
+        "SER": {
+          "hits": 61,
+          "reviewed": 184,
+          "precision": 0.33152173913043476,
+          "recall": 0.07830551989730423,
+          "enrichment_factor": 1.011588156499414,
+          "mean_average_precision": 0.9396213444616976,
+          "groups_with_positives": 32,
+          "distinct_hit_pairs": 33
+        },
+        "XGBoost": {
+          "hits": 61,
+          "reviewed": 184,
+          "precision": 0.33152173913043476,
+          "recall": 0.07830551989730423,
+          "enrichment_factor": 1.011588156499414,
+          "mean_average_precision": 0.9396213444616976,
+          "groups_with_positives": 32,
+          "distinct_hit_pairs": 33
+        }
+      },
+      "eligible_episodes_used": 2377,
+      "positive_episodes_used": 779,
+      "base_rate": 0.32772402187631466
+    },
+    "OKL2026_multi_kinase|k2": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'remaining_binding'"
+    },
+    "OKL2026_multi_kinase|k3": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'remaining_binding'"
+    },
+    "Oh2026_ALK|k2": {
+      "defined": false,
+      "reason": "no sensitivity rule for scale 'other'"
+    },
+    "Robichaux2021_EGFR|k2": {
+      "defined": true,
+      "ambiguous_excluded": 0,
+      "groups_total": 2227,
+      "groups_used": 0,
+      "groups_below_minimum": 2227,
+      "methods": {
+        "AlignedAddAudit": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "CovarianceLocalMedian": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "NestedAligned": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SAER-7g": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SER": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "XGBoost": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        }
+      },
+      "eligible_episodes_used": 0,
+      "positive_episodes_used": 0,
+      "base_rate": NaN
+    },
+    "Robichaux2021_EGFR|k3": {
+      "defined": true,
+      "ambiguous_excluded": 0,
+      "groups_total": 4333,
+      "groups_used": 0,
+      "groups_below_minimum": 4333,
+      "methods": {
+        "AlignedAddAudit": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "CovarianceLocalMedian": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "NestedAligned": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SAER-7g": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "SER": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        },
+        "XGBoost": {
+          "hits": 0,
+          "reviewed": 0,
+          "precision": NaN,
+          "recall": NaN,
+          "enrichment_factor": NaN,
+          "mean_average_precision": NaN,
+          "groups_with_positives": 0,
+          "distinct_hit_pairs": 0
+        }
+      },
+      "eligible_episodes_used": 0,
+      "positive_episodes_used": 0,
+      "base_rate": NaN
+    }
+  },
+  "T2_inhibitor_choice": {
+    "Chakraborty2024_SRC|k2": {
+      "defined": true,
+      "support_sets": 20250,
+      "excluded_incomplete": 0,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 3375,
+          "mean_regret": 0.07287387260610517,
+          "chosen_is_best_fraction": 0.6833086419753086
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 3375,
+          "mean_regret": 0.07270415571061291,
+          "chosen_is_best_fraction": 0.6829135802469136
+        },
+        "NestedAligned": {
+          "eligible_variants": 3375,
+          "mean_regret": 0.07259899525327347,
+          "chosen_is_best_fraction": 0.6835555555555556
+        },
+        "SAER-7g": {
+          "eligible_variants": 3375,
+          "mean_regret": 0.07331825468326765,
+          "chosen_is_best_fraction": 0.6821728395061728
+        },
+        "SER": {
+          "eligible_variants": 3375,
+          "mean_regret": 0.07130470244805925,
+          "chosen_is_best_fraction": 0.6855308641975308
+        },
+        "XGBoost": {
+          "eligible_variants": 3375,
+          "mean_regret": 0.0721495564630412,
+          "chosen_is_best_fraction": 0.6847901234567901
+        }
+      }
+    },
+    "Chakraborty2024_SRC|k3": {
+      "defined": false,
+      "reason": "only 1 remaining inhibitor(s) at k=3; at least 2 are needed"
+    },
+    "DuongLy2016_multi_kinase|k2": {
+      "defined": true,
+      "support_sets": 0,
+      "excluded_incomplete": 9095,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "NestedAligned": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SAER-7g": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SER": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "XGBoost": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        }
+      }
+    },
+    "DuongLy2016_multi_kinase|k3": {
+      "defined": true,
+      "support_sets": 0,
+      "excluded_incomplete": 9120,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "NestedAligned": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SAER-7g": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SER": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "XGBoost": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        }
+      }
+    },
+    "Estevam2025_MET|k2": {
+      "defined": true,
+      "support_sets": 0,
+      "excluded_incomplete": 61764,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "NestedAligned": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SAER-7g": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SER": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "XGBoost": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        }
+      }
+    },
+    "Estevam2025_MET|k3": {
+      "defined": true,
+      "support_sets": 0,
+      "excluded_incomplete": 71072,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "NestedAligned": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SAER-7g": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SER": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "XGBoost": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        }
+      }
+    },
+    "Jung2025_ABL1|k2": {
+      "defined": true,
+      "support_sets": 18360,
+      "excluded_incomplete": 0,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.5796833241884535,
+          "chosen_is_best_fraction": 0.5209694989106753
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.5959440152541509,
+          "chosen_is_best_fraction": 0.5145424836601307
+        },
+        "NestedAligned": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.5941020324508708,
+          "chosen_is_best_fraction": 0.5172657952069717
+        },
+        "SAER-7g": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.5806452746784959,
+          "chosen_is_best_fraction": 0.5217864923747276
+        },
+        "SER": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.5880536098403017,
+          "chosen_is_best_fraction": 0.5203703703703704
+        },
+        "XGBoost": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.5978465892997203,
+          "chosen_is_best_fraction": 0.5205882352941177
+        }
+      }
+    },
+    "Jung2025_ABL1|k3": {
+      "defined": true,
+      "support_sets": 18360,
+      "excluded_incomplete": 0,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.36361776539640817,
+          "chosen_is_best_fraction": 0.684368191721133
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.36723505774311405,
+          "chosen_is_best_fraction": 0.6793028322440087
+        },
+        "NestedAligned": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.3758532740626114,
+          "chosen_is_best_fraction": 0.6788126361655773
+        },
+        "SAER-7g": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.3652633623930666,
+          "chosen_is_best_fraction": 0.6838235294117647
+        },
+        "SER": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.35847709439290854,
+          "chosen_is_best_fraction": 0.6828976034858388
+        },
+        "XGBoost": {
+          "eligible_variants": 1836,
+          "mean_regret": 0.36524297113984744,
+          "chosen_is_best_fraction": 0.6817538126361655
+        }
+      }
+    },
+    "KiRHub2026_multi_kinase|k2": {
+      "defined": true,
+      "support_sets": 0,
+      "excluded_incomplete": 18590,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "NestedAligned": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SAER-7g": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SER": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "XGBoost": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        }
+      }
+    },
+    "KiRHub2026_multi_kinase|k3": {
+      "defined": true,
+      "support_sets": 0,
+      "excluded_incomplete": 18818,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "NestedAligned": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SAER-7g": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SER": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "XGBoost": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        }
+      }
+    },
+    "Lee2026_EGFR|k2": {
+      "defined": false,
+      "reason": "only 1 remaining inhibitor(s) at k=2; at least 2 are needed"
+    },
+    "Nakamura2021_FGFR1_FGFR2_FGFR3|k2": {
+      "defined": true,
+      "support_sets": 1456,
+      "excluded_incomplete": 414,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 52,
+          "mean_regret": 0.0722654392977153,
+          "chosen_is_best_fraction": 0.8578296703296703
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 52,
+          "mean_regret": 0.0847238496924503,
+          "chosen_is_best_fraction": 0.8770604395604396
+        },
+        "NestedAligned": {
+          "eligible_variants": 52,
+          "mean_regret": 0.07520539105972111,
+          "chosen_is_best_fraction": 0.8557692307692307
+        },
+        "SAER-7g": {
+          "eligible_variants": 52,
+          "mean_regret": 0.0698584015233318,
+          "chosen_is_best_fraction": 0.8612637362637363
+        },
+        "SER": {
+          "eligible_variants": 52,
+          "mean_regret": 0.05137098593080055,
+          "chosen_is_best_fraction": 0.9175824175824175
+        },
+        "XGBoost": {
+          "eligible_variants": 52,
+          "mean_regret": 0.05137098593080055,
+          "chosen_is_best_fraction": 0.9175824175824175
+        }
+      }
+    },
+    "Nakamura2021_FGFR1_FGFR2_FGFR3|k3": {
+      "defined": true,
+      "support_sets": 2912,
+      "excluded_incomplete": 685,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 52,
+          "mean_regret": 0.11963350352224686,
+          "chosen_is_best_fraction": 0.770260989010989
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 52,
+          "mean_regret": 0.1245626436374861,
+          "chosen_is_best_fraction": 0.7870879120879121
+        },
+        "NestedAligned": {
+          "eligible_variants": 52,
+          "mean_regret": 0.12120800907843923,
+          "chosen_is_best_fraction": 0.7685439560439561
+        },
+        "SAER-7g": {
+          "eligible_variants": 52,
+          "mean_regret": 0.11624843271661035,
+          "chosen_is_best_fraction": 0.7757554945054945
+        },
+        "SER": {
+          "eligible_variants": 52,
+          "mean_regret": 0.1282248884749818,
+          "chosen_is_best_fraction": 0.8028846153846154
+        },
+        "XGBoost": {
+          "eligible_variants": 52,
+          "mean_regret": 0.1282248884749818,
+          "chosen_is_best_fraction": 0.8028846153846154
+        }
+      }
+    },
+    "OKL2026_multi_kinase|k2": {
+      "defined": true,
+      "support_sets": 0,
+      "excluded_incomplete": 7045,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "NestedAligned": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SAER-7g": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SER": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "XGBoost": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        }
+      }
+    },
+    "OKL2026_multi_kinase|k3": {
+      "defined": true,
+      "support_sets": 0,
+      "excluded_incomplete": 7080,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "NestedAligned": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SAER-7g": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SER": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "XGBoost": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        }
+      }
+    },
+    "Oh2026_ALK|k2": {
+      "defined": false,
+      "reason": "only 1 remaining inhibitor(s) at k=2; at least 2 are needed"
+    },
+    "Robichaux2021_EGFR|k2": {
+      "defined": true,
+      "support_sets": 0,
+      "excluded_incomplete": 6572,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "NestedAligned": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SAER-7g": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SER": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "XGBoost": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        }
+      }
+    },
+    "Robichaux2021_EGFR|k3": {
+      "defined": true,
+      "support_sets": 0,
+      "excluded_incomplete": 8612,
+      "excluded_censored": 0,
+      "prediction_ties_first_method": 0,
+      "unit": "variant",
+      "methods": {
+        "AlignedAddAudit": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "CovarianceLocalMedian": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "NestedAligned": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SAER-7g": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "SER": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        },
+        "XGBoost": {
+          "eligible_variants": 0,
+          "mean_regret": null,
+          "chosen_is_best_fraction": null
+        }
+      }
+    }
+  },
+  "T3_third_measurement": {
+    "Chakraborty2024_SRC": {
+      "defined": true,
+      "base_episodes": 40500,
+      "methods": {
+        "AlignedAddAudit": {
+          "mean_error_reduction": 0.010969948271998386,
+          "site_mean_error_reduction": 0.011322514461714263,
+          "fraction_helped": 0.5460493827160494
+        },
+        "CovarianceLocalMedian": {
+          "mean_error_reduction": 0.009687570492659454,
+          "site_mean_error_reduction": 0.009342711516280808,
+          "fraction_helped": 0.5394814814814815
+        },
+        "NestedAligned": {
+          "mean_error_reduction": 0.010035553144700131,
+          "site_mean_error_reduction": 0.009974652288986674,
+          "fraction_helped": 0.5444444444444444
+        },
+        "SAER-7g": {
+          "mean_error_reduction": 0.01182694505792875,
+          "site_mean_error_reduction": 0.011610330740002985,
+          "fraction_helped": 0.555358024691358
+        },
+        "SER": {
+          "mean_error_reduction": 0.0091942810274706,
+          "site_mean_error_reduction": 0.00930761733687823,
+          "fraction_helped": 0.5451604938271605
+        },
+        "XGBoost": {
+          "mean_error_reduction": 0.009865731568459424,
+          "site_mean_error_reduction": 0.010182847501734822,
+          "fraction_helped": 0.5532098765432099
+        }
+      }
+    },
+    "DuongLy2016_multi_kinase": {
+      "defined": true,
+      "base_episodes": 1,
+      "methods": {
+        "AlignedAddAudit": {
+          "mean_error_reduction": -1.1430384719913462,
+          "site_mean_error_reduction": -1.1430384719913462,
+          "fraction_helped": 0.0
+        },
+        "CovarianceLocalMedian": {
+          "mean_error_reduction": -0.10277722085760388,
+          "site_mean_error_reduction": -0.10277722085760388,
+          "fraction_helped": 0.0
+        },
+        "NestedAligned": {
+          "mean_error_reduction": 0.09498243283877628,
+          "site_mean_error_reduction": 0.09498243283877628,
+          "fraction_helped": 1.0
+        },
+        "SAER-7g": {
+          "mean_error_reduction": -1.3002477725334245,
+          "site_mean_error_reduction": -1.3002477725334245,
+          "fraction_helped": 0.0
+        },
+        "SER": {
+          "mean_error_reduction": -1.9149475701874081,
+          "site_mean_error_reduction": -1.9149475701874081,
+          "fraction_helped": 0.0
+        },
+        "XGBoost": {
+          "mean_error_reduction": -1.7628402709960938,
+          "site_mean_error_reduction": -1.7628402709960938,
+          "fraction_helped": 0.0
+        }
+      }
+    },
+    "Estevam2025_MET": {
+      "defined": true,
+      "base_episodes": 14354,
+      "methods": {
+        "AlignedAddAudit": {
+          "mean_error_reduction": 0.018267207293567053,
+          "site_mean_error_reduction": 0.01840216109502206,
+          "fraction_helped": 0.5518322418837954
+        },
+        "CovarianceLocalMedian": {
+          "mean_error_reduction": 0.030285141588141745,
+          "site_mean_error_reduction": 0.030547884644522415,
+          "fraction_helped": 0.5574752682179184
+        },
+        "NestedAligned": {
+          "mean_error_reduction": 0.01836607993463873,
+          "site_mean_error_reduction": 0.01848498610807674,
+          "fraction_helped": 0.5535739166782778
+        },
+        "SAER-7g": {
+          "mean_error_reduction": 0.017579370785398427,
+          "site_mean_error_reduction": 0.017524729453443515,
+          "fraction_helped": 0.5559425943987739
+        },
+        "SER": {
+          "mean_error_reduction": 0.03033276938529926,
+          "site_mean_error_reduction": 0.030565751559812396,
+          "fraction_helped": 0.5574752682179184
+        },
+        "XGBoost": {
+          "mean_error_reduction": 0.024958499005131293,
+          "site_mean_error_reduction": 0.023798091076284323,
+          "fraction_helped": 0.5525985787933677
+        }
+      }
+    },
+    "Jung2025_ABL1": {
+      "defined": true,
+      "base_episodes": 55080,
+      "methods": {
+        "AlignedAddAudit": {
+          "mean_error_reduction": 0.08930255936085602,
+          "site_mean_error_reduction": 0.08995515422204543,
+          "fraction_helped": 0.5638525780682644
+        },
+        "CovarianceLocalMedian": {
+          "mean_error_reduction": 0.08477530722845923,
+          "site_mean_error_reduction": 0.08589122844409733,
+          "fraction_helped": 0.5578976034858388
+        },
+        "NestedAligned": {
+          "mean_error_reduction": 0.08744382776269244,
+          "site_mean_error_reduction": 0.08835403105992784,
+          "fraction_helped": 0.5608750907770516
+        },
+        "SAER-7g": {
+          "mean_error_reduction": 0.08972334576174693,
+          "site_mean_error_reduction": 0.09045696916298103,
+          "fraction_helped": 0.5639796659404502
+        },
+        "SER": {
+          "mean_error_reduction": 0.08834873740231118,
+          "site_mean_error_reduction": 0.08947452735231554,
+          "fraction_helped": 0.5642519970951344
+        },
+        "XGBoost": {
+          "mean_error_reduction": 0.08595886063814139,
+          "site_mean_error_reduction": 0.08707675134303423,
+          "fraction_helped": 0.5618736383442265
+        }
+      }
+    },
+    "KiRHub2026_multi_kinase": {
+      "defined": true,
+      "base_episodes": 59,
+      "methods": {
+        "AlignedAddAudit": {
+          "mean_error_reduction": 1.1985479833079846,
+          "site_mean_error_reduction": 0.31707886365680016,
+          "fraction_helped": 0.6101694915254238
+        },
+        "CovarianceLocalMedian": {
+          "mean_error_reduction": 0.6222171454051607,
+          "site_mean_error_reduction": 2.1183198588916463,
+          "fraction_helped": 0.4576271186440678
+        },
+        "NestedAligned": {
+          "mean_error_reduction": -0.18218750423983085,
+          "site_mean_error_reduction": 0.257618623974123,
+          "fraction_helped": 0.5254237288135594
+        },
+        "SAER-7g": {
+          "mean_error_reduction": 1.4900283682114868,
+          "site_mean_error_reduction": 0.985928172217011,
+          "fraction_helped": 0.6440677966101694
+        },
+        "SER": {
+          "mean_error_reduction": 0.29409022558914,
+          "site_mean_error_reduction": 0.3483284849457859,
+          "fraction_helped": 0.5084745762711864
+        },
+        "XGBoost": {
+          "mean_error_reduction": 1.3859638977050786,
+          "site_mean_error_reduction": -0.6229312991729291,
+          "fraction_helped": 0.5932203389830508
+        }
+      }
+    },
+    "Nakamura2021_FGFR1_FGFR2_FGFR3": {
+      "defined": true,
+      "base_episodes": 10791,
+      "methods": {
+        "AlignedAddAudit": {
+          "mean_error_reduction": 0.03720613101868579,
+          "site_mean_error_reduction": 0.05287087617046741,
+          "fraction_helped": 0.5864146047632286
+        },
+        "CovarianceLocalMedian": {
+          "mean_error_reduction": 0.0075744114888097154,
+          "site_mean_error_reduction": 0.023898545539977428,
+          "fraction_helped": 0.5301640255768696
+        },
+        "NestedAligned": {
+          "mean_error_reduction": 0.0392589640998179,
+          "site_mean_error_reduction": 0.05447849049451806,
+          "fraction_helped": 0.5896580483736447
+        },
+        "SAER-7g": {
+          "mean_error_reduction": 0.03684597380523815,
+          "site_mean_error_reduction": 0.049613661193776026,
+          "fraction_helped": 0.6283940320637569
+        },
+        "SER": {
+          "mean_error_reduction": -0.005940336501360227,
+          "site_mean_error_reduction": 0.019330777163479963,
+          "fraction_helped": 0.4849411546659253
+        },
+        "XGBoost": {
+          "mean_error_reduction": -0.005940336501360227,
+          "site_mean_error_reduction": 0.019330777163479963,
+          "fraction_helped": 0.4849411546659253
+        }
+      }
+    },
+    "OKL2026_multi_kinase": {
+      "defined": false,
+      "reason": "no paired two- and three-drug episodes"
+    },
+    "Robichaux2021_EGFR": {
+      "defined": true,
+      "base_episodes": 1261,
+      "methods": {
+        "AlignedAddAudit": {
+          "mean_error_reduction": 0.06132469160475953,
+          "site_mean_error_reduction": 0.04335906785386821,
+          "fraction_helped": 0.584456780333069
+        },
+        "CovarianceLocalMedian": {
+          "mean_error_reduction": 0.022616473010741357,
+          "site_mean_error_reduction": 0.04973438745261187,
+          "fraction_helped": 0.535289452815226
+        },
+        "NestedAligned": {
+          "mean_error_reduction": 0.04938368050505928,
+          "site_mean_error_reduction": 0.026719351532888957,
+          "fraction_helped": 0.5535289452815226
+        },
+        "SAER-7g": {
+          "mean_error_reduction": 0.061166326069579675,
+          "site_mean_error_reduction": 0.02727145184235138,
+          "fraction_helped": 0.578112609040444
+        },
+        "SER": {
+          "mean_error_reduction": 0.04189347459242619,
+          "site_mean_error_reduction": 0.05576358104992824,
+          "fraction_helped": 0.5448057097541633
+        },
+        "XGBoost": {
+          "mean_error_reduction": 0.015450520326483037,
+          "site_mean_error_reduction": 0.04334716755249817,
+          "fraction_helped": 0.5083267248215702
+        }
+      }
+    }
+  },
+  "T4_binding_mode": {
+    "Chakraborty2024_SRC|k2": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Chakraborty2024_SRC|k3": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "DuongLy2016_multi_kinase|k2": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "DuongLy2016_multi_kinase|k3": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Estevam2025_MET|k2": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Estevam2025_MET|k3": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Jung2025_ABL1|k2": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Jung2025_ABL1|k3": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "KiRHub2026_multi_kinase|k2": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "KiRHub2026_multi_kinase|k3": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Lee2026_EGFR|k2": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Nakamura2021_FGFR1_FGFR2_FGFR3|k2": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Nakamura2021_FGFR1_FGFR2_FGFR3|k3": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "OKL2026_multi_kinase|k2": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "OKL2026_multi_kinase|k3": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Oh2026_ALK|k2": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Robichaux2021_EGFR|k2": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    },
+    "Robichaux2021_EGFR|k3": {
+      "defined": false,
+      "reason": "no inhibitor mode annotation for this panel"
+    }
+  }
+}
