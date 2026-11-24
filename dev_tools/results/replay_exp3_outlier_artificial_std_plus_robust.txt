@@ -1,0 +1,22 @@
+target                               cens  local  ridge |     registered |     nodefer_bi |   nodefer_all3 | registered+mea | nodefer_bi+mea
+Syn0153_D6_n100_ser:2                -      -5.3   -8.8 |  -0.41 (0.20) |  -0.41 (0.20) |  -0.41 (0.20) |  -1.04 (0.20) |  -1.04 (0.20)
+Syn0159_D4_n200_mat:2                -      -2.0  -12.6 |   0.24 (0.31) |   0.24 (0.31) |   0.24 (0.31) |   0.24 (0.31) |   0.24 (0.31)
+Syn0192_D6_n200_mat:2                -     -24.0  -29.1 |  -0.07 (0.53) |  -0.07 (0.53) |  -0.07 (0.53) |  -0.72 (0.53) |  -0.72 (0.53)
+Syn0218_D3_n60_mat:2                 -      -4.8    2.3 |  -1.30 (1.00) |  -1.30 (1.00) |  -1.30 (1.00) |  -2.29 (1.00) |  -2.29 (1.00)
+Syn0224_D3_n400_mat:2                -      -1.0  -34.7 |   0.01 (0.22) |   0.01 (0.22) |   0.01 (0.22) |  -0.07 (0.22) |  -0.07 (0.22)
+Syn0249_D3_n40_mat:2                 -     -26.7  -27.1 |  -6.50 (0.28) |  -6.50 (0.28) |  -6.50 (0.28) | -12.14 (0.28) | -12.14 (0.28)
+Syn0255_D6_n400_mat:2                -       1.9   -3.8 |   2.61 (1.00) |   2.61 (1.00) |   2.61 (1.00) |   2.78 (1.00) |   2.78 (1.00)
+Syn0274_D3_n100_mat:2                -      -8.5  -11.9 |  -0.84 (0.40) |  -0.84 (0.40) |  -0.84 (0.40) |  -0.84 (0.40) |  -0.84 (0.40)
+Syn0337_D4_n100_mat:2                -     -65.8  -59.7 |   0.03 (0.19) |   0.03 (0.19) |   0.03 (0.19) |   0.03 (0.19) |   0.03 (0.19)
+Syn0343_D5_n100_mat:2                -      -7.9  -12.5 |   0.31 (0.15) |   0.31 (0.15) |   0.31 (0.15) |   0.31 (0.15) |   0.31 (0.15)
+Syn0358_D3_n400_mat:2                -       1.4   -9.1 |   0.81 (1.00) |   0.81 (1.00) |   0.81 (1.00) |   1.09 (1.00) |   1.09 (1.00)
+Syn0369_D6_n400_ser:2                -       8.5  -44.7 |   9.67 (1.00) |   9.67 (1.00) |   9.67 (1.00) |   9.59 (1.00) |   9.59 (1.00)
+Syn0381_D6_n200_mat:2                -      -3.0  -15.4 |   0.90 (1.00) |   0.90 (1.00) |   0.90 (1.00) |   0.56 (1.00) |   0.56 (1.00)
+
+mean gain over targets: {'registered': 0.42, 'nodefer_bi': 0.42, 'nodefer_all3': 0.42, 'registered+meansafe': -0.19, 'nodefer_bi+meansafe': -0.19}
+harm (CI hi < 0): {'registered': 0, 'nodefer_bi': 0, 'nodefer_all3': 0, 'registered+meansafe': 0, 'nodefer_bi+meansafe': 0}
+studies with negative gain: {'registered': np.int64(5), 'nodefer_bi': np.int64(5), 'nodefer_all3': np.int64(5), 'registered+meansafe': np.int64(6), 'nodefer_bi+meansafe': np.int64(6)}
+worst study gain: {'registered': np.float64(-6.5), 'nodefer_bi': np.float64(-6.5), 'nodefer_all3': np.float64(-6.5), 'registered+meansafe': np.float64(-12.14), 'nodefer_bi+meansafe': np.float64(-12.14)}
+
+interval-error gain (sensitivity analysis), mean over targets / worst target:
+{'registered': (0.42, np.float64(-6.5)), 'nodefer_bi': (0.42, np.float64(-6.5)), 'nodefer_all3': (0.42, np.float64(-6.5)), 'registered+meansafe': (-0.19, np.float64(-12.14)), 'nodefer_bi+meansafe': (-0.19, np.float64(-12.14))}

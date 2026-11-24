@@ -1,5 +1,8 @@
 # Keep line endings identical on every machine so the recorded hashes match.
 * text=auto eol=lf
+# Study data is stored byte for byte: its SHA-256 hashes are in the OSF record.
+data/** -text
 *.pdf binary
 *.gz binary
 *.png binary
+*.npz binary

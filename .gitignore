@@ -7,27 +7,30 @@ venv/
 *.egg-info/
 .ipynb_checkpoints/
 
-# Study data stays OUTSIDE the repo. Only hashes are recorded.
-data/
+# Raw downloads and the original archive folder live outside the repository.
 raw_data/
 SER_Code_and_All_Cleaned_Study_Data/
 
-# Lockbox material must never be committed (curator-held): Lockbox A and Lockbox B
+# Lockbox material stays private until both one-shot lockbox runs are done and scored
+# (README, "Lockbox access policy"). After that, delete this block and commit the tables.
 lockbox_private/
 splits/lockbox_private/
 LockboxB_Data/
-**/SER_responses.csv
-**/source_IC50.csv
+data/An2023_EGFR/
+data/Abadie2026_EGFR/
+data/Bahcall2022_MET/
+data/Fujino2019_MET/
+data/Wylie2017_ABL1/
+data/Zhang2016_ALK/
+data/Gainor2016_ALK/
+data_lockbox_B/
 *_truth.csv*
 *_inputs.csv*
 
-# Run outputs (large / regenerable). Hashes are recorded instead.
+# Run outputs: predictions are large and regenerable, so only their hashes are recorded.
+# Summary results (results/) ARE tracked.
 runs/
-results/
 outputs/
-*.npz
-*.parquet
-!splits/**/*.parquet
 *.log
 
 # Editor and OS

@@ -34,6 +34,12 @@
     1.0,
     10.0
   ],
+  "revision": {
+    "xgb_standardize_target": true,
+    "neighbors_whitening": "classic",
+    "ser_censor_mode": "no_defer_bi",
+    "ser_selection": "max_lower_bound"
+  },
   "ser": {
     "weights": [
       0.25,

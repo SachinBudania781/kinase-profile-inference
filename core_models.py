@@ -49,6 +49,12 @@ DEFAULT_CONFIG = {
     "ridge_kappa": [0.1, 1.0, 10.0],
     "ser": {"weights": [0.25, 0.5, 0.75, 1.0], "confidence": 0.90, "min_validation_sites": 3,
             "experts": ["bounded_local", "shrunk_local", "bounded_ridge", "query_median", "pooled_median"]},
+    # Pre-freeze revisions (amendments log, section 11). The values here reproduce the registered (v0.2) behaviour;
+    # configs/models.json switches the revisions on, so tests against the released reference keep working.
+    "revision": {"xgb_standardize_target": False,       # fit XGBoost on (y - median) / SD of the fitting episodes
+                 "neighbors_whitening": "classic",       # "classic" (SD + Pearson covariance) or "robust" (MAD + rank correlation)
+                 "ser_censor_mode": "registered",        # "registered" | "no_defer_bi" | "no_defer_all3"
+                 "ser_selection": "max_lower_bound"},    # "max_lower_bound" | "max_mean_safe"
     "saer": {"joint_min_profiles": 1000, "joint_min_cells": 10000, "router_max_iter": 300,
              "gaussian_centers": ["zero", "mean", "median"], "gaussian_shrink": [0.01, 0.05, 0.25, 0.5, 0.9],
              "gaussian_mult": [0.25, 0.5, 0.75, 1.0], "mixture_components": [1, 2, 4, 8],
@@ -144,20 +150,54 @@ def make_xgb(row, cfg) -> XGBRegressor:
                         random_state=x["seed"], tree_method="hist")
 
 
-def fit_xgb(X, y, fit_idx, row, cfg) -> XGBRegressor:
+class StdXGB:
+    """XGBoost fitted on a standardised target; ``predict`` returns values on the original scale."""
+
+    def __init__(self, model, centre: float, scale: float):
+        self.model, self.centre, self.scale = model, centre, scale
+
+    def predict(self, X):
+        return self.model.predict(X) * self.scale + self.centre
+
+
+def fit_xgb(X, y, fit_idx, row, cfg):
     ix = subsample_indices(fit_idx, cfg["xgb"]["max_train_episodes"], cfg["xgb"]["seed"])
+    if cfg.get("revision", {}).get("xgb_standardize_target"):
+        centre = float(np.median(y[ix]))
+        scale = float(np.std(y[ix]))
+        scale = scale if np.isfinite(scale) and scale > 1e-12 else 1.0
+        return StdXGB(make_xgb(row, cfg).fit(X[ix], (y[ix] - centre) / scale), centre, scale)
     return make_xgb(row, cfg).fit(X[ix], y[ix])
 
 
 # ======================================================================================
 # Covariance-adjusted local neighbourhoods (CovarianceLocalMedian and SER alternatives)
 # ======================================================================================
-def whiten(fit: np.ndarray, new: np.ndarray):
-    """Training-only median/SD standardisation, then 0.85*Cov + 0.15*I whitening (Cholesky)."""
+def _rank_corr(z: np.ndarray) -> np.ndarray:
+    """Spearman correlation mapped to the Gaussian-copula Pearson scale (robust to gross outliers)."""
+    ranks = np.argsort(np.argsort(z, axis=0, kind="stable"), axis=0).astype(float)
+    r = np.atleast_2d(np.corrcoef(ranks.T))
+    r = np.nan_to_num(r, nan=0.0)
+    np.fill_diagonal(r, 1.0)
+    return 2.0 * np.sin(np.pi * r / 6.0)
+
+
+def whiten(fit: np.ndarray, new: np.ndarray, robust: bool = False):
+    """Training-only median/SD standardisation, then 0.85*Cov + 0.15*I whitening (Cholesky).
+
+    ``robust=True`` (revision): scale by 1.4826 x MAD (SD where the MAD is zero) and use a rank-based
+    correlation, so a few gross outliers cannot distort the metric; nothing is clipped, so real heavy tails keep their size.
+    """
     center = np.median(fit, axis=0)
-    scale = np.maximum(np.std(fit, axis=0), 1e-6)
-    z, zn = (fit - center) / scale, (new - center) / scale
-    cov = np.atleast_2d(np.cov(z.T))
+    if robust:
+        mad = 1.4826 * np.median(np.abs(fit - center), axis=0)
+        scale = np.maximum(np.where(mad > 1e-6 * (np.std(fit, axis=0) + 1e-12), mad, np.std(fit, axis=0)), 1e-6)
+        z, zn = (fit - center) / scale, (new - center) / scale
+        cov = _rank_corr(z) if z.shape[0] > 2 else np.eye(z.shape[1])
+    else:
+        scale = np.maximum(np.std(fit, axis=0), 1e-6)
+        z, zn = (fit - center) / scale, (new - center) / scale
+        cov = np.atleast_2d(np.cov(z.T))
     chol = np.linalg.cholesky(0.85 * cov + 0.15 * np.eye(z.shape[1]))
     rot = np.linalg.inv(chol.T)
     return z @ rot, zn @ rot
@@ -174,7 +214,7 @@ class Neighborhood:
 
 
 def neighborhood(y: np.ndarray, train_rows: np.ndarray, train_sites: np.ndarray, i, q, s, Ks,
-                 lo_hi: tuple | None = None) -> Neighborhood:
+                 lo_hi: tuple | None = None, robust: bool = False) -> Neighborhood:
     """Covariance-adjusted neighbourhood predictions for episodes (i, q, S) using only ``train_rows``.
 
     Training profiles are those with finite responses on the mask's supports and query. The requested
@@ -199,7 +239,7 @@ def neighborhood(y: np.ndarray, train_rows: np.ndarray, train_sites: np.ndarray,
             continue
         fit, target, sites = block[ok][:, :-1], block[ok][:, -1], site_codes[ok]
         point = y[np.ix_(i[take], sup)]
-        a, b = whiten(fit, point)
+        a, b = whiten(fit, point, robust)
         dist = cdist(b, a)
         order = np.argsort(dist, axis=1, kind="stable")[:, :min(max(Ks), n_el)]
         lo, hi = (target.min(), target.max()) if lo_hi is None else (lo_hi[0][query], lo_hi[1][query])
@@ -289,31 +329,63 @@ def site_lower_score(gain: np.ndarray, sites: np.ndarray, confidence=0.90, min_s
 
 
 def ser_gate(truth, anchor, alternatives: dict, sites, weights, confidence, min_sites, observed_limit=None,
-             query_censor=None, censored_panel=False) -> dict:
-    """Largest positive Q over (alternative, weight) in fixed order; ties keep the earlier entry."""
+             query_censor=None, censored_panel=False, censor_mode: str = "registered",
+             selection: str = "max_lower_bound") -> dict:
+    """Largest positive Q over (alternative, weight) in fixed order; ties keep the earlier entry.
+
+    censor_mode (censored panels only):
+      "registered"    candidate set to XGBoost where a support is censored; Q = min(Q_boundary, Q_interval, Q_exact)
+      "no_defer_bi"   revision: censored supports are not special; Q = min(Q_boundary, Q_interval)
+      "no_defer_all3" revision: as above plus Q_exact on episodes whose hidden response is exact
+    selection: "max_lower_bound" (registered: largest Q) or "max_mean_safe" (revision: among candidates with Q > 0,
+    the largest mean gain; the lower-bound test is then a safety filter only).
+    """
     best = {"expert": "XGBoost", "weight": 0.0, "selection_score": 0.0, "validation_sites": int(len(np.unique(sites)))}
+    best_key = 0.0
     ref_abs = np.abs(anchor - truth)
     if censored_panel:
-        exact = ~observed_limit & (query_censor == 0)
+        registered = censor_mode == "registered"
+        exact = (~observed_limit & (query_censor == 0)) if registered else (query_censor == 0)
         ref_int = interval_error(anchor, truth, query_censor)
     for name, alt in alternatives.items():
         alt = np.where(np.isfinite(alt), alt, anchor)
         for w in weights:
             pred = anchor + w * (alt - anchor)
             if censored_panel:
-                pred = np.where(observed_limit, anchor, pred)
+                if registered:
+                    pred = np.where(observed_limit, anchor, pred)
                 reported = ref_abs - np.abs(pred - truth)
                 interval = ref_int - interval_error(pred, truth, query_censor)
                 scores = [site_lower_score(reported, sites, confidence, min_sites),
-                          site_lower_score(interval, sites, confidence, min_sites),
-                          site_lower_score(reported[exact], sites[exact], confidence, min_sites)]
+                          site_lower_score(interval, sites, confidence, min_sites)]
+                if censor_mode != "no_defer_bi":
+                    scores.append(site_lower_score(reported[exact], sites[exact], confidence, min_sites))
                 score = min(scores)
+                mean_gain = min(float(reported.mean()), float(interval.mean()))
             else:
-                score = site_lower_score(ref_abs - np.abs(pred - truth), sites, confidence, min_sites)
-            if score > best["selection_score"]:
+                gain = ref_abs - np.abs(pred - truth)
+                score = site_lower_score(gain, sites, confidence, min_sites)
+                mean_gain = float(gain.mean())
+            key = score if selection == "max_lower_bound" else mean_gain
+            if score > 0.0 and key > best_key:
                 best = {"expert": name, "weight": float(w), "selection_score": float(score),
                         "validation_sites": int(len(np.unique(sites)))}
+                best_key = key
     return best
+
+
+def ser_apply(choice: dict, base: np.ndarray, alt: np.ndarray | None, observed_limit: np.ndarray, censored_panel: bool,
+              censor_mode: str = "registered") -> np.ndarray:
+    """SER prediction for test episodes given the gate's choice (alt = the chosen expert's values, or None for XGBoost)."""
+    out = base.copy()
+    if choice["expert"] == "XGBoost" or alt is None:
+        return out
+    use = np.ones(len(base), dtype=bool)
+    if censored_panel and censor_mode == "registered":
+        use = ~observed_limit                                           # censored supports keep XGBoost
+    alt = np.where(np.isfinite(alt), alt, base)
+    out[use] = base[use] + choice["weight"] * (alt[use] - base[use])
+    return out
 
 
 # ======================================================================================
@@ -333,7 +405,7 @@ class BaselineOutput:
     inner: dict = field(default_factory=dict)      # outer fold -> inner validation records (for diagnostics)
 
 
-def run_baselines(panel: dp.Panel, ep: dp.EpisodeSet, cfg: dict, log=None) -> BaselineOutput:
+def run_baselines(panel: dp.Panel, ep: dp.EpisodeSet, cfg: dict, log=None, capture: dict | None = None) -> BaselineOutput:
     """Nested residue-group evaluation of the XGBoost reference, CovarianceLocalMedian and SER.
 
     For every outer fold: each other fold is held out in turn (inner validation) and the remaining
@@ -361,6 +433,10 @@ def run_baselines(panel: dp.Panel, ep: dp.EpisodeSet, cfg: dict, log=None) -> Ba
     Ks, kappas = cfg["neighbors"], cfg["ridge_kappa"]
     grid = cfg["xgb"]["grid"]
     min_sites = cfg["ser"]["min_validation_sites"]
+    rev = cfg.get("revision", {})
+    robust = rev.get("neighbors_whitening", "classic") == "robust"
+    censor_mode = rev.get("ser_censor_mode", "registered")
+    selection = rev.get("ser_selection", "max_lower_bound")
     for outer in np.unique(folds_v):
         outer_test = np.flatnonzero(ef == outer)
         assert not (set(sites_v[folds_v == outer]) & set(sites_v[folds_v != outer])), "residue separation violated"
@@ -374,7 +450,7 @@ def run_baselines(panel: dp.Panel, ep: dp.EpisodeSet, cfg: dict, log=None) -> Ba
             train_ep = np.flatnonzero(np.isin(ep.i, train_rows))
             xgb_all = np.column_stack([fit_xgb(X, truth, train_ep, row, cfg).predict(X[val]) for row in grid])
             lo_hi = train_range(y, train_rows)
-            nb = neighborhood(y, train_rows, sites_v[train_rows], ep.i[val], ep.q[val], ep.s[val], Ks, lo_hi)
+            nb = neighborhood(y, train_rows, sites_v[train_rows], ep.i[val], ep.q[val], ep.s[val], Ks, lo_hi, robust)
             rid = ridge_predictions(y, train_rows, ep.i[val], ep.q[val], ep.s[val], kappas)
             qmed, pmed = simple_locations(y, train_rows, ep.q[val])
             store.append({"val": val, "xgb": xgb_all, "nb": nb, "ridge": rid, "qmed": qmed, "pmed": pmed,
@@ -405,7 +481,7 @@ def run_baselines(panel: dp.Panel, ep: dp.EpisodeSet, cfg: dict, log=None) -> Ba
                 "bounded_ridge": np.clip(rid_stack[:, best_r], lo, hi), "query_median": stack("qmed"), "pooled_median": stack("pmed")}
         alts = {n: alts[n] for n in cfg["ser"]["experts"]}
         choice = ser_gate(t_val, anchor, alts, sites_e[val_all], cfg["ser"]["weights"], cfg["ser"]["confidence"],
-                          min_sites, obs_limit[val_all], censor_q[val_all], censored_panel)
+                          min_sites, obs_limit[val_all], censor_q[val_all], censored_panel, censor_mode, selection)
         decisions.append({"fold": int(outer), **choice, "inner_episodes": int(len(val_all))})
         # ---------------- outer refit and prediction ----------------
         train_rows = np.flatnonzero(folds_v != outer)
@@ -415,34 +491,28 @@ def run_baselines(panel: dp.Panel, ep: dp.EpisodeSet, cfg: dict, log=None) -> Ba
         xgb_pred[outer_test] = fit_xgb(X, truth, train_ep, grid[best_x], cfg).predict(X[outer_test])
         lo_hi = train_range(y, train_rows)
         nb = neighborhood(y, train_rows, sites_v[train_rows], ep.i[outer_test], ep.q[outer_test], ep.s[outer_test],
-                          [Ks[best_k]], lo_hi)
+                          [Ks[best_k]], lo_hi, robust)
         local_pred[outer_test] = nb.original[:, 0]
         qmed_pred[outer_test] = simple_locations(y, train_rows, ep.q[outer_test])[0]
-        ridge_pred[outer_test] = np.clip(
-            ridge_predictions(y, train_rows, ep.i[outer_test], ep.q[outer_test], ep.s[outer_test], [kappas[best_r]])[:, 0],
-            lo_hi[0][ep.q[outer_test]], lo_hi[1][ep.q[outer_test]])
+        lo_t, hi_t = lo_hi[0][ep.q[outer_test]], lo_hi[1][ep.q[outer_test]]
+        ridge_raw = ridge_predictions(y, train_rows, ep.i[outer_test], ep.q[outer_test], ep.s[outer_test], [kappas[best_r]])[:, 0]
+        ridge_pred[outer_test] = np.clip(ridge_raw, lo_t, hi_t)
         for e in np.flatnonzero(~nb.ok):
             failures["CovarianceLocalMedian"][int(outer_test[e])] = "insufficient_eligible_training_profiles"
-        ser_pred[outer_test] = xgb_pred[outer_test]
-        if choice["expert"] != "XGBoost":
-            test = outer_test[~obs_limit[outer_test]]               # censored supports keep XGBoost
-            if len(test):
-                name = choice["expert"]
-                if name in ("bounded_local", "shrunk_local"):
-                    nb_t = neighborhood(y, train_rows, sites_v[train_rows], ep.i[test], ep.q[test], ep.s[test],
-                                        [Ks[best_k]], lo_hi)
-                    alt = np.clip(nb_t.original[:, 0], lo_hi[0][ep.q[test]], lo_hi[1][ep.q[test]]) \
-                        if name == "bounded_local" else nb_t.shrunk[:, 0]
-                elif name == "bounded_ridge":
-                    alt = np.clip(ridge_predictions(y, train_rows, ep.i[test], ep.q[test], ep.s[test], [kappas[best_r]])[:, 0],
-                                  lo_hi[0][ep.q[test]], lo_hi[1][ep.q[test]])
-                elif name == "query_median":
-                    alt = simple_locations(y, train_rows, ep.q[test])[0]
-                else:
-                    alt = simple_locations(y, train_rows, ep.q[test])[1]
-                base = xgb_pred[test]
-                alt = np.where(np.isfinite(alt), alt, base)
-                ser_pred[test] = base + choice["weight"] * (alt - base)
+        pmed_t = simple_locations(y, train_rows, ep.q[outer_test])[1]
+        alt_test = {"bounded_local": np.clip(nb.original[:, 0], lo_t, hi_t), "shrunk_local": nb.shrunk[:, 0],
+                    "bounded_ridge": ridge_pred[outer_test], "query_median": qmed_pred[outer_test], "pooled_median": pmed_t}
+        name = choice["expert"]
+        ser_pred[outer_test] = ser_apply(choice, xgb_pred[outer_test], alt_test.get(name), obs_limit[outer_test],
+                                         censored_panel, censor_mode)
+        if capture is not None:                                    # development replays of gate variants (never lockbox)
+            capture[int(outer)] = {
+                "val": {"truth": t_val, "anchor": anchor, "alts": {n: np.asarray(a) for n, a in alts.items()},
+                        "sites": sites_e[val_all], "obs_limit": obs_limit[val_all], "query_censor": censor_q[val_all]},
+                "test": {"idx": outer_test, "truth": truth[outer_test], "xgb": xgb_pred[outer_test], "alts": alt_test,
+                         "obs_limit": obs_limit[outer_test], "query_censor": censor_q[outer_test],
+                         "sites": sites_e[outer_test]},
+                "censored_panel": censored_panel}
     intervened = np.isfinite(ser_pred) & np.isfinite(xgb_pred) & (ser_pred != xgb_pred)
     return BaselineOutput(xgb_pred, local_pred, ser_pred, intervened, qmed_pred, ridge_pred, decisions, selected_log, failures)
 
@@ -805,6 +875,8 @@ class ExpertBank:
                 r = rng.integers(len(self.rows), size=n)
                 keys = np.where(fin[r], rng.random((n, self.D)), 2.0)
                 order = np.argsort(keys, axis=1)[:, :4]
+                if order.shape[1] < 4:                                  # panels with fewer than 4 inhibitors
+                    order = np.pad(order, ((0, 0), (0, 4 - order.shape[1])))
                 nf = fin[r].sum(1)
                 m = np.minimum(rng.integers(0, 4, size=n), nf - 1)
                 ok = m >= 0
@@ -1033,14 +1105,15 @@ class PoolProvider:
         key = (name, k)
         if key not in self.cache:
             panel = self.panels[name]
-            self.cache[key] = None
+            result = None                                        # cached only after success: a failure stays loud
             if k in panel.budgets():
                 ep = dp.build_episodes(panel, k)
                 aux, _ = build_aux(panel, ep, self.cfg, np.arange(panel.n), "fixed", k)
                 if aux is not None:
                     skill = aux_skill(aux)
                     rec = records_from_aux(aux, skill)
-                    self.cache[key] = (rec, head_features_fallback(rec, aux), skill)
+                    result = (rec, head_features_fallback(rec, aux), skill)
+            self.cache[key] = result
         return self.cache[key]
 
     def records(self, exclude: str | None, k: int):
@@ -1244,7 +1317,7 @@ class PanelRun:
 
 
 def run_panel(panel: dp.Panel, k: int, cfg: dict, methods=METHODS, pool: PoolProvider | None = None,
-              ep: dp.EpisodeSet | None = None, log=None) -> PanelRun:
+              ep: dp.EpisodeSet | None = None, log=None, capture: dict | None = None) -> PanelRun:
     """Run the requested methods on the same episode set with nested residue-group folds."""
     log = log or (lambda *a, **kw: None)
     ep = ep or dp.build_episodes(panel, k)
@@ -1256,7 +1329,7 @@ def run_panel(panel: dp.Panel, k: int, cfg: dict, methods=METHODS, pool: PoolPro
     intervened = np.zeros(E, dtype=bool)
     if set(methods) & {"XGBoost", "CovarianceLocalMedian", "SER", "QueryMedian", "RidgeSupports"}:
         log(f"{panel.name} k={k}: baseline engine")
-        out = run_baselines(panel, ep, cfg)
+        out = run_baselines(panel, ep, cfg, capture=capture)
         for name, arr in (("XGBoost", out.xgb), ("CovarianceLocalMedian", out.local), ("SER", out.ser),
                           ("QueryMedian", out.qmed), ("RidgeSupports", out.ridge)):
             if name in preds:

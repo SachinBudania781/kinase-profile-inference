@@ -1,0 +1,578 @@
+{
+ "Jung2025_ABL1_k2": {
+  "n_var": 1836,
+  "n_drugs": 5,
+  "n_sites": 322,
+  "censored_frac": 0.0,
+  "drug_sd": [
+   3.435,
+   2.726,
+   1.656,
+   2.274,
+   3.464
+  ],
+  "mean_offdiag_corr": 0.722918491871675,
+  "min_corr": 0.5953257875436258,
+  "mae": {
+   "XGBoost": 1.0685,
+   "SER": 1.0525,
+   "CovarianceLocalMedian": 1.0546,
+   "RidgeSupports": 1.0941,
+   "QueryMedian": 2.0147
+  },
+  "skill_xgb_vs_qmed_%": 47.0,
+  "ser_gain_%": 1.49,
+  "ridge_gain_%": -2.4,
+  "local_gain_%": 1.3,
+  "mean_abs_ser_minus_xgb": 0.1373,
+  "ser_move_over_xgb_mae_%": 12.8,
+  "blend_local": {
+   "0": 1.0685,
+   "0.25": 1.0589,
+   "0.5": 1.0532,
+   "0.75": 1.0516,
+   "1.0": 1.0546
+  },
+  "blend_ridge": {
+   "0": 1.0685,
+   "0.25": 1.062,
+   "0.5": 1.0642,
+   "0.75": 1.075,
+   "1.0": 1.0941
+  },
+  "per_query_drug_xgb_ser": {
+   "Imatinib": [
+    1.283,
+    1.26
+   ],
+   "Nilotinib": [
+    0.855,
+    0.84
+   ],
+   "Bosutinib": [
+    0.766,
+    0.75
+   ],
+   "Ponatinib": [
+    0.796,
+    0.78
+   ],
+   "Asciminib": [
+    1.642,
+    1.633
+   ]
+  },
+  "replicate_mean_abs_diff": 1.1758205512661386,
+  "replicate_note": "mean |rep1-rep2|; a prediction cannot beat ~half-to-equal of this on average"
+ },
+ "Jung2025_ABL1_k3": {
+  "n_var": 1836,
+  "n_drugs": 5,
+  "n_sites": 322,
+  "censored_frac": 0.0,
+  "drug_sd": [
+   3.435,
+   2.726,
+   1.656,
+   2.274,
+   3.464
+  ],
+  "mean_offdiag_corr": 0.722918491871675,
+  "min_corr": 0.5953257875436258,
+  "mae": {
+   "XGBoost": 0.9825,
+   "SER": 0.9641,
+   "CovarianceLocalMedian": 0.9698,
+   "RidgeSupports": 0.996,
+   "QueryMedian": 2.0147
+  },
+  "skill_xgb_vs_qmed_%": 51.2,
+  "ser_gain_%": 1.87,
+  "ridge_gain_%": -1.38,
+  "local_gain_%": 1.29,
+  "mean_abs_ser_minus_xgb": 0.1358,
+  "ser_move_over_xgb_mae_%": 13.8,
+  "blend_local": {
+   "0": 0.9825,
+   "0.25": 0.9704,
+   "0.5": 0.9641,
+   "0.75": 0.9636,
+   "1.0": 0.9698
+  },
+  "blend_ridge": {
+   "0": 0.9825,
+   "0.25": 0.9724,
+   "0.5": 0.9715,
+   "0.75": 0.9794,
+   "1.0": 0.996
+  },
+  "per_query_drug_xgb_ser": {
+   "Imatinib": [
+    1.138,
+    1.107
+   ],
+   "Nilotinib": [
+    0.724,
+    0.702
+   ],
+   "Bosutinib": [
+    0.732,
+    0.715
+   ],
+   "Ponatinib": [
+    0.722,
+    0.705
+   ],
+   "Asciminib": [
+    1.596,
+    1.592
+   ]
+  },
+  "replicate_mean_abs_diff": 1.1758205512661386,
+  "replicate_note": "mean |rep1-rep2|; a prediction cannot beat ~half-to-equal of this on average"
+ },
+ "Chakraborty2024_SRC_k2": {
+  "n_var": 3375,
+  "n_drugs": 4,
+  "n_sites": 246,
+  "censored_frac": 0.0,
+  "drug_sd": [
+   0.662,
+   0.368,
+   0.37,
+   0.366
+  ],
+  "mean_offdiag_corr": 0.5690842395893642,
+  "min_corr": 0.30153011830455095,
+  "mae": {
+   "XGBoost": 0.1842,
+   "SER": 0.1821,
+   "CovarianceLocalMedian": 0.1825,
+   "RidgeSupports": 0.1901,
+   "QueryMedian": 0.2666
+  },
+  "skill_xgb_vs_qmed_%": 30.9,
+  "ser_gain_%": 1.17,
+  "ridge_gain_%": -3.19,
+  "local_gain_%": 0.95,
+  "mean_abs_ser_minus_xgb": 0.0238,
+  "ser_move_over_xgb_mae_%": 12.9,
+  "blend_local": {
+   "0": 0.1842,
+   "0.25": 0.1828,
+   "0.5": 0.182,
+   "0.75": 0.1819,
+   "1.0": 0.1825
+  },
+  "blend_ridge": {
+   "0": 0.1842,
+   "0.25": 0.1838,
+   "0.5": 0.1847,
+   "0.75": 0.1869,
+   "1.0": 0.1901
+  },
+  "per_query_drug_xgb_ser": {
+   "Dasatinib25uM": [
+    0.261,
+    0.258
+   ],
+   "Compound1": [
+    0.13,
+    0.128
+   ],
+   "Compound2": [
+    0.206,
+    0.203
+   ],
+   "Compound4": [
+    0.139,
+    0.139
+   ]
+  }
+ },
+ "Chakraborty2024_SRC_k3": {
+  "n_var": 3375,
+  "n_drugs": 4,
+  "n_sites": 246,
+  "censored_frac": 0.0,
+  "drug_sd": [
+   0.662,
+   0.368,
+   0.37,
+   0.366
+  ],
+  "mean_offdiag_corr": 0.5690842395893642,
+  "min_corr": 0.30153011830455095,
+  "mae": {
+   "XGBoost": 0.1746,
+   "SER": 0.173,
+   "CovarianceLocalMedian": 0.1728,
+   "RidgeSupports": 0.1791,
+   "QueryMedian": 0.2666
+  },
+  "skill_xgb_vs_qmed_%": 34.5,
+  "ser_gain_%": 0.92,
+  "ridge_gain_%": -2.62,
+  "local_gain_%": 1.02,
+  "mean_abs_ser_minus_xgb": 0.0176,
+  "ser_move_over_xgb_mae_%": 10.1,
+  "blend_local": {
+   "0": 0.1746,
+   "0.25": 0.1729,
+   "0.5": 0.172,
+   "0.75": 0.172,
+   "1.0": 0.1728
+  },
+  "blend_ridge": {
+   "0": 0.1746,
+   "0.25": 0.1737,
+   "0.5": 0.1743,
+   "0.75": 0.176,
+   "1.0": 0.1791
+  },
+  "per_query_drug_xgb_ser": {
+   "Dasatinib25uM": [
+    0.24,
+    0.237
+   ],
+   "Compound1": [
+    0.12,
+    0.119
+   ],
+   "Compound2": [
+    0.205,
+    0.202
+   ],
+   "Compound4": [
+    0.134,
+    0.133
+   ]
+  }
+ },
+ "Oh2026_ALK_k2": {
+  "n_var": 1932,
+  "n_drugs": 3,
+  "n_sites": 331,
+  "censored_frac": 0.0,
+  "drug_sd": [
+   1.163,
+   1.381,
+   1.171
+  ],
+  "mean_offdiag_corr": 0.56455594378424,
+  "min_corr": 0.42277093860133014,
+  "mae": {
+   "XGBoost": 0.5907,
+   "SER": 0.5854,
+   "CovarianceLocalMedian": 0.5987,
+   "RidgeSupports": 0.5843,
+   "QueryMedian": 0.7983
+  },
+  "skill_xgb_vs_qmed_%": 26.0,
+  "ser_gain_%": 0.89,
+  "ridge_gain_%": 1.08,
+  "local_gain_%": -1.35,
+  "mean_abs_ser_minus_xgb": 0.0594,
+  "ser_move_over_xgb_mae_%": 10.1,
+  "blend_local": {
+   "0": 0.5907,
+   "0.25": 0.59,
+   "0.5": 0.5916,
+   "0.75": 0.5945,
+   "1.0": 0.5987
+  },
+  "blend_ridge": {
+   "0": 0.5907,
+   "0.25": 0.5857,
+   "0.5": 0.5832,
+   "0.75": 0.5826,
+   "1.0": 0.5843
+  },
+  "per_query_drug_xgb_ser": {
+   "Alectinib": [
+    0.577,
+    0.572
+   ],
+   "Lorlatinib": [
+    0.57,
+    0.564
+   ],
+   "Zotizalkib": [
+    0.625,
+    0.62
+   ]
+  }
+ },
+ "Lee2026_EGFR_k2": {
+  "n_var": 1588,
+  "n_drugs": 3,
+  "n_sites": 286,
+  "censored_frac": 0.0,
+  "drug_sd": [
+   1.702,
+   1.846,
+   1.876
+  ],
+  "mean_offdiag_corr": 0.6144236157515074,
+  "min_corr": 0.46598600379200916,
+  "mae": {
+   "XGBoost": 0.7822,
+   "SER": 0.7771,
+   "CovarianceLocalMedian": 0.7753,
+   "RidgeSupports": 0.788,
+   "QueryMedian": 1.211
+  },
+  "skill_xgb_vs_qmed_%": 35.4,
+  "ser_gain_%": 0.65,
+  "ridge_gain_%": -0.74,
+  "local_gain_%": 0.88,
+  "mean_abs_ser_minus_xgb": 0.0646,
+  "ser_move_over_xgb_mae_%": 8.3,
+  "blend_local": {
+   "0": 0.7822,
+   "0.25": 0.7752,
+   "0.5": 0.7719,
+   "0.75": 0.7719,
+   "1.0": 0.7753
+  },
+  "blend_ridge": {
+   "0": 0.7822,
+   "0.25": 0.7749,
+   "0.5": 0.7735,
+   "0.75": 0.7774,
+   "1.0": 0.788
+  },
+  "per_query_drug_xgb_ser": {
+   "Afatinib": [
+    0.66,
+    0.65
+   ],
+   "Dacomitinib": [
+    0.719,
+    0.713
+   ],
+   "Osimertinib": [
+    0.968,
+    0.969
+   ]
+  }
+ },
+ "Robichaux2021_EGFR_k2": {
+  "n_var": 77,
+  "n_drugs": 18,
+  "n_sites": 13,
+  "censored_frac": 0.0,
+  "drug_sd": [
+   0.946,
+   1.243,
+   1.279,
+   1.032,
+   1.442,
+   1.046,
+   0.976,
+   1.209,
+   1.11,
+   0.831,
+   0.871,
+   1.181,
+   0.986,
+   1.042,
+   1.287,
+   0.774,
+   1.639,
+   1.259
+  ],
+  "mean_offdiag_corr": 0.45410405060559145,
+  "min_corr": -0.019571147824733282,
+  "mae": {
+   "XGBoost": 0.7752,
+   "SER": 0.7352,
+   "CovarianceLocalMedian": 0.762,
+   "RidgeSupports": 0.7508,
+   "QueryMedian": 1.0307
+  },
+  "skill_xgb_vs_qmed_%": 24.8,
+  "ser_gain_%": 5.16,
+  "ridge_gain_%": 3.15,
+  "local_gain_%": 1.71,
+  "mean_abs_ser_minus_xgb": 0.1988,
+  "ser_move_over_xgb_mae_%": 25.6,
+  "blend_local": {
+   "0": 0.7752,
+   "0.25": 0.7415,
+   "0.5": 0.7285,
+   "0.75": 0.7362,
+   "1.0": 0.762
+  },
+  "blend_ridge": {
+   "0": 0.7752,
+   "0.25": 0.7487,
+   "0.5": 0.7359,
+   "0.75": 0.7362,
+   "1.0": 0.7508
+  },
+  "per_query_drug_xgb_ser": {
+   "AZ5104": [
+    0.622,
+    0.622
+   ],
+   "AZD3759": [
+    0.747,
+    0.742
+   ],
+   "Afatinib": [
+    0.839,
+    0.749
+   ],
+   "CLN-081": [
+    0.89,
+    0.832
+   ],
+   "Dacomitinib": [
+    1.032,
+    0.917
+   ],
+   "Erlotinib": [
+    0.614,
+    0.568
+   ],
+   "Gefitinib": [
+    0.707,
+    0.688
+   ],
+   "Lazertinib": [
+    0.818,
+    0.794
+   ],
+   "Mobocertinib": [
+    0.868,
+    0.89
+   ],
+   "Naquotinib": [
+    0.646,
+    0.609
+   ],
+   "Nazartinib": [
+    0.535,
+    0.511
+   ],
+   "Neratinib": [
+    0.824,
+    0.762
+   ],
+   "Olmutinib": [
+    0.667,
+    0.624
+   ],
+   "Osimertinib": [
+    0.731,
+    0.676
+   ],
+   "Poziotinib": [
+    0.827,
+    0.791
+   ],
+   "Rociletinib": [
+    0.56,
+    0.511
+   ],
+   "Sapatinib": [
+    1.145,
+    1.091
+   ],
+   "Tarlox-TKI": [
+    0.834,
+    0.814
+   ]
+  }
+ },
+ "Estevam2025_MET_k2": {
+  "n_var": 3214,
+  "n_drugs": 10,
+  "n_sites": 287,
+  "censored_frac": 0.0,
+  "drug_sd": [
+   1.45,
+   1.405,
+   1.209,
+   1.437,
+   1.284,
+   1.349,
+   1.397,
+   1.375,
+   1.473,
+   1.359
+  ],
+  "mean_offdiag_corr": 0.9029474128054147,
+  "min_corr": 0.7689184442610041,
+  "mae": {
+   "XGBoost": 0.2875,
+   "SER": 0.2645,
+   "CovarianceLocalMedian": 0.2644,
+   "RidgeSupports": 0.3097,
+   "QueryMedian": 1.1654
+  },
+  "skill_xgb_vs_qmed_%": 75.3,
+  "ser_gain_%": 8.0,
+  "ridge_gain_%": -7.74,
+  "local_gain_%": 8.02,
+  "mean_abs_ser_minus_xgb": 0.1057,
+  "ser_move_over_xgb_mae_%": 36.8,
+  "blend_local": {
+   "0": 0.2875,
+   "0.25": 0.2777,
+   "0.5": 0.2703,
+   "0.75": 0.2657,
+   "1.0": 0.2644
+  },
+  "blend_ridge": {
+   "0": 0.2875,
+   "0.25": 0.2874,
+   "0.5": 0.2914,
+   "0.75": 0.299,
+   "1.0": 0.3097
+  },
+  "per_query_drug_xgb_ser": {
+   "A458": [
+    0.305,
+    0.291
+   ],
+   "Cabo": [
+    0.27,
+    0.253
+   ],
+   "Camp": [
+    0.321,
+    0.28
+   ],
+   "Crizo": [
+    0.283,
+    0.266
+   ],
+   "Gle": [
+    0.27,
+    0.253
+   ],
+   "Glu": [
+    0.293,
+    0.258
+   ],
+   "Mere": [
+    0.277,
+    0.259
+   ],
+   "NVP": [
+    0.251,
+    0.231
+   ],
+   "Savo": [
+    0.354,
+    0.317
+   ],
+   "Tepo": [
+    0.25,
+    0.238
+   ]
+  }
+ }
+}

@@ -150,3 +150,79 @@ def test_joint_expert_rule_follows_panel_size(world):
     assert not small.use_joint
     big_cfg = cm.load_config(overrides={"saer": {"joint_min_profiles": 10}})
     assert cm.ExpertBank(panels["T"], np.arange(panels["T"].n), big_cfg).use_joint
+
+
+# ---------------------------------------------------------------------------------------
+# Pre-freeze revisions of 2026-11-13 (amendments log, section 11)
+# ---------------------------------------------------------------------------------------
+from pathlib import Path
+
+
+def test_three_inhibitor_panel_joint_expert_does_not_crash(tmp_path):
+    """Revision R1: panels with only 3 inhibitors used to break the joint expert's sampler (shape (n,3) vs (n,2))."""
+    write_ser_panel(tmp_path, "Tri", n_sites=40, per_site=2, drugs=tuple("abc"), seed=11)
+    panel = dp.load_panel(synth_registry(("Tri",)), "Tri", {"archive": tmp_path}, allow_lockbox=True)
+    cfg = cm.load_config(overrides={"saer": {"joint_min_profiles": 10, "joint_min_cells": 10}})
+    cm.clear_caches()
+    bank = cm.ExpertBank(panel, np.arange(panel.n), cfg)
+    assert bank.use_joint and bank.D == 3
+    ep = dp.build_episodes(panel, 2)
+    out = bank.predict(ep.i[:60], ep.q[:60], ep.s[:60])
+    assert np.isfinite(out[:, 6]).all()
+
+
+def test_pool_provider_does_not_cache_a_failed_computation(world):
+    """Revision R1: a failure must not be remembered as 'no records'."""
+    panels, cfg, _ = world
+    pool = cm.PoolProvider({"T": panels["T"]}, cfg)
+    assert pool.panel_records("T", 2) is not None
+    assert pool.cache.get(("T", 2)) is not None or any(v is not None for v in pool.cache.values())
+
+
+def test_standardised_xgboost_is_scale_equivariant(world):
+    """Revision R2: with the standardised target, rescaling every response rescales XGBoost's predictions."""
+    panels, _, _ = world
+    panel = panels["T"]
+    ep = dp.build_episodes(panel, 2)
+    cfg = cm.load_config(overrides={"revision": {"xgb_standardize_target": True}})
+    cm.clear_caches()
+    ref = cm.run_baselines(panel, ep, cfg)
+    small = type(panel)(**{**panel.__dict__, "y": panel.y * 1e-4})
+    cm.clear_caches()
+    got = cm.run_baselines(small, ep, cfg)
+    np.testing.assert_allclose(got.xgb, ref.xgb * 1e-4, rtol=1e-3, atol=1e-8)
+
+
+def test_censor_modes_defer_or_use_alternative_on_censored_supports():
+    """Revision R3: 'registered' defers to XGBoost on censored supports; 'no_defer_bi' lets the gate judge them."""
+    n, g = 60, 6
+    sites = np.repeat(np.arange(g), n // g)
+    truth, anchor = np.zeros(n), np.ones(n)
+    alts = {"bounded_local": np.zeros(n)}                       # the alternative is exactly right everywhere
+    limit = np.ones(n, dtype=bool)                              # every episode has a censored support
+    zeros = np.zeros(n, dtype=int)
+    args = (truth, anchor, alts, sites, [0.5, 1.0], 0.90, 3, limit, zeros, True)
+    reg = cm.ser_gate(*args, censor_mode="registered")
+    assert reg["expert"] == "XGBoost"
+    new = cm.ser_gate(*args, censor_mode="no_defer_bi")
+    assert new["expert"] == "bounded_local" and new["weight"] == 1.0
+    np.testing.assert_array_equal(cm.ser_apply(reg, anchor, alts["bounded_local"], limit, True, "registered"), anchor)
+    np.testing.assert_array_equal(cm.ser_apply(new, anchor, alts["bounded_local"], limit, True, "no_defer_bi"), truth)
+
+
+def test_production_config_enables_adopted_revisions_and_defaults_stay_registered():
+    prod = cm.load_config(Path(__file__).resolve().parents[1] / "configs" / "models.json")["revision"]
+    assert prod == {"xgb_standardize_target": True, "neighbors_whitening": "classic",
+                    "ser_censor_mode": "no_defer_bi", "ser_selection": "max_lower_bound"}
+    assert cm.load_config()["revision"] == {"xgb_standardize_target": False, "neighbors_whitening": "classic",
+                                            "ser_censor_mode": "registered", "ser_selection": "max_lower_bound"}
+
+
+def test_revised_pipeline_runs_on_censored_panel(world):
+    panels, _, _ = world
+    cfg = cm.load_config(Path(__file__).resolve().parents[1] / "configs" / "models.json")
+    panel = panels["Cens"]
+    ep = dp.build_episodes(panel, 2)
+    cm.clear_caches()
+    out = cm.run_baselines(panel, ep, cfg)
+    assert np.isfinite(out.xgb).all() and np.isfinite(out.ser).all() and all(not v for v in out.failures.values())

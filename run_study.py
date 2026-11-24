@@ -60,6 +60,22 @@ def check_lockbox_gate(args, out: Path, roots: dict):
                                   "started_unix": int(time.time())}, indent=2) + "\n")
 
 
+def save_capture(directory, panel, k, result, cap, cfg):
+    """Store per-fold SER records and hidden truth so gate variants can be replayed offline (development panels only)."""
+    import pickle
+    import numpy as np
+    ep = dp.build_episodes(panel, k)
+    sites = np.array([dp.site_key(s) for s in panel.sites], dtype=object)[ep.i]
+    rec = {"name": panel.name, "k": k, "config_revision": cfg.get("revision"), "episodes": len(ep), "ids": ep.ids,
+           "truth": panel.y[ep.i, ep.q], "query_censor": panel.censor[ep.i, ep.q], "sites": sites,
+           "folds": panel.folds[ep.i], "q": ep.q, "n_drugs": panel.n_drugs, "n": panel.n, "n_sites": panel.n_sites,
+           "scale_kind": panel.scale_kind, "censored_panel": bool((panel.censor != 0).any()),
+           "preds": {m: result.preds[m] for m in result.preds}, "decisions": result.decisions, "records": cap}
+    Path(directory).mkdir(parents=True, exist_ok=True)
+    with open(Path(directory) / f"{panel.name}_k{k}.pkl", "wb") as fh:
+        pickle.dump(rec, fh)
+
+
 def run(args) -> dict:
     registry = dp.load_registry(args.registry)
     roots = {"archive": args.archive_root}
@@ -67,6 +83,8 @@ def run(args) -> dict:
         roots["lockbox_b"] = args.lockbox_b_root
     roles = args.roles.split(",")
     uses_lockbox = bool(set(roles) & set(dp.LOCKBOX_ROLES))
+    if uses_lockbox and args.capture_dir:
+        sys.exit("--capture-dir stores hidden responses and is for development panels only; it is refused for lockbox roles.")
     out = Path(args.out)
     if uses_lockbox:
         check_lockbox_gate(args, out, roots)
@@ -89,8 +107,11 @@ def run(args) -> dict:
                 continue
             t0 = time.time()
             try:
-                result = cm.run_panel(panel, k, cfg, methods, pool, log=print if args.verbose else None)
+                cap = {} if args.capture_dir else None
+                result = cm.run_panel(panel, k, cfg, methods, pool, log=print if args.verbose else None, capture=cap)
                 info = cm.save_run(result, out)
+                if args.capture_dir:                                    # development replays only (never lockbox)
+                    save_capture(args.capture_dir, panel, k, result, cap, cfg)
                 info.update({"panel": name, "k": k, "seconds": round(time.time() - t0, 1),
                              "failures": {m: len(v) for m, v in result.failures.items() if v}})
                 manifest["runs"].append(info)
@@ -122,6 +143,7 @@ def main(argv=None):
     p.add_argument("--allow-lockbox", action="store_true")
     p.add_argument("--integrity-record", default=None)
     p.add_argument("--verbose", action="store_true")
+    p.add_argument("--capture-dir", default=None, help="development only: store per-fold records for offline gate replays")
     args = p.parse_args(argv)
     manifest = run(args)
     if manifest["errors"]:

@@ -1,0 +1,24 @@
+target                               cens  local  ridge |     registered |     nodefer_bi |   nodefer_all3 | registered+mea | nodefer_bi+mea
+Syn0015_D3_n400_ser:2                Y       0.6   -1.7 |   0.98 (0.91) |   0.85 (1.00) |   0.85 (1.00) |   0.62 (0.91) |   0.60 (1.00)
+Syn0056_D8_n400_ser:2                Y      16.2   -1.2 |   3.33 (0.22) |  16.49 (1.00) |  10.65 (1.00) |   3.42 (0.22) |  16.49 (1.00)
+Syn0069_D8_n200_ser:2                Y       7.0    6.1 |   6.22 (0.78) |   6.74 (1.00) |   5.73 (1.00) |   6.22 (0.78) |   6.12 (1.00)
+Syn0081_D8_n400_ser:2                Y       2.3    1.0 |   0.84 (0.45) |   2.51 (1.00) |   1.14 (1.00) |   0.86 (0.45) |   2.51 (1.00)
+Syn0171_D5_n200_ser:2                Y       8.0    7.9 |   5.50 (0.91) |   7.84 (1.00) |   7.63 (1.00) |   5.69 (0.91) |   7.84 (1.00)
+Syn0172_D6_n200_ser:2                Y       7.0    3.6 |   5.30 (0.76) |   6.91 (1.00) |   6.90 (1.00) |   5.64 (0.76) |   7.10 (1.00)
+Syn0181_D3_n60_ser:2                 Y      14.5   14.4 |   2.46 (0.24) |  14.18 (1.00) |  11.27 (1.00) |   3.38 (0.24) |  14.89 (1.00)
+Syn0183_D4_n40_ser:2                 Y      18.0   22.5 |  11.12 (0.77) |  20.57 (1.00) |  17.10 (1.00) |  13.29 (0.77) |  20.57 (1.00)
+Syn0188_D6_n400_ser:2                Y       5.1   -3.7 |   1.20 (0.20) |   4.96 (1.00) |   0.00 (0.00) |   1.52 (0.20) |   5.13 (1.00)
+Syn0256_D5_n200_ser:2                Y      11.4    7.3 |   2.85 (0.49) |  10.17 (1.00) |   7.12 (1.00) |   2.84 (0.49) |  11.38 (1.00)
+Syn0276_D4_n100_ser:2                Y       3.6  -18.6 |   2.50 (0.90) |   4.82 (1.00) |   4.43 (1.00) |   2.81 (0.90) |   4.59 (1.00)
+Syn0306_D6_n60_ser:2                 Y       7.5    8.2 |   6.22 (0.77) |   7.55 (1.00) |   7.40 (1.00) |   6.59 (0.77) |   7.84 (1.00)
+Syn0316_D6_n60_ser:2                 Y       1.7   -2.5 |   2.71 (0.87) |   2.97 (1.00) |   2.97 (1.00) |   3.06 (0.87) |   2.67 (1.00)
+Syn0333_D3_n800_ser:2                Y       0.2    0.0 |   0.66 (0.76) |   0.37 (1.00) |   0.39 (1.00) |   0.72 (0.76) |   0.26 (1.00)
+Syn0391_D5_n60_ser:2                 Y       5.5    4.1 |   5.57 (0.53) |   4.78 (1.00) |   4.97 (1.00) |   5.57 (0.53) |   2.74 (1.00)
+
+mean gain over targets: {'registered': 3.83, 'nodefer_bi': 7.45, 'nodefer_all3': 5.9, 'registered+meansafe': 4.15, 'nodefer_bi+meansafe': 7.38}
+harm (CI hi < 0): {'registered': 0, 'nodefer_bi': 0, 'nodefer_all3': 0, 'registered+meansafe': 0, 'nodefer_bi+meansafe': 0}
+studies with negative gain: {'registered': np.int64(0), 'nodefer_bi': np.int64(0), 'nodefer_all3': np.int64(0), 'registered+meansafe': np.int64(0), 'nodefer_bi+meansafe': np.int64(0)}
+worst study gain: {'registered': np.float64(0.66), 'nodefer_bi': np.float64(0.37), 'nodefer_all3': np.float64(0.0), 'registered+meansafe': np.float64(0.62), 'nodefer_bi+meansafe': np.float64(0.26)}
+
+interval-error gain (sensitivity analysis), mean over targets / worst target:
+{'registered': (3.83, np.float64(0.66)), 'nodefer_bi': (7.32, np.float64(0.37)), 'nodefer_all3': (5.8, np.float64(0.0)), 'registered+meansafe': (4.15, np.float64(0.62)), 'nodefer_bi+meansafe': (7.25, np.float64(0.26))}
