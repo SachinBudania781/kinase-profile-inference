@@ -1,0 +1,70 @@
+{
+  "code": {
+    "bundle_sha256": "a74a4b61178ed5baaaf96081af61409105627e3dad05f2a7485c10fb13a5bb58",
+    "files": {
+      "build_lockbox_panel.py": "df84cc35bdc0811ada9afe2deb2ba2738e8dda879438d59f93b8cfacdf6f2e3d",
+      "configs/models.json": "869861a2941b114ca55a0e058296f3f8655fac841088c3b6bc8cdec213c67859",
+      "configs/panels.json": "1a01f3b8a458ba3648dca092adeb124598ef9a94c3ee2e4dbf7d8f6ea5372385",
+      "core_models.py": "82961cf1b91711b468221917c56b2bbf11970b33fb02c8b6cbce492a8a7a4446",
+      "data_pipeline.py": "040ae43c4bb7fa800db9adbfa6316505d2bbb31c92bfa09532c847614efcf473",
+      "dl_baselines.py": "e9ada2c91e538895e6c17a360aae29d8f30ea773a29bc51235ffe67d6fe60cba",
+      "evaluator.py": "932931bc4475ce82eb22f6df02eaefc36f70b9a3ffa82a5f42aab9b437a68a15",
+      "integrity.py": "15569751d73199eeebd456f7323bac6edc570ca83544aaa1dc255d128d558a65",
+      "lockbox_similarity.py": "9e1a1e7adf6643e80969c63b88f4e5e35b0b6314490247499b6a2b027ff35aa9",
+      "requirements.txt": "c0a4a31cfe05a19d241367ad534704ecb839d00d4fc1736006bf0fce95c068dd",
+      "routers.py": "32f0b2a6f4747dd060c2a4c178ced9c7c7565f08455e62b50dfed56bb57dfa89",
+      "run_study.py": "7920981437c2568445825d4952f8759b1dba78529f26f73cb7edf25f727d980a",
+      "tests/conftest.py": "48d86923adafa8fcda8ca859bfc67c8da929c5561d11b9acd152cd9210c3dbcc",
+      "tests/test_build_lockbox_panel.py": "34cc5e57adcab8efda623f3788f280e2a815917abb577c5cbcc56d0c84febabf",
+      "tests/test_data_pipeline.py": "6a76538058102301dd3c113fd1b28c41f00efdf52ffdef86a0ddd95760c540af",
+      "tests/test_dl_baselines.py": "c2a9f8e1dc9521f99fcb2b93f8fba6967d878a05cc32f09bd8496de4fbc0ff53",
+      "tests/test_evaluator.py": "744d53edddabc6fafedcbe9832b6921d3f2204907471aaac01b35f600e63b496",
+      "tests/test_integrity.py": "942ef29a2935a43dd2c0baf4920b30ad8b9b2e51d7bd3af410c2087d6a4b874a",
+      "tests/test_lockbox_similarity.py": "67a3d36d838e72fd56da19acee9983e33262b98f3ccb0472316eb5fbf58ea0f0",
+      "tests/test_models.py": "3299ad94e9fbe1ff2c2de5b979b8ef05682d73da802339dd332e47e863c7acb1",
+      "tests/test_parity_reference.py": "b70a014717382ce6353d7299c0027f335aa06d24a3d36f6796e744eafe7b445a",
+      "tests/test_routers.py": "a09472349b6574f6c7879a5de1723477ad43e23086e1dada3888594c281745b5",
+      "tests/test_run_study.py": "9be1a58f7d7680a82495d6edc1f70a6af5632619078ba367dd0aeebb8355fc21"
+    }
+  },
+  "configs_sha256": "78827c27563f6a2264d4c07b43d2db2e0ba072614b4acf2012b3a902d7175075",
+  "development_data": {
+    "bundle_sha256": "7e362a53f43bfcdc825e92411c162e4e994dc9ef291dde8f6d306a79dbc4a7b5",
+    "panels": {
+      "Chakraborty2024_SRC": "abcaf3103c6a66af9c1d24f2e9fe548e63f01efb4339154d920ab526a3af5709",
+      "DuongLy2016_multi_kinase": "d2c59e4b513df4bf83ddb51eaa3e40f227c22e05f54fbfbf5e7b645963e5ab22",
+      "Estevam2025_MET": "46d3235fdb746ae7c32cea260e037460a953d2914b9d68f9e20c91cf943b98a6",
+      "Jung2025_ABL1": "7b0b40af9b3444149328c78ecf6bc6788d9f31d8ac7daee15c83aeec087d6862",
+      "KiRHub2026_multi_kinase": "ac9c4c47d020c98b4397c7013d4ad2b2771ac235be13fd2653a02870070d402b",
+      "Lee2026_EGFR": "0df1056c461d78dcbfecf9c99bcc3e190264f348bf6e941d9035ae562bb55e3d",
+      "Nakamura2021_FGFR1_FGFR2_FGFR3": "0d5bf809e49423c9e72ac7d9b143afd9ad89860de7d5e20d779bbc0312b926c7",
+      "OKL2026_multi_kinase": "b0fd0bac8144480ef63dd06e05511117fc99fe95ae814eddc926882000daedd8",
+      "Oh2026_ALK": "8fd6f9f8dac81ac3954278d23c9c3b2d8096c041d9d1c274e9f445a345f72472",
+      "Robichaux2021_EGFR": "99ac13ab63e314c017e6de32ee853f6cbeed668c010b0f2f9c03651e3bb7511d"
+    }
+  },
+  "development_episode_manifest_sha256": "509f2338a1c590f9ea2ae95ff4d9b876cf2c5358b0bce585d0023c29c590a94b",
+  "development_fold_table_sha256": "8f09dc43a942e4f32cb64f6102e3c468d3643273234fa64a140676613c62541a",
+  "lockbox_A": {
+    "bundle_sha256": "8c1e0505e2252cbf50ae35c09085aeaf748e6c6e715a906fb77ea9b79090c321",
+    "panels": {
+      "Abadie2026_EGFR": "2ad23117c0b36d0c0d8caf54e4047cc10f84d485a561f5a1dede53975cdc00c0",
+      "An2023_EGFR": "ab794dcb74c14dcda3d755bbe08e025c60c1224f151f04dc0904d4a6b666b99f",
+      "Bahcall2022_MET": "8cdf748483afcc7b31eec521a696f46063f47911358e539ad836412034353a76",
+      "Fujino2019_MET": "5d89ce6f5a29dd1afa5d1cb8b78dc66722ecf9b3e67731a0ebd8621cc8fd839e",
+      "Gainor2016_ALK": "ba9791b6f28c75b39703aec363bd17c928f6e21bb3497e65cec3f8da85be6c7c",
+      "Wylie2017_ABL1": "5bb0e1c19627ab63e6fed720b5b88c0dd957336cc599abef5cb1c0d31101a31e",
+      "Zhang2016_ALK": "a26a67152caa9d037afa68481613b54455bb3da80e39e79b1f7609ad8c8b976f"
+    }
+  },
+  "lockbox_B": {
+    "bundle_sha256": "370b8f8cc14b54781f458f30892aa4368abaa5818aa8143b390348073e2b0d90",
+    "panels": {
+      "Peng2024_ROS1": "e896a4a45581b7e6c4676c6d6ff279031062e858ecd5d7a107c0849561689534",
+      "Takei2025_ALK": "e4949800cd7191af2d680c6039bfacf1a5144c6721a20b2d8712dae3e7af6d04",
+      "Villa2024_ALK": "bcfdb1e280ea865390bdb43aea5bdfcf9fc7df670df292572df5404e97ee548a"
+    }
+  },
+  "schema": 1,
+  "seed": 20261112
+}
